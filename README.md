@@ -1,7 +1,5 @@
-# Drupal Starter Kit
+# GMS Ocha - Drupal 9 version
+============================
 
-This is a sample Drupal site repository. It contains all the basics to get you started.
+This is the drupal 9 codebase for the [GMSOcha](https://gms.unocha.org/) site.
 
-See https://humanitarian.atlassian.net/browse/OPS-7611
-
-Use `composer create-project` to install after cloning or `composer create-project unocha/drupal-starterkit`
