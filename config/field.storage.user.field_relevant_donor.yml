@@ -1,0 +1,20 @@
+uuid: f5e59949-dd32-43d4-b0fd-885390775d7f
+langcode: und
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.field_relevant_donor
+field_name: field_relevant_donor
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

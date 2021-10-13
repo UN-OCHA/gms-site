@@ -1,0 +1,29 @@
+uuid: 12f39ac9-3f69-4775-b6e0-afb3c813fc24
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_taxonomy_view
+  module:
+    - system
+    - views
+  theme:
+    - gms_ocha_common
+id: views_block__blog_taxonomy_view_block_1
+theme: gms_ocha_common
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:blog_taxonomy_view-block_1'
+settings:
+  id: 'views_block:blog_taxonomy_view-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/content/home-page-blog\r\n\r\n/content/quick-guidance-how-insert-your-operational-modalities-gms\r\n/content/risk-level-determination-capacity-assessment-and-performance-index-scores\r\n/content/gms-milestones\r\n/content/system-users-2-common-mistakes-hfu-staff-want-avoid-while-modifying-their-profile\r\n/content/gms-youtube-channel\r\n/content/accessing-new-cbpf-internal-business-intelligence\r\n/content/ochas-pooled-funds-data-hub\r\n/content/gms-milestone-feb-2017\r\n/content/introduction-cbpf-gms\r\n/content/performance-index-march-2017\r\n/content/how-create-src-scorecard\r\n/content/gms-training-upcoming-releases-december-2020\r\n/content/tools-better-allocation-setup-process\r\n/content/gms-training-upcoming-releases-october-2020\r\n/content/gms-training-upcoming-release-june-2020\r\n/content/reflecting-covid-19-hrp-features-new-and-reprogrammed-projects\r\n/content/gms-new-releases-june-2019\r\n/content/gms-new-releases-april-2019\r\n/content/gms-new-releases-january-2019\r\n/content/gms-new-releases-october-2018\r\n/content/gms-new-releases-july-2018\r\n/content/gms-new-releases-may-2018\r\n/content/gms-new-releases-february-2018\r\n/content/gms-humanitarian-id-launch\r\n/content/gms-open-forum-july\r\n/content/gms-new-releases-28-november-2017\r\n/content/gms-biweekly-archive\r\n/content/gms-open-forum-november\r\n/content/gms-new-releases-281-2nd-blog-november-2017\r\n/content/gms-bi-open-forum-july\r\n/content/gms-read-only-access-auditors\r\n\r\n/categories/whats-new-gms\r\n/categories/training-guidance-notes\r\n/categories/gms-quick-tip\r\n/categories/open-forums\r\n/categories/archive\r\n\r\n/tags/2017-july-gms-bi-open-forum\r\n/tags/2017-july-gms-open-forum\r\n/tags/2017-july-open-forum\r\n/tags/2017-november-gms-open-forum-project-code-risk-level-performance-index-online-boq\r\n/tags/averages\r\n/tags/covid-19\r\n/tags/dashboard\r\n/tags/country-funding-process"
+    negate: false

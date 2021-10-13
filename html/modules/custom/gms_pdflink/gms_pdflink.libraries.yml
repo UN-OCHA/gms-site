@@ -1,0 +1,18 @@
+gms_pdflink.entity_print:
+  css:
+    theme:
+      css/entity-print.css: {}
+
+gms_pdflink.page_print:
+  css:
+    theme:
+      css/page-print.css: {}
+
+pdf_links:
+  version: 1.x
+  js:
+    js/pdf_links.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

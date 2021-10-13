@@ -1,0 +1,23 @@
+gms_sitename.add:
+  path: '/admin/config/system/gms_sitename'
+  defaults:
+    _form: 'Drupal\gms_sitename\Form\SiteNameForm'
+    _title: 'GMS Sitenames'
+  requirements:
+    _permission: 'access site name'
+
+gms_sitename.edit:
+  path: '/admin/config/system/gms_sitename/{sitename}'
+  defaults:
+    _form: 'Drupal\gms_sitename\Form\SiteNameForm'
+    _title: 'GMS Sitenames'
+  requirements:
+    _permission: 'access site name'
+
+gms_sitename.confirm:
+  path: '/admin/config/system/gms_sitename/confirm/{sitename}'
+  defaults:
+    _form: '\Drupal\gms_sitename\Form\SitenameDeleteConfirmForm'
+    _title: 'Confirm delete sitename'
+  requirements:
+    _permission: 'access site name'

@@ -1,0 +1,26 @@
+diff --git a/src/Plugin/migrate/process/GoogleAnalyticsVisibilityPages.php b/src/Plugin/migrate/process/GoogleAnalyticsVisibilityPages.php
+index 8374c55..ccd6b71 100644
+--- a/src/Plugin/migrate/process/GoogleAnalyticsVisibilityPages.php
++++ b/src/Plugin/migrate/process/GoogleAnalyticsVisibilityPages.php
+@@ -75,7 +75,7 @@ class GoogleAnalyticsVisibilityPages extends ProcessPluginBase implements Contai
+       $plugin_id,
+       $plugin_definition,
+       $container->get('module_handler'),
+-      $container->get('plugin.manager.migrate.process')->createInstance('migration', $migration_configuration, $migration)
++      $container->get('plugin.manager.migrate.process')->createInstance('migration_lookup', $migration_configuration, $migration)
+     );
+   }
+ 
+diff --git a/src/Plugin/migrate/process/GoogleAnalyticsVisibilityRoles.php b/src/Plugin/migrate/process/GoogleAnalyticsVisibilityRoles.php
+index 2fe62b4..c6b4374 100644
+--- a/src/Plugin/migrate/process/GoogleAnalyticsVisibilityRoles.php
++++ b/src/Plugin/migrate/process/GoogleAnalyticsVisibilityRoles.php
+@@ -61,7 +61,7 @@ class GoogleAnalyticsVisibilityRoles extends ProcessPluginBase implements Contai
+       $plugin_id,
+       $plugin_definition,
+       $container->get('module_handler'),
+-      $container->get('plugin.manager.migrate.process')->createInstance('migration', $migration_configuration, $migration)
++      $container->get('plugin.manager.migrate.process')->createInstance('migration_lookup', $migration_configuration, $migration)
+     );
+   }
+ 

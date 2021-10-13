@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/Field/FieldWidget/EntityReferenceBrowserWidget.php b/src/Plugin/Field/FieldWidget/EntityReferenceBrowserWidget.php
+index 719869c..7b76b02 100644
+--- a/src/Plugin/Field/FieldWidget/EntityReferenceBrowserWidget.php
++++ b/src/Plugin/Field/FieldWidget/EntityReferenceBrowserWidget.php
+@@ -405,7 +405,7 @@ class EntityReferenceBrowserWidget extends WidgetBase implements ContainerFactor
+    * Render API callback: Processes the entity browser element.
+    */
+   public static function processEntityBrowser(&$element, FormStateInterface $form_state, &$complete_form) {
+-    $uuid = key($element['#attached']['drupalSettings']['entity_browser']);
++    $uuid = !empty($element['#attached']['drupalSettings']['entity_browser']) ? key($element['#attached']['drupalSettings']['entity_browser']) : '';
+     $element['#attached']['drupalSettings']['entity_browser'][$uuid]['selector'] = '#' . $element['#custom_hidden_id'];
+     return $element;
+   }

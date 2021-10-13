@@ -1,0 +1,10 @@
+<?php
+/* yourtheme.theme */
+
+function gms_ocha_common_preprocess_page(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+  // logo needs to be placed within specified folder
+  $variables['site_logo'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+}

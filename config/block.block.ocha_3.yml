@@ -1,0 +1,36 @@
+uuid: 9c3a9ebc-cb3e-4d7d-8429-8135bc3bb553
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-ocha
+  module:
+    - menu_block
+    - system
+  theme:
+    - gms_ocha_common
+id: ocha_3
+theme: gms_ocha_common
+region: highlighted
+weight: -8
+provider: null
+plugin: 'menu_block:menu-ocha'
+settings:
+  id: 'menu_block:menu-ocha'
+  label: HUF
+  provider: menu_block
+  label_display: visible
+  follow: true
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'menu-ocha:menu_link_content:00487946-1370-4f1f-b349-e2d6f4426c56'
+  suggestion: menu_ocha
+  label_type: parent
+  label_link: false
+visibility:
+  request_path:
+    id: request_path
+    pages: /content/hfu
+    negate: false

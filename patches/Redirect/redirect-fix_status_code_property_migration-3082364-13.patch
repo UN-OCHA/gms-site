@@ -1,0 +1,425 @@
+diff --git a/src/Plugin/migrate/source/d7/PathRedirect.php b/src/Plugin/migrate/source/d7/PathRedirect.php
+index c9ec720..7ddcd24 100644
+--- a/src/Plugin/migrate/source/d7/PathRedirect.php
++++ b/src/Plugin/migrate/source/d7/PathRedirect.php
+@@ -36,15 +36,14 @@ class PathRedirect extends DrupalSqlBase {
+   public function prepareRow(Row $row) {
+     static $default_status_code;
+     if (!isset($default_status_code)) {
+-      $default_status_code = unserialize($this->getDatabase()
+-        ->select('variable', 'v')
+-        ->fields('v', ['value'])
+-        ->condition('name', 'redirect_default_status_code')
+-        ->execute()
+-        ->fetchField());
++      // The default status code not necessarily saved to the source database.
++      // In this case, redirects should get the default value from the Drupal 7
++      // version's variable_get() calls, which is 301.
++      // @see https://git.drupalcode.org/project/redirect/-/blob/7f9531d08/redirect.admin.inc#L16
++      $default_status_code = $this->variableGet('redirect_default_status_code', 301);
+     }
+     $current_status_code = $row->getSourceProperty('status_code');
+-    $status_code = $current_status_code != 0 ? $current_status_code : $default_status_code;
++    $status_code = !empty($current_status_code) ? $current_status_code : $default_status_code;
+     $row->setSourceProperty('status_code', $status_code);
+     return parent::prepareRow($row);
+   }
+diff --git a/tests/fixtures/drupal7-no-default.php b/tests/fixtures/drupal7-no-default.php
+new file mode 100644
+index 0000000..1ba0bb8
+--- /dev/null
++++ b/tests/fixtures/drupal7-no-default.php
+@@ -0,0 +1,229 @@
++<?php
++/**
++ * @file
++ * A database agnostic dump for testing purposes.
++ */
++
++use Drupal\Core\Database\Database;
++
++$connection = Database::getConnection();
++
++$connection->schema()->createTable('redirect', [
++  'fields' => [
++    'rid' => [
++      'type' => 'serial',
++      'not null' => TRUE,
++      'size' => 'normal',
++    ],
++    'hash' => [
++      'type' => 'varchar',
++      'length' => 64,
++      'not null' => TRUE,
++    ],
++    'type' => [
++      'type' => 'varchar',
++      'length' => 64,
++      'not null' => TRUE,
++    ],
++    'uid' => [
++      'type' => 'int',
++      'not null' => TRUE,
++    ],
++    'source' => [
++      'type' => 'varchar',
++      'length' => 255,
++      'not null' => TRUE,
++    ],
++    'source_options' => [
++      'type' => 'text',
++      'not null' => TRUE,
++    ],
++    'redirect' => [
++      'type' => 'varchar',
++      'length' => 255,
++      'not null' => TRUE,
++    ],
++    'redirect_options' => [
++      'type' => 'text',
++      'not null' => TRUE,
++    ],
++    'language' => [
++      'type' => 'varchar',
++      'length' => 12,
++      'not null' => TRUE,
++      'default' => '',
++    ],
++    'status_code' => [
++      'type' => 'int',
++      'size' => 'small',
++      'not null' => TRUE,
++    ],
++    'count' => [
++      'type' => 'int',
++      'not null' => TRUE,
++    ],
++    'access' => [
++      'type' => 'int',
++      'not null' => TRUE,
++    ],
++  ],
++  'primary key' => ['rid'],
++  'unique keys' => [
++    'source_language' => ['source', 'language'],
++    'expires' => ['type', 'access']
++  ],
++  'mysql_character_set' => 'utf8',
++]);
++
++
++$connection->insert('redirect')
++  ->fields([
++    'rid',
++    'hash',
++    'type',
++    'uid',
++    'source',
++    'source_options',
++    'redirect',
++    'redirect_options',
++    'language',
++    'status_code',
++    'count',
++    'access',
++  ])
++  ->values([
++    'rid' => 5,
++    'hash' => 'MwmDbnA65ag646gtEdLqmAqTbF0qQerse63RkQmJK_Y',
++    'type' => 'redirect',
++    'uid' => 5,
++    'source' => 'test/source/url',
++    'source_options' => '',
++    'redirect' => 'test/redirect/url',
++    'redirect_options' => '',
++    'language' => 'und',
++    'status_code' => 301,
++    'count' => 2518,
++    'access' => 1449497138,
++  ])
++  ->values([
++    'rid' => 7,
++    'hash' => 'GvD5bBB71W8qBvp9I9hHmbSoqZfTvUz0mIkEWjlP8M4',
++    'type' => 'redirect',
++    'uid' => 6,
++    'source' => 'test/source/url2',
++    'source_options' => '',
++    'redirect' => 'http://test/external/redirect/url',
++    'redirect_options' => 'a:2:{s:5:"query";a:2:{s:3:"foo";s:3:"bar";s:3:"biz";s:3:"buz";}s:8:"fragment";s:10:"fragment-1";}',
++    'language' => 'und',
++    'status_code' => 0,
++    'count' => 419,
++    'access' => 1449497139,
++  ])
++  ->execute();
++
++$connection->schema()->createTable('variable', [
++  'fields' => [
++    'name' => [
++      'type' => 'varchar',
++      'not null' => TRUE,
++      'length' => '128',
++      'default' => '',
++    ],
++    'value' => [
++      'type' => 'blob',
++      'not null' => TRUE,
++      'size' => 'normal',
++    ],
++  ],
++  'primary key' => [
++    'name',
++  ],
++  'mysql_character_set' => 'utf8',
++]);
++
++$connection->schema()->createTable('system', [
++  'fields' => [
++    'filename' => [
++      'type' => 'varchar',
++      'not null' => TRUE,
++      'length' => '255',
++      'default' => '',
++    ],
++    'name' => [
++      'type' => 'varchar',
++      'not null' => TRUE,
++      'length' => '255',
++      'default' => '',
++    ],
++    'type' => [
++      'type' => 'varchar',
++      'not null' => TRUE,
++      'length' => '12',
++      'default' => '',
++    ],
++    'owner' => [
++      'type' => 'varchar',
++      'not null' => TRUE,
++      'length' => '255',
++      'default' => '',
++    ],
++    'status' => [
++      'type' => 'int',
++      'not null' => TRUE,
++      'size' => 'normal',
++      'default' => '0',
++    ],
++    'bootstrap' => [
++      'type' => 'int',
++      'not null' => TRUE,
++      'size' => 'normal',
++      'default' => '0',
++    ],
++    'schema_version' => [
++      'type' => 'int',
++      'not null' => TRUE,
++      'size' => 'normal',
++      'default' => '-1',
++    ],
++    'weight' => [
++      'type' => 'int',
++      'not null' => TRUE,
++      'size' => 'normal',
++      'default' => '0',
++    ],
++    'info' => [
++      'type' => 'blob',
++      'not null' => FALSE,
++      'size' => 'normal',
++    ],
++  ],
++  'primary key' => [
++    'filename',
++  ],
++  'mysql_character_set' => 'utf8',
++]);
++
++$connection->insert('system')
++->fields([
++  'filename',
++  'name',
++  'type',
++  'owner',
++  'status',
++  'bootstrap',
++  'schema_version',
++  'weight',
++  'info',
++])
++->values([
++  'filename' => 'modules/contrib/redirect/redirect.module',
++  'name' => 'redirect',
++  'type' => 'module',
++  'owner' => '',
++  'status' => '1',
++  'bootstrap' => '0',
++  'schema_version' => '7000',
++  'weight' => '0',
++  'info' => 'a:13:{s:4:"name";s:8:"Redirect";s:11:"description";s:51:"Allows users to redirect from old URLs to new URLs.";s:4:"core";s:3:"7.x";s:5:"files";a:11:{i:0;s:15:"redirect.module";i:1;s:18:"redirect.admin.inc";i:2;s:16:"redirect.install";i:3;s:13:"redirect.test";i:4;s:24:"views/redirect.views.inc";i:5;s:47:"views/redirect_handler_filter_redirect_type.inc";i:6;s:48:"views/redirect_handler_field_redirect_source.inc";i:7;s:50:"views/redirect_handler_field_redirect_redirect.inc";i:8;s:52:"views/redirect_handler_field_redirect_operations.inc";i:9;s:51:"views/redirect_handler_field_redirect_link_edit.inc";i:10;s:53:"views/redirect_handler_field_redirect_link_delete.inc";}s:9:"configure";s:37:"admin/config/search/redirect/settings";s:7:"version";s:11:"7.x-1.0-rc1";s:7:"project";s:8:"redirect";s:9:"datestamp";s:10:"1347989995";s:5:"mtime";i:1347989995;s:12:"dependencies";a:0:{}s:7:"package";s:5:"Other";s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;}',
++])
++->execute();
+diff --git a/tests/src/Kernel/Migrate/d7/PathRedirectTest.php b/tests/src/Kernel/Migrate/d7/PathRedirectTest.php
+index 15134cd..f00d8c7 100644
+--- a/tests/src/Kernel/Migrate/d7/PathRedirectTest.php
++++ b/tests/src/Kernel/Migrate/d7/PathRedirectTest.php
+@@ -7,21 +7,12 @@
+ 
+ namespace Drupal\Tests\redirect\Kernel\Migrate\d7;
+ 
+-use Drupal\redirect\Entity\Redirect;
+-use Drupal\Tests\migrate_drupal\Kernel\MigrateDrupalTestBase;
+-
+-
+ /**
+  * Tests the d7_path_redirect source plugin.
+  *
+  * @group redirect
+  */
+-class PathRedirectTest extends MigrateDrupalTestBase {
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static $modules = ['redirect', 'link', 'path_alias'];
++class PathRedirectTest extends PathRedirectTestBase {
+ 
+   /**
+    * {@inheritdoc}
+@@ -30,34 +21,9 @@ class PathRedirectTest extends MigrateDrupalTestBase {
+     parent::setUp();
+     $this->installEntitySchema('redirect');
+     $this->loadFixture(__DIR__ . '/../../../../fixtures/drupal7.php');
+-
+     $this->executeMigration('d7_path_redirect');
+   }
+ 
+-  /**
+-   * Asserts various aspects of a redirect entity.
+-   *
+-   * @param int $id
+-   *   The entity ID in the form ENTITY_TYPE.BUNDLE.FIELD_NAME.
+-   * @param string $source_url
+-   *   The expected source url.
+-   * @param string $redirect_url
+-   *   The expected redirect url.
+-   * @param string $status_code
+-   *   The expected status code.
+-   */
+-  protected function assertEntity($id, $source_url, $redirect_url, $status_code) {
+-    /** @var Redirect $redirect */
+-    $redirect = Redirect::load($id);
+-    $this->assertSame($this->getMigration('d7_path_redirect')
+-      ->getIdMap()
+-      ->lookupDestinationIds([$id]), [[$redirect->id()]]);
+-    $this->assertSame($source_url, $redirect->getSourceUrl());
+-    $this->assertSame($redirect_url, $redirect->getRedirectUrl()
+-      ->toUriString());
+-    $this->assertSame($status_code, $redirect->getStatusCode());
+-  }
+-
+   /**
+    * Tests the Drupal 7 path redirect to Drupal 8 migration.
+    */
+@@ -65,4 +31,5 @@ class PathRedirectTest extends MigrateDrupalTestBase {
+     $this->assertEntity(5, '/test/source/url', 'base:test/redirect/url', '301');
+     $this->assertEntity(7, '/test/source/url2', 'http://test/external/redirect/url?foo=bar&biz=buz#fragment-1', '307');
+   }
++
+ }
+diff --git a/tests/src/Kernel/Migrate/d7/PathRedirectTestBase.php b/tests/src/Kernel/Migrate/d7/PathRedirectTestBase.php
+new file mode 100644
+index 0000000..4907c1a
+--- /dev/null
++++ b/tests/src/Kernel/Migrate/d7/PathRedirectTestBase.php
+@@ -0,0 +1,49 @@
++<?php
++
++/**
++ * @file
++ * Contains \Drupal\Tests\redirect\Kernel\Migrate\d7\PathRedirectTestBase.
++ */
++
++namespace Drupal\Tests\redirect\Kernel\Migrate\d7;
++
++use Drupal\redirect\Entity\Redirect;
++use Drupal\Tests\migrate_drupal\Kernel\MigrateDrupalTestBase;
++
++/**
++ * Base for d7_path_redirect source plugin tests.
++ *
++ * @group redirect
++ */
++abstract class PathRedirectTestBase extends MigrateDrupalTestBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  public static $modules = ['redirect', 'link', 'path_alias'];
++
++  /**
++   * Asserts various aspects of a redirect entity.
++   *
++   * @param int $id
++   *   The entity ID in the form ENTITY_TYPE.BUNDLE.FIELD_NAME.
++   * @param string $source_url
++   *   The expected source url.
++   * @param string $redirect_url
++   *   The expected redirect url.
++   * @param string $status_code
++   *   The expected status code.
++   */
++  protected function assertEntity($id, $source_url, $redirect_url, $status_code) {
++    /** @var Redirect $redirect */
++    $redirect = Redirect::load($id);
++    $this->assertSame($this->getMigration('d7_path_redirect')
++      ->getIdMap()
++      ->lookupDestinationIds([$id]), [[$redirect->id()]]);
++    $this->assertSame($source_url, $redirect->getSourceUrl());
++    $this->assertSame($redirect_url, $redirect->getRedirectUrl()
++      ->toUriString());
++    $this->assertSame($status_code, $redirect->getStatusCode());
++  }
++
++}
+diff --git a/tests/src/Kernel/Migrate/d7/PathRedirectWithoutDefaultTest.php b/tests/src/Kernel/Migrate/d7/PathRedirectWithoutDefaultTest.php
+new file mode 100644
+index 0000000..0120d64
+--- /dev/null
++++ b/tests/src/Kernel/Migrate/d7/PathRedirectWithoutDefaultTest.php
+@@ -0,0 +1,35 @@
++<?php
++
++/**
++ * @file
++ * Contains \Drupal\Tests\redirect\Kernel\Migrate\d7\PathRedirectWithoutDefaultTest.
++ */
++
++namespace Drupal\Tests\redirect\Kernel\Migrate\d7;
++
++/**
++ * Tests the d7_path_redirect source plugin, without d7 default status code.
++ *
++ * @group redirect
++ */
++class PathRedirectWithoutDefaultTest extends PathRedirectTestBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function setUp() {
++    parent::setUp();
++    $this->installEntitySchema('redirect');
++    $this->loadFixture(__DIR__ . '/../../../../fixtures/drupal7-no-default.php');
++    $this->executeMigration('d7_path_redirect');
++  }
++
++  /**
++   * Tests the Drupal 7 path redirect to Drupal 8 migration.
++   */
++  public function testPathRedirect() {
++    $this->assertEntity(5, '/test/source/url', 'base:test/redirect/url', '301');
++    $this->assertEntity(7, '/test/source/url2', 'http://test/external/redirect/url?foo=bar&biz=buz#fragment-1', '301');
++  }
++
++}

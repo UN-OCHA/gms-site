@@ -1,0 +1,14 @@
+uuid: 584c096d-cd78-4379-a5bb-525843694572
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.non_verified
+  module:
+    - user
+id: user_remove_role_action.non_verified
+label: 'Remove the non-verified role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: non_verified

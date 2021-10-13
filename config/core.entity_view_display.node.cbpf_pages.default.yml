@@ -1,0 +1,39 @@
+uuid: b09f0d27-eb0c-4572-9000-ad318550f448
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cbpf_pages.body
+    - field.field.node.cbpf_pages.field_search_keywords
+    - node.type.cbpf_pages
+  module:
+    - text
+    - user
+id: node.cbpf_pages.default
+targetEntityType: node
+bundle: cbpf_pages
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_search_keywords:
+    label: above
+    weight: 1
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

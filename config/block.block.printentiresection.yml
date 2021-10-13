@@ -1,0 +1,25 @@
+uuid: c4c5c5c5-13d0-4b9b-81e9-f5194775e352
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e3562da4-6577-44ce-b813-92a89900a479'
+  module:
+    - block_content
+  theme:
+    - dxpr_theme
+id: printentiresection
+theme: dxpr_theme
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:e3562da4-6577-44ce-b813-92a89900a479'
+settings:
+  id: 'block_content:e3562da4-6577-44ce-b813-92a89900a479'
+  label: 'Print entire section'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

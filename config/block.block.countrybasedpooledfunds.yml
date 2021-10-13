@@ -1,0 +1,30 @@
+uuid: ace65c60-6b7f-48aa-9129-a07fac8d62ef
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bc46f28d-2916-481a-b67e-a188790ded02'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: countrybasedpooledfunds
+theme: gms_ocha_common
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
+settings:
+  id: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
+  label: 'Country-based Pooled Funds'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

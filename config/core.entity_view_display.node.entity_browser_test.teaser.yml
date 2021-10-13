@@ -1,0 +1,46 @@
+uuid: fcc49a14-aad0-4e54-ad61-871442729dc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.entity_browser_test.body
+    - field.field.node.entity_browser_test.field_files
+    - field.field.node.entity_browser_test.field_files1
+    - field.field.node.entity_browser_test.field_files_over_ajax
+    - field.field.node.entity_browser_test.field_image_browser
+    - field.field.node.entity_browser_test.field_nodes
+    - node.type.entity_browser_test
+  enforced:
+    module:
+      - entity_browser_example
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: vu9Vq8OWfsOVQ6pAVqG1ez3LkA5f_7tsqthB7fJrRoI
+id: node.entity_browser_test.teaser
+targetEntityType: node
+bundle: entity_browser_test
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_files: true
+  field_files1: true
+  field_files_over_ajax: true
+  field_image_browser: true
+  field_nodes: true

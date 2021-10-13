@@ -1,0 +1,15 @@
+uuid: 03e5843d-08b3-4d70-9462-f2a89073e945
+langcode: en
+status: true
+dependencies: {  }
+name: menu_icon
+label: menu_icon
+effects:
+  fd0e425e-b8c5-4e06-8c1d-e10e5141212c:
+    uuid: fd0e425e-b8c5-4e06-8c1d-e10e5141212c
+    id: image_scale
+    weight: 0
+    data:
+      width: null
+      height: 22
+      upscale: true

@@ -1,0 +1,11 @@
+gms_sitename.main:
+  route_name: gms_sitename.add
+  parent: system.admin_config
+  title: 'GMS Sitename'
+
+gms_sitename.addsite:
+  title: 'Add site name'
+  parent: gms_sitename.main
+  description: 'Create a sitename for domain.'
+  route_name: gms_sitename.add
+  weight: 0

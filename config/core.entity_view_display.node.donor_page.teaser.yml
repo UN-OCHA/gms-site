@@ -1,0 +1,33 @@
+uuid: 5dc5db82-5371-4a34-8402-b96be09b2631
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.donor_page.body
+    - node.type.donor_page
+  module:
+    - text
+    - user
+id: node.donor_page.teaser
+targetEntityType: node
+bundle: donor_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

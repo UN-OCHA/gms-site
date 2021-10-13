@@ -1,0 +1,30 @@
+uuid: a96deab3-b8f3-4093-9a1f-5027916be832
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_page_header_style
+field_name: field_page_header_style
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'no'
+      label: 'None bg image'
+    -
+      value: 'yes'
+      label: 'Background image'
+    -
+      value: disable
+      label: 'Disable page header'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

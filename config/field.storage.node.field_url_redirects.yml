@@ -1,0 +1,19 @@
+uuid: e317f1c9-8c83-41e6-82ec-94f59f937710
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_url_redirects
+field_name: field_url_redirects
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

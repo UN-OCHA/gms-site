@@ -1,0 +1,6 @@
+name: GMS PDF LINK
+type: module
+description: Custom links
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

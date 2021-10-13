@@ -1,0 +1,47 @@
+uuid: 8267411f-0335-4f68-9517-c7c467a87c3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_pdflink
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: printpdfentiresection
+theme: gms_ocha_common
+region: content
+weight: -8
+provider: null
+plugin: print_entire
+settings:
+  id: print_entire
+  label: 'Print PDF Entire Section'
+  provider: gms_pdflink
+  label_display: '0'
+  pdf_enabled: 1
+  pdf_link_text: 'Download Entire Section'
+  epub_enabled: 0
+  epub_link_text: 'View EPub'
+  word_docx_enabled: 0
+  word_docx_link_text: 'View Word Document'
+  context_mapping:
+    entity: '@node.node_route_context:node'
+  max_age: null
+visibility:
+  request_path:
+    id: request_path
+    pages: "/content/partner\r\n/content/hfu\r\n/content/cbpf-finance\r\n/content/cluster-coordinator\r\n/content/guest"
+    negate: false
+  node_type:
+    id: node_type
+    bundles:
+      document: document
+      donor_page: donor_page
+      faq: faq
+      page: page
+      special_page: special_page
+      static_page: static_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

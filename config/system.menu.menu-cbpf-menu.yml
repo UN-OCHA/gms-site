@@ -1,0 +1,8 @@
+uuid: 42cfc1b8-7382-49f5-9889-ce7162afd2b0
+langcode: en
+status: true
+dependencies: {  }
+id: menu-cbpf-menu
+label: 'CBPF BI internal Menu'
+description: 'This menu will be used for cbpf links only.'
+locked: false

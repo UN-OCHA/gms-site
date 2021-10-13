@@ -1,0 +1,22 @@
+diff --git a/core/modules/ckeditor/src/Plugin/CKEditorPlugin/StylesCombo.php b/core/modules/ckeditor/src/Plugin/CKEditorPlugin/StylesCombo.php
+index 5e45bde777..25119f330d 100644
+--- a/core/modules/ckeditor/src/Plugin/CKEditorPlugin/StylesCombo.php
++++ b/core/modules/ckeditor/src/Plugin/CKEditorPlugin/StylesCombo.php
+@@ -161,6 +161,17 @@ protected function generateStylesSetSetting($styles) {
+         ];
+       }
+       $styles_set[] = $configured_style;
++      
++      // @todo Temporary work-around for styles not working for Image Widgets; remove when https://dev.ckeditor.com/ticket/16998 is fixed.
++      if ($configured_style['element'] === 'img') {
++        $styles_set[] = [
++          'name' => $configured_style['name'],
++          'type' => 'widget',
++          'widget' => 'image',
++          'attributes' => $configured_style['attributes'],
++        ];
++      }
++      
+     }
+     return $styles_set;
+   }

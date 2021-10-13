@@ -1,0 +1,22 @@
+uuid: 033e9f7a-33ce-4a43-8859-6c828f234795
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design
+_core:
+  default_config_hash: KpBqqBIyNPTNavLklXPC1-cUAeuwAbBOsrvGussFh1E
+id: common_design_breadcrumbs
+theme: common_design
+region: page_title
+weight: 10
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

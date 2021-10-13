@@ -1,0 +1,5 @@
+name: GMS Groups data Migration
+type: module
+description: To migrate the GMS Groups
+package: GMS Custom Modules
+core_version_requirement: ^8.8 || ^9

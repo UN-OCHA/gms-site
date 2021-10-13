@@ -1,0 +1,29 @@
+pdf_using_mpdf:
+  pdf_filename: '[site:name]-[current-date:html_datetime]'
+  pdf_save_option: '0'
+  pdf_set_title: ''
+  pdf_set_author: ''
+  pdf_set_subject: ''
+  pdf_set_creator: ''
+  margin_top: '16'
+  margin_right: '15'
+  margin_bottom: '16'
+  margin_left: '15'
+  margin_header: '9'
+  margin_footer: '9'
+  pdf_font_size: '12'
+  pdf_default_font: dejavusanscondensed
+  pdf_page_size: A4
+  dpi: '96'
+  img_dpi: '96'
+  orientation: P
+  watermark_option: '0'
+  watermark_opacity: '0.1'
+  pdf_watermark_text: ''
+  watermark_image: {  }
+  pdf_header: "<strong>[node:title] - [site:name]</strong>\r\n<hr/>\r\n"
+  pdf_footer: "<hr/>\r\n[node:title]"
+  pdf_css_file: ''
+  pdf_password: ''
+_core:
+  default_config_hash: 4ecPXvfCsotFyuUYiSemqVkVtbtIJawEGaynUB4me_s

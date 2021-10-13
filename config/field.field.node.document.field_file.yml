@@ -1,0 +1,27 @@
+uuid: f2d21864-5e7c-4afe-a0e2-fbf5aff65fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file
+    - node.type.document
+  module:
+    - file
+id: node.document.field_file
+field_name: field_file
+entity_type: node
+bundle: document
+label: File
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: 'txt pdf jpg png xls xlsx doc docx ppt pptx'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

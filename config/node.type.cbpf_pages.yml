@@ -1,0 +1,18 @@
+uuid: cd13945f-6b83-4b93-9708-7c68fa83797e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - menu-cbpf-menu
+    parent: 'menu-cbpf-menu:menu_link_content:1fb1951a-fc21-413e-9b5d-9fc24bc33c77'
+name: 'CBPF BI internal Pages'
+type: cbpf_pages
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,5 @@
+name: GMS Ocha
+type: module
+description: GMS Ocha custom functionality
+package: GMS Custom Modules
+core_version_requirement: ^8.8 || ^9

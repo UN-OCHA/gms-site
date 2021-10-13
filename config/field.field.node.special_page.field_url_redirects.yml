@@ -1,0 +1,23 @@
+uuid: 6b3a3168-69c7-46a7-b552-03b75b3c37b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_redirects
+    - node.type.special_page
+  module:
+    - link
+id: node.special_page.field_url_redirects
+field_name: field_url_redirects
+entity_type: node
+bundle: special_page
+label: 'URL redirects'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+field_type: link

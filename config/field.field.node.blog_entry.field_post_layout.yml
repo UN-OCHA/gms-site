@@ -1,0 +1,23 @@
+uuid: 50cf9179-7160-4c02-a3cf-468f403e63a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_layout
+    - node.type.blog_entry
+  module:
+    - options
+id: node.blog_entry.field_post_layout
+field_name: field_post_layout
+entity_type: node
+bundle: blog_entry
+label: 'Post Layout'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: leftsidebar
+default_value_callback: ''
+settings: {  }
+field_type: list_string

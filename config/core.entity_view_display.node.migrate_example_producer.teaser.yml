@@ -1,0 +1,35 @@
+uuid: 7694c62c-c787-41b6-ac80-c279bcb3ff89
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.migrate_example_producer.body
+    - field.field.node.migrate_example_producer.field_migrate_example_wine_regio
+    - node.type.migrate_example_producer
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: XcPK8-uBDHduWSPYtnW6HMqjno0GqZGGne54JlAfqCc
+id: node.migrate_example_producer.teaser
+targetEntityType: node
+bundle: migrate_example_producer
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_migrate_example_wine_regio: true

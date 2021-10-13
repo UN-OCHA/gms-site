@@ -1,0 +1,34 @@
+<?php
+use Drupal\Core\Url;
+
+function gms_pdflink_theme_registry_alter(&$theme_registry) {
+ // dump($theme_registry);exit();
+ // $theme_registry['page']['path'] = drupal_get_path('module', 'my_module') . '/templates';
+}
+/**
+ * Implements hook_theme().
+ */
+function gms_pdflink_theme($existing, $type, $theme, $path) {
+  return [
+    'entity_print' => [
+      'path' => $path . '/templates',
+      'template' => 'entity-print',
+      'variables' => [
+        'title' => '',
+        'ochamenu'=> NULL,
+        'content' => NULL,
+        'entity_print_css' => NULL,
+      ],
+    ],
+    'page_print' => [
+      'path' => $path . '/templates',
+      'template' => 'page-print',
+      'variables' => [
+        'title' => '',
+        'content' => NULL,
+        'page_print_css' => '',
+      ],
+    ],
+  ];
+}
+

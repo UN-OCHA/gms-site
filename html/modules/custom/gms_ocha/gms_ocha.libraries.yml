@@ -1,0 +1,17 @@
+sankey_chart:
+  js:
+    js/d3.v3.min.js: {}
+    js/index.js: {}
+    js/sankey.js: {}
+    js/d3.chart.min.js: {}
+    js/d3.chart.sankey.min.js: {}
+    js/es5-sham.min.js: {}
+    js/es5-shim.min.js: {}
+    js/sankey_chart.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal.ajax
+  - core/drupal
+  - core/drupalSettings
+  - core/jquery.once
+

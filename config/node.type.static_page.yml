@@ -1,0 +1,18 @@
+uuid: bf8b7702-65f0-4621-8557-d0be829a97fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - menu-ocha
+    parent: 'menu-ocha:0:'
+name: 'Basic Page'
+type: static_page
+description: 'Use this to add a basic page.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

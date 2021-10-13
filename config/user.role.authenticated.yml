@@ -1,0 +1,23 @@
+uuid: 70458cc9-36fb-4e4d-a103-564d89a0901a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access PDF version'
+  - 'access comments'
+  - 'access content'
+  - 'change own e-mail'
+  - 'change own openid'
+  - 'change own password'
+  - 'edit own account'
+  - 'grant content access'
+  - 'grant own content access'
+  - 'search content'
+  - 'use text format svg_embed'
+  - 'view media'

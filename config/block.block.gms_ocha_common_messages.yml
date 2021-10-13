@@ -1,0 +1,22 @@
+uuid: aad4fe46-1cab-4b4a-bcd8-2e01552341cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gms_ocha_common
+_core:
+  default_config_hash: T7gZEkBqqElnOklin4m1rfJYv28ry5eY-FjEDOrHGTU
+id: gms_ocha_common_messages
+theme: gms_ocha_common
+region: content
+weight: -14
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

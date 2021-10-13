@@ -1,0 +1,20 @@
+uuid: 096a53c9-1a75-4cf7-93cb-6572305f55ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_functional_title
+  module:
+    - user
+id: user.user.field_functional_title
+field_name: field_functional_title
+entity_type: user
+bundle: user
+label: 'Functional Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,53 @@
+uuid: 72e8fc00-2e92-43ad-905e-dff2c8f7e145
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_domain
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Domain Records'
+source:
+  plugin: d7_domain
+process:
+  id:
+    -
+      plugin: get
+      source: machine_name
+  name:
+    -
+      plugin: get
+      source: sitename
+  hostname:
+    -
+      plugin: get
+      source: subdomain
+  weight:
+    -
+      plugin: get
+      source: weight
+  is_default:
+    -
+      plugin: get
+      source: is_default
+  scheme:
+    -
+      plugin: get
+      source: scheme
+  path:
+    -
+      plugin: get
+      source: subdomain
+  status:
+    -
+      plugin: get
+      source: valid
+destination:
+  plugin: 'entity:domain'
+  destination_module: domain
+migration_dependencies:
+  required: {  }
+  optional: {  }

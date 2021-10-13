@@ -1,0 +1,35 @@
+uuid: 9d377ad8-c491-49d9-a50f-63e2a7521637
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.migrate_example_wine_varieties.field_variety_attributes
+    - taxonomy.vocabulary.migrate_example_wine_varieties
+  module:
+    - text
+_core:
+  default_config_hash: aE5r_a1dFCxP95MWmfDqw0Voru15vc7nfX6bvVzEdsw
+id: taxonomy_term.migrate_example_wine_varieties.default
+targetEntityType: taxonomy_term
+bundle: migrate_example_wine_varieties
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_variety_attributes:
+    type: string
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

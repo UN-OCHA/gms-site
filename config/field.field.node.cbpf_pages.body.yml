@@ -1,0 +1,23 @@
+uuid: cb26e0f1-fb00-4dc8-9c9a-014726523b7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.cbpf_pages
+  module:
+    - text
+id: node.cbpf_pages.body
+field_name: body
+entity_type: node
+bundle: cbpf_pages
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

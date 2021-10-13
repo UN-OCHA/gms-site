@@ -1,0 +1,35 @@
+uuid: f537645a-d295-4e0e-a5c5-2050f5570a90
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cbpf_pages.body
+    - field.field.node.cbpf_pages.field_search_keywords
+    - node.type.cbpf_pages
+  module:
+    - text
+    - user
+id: node.cbpf_pages.teaser
+targetEntityType: node
+bundle: cbpf_pages
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 0
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_search_keywords: true

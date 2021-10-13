@@ -1,0 +1,29 @@
+uuid: 1349e437-0c18-42d6-902c-5c6ec487185b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_view
+  module:
+    - system
+    - views
+  theme:
+    - gms_ocha_common
+id: views_block__blog_view_blog_listing_block
+theme: gms_ocha_common
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:blog_view-blog_listing_block'
+settings:
+  id: 'views_block:blog_view-blog_listing_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /content/home-page-blog
+    negate: false

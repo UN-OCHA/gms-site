@@ -1,0 +1,64 @@
+uuid: dd45f18a-1369-4099-8091-b3d3cd165a6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.blog_entry.body
+    - field.field.node.blog_entry.comment
+    - field.field.node.blog_entry.field_categories
+    - field.field.node.blog_entry.field_embedded_video
+    - field.field.node.blog_entry.field_image1
+    - field.field.node.blog_entry.field_page_header_bg_image
+    - field.field.node.blog_entry.field_page_header_style
+    - field.field.node.blog_entry.field_post_layout
+    - field.field.node.blog_entry.field_tags
+    - field.field.node.blog_entry.field_thumbnail_image
+    - image.style.large
+    - node.type.blog_entry
+  module:
+    - image
+    - user
+    - video_embed_field
+id: node.blog_entry.teaser
+targetEntityType: node
+bundle: blog_entry
+mode: teaser
+content:
+  field_embedded_video:
+    type: video_embed_field_video
+    weight: 2
+    region: content
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+  field_thumbnail_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  comment: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_categories: true
+  field_image1: true
+  field_page_header_bg_image: true
+  field_page_header_style: true
+  field_post_layout: true
+  field_tags: true

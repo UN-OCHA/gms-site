@@ -1,0 +1,8 @@
+uuid: e7cc5442-cd25-431b-a1ee-75aaa851f585
+langcode: en
+status: true
+dependencies: {  }
+id: menu-special-page-menu
+label: 'Special Page Menu'
+description: ''
+locked: false

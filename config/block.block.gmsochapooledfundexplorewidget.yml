@@ -1,0 +1,25 @@
+uuid: a401ad32-342d-461e-b7d2-7005281ada6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+id: gmsochapooledfundexplorewidget
+theme: gms_ocha_common
+region: content
+weight: -5
+provider: null
+plugin: gms_ocha_pooled_fund_explore_widget
+settings:
+  id: gms_ocha_pooled_fund_explore_widget
+  label: Explore
+  provider: gms_ocha
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /content/biv2
+    negate: false

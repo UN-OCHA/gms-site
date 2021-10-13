@@ -1,0 +1,26 @@
+uuid: 94f0eec2-e773-4815-8979-b4478c69ebfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relevant_donor
+    - node.type.document
+    - taxonomy.vocabulary.relevant_donor
+id: node.document.field_relevant_donor
+field_name: field_relevant_donor
+entity_type: node
+bundle: document
+label: 'Relevant Donor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      relevant_donor: relevant_donor
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

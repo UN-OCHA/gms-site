@@ -1,0 +1,36 @@
+uuid: 71d0e111-1d56-424e-94ba-2da668b10d6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_pdflink
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: printlinks
+theme: gms_ocha_common
+region: content
+weight: -7
+provider: null
+plugin: print_links
+settings:
+  id: print_links
+  label: 'Print Links'
+  provider: gms_pdflink
+  label_display: '0'
+  max_age: null
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      static_page: static_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true

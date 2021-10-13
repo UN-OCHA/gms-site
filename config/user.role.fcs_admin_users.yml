@@ -1,0 +1,22 @@
+uuid: 21b700a2-bbd5-4213-bd1b-e7907869702e
+langcode: en
+status: true
+dependencies: {  }
+id: fcs_admin_users
+label: 'FCS admin users'
+weight: 51
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer own domains'
+  - 'administer users'
+  - 'create document content'
+  - 'create donor_page content'
+  - 'delete any document content'
+  - 'delete any donor_page content'
+  - 'delete own document content'
+  - 'delete own donor_page content'
+  - 'edit any document content'
+  - 'edit any donor_page content'
+  - 'edit own document content'
+  - 'edit own donor_page content'

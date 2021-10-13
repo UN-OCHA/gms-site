@@ -1,0 +1,50 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ */
+function gms_sitename_schema() {
+  $schema['gms_sitename_data'] = [
+    'description' => 'Stores site name entries.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique sitename ID.',
+      ],
+      'check_type' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Check types',
+      ],
+      'condition_type' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Condition types',
+      ],
+      'sitename' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Site names',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'check_type' => ['check_type'],
+      'condition_type' => ['condition_type'],
+      'sitename' => ['sitename'],
+    ],
+  ];
+
+  return $schema;
+}

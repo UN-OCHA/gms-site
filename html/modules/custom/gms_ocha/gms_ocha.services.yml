@@ -1,0 +1,4 @@
+services:
+  gms_ocha.graph_data:
+    class: Drupal\gms_ocha\graphData
+    arguments: []

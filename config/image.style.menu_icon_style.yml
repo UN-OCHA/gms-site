@@ -1,0 +1,15 @@
+uuid: 661fdb55-1242-437f-9e6e-8927074756bb
+langcode: en
+status: true
+dependencies: {  }
+name: menu_icon_style
+label: 'menu icon style'
+effects:
+  03a44786-daa0-414d-ba1a-75f0d83d5f5f:
+    uuid: 03a44786-daa0-414d-ba1a-75f0d83d5f5f
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 22
+      upscale: false

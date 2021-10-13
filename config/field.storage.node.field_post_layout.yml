@@ -1,0 +1,30 @@
+uuid: 163ec6ae-d360-4119-b7cf-8665426692d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_post_layout
+field_name: field_post_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: rightsidebar
+      label: 'Right sidebar'
+    -
+      value: leftsidebar
+      label: 'Left sidebar'
+    -
+      value: fullwidth
+      label: 'Full width'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

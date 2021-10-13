@@ -1,0 +1,22 @@
+uuid: bd45fc3a-3930-4cc4-b61a-4d2917f97756
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gms_ocha_common
+_core:
+  default_config_hash: bqcUyJfypWnp1brZbJafXVGafynv0TAEfKEDh4893qM
+id: gms_ocha_common_local_tasks
+theme: gms_ocha_common
+region: content
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

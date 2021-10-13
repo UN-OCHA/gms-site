@@ -1,0 +1,45 @@
+uuid: 9282e8ad-918c-4c9e-a188-089c333df6fc
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example
+_core:
+  default_config_hash: nyIZwLyB6nJv_7SjojqQJATyJtq9gzc2H2nKRdFmFF0
+id: beer_node
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - example
+migration_group: beer
+label: 'Beers of the world'
+source:
+  plugin: beer_node
+process:
+  type:
+    plugin: default_value
+    default_value: migrate_example_beer
+  title: name
+  nid: bid
+  uid:
+    plugin: migration_lookup
+    migration: beer_user
+    source: aid
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_migrate_example_country: countries
+  field_migrate_example_beer_style:
+    plugin: migration_lookup
+    migration: beer_term
+    source: terms
+  body/value: body
+  body/summary: excerpt
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - beer_term
+    - beer_user

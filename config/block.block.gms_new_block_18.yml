@@ -1,0 +1,30 @@
+uuid: a86359fc-a9cf-4760-8722-cdc59e3b7d96
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:768a5981-5ce1-4590-998d-7d0cd6a7b972'
+  module:
+    - block_content
+    - system
+  theme:
+    - bartik
+id: gms_new_block_18
+theme: bartik
+region: content
+weight: -33
+provider: null
+plugin: 'block_content:768a5981-5ce1-4590-998d-7d0cd6a7b972'
+settings:
+  id: 'block_content:768a5981-5ce1-4590-998d-7d0cd6a7b972'
+  label: ''
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

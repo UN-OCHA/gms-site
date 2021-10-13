@@ -1,0 +1,23 @@
+uuid: cb9f2450-b2f2-405d-be60-8b36a2054a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_header_style
+    - node.type.blog_entry
+  module:
+    - options
+id: node.blog_entry.field_page_header_style
+field_name: field_page_header_style
+entity_type: node
+bundle: blog_entry
+label: 'Page header style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'no'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

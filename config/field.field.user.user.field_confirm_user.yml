@@ -1,0 +1,22 @@
+uuid: f384713f-9c63-45e9-bc31-808eebddc479
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_confirm_user
+  module:
+    - user
+id: user.user.field_confirm_user
+field_name: field_confirm_user
+entity_type: user
+bundle: user
+label: 'Confirm User'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean

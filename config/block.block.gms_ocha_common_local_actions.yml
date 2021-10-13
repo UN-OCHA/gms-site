@@ -1,0 +1,20 @@
+uuid: de6ecbdd-fe1c-4a3e-bf1a-0a3d91f08737
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gms_ocha_common
+_core:
+  default_config_hash: 72nlwRjqiXBAwD4_Wzf9YVMhGeEnqWlHF8NS6KoI7Js
+id: gms_ocha_common_local_actions
+theme: gms_ocha_common
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

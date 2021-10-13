@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\migrate\MigrateSkipRowException;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Row;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_migrate_prepare_row().
+ *
+ * @param \Drupal\migrate\Row $row
+ * @param \Drupal\migrate\Plugin\MigrateSourceInterface $source
+ * @param \Drupal\migrate\Plugin\MigrationInterface $migration
+ *
+ * @throws \Exception
+ */
+function gms_group_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+
+  switch ($migration->id()) {
+      case 'upgrade_d7_node_cbpf_pages' ||
+        'upgrade_d7_node_document' ||
+        'upgrade_d7_node_special_page' ||
+        'upgrade_d7_node_static_page'  :
+       //dump($row);
+
+      if($row->getSourceProperty('language') == 'und'){
+        $row->setSourceProperty('language', 'en');
+      }
+
+      break;
+  }
+}
+
+
+
+
+/**
+ * Helper method to get the gids as target ids from d7 domain_source.
+ *
+ * @param int $nid
+ *   Nid of the current row.
+ *
+ * @return array
+ *   returns target ids of domains
+ */
+function getDomainSourceTargetId(int $nid) {
+  $row_source_properties = [];
+
+  $domains = $this->select('domain_source', 'ds')
+    ->fields('ds', ['domain_id'])
+    ->condition('ds.nid', $nid)
+    ->execute()
+    ->fetchCol();
+
+  foreach ($domains as $domain) {
+    $domain_target_ids = $this->select('domain', 'da')
+      ->fields('da', ['machine_name'])
+      ->condition('da.domain_id', $domain)
+      ->execute()
+      ->fetchCol();
+    $row_source_properties = $domain_target_ids[0];
+  }
+  return $row_source_properties;
+}
+
+
+//
+//drush config-delete "migrate_plus.migration.upgrade_d7_node_group"
+//drush config-delete "migrate_plus.migration.upgrade_d7_node_groups"
+//drush config-delete "migrate_plus.migration.upgrade_d7_user"
+//drush config-delete "migrate_plus.migration_group.igf_groups"

@@ -1,0 +1,7 @@
+gms_ocha.donor_chart:
+  path: '/special/donor/chart/sankey/json/{year}/{country}/{donor}'
+  defaults:
+    _controller: '\Drupal\gms_ocha\Controller\graphController::getJsonData'
+    _format: json
+  requirements:
+    _permission: 'access content'

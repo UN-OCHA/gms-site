@@ -1,0 +1,28 @@
+uuid: 126e2c03-53d6-4262-a0cf-132f6f8858f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_path_settings
+    - node.type.special_page
+  module:
+    - link
+id: node.special_page.field_url_path_settings
+field_name: field_url_path_settings
+entity_type: node
+bundle: special_page
+label: 'URL path settings'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'internal:/node/251'
+    title: ''
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+field_type: link

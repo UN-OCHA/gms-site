@@ -1,0 +1,9 @@
+uuid: 24bce3de-adbc-4b8a-8e16-bcff41c5abb1
+langcode: en
+status: true
+dependencies: {  }
+id: verified
+label: verified
+weight: 50
+is_admin: null
+permissions: {  }

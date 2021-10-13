@@ -1,0 +1,19 @@
+uuid: 9c7532e2-1142-493b-a651-19db8d57d95b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_keywords
+    - node.type.cbpf_pages
+id: node.cbpf_pages.field_search_keywords
+field_name: field_search_keywords
+entity_type: node
+bundle: cbpf_pages
+label: 'Search Keywords'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

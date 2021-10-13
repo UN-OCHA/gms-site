@@ -1,0 +1,34 @@
+uuid: 76f0f115-a3a5-4d33-9de9-34ecacb080b5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - gms_group_migrate
+_core:
+  default_config_hash: XdG6jA91x01brgCmF4jGhzXqU-flq2HasdPk4EjR-7E
+id: upgrade_d7_node_static_page
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: gms_groups
+label: 'static_page Nodes'
+source:
+  plugin: d7_node_custom
+  node_type: static_page
+  key: migrate
+process:
+  nid: tnid
+  title: title
+  field_domain_access:
+    plugin: sub_process
+    source: domain_access_node
+    process:
+      target_id: target_id
+destination:
+  plugin: 'entity:node'
+  translations: true
+  default_bundle: static_page
+migration_dependencies: null

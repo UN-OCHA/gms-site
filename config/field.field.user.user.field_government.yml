@@ -1,0 +1,20 @@
+uuid: 5217d4cf-605f-409c-8748-1d7befae0b10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_government
+  module:
+    - user
+id: user.user.field_government
+field_name: field_government
+entity_type: user
+bundle: user
+label: Government
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

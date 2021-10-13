@@ -1,0 +1,14 @@
+uuid: 4ae62f74-bcb2-453f-846a-dcf88a85af4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.non_verified
+  module:
+    - user
+id: user_add_role_action.non_verified
+label: 'Add the non-verified role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: non_verified

@@ -1,0 +1,56 @@
+uuid: eab20789-eeeb-4fac-ba82-8a33e6e39255
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_confirm_user
+    - field.field.user.user.field_countries
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_functional_title
+    - field.field.user.user.field_government
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_migrate_example_favbeers
+    - field.field.user.user.field_migrate_example_gender
+    - field.field.user.user.field_note
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_relevant_donor
+    - field.field.user.user.field_terms_and_condition
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_confirm_user: true
+  field_countries: true
+  field_first_name: true
+  field_functional_title: true
+  field_government: true
+  field_last_name: true
+  field_migrate_example_favbeers: true
+  field_migrate_example_gender: true
+  field_note: true
+  field_phone_number: true
+  field_relevant_donor: true
+  field_terms_and_condition: true
+  member_for: true

@@ -1,0 +1,27 @@
+uuid: d989b4af-7455-4cbf-bf3e-d3b59a6522cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf
+    - node.type.static_page
+  module:
+    - file
+id: node.static_page.field_pdf
+field_name: field_pdf
+entity_type: node
+bundle: static_page
+label: PDF
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,14 @@
+uuid: bd76b444-c0d5-4e2a-81ee-8af22f2001c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.fcs_admin_users
+  module:
+    - user
+id: user_remove_role_action.fcs_admin_users
+label: 'Remove the FCS admin users role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: fcs_admin_users

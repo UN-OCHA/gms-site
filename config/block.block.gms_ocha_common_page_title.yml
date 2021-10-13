@@ -1,0 +1,26 @@
+uuid: b51c2578-6c58-4ef9-a48c-9167c3029904
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gms_ocha_common
+_core:
+  default_config_hash: 5p6onlbwg8IfOoLBo-hjKA7w3Wmb37ZZxGGxZp5vVm8
+id: gms_ocha_common_page_title
+theme: gms_ocha_common
+region: page_title
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>"
+    negate: true

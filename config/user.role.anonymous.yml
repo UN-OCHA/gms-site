@@ -1,0 +1,17 @@
+uuid: d3a3373e-8800-4c44-8899-b097cd3f90b6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access PDF version'
+  - 'access comments'
+  - 'access content'
+  - 'search content'
+  - 'use hybridauth'
+  - 'view media'

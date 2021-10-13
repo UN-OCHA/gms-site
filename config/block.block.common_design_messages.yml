@@ -1,0 +1,22 @@
+uuid: 69ca2d39-cb10-4829-a4b6-0fc0333b6bd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design
+_core:
+  default_config_hash: T7gZEkBqqElnOklin4m1rfJYv28ry5eY-FjEDOrHGTU
+id: common_design_messages
+theme: common_design
+region: content
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: 08b6a6d6-88f4-4dbf-9c4e-c811881f0d0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - common_design
+_core:
+  default_config_hash: sOBfLFUB4t3yuAG5cmsbqVnN31761mx5SUHgrjS3Lpk
+id: common_design_main_menu
+theme: common_design
+region: header_top
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 9
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,39 @@
+uuid: 813ab9f1-8376-42ff-8347-4a10de08d93d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.document.field_countries
+    - field.field.node.document.field_file
+    - field.field.node.document.field_letter_to
+    - field.field.node.document.field_ngo
+    - field.field.node.document.field_overview
+    - field.field.node.document.field_relevant_donor
+    - field.field.node.document.field_signed_date
+    - field.field.node.document.field_type
+    - node.type.document
+  module:
+    - user
+id: node.document.teaser
+targetEntityType: node
+bundle: document
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_countries: true
+  field_file: true
+  field_letter_to: true
+  field_ngo: true
+  field_overview: true
+  field_relevant_donor: true
+  field_signed_date: true
+  field_type: true

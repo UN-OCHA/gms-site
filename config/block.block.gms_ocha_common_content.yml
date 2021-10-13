@@ -1,0 +1,22 @@
+uuid: ac15455b-a0b6-46df-ace1-bc803f86dc4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gms_ocha_common
+_core:
+  default_config_hash: FR6TscQ_wWvu_Oif0Ha6seHBgJwsupKvwisRs1yTxYw
+id: gms_ocha_common_content
+theme: gms_ocha_common
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

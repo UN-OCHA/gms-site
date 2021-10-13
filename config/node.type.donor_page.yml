@@ -1,0 +1,18 @@
+uuid: d4e02128-1581-4160-bd8d-e3e839bfcac4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'Donor Page'
+type: donor_page
+description: 'This is an donor page node type with a few fields.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

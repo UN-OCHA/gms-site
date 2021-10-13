@@ -1,0 +1,14 @@
+gms_pdflink.generatepdf:
+  path: 'page/print/{export_type}/{entity_type}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\gms_pdflink\Controller\ViewPdfController::viewPrint'
+    _title: 'Page Print'
+  requirements:
+    _permission: 'access content'
+gms_pdflink.view:
+  path: 'section/print/{export_type}/{entity_type}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\gms_pdflink\Controller\PrintSectionController::viewPrint'
+    _title: 'Section Print'
+  requirements:
+    _permission: 'access content'

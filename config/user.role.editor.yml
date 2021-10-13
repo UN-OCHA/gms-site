@@ -1,0 +1,33 @@
+uuid: 558448bc-c5c3-4e1a-8fc9-a91d49e74ca6
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access PDF version'
+  - 'access administration menu'
+  - 'access content overview'
+  - 'administer menu-faq-menu menu items'
+  - 'administer menu-ocha menu items'
+  - 'administer modules'
+  - 'create faq content'
+  - 'create static_page content'
+  - 'create url aliases'
+  - 'delete any faq content'
+  - 'delete any static_page content'
+  - 'delete own faq content'
+  - 'delete own static_page content'
+  - 'edit any faq content'
+  - 'edit any static_page content'
+  - 'edit own faq content'
+  - 'edit own static_page content'
+  - 'override faq published option'
+  - 'override static_page published option'
+  - 'search content'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format php_code'
+  - 'use text format svg_embed'

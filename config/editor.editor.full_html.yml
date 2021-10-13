@@ -1,0 +1,99 @@
+uuid: d865c8c1-53b4-4212-b5d6-d3a2573d3eb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - Undo
+            - Redo
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+            - SpecialChar
+            - TextColor
+            - BGColor
+            - FontSize
+            - Font
+        -
+          name: paragraph
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - Outdent
+            - Indent
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - ImceImage
+            - DrupalImage
+            - DrupalMediaLibrary
+            - Table
+            - HorizontalRule
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+            - Styles
+            - Maximize
+            - Language
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: "table.table.table-bordered|Table bordered\r\ntable.table.table-default|Table default\r\ntable.table.table-striped|Table strip\r\ntable.table.table-green-left-border|Table green left border\r\ntable.table.table-green-border|Table green border\r\ntable.table.table-vertical-heading|Table vertical heading\r\nul.p-0.ml-3|Left spacing none (Unordered List)\r\nul.mt-4|Top spacing (Unordered List)\r\nul.mb-4|Bottom spacing (Unordered List)\r\nol.p-0.ml-3|Left spacing none (Ordered List)\r\nol.mt-4|Top spacing (Ordered List)\r\nol.mb-4|Bottom spacing (Ordered List)\r\np.mt-4|Top spacing (Paragraph)\r\np.mb-4|Bottom spacing (Paragraph)\r\nh2.mt-5|Top spacing (Heading 2)\r\nh2.mb-5|Bottom spacing (Heading 2)\r\nh2.igf-text-primary|Green Text (Heading 2)\r\nh5.mt-5|Top spacing (Heading 5)\r\nh5.mb-5|Bottom spacing (Heading 5)\r\nh5.igf-text-primary|Green Text (Heading 5)"
+    customconfig:
+      ckeditor_custom_config: ''
+    font:
+      font_names: ''
+      font_sizes: ''
+    colorbutton:
+      colors: ''
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

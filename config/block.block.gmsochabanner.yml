@@ -1,0 +1,25 @@
+uuid: 189092fb-5e01-4e3c-9e93-06e851fe3cd1
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+id: gmsochabanner
+theme: gms_ocha_common
+region: highlighted
+weight: -12
+provider: null
+plugin: gms_ocha_banner
+settings:
+  id: gms_ocha_banner
+  label: 'GMS Ocha Banner'
+  provider: gms_ocha
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /content/home
+    negate: false

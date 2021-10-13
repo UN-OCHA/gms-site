@@ -1,0 +1,25 @@
+uuid: 5e993564-c5f2-44a4-92fa-90414386c91e
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+id: gmsochapooledfundwidget
+theme: gms_ocha_common
+region: content
+weight: -4
+provider: null
+plugin: gms_ocha_pooled_fund_widget
+settings:
+  id: gms_ocha_pooled_fund_widget
+  label: 'GMS Ocha Pooled Fund Widget'
+  provider: gms_ocha
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /content/biv2
+    negate: false

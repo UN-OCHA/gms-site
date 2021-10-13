@@ -1,0 +1,22 @@
+uuid: 66ff97b6-c506-417b-8d0a-0e53d676b40d
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - common_design
+_core:
+  default_config_hash: mV9h_NNjjbPAWoq62QCf5yvnX3TeL4r49DFhFuRfidE
+id: common_design_help
+theme: common_design
+region: header_top
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

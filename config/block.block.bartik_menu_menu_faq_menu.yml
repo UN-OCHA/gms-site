@@ -1,0 +1,18 @@
+uuid: d0741d19-5b2d-4515-8d02-dc0390fc71bc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bartik
+id: bartik_menu_menu_faq_menu
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-faq-menu'
+settings:
+  id: broken
+  label: ''
+  provider: core
+  label_display: '0'
+visibility: {  }
