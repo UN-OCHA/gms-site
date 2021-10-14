@@ -1,0 +1,59 @@
+version: "2.2"
+
+networks:
+  default:
+
+volumes:
+  gms9-site-public:
+  gms9-site-private:
+
+services:
+  mysql:
+    image: unocha/alpine-mysql:10.5.12-r0-202109-01
+    hostname: gms9-test-mysql
+    container_name: gms9-test-mysql
+    environment:
+      - MYSQL_DB=gms
+      - MYSQL_USER=gms
+      - MYSQL_PASS=gms
+    networks:
+      - default
+
+  redis:
+    restart: always
+    image: unocha/alpine-redis:5
+    hostname: gms9-test-redis
+    container_name: gms9-test-redis
+    ports:
+      - "6379"
+    networks:
+      - default
+
+  drupal:
+    image: unocha/gms9-site:local
+    hostname: gms9-test-site
+    container_name: gms9-test-site
+    volumes:
+      - "./settings:/srv/www/shared/settings:ro"
+      # Mount volumes for the private and public files.
+      - "gms9-site-public:/srv/www/html/sites/default/files:rw"
+      - "gms9-site-private:/srv/www/html/sites/default/private:rw"
+      # Mount the folders needed for the tests.
+      - "../tests:/srv/www/tests"
+      - "../phpcs.xml:/srv/www/phpcs.xml:ro"
+    environment:
+      - TERM=xterm
+      - ENVIRONMENT=dev
+      - NGINX_SERVERNAME=gms9-test-site,localhost,127.0.0.1
+      - NGINX_OVERRIDE_PROTOCOL=HTTP,gms9-test-site,localhost,127.0.0.1
+      - DRUSH_OPTIONS_URI=http://gms9-test-site
+      - DRUPAL_DB_DATABASE=gms
+      - DRUPAL_DB_USERNAME=gms
+      - DRUPAL_DB_PASSWORD=gms
+      - DRUPAL_DB_HOST=mysql
+      - DRUPAL_DB_DRIVER=mysql
+    networks:
+      - default
+    depends_on:
+      - mysql
+      - redis
