@@ -36,7 +36,7 @@ script:
   - docker ps -a
 
   # Wait a bit for solr and mysql to be ready.
-  - sleep 10
+  - sleep 5
 
   # Install the dev dependencies.
   - docker exec -it -w /srv/www gms9-test-site composer install
@@ -51,7 +51,7 @@ script:
   - docker exec -it gms9-test-site drush -y si --existing-config
 
   # Show us the status.
-  - docker exec -it gms9-test-site drustatus
+  - docker exec -it gms9-test-site drush status
 
 after_success:
   - echo "The tests completed without errors."
