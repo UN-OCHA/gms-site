@@ -293,6 +293,12 @@
     "drupal/pathologic": {
         "version": "1.0.0-alpha2"
     },
+    "drupal/pdf_api": {
+        "version": "2.0.0"
+    },
+    "drupal/pdf_using_mpdf": {
+        "version": "2.2.0"
+    },
     "drupal/redirect": {
         "version": "1.6.0"
     },
@@ -442,6 +448,9 @@
     },
     "mikey179/vfsstream": {
         "version": "v1.6.10"
+    },
+    "mpdf/mpdf": {
+        "version": "v7.1.9"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
@@ -609,6 +618,9 @@
     },
     "seld/phar-utils": {
         "version": "1.1.2"
+    },
+    "setasign/fpdi": {
+        "version": "1.6.2"
     },
     "sirbrillig/phpcs-variable-analysis": {
         "version": "v2.11.2"
@@ -821,6 +833,9 @@
     },
     "symfony/yaml": {
         "version": "v4.4.25"
+    },
+    "tecnickcom/tcpdf": {
+        "version": "6.4.2"
     },
     "theseer/tokenizer": {
         "version": "1.2.1"
