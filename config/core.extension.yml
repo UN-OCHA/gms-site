@@ -60,14 +60,12 @@ module:
   metatag: 0
   migrate: 0
   migrate_drupal: 0
-  migrate_drupal_ui: 0
   migrate_example: 0
   migrate_example_advanced: 0
   migrate_example_advanced_setup: 0
   migrate_example_setup: 0
   migrate_file: 0
   migrate_plus: 0
-  migrate_tools: 0
   migrate_upgrade: 0
   node: 0
   noreqnewpass: 0
@@ -76,8 +74,6 @@ module:
   panelbutton: 0
   path: 0
   path_alias: 0
-  pdf_api: 0
-  pdf_using_mpdf: 0
   quickedit: 0
   rdf: 0
   redirect: 0
