@@ -87,6 +87,7 @@
         "drush/drush": "10.4.0",
         "mikehaertl/phpwkhtmltopdf": "^2.5",
         "oomphinc/composer-installers-extender": "^2.0",
+        "symfony/flex": "^1.17",
         "unocha/common_design": "^4.0.0",
         "webflo/drupal-finder": "^1.2.2"
     },
@@ -156,10 +157,9 @@
     },
     "scripts": {
         "git-hooks": "git config core.hooksPath git-hooks || exit 0",
-        "sass-prepare": "cd html/themes/custom/common_design_subtheme && npm install",
-        "sass-build": "cd html/themes/custom/common_design_subtheme && ./node_modules/.bin/sass sass:build",
-        "sass-cleanup": "cd html/themes/custom/common_design_subtheme && rm -rf ./node_modules",
-        "sub-theme": "cp -r html/themes/contrib/common_design/common_design_subtheme html/themes/custom/ && mv html/themes/custom/common_design_subtheme/common_design_subtheme.info.yml.example html/themes/custom/common_design_subtheme/common_design_subtheme.info.yml",
+        "sass-prepare": "cd html/themes/custom/gms_ocha_common && npm install",
+        "sass-build": "cd html/themes/custom/gms_ocha_common && ./node_modules/.bin/sass sass:build",
+        "sass-cleanup": "cd html/themes/custom/gms_ocha_common && rm -rf ./node_modules",
         "sass": [
             "@sass-prepare",
             "@sass-build",
@@ -167,9 +167,6 @@
         ],
         "post-install-cmd": [
             "@git-hooks"
-        ],
-        "post-create-project-cmd": [
-            "@sub-theme"
         ],
         "post-update-cmd": [
             "@git-hooks"

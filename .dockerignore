@@ -9,7 +9,8 @@
 !composer.json
 !composer.lock
 !composer.patches.json
+!symfony.lock
 !load.environment.php
 
-# Ignore the node modules in the common design subtheme.
-html/themes/custom/common_design_subtheme/node_modules
+# Ignore the node modules in the theme.
+html/themes/custom/gms_ocha_common/node_modules
