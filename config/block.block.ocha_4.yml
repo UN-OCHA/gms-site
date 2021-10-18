@@ -12,7 +12,7 @@ dependencies:
 id: ocha_4
 theme: gms_ocha_common
 region: highlighted
-weight: -10
+weight: -11
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:

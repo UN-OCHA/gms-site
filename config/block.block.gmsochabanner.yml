@@ -10,7 +10,7 @@ dependencies:
 id: gmsochabanner
 theme: gms_ocha_common
 region: highlighted
-weight: -12
+weight: -13
 provider: null
 plugin: gms_ocha_banner
 settings:

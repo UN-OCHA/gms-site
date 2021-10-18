@@ -12,7 +12,7 @@ dependencies:
 id: countrybasedpooledfunds_2
 theme: gms_ocha_common
 region: highlighted
-weight: -6
+weight: -7
 provider: null
 plugin: 'block_content:6c29f89b-efe8-4c05-9851-67a4bbb56fee'
 settings:

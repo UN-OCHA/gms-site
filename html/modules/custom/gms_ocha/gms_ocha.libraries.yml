@@ -14,4 +14,12 @@ sankey_chart:
   - core/drupal
   - core/drupalSettings
   - core/jquery.once
-
+welcome_text:
+  js:
+    js/clock.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

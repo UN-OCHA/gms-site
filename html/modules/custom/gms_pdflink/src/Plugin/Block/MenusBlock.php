@@ -2,17 +2,7 @@
 
 namespace Drupal\gms_pdflink\Plugin\Block;
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Link;
-use Drupal\Core\Menu\MenuLinkTreeInterface;
-use Drupal\Core\Menu\MenuTreeParameters;
-use Drupal\Core\Render\Markup;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\system\Entity\Menu;
-use Drupal\system\Plugin\Block\SystemMenuBlock;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an extended Menu block.
@@ -25,7 +15,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class MenusBlock extends BlockBase {
 
-
+  /**
+   * GMS portal menu block.
+   */
   public function build() {
     $menuTree = \Drupal::menuTree();
     $menu_name = 'menu-ocha';
@@ -39,8 +31,6 @@ class MenusBlock extends BlockBase {
     $following = FALSE;
 
     $parameters->setMinDepth($level);
-   // $parameters->onlyEnabledLinks(); //already working
-
     if ($follow && count($parameters->activeTrail) > $level) {
       $level = count($parameters->activeTrail);
       $following = TRUE;
@@ -119,9 +109,7 @@ class MenusBlock extends BlockBase {
     $build['#contextual_links']['menu'] = [
       'route_parameters' => ['menu' => $menu_name],
     ];
-
     return $build;
   }
-
 
 }

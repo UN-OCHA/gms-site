@@ -1,18 +1,23 @@
 <?php
+
 namespace Drupal\gms_ocha\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use stdClass;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
-class graphController extends ControllerBase {
+/**
+ * Get the Sankeychart Data.
+ */
+class GraphController extends ControllerBase {
 
+  /**
+   * Get the Sankeychart Data.
+   */
   public function getJsonData($year = 2016, $country = NULL, $donor = NULL) {
     $cached = \Drupal::cache()->get('Poolfund_project_sankey_chart_' . $year);
     $data = isset($cached->data) ? $cached->data : '';
     if ($data) {
-      $colors = array('color1', 'color4', 'color2', 'color3', 'color5', 'color6');
-      $nodes = $node_check = $links = array();
+      $colors = ['color1', 'color4', 'color2', 'color3', 'color5', 'color6'];
+      $nodes = $node_check = $links = [];
       $i = $j = 0;
       if ($country != 'select') {
         $rows[] = $data[$country];
@@ -26,11 +31,11 @@ class graphController extends ControllerBase {
           $i = 0;
         }
 
-        $data_donor = array();
+        $data_donor = [];
         if ($donor != 'select') {
           if (array_key_exists($donor, $value['donor'])) {
             $data_donor[] = $value['donor'][$donor];
-            $parent = new stdClass();
+            $parent = new \stdClass();
             $parent->name = $value['name'];
             $parent->id = $colors[$i] . '_' . $value['id'];
             $nodes[] = $parent;
@@ -39,12 +44,12 @@ class graphController extends ControllerBase {
 
           }
           else {
-            $data_donor = array();
+            $data_donor = [];
           }
         }
         else {
           $data_donor = $value['donor'];
-          $parent = new stdClass();
+          $parent = new \stdClass();
           $parent->name = $value['name'];
           $parent->id = $colors[$i] . '_' . $value['id'];
           $nodes[] = $parent;
@@ -57,7 +62,7 @@ class graphController extends ControllerBase {
             $j = 0;
           }
           if (!in_array($donor_value['name'], $node_check)) {
-            $parent = new stdClass();
+            $parent = new \stdClass();
             $parent->name = $donor_value['name'];
             $parent->id = $colors[$j] . '_' . $donor_value['id'];
             $nodes[] = $parent;
@@ -65,7 +70,7 @@ class graphController extends ControllerBase {
             $j++;
           }
 
-          $children = new stdClass();
+          $children = new \stdClass();
           $children->source = array_search($donor_value['name'], $node_check);
           $children->value = $donor_value['amount'];
           $children->target = array_search($value['name'], $node_check);
@@ -73,15 +78,14 @@ class graphController extends ControllerBase {
         }
       }
       ksort($nodes);
-      $countries = new stdClass();
+      $countries = new \stdClass();
       $countries->nodes = $nodes;
       $countries->links = $links;
     }
-//    drupal_add_http_header('Content-Type', 'application/json');
     header('Content-Type: application/json');
     $data = json_encode($countries);
-    echo $data;die;
-//    return $data;
+    echo $data;
+    die;
   }
 
 }

@@ -216,3 +216,30 @@
 .input-group-addon {
   display: none;
 }
+
+.cd-site-header {
+    background: #3070b0;
+    height: 62px;       
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    border: none;
+}
+.header__name-and-slogan {
+    float: left;
+}
+.header__site-name{
+    font-size: 18px;
+    color: #c1dffe !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    display: flex;
+    padding: 23px 0 0 13px;
+    text-decoration: none !important;
+}
+.cd-container {
+    padding: 0 var(--cd-container-padding);
+}
+.cd-layout-container main {
+    padding-top: 0;
+}

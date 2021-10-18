@@ -10,6 +10,14 @@ use Drupal\Core\Ajax\ReplaceCommand;
  */
 function gms_ocha_theme($existing, $type, $theme, $path) {
   return [
+    'gms_ocha_welcome'=>[
+       'variables' => [
+          'welcome' => NULL,
+          'logoutUrl' => NULL,
+          'logged_in'=> NULL,
+          'name'=>NULL
+        ]
+    ],
     'pooled_fund_sankey_chart' => [
       'render element'  => 'form',
       'variables' => [
