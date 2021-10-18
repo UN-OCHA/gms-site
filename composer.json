@@ -87,6 +87,7 @@
         "drush/drush": "10.4.0",
         "mikehaertl/phpwkhtmltopdf": "^2.5",
         "oomphinc/composer-installers-extender": "^2.0",
+        "symfony/flex": "^1.17",
         "unocha/common_design": "^4.0.0",
         "webflo/drupal-finder": "^1.2.2"
     },
