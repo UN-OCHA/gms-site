@@ -1,22 +1,26 @@
 <?php
+
+/**
+ * @file
+ * GMS Ocha Module.
+ */
+
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\SettingsCommand;
-use Drupal\Core\Ajax\InvokeCommand;
-use Drupal\Core\Ajax\ReplaceCommand;
-/*
- *
- * Implements hook_preprocess_page
+
+/**
+ * Implements hook_preprocess_page.
  */
 function gms_ocha_theme($existing, $type, $theme, $path) {
   return [
-    'gms_ocha_welcome'=>[
-       'variables' => [
-          'welcome' => NULL,
-          'logoutUrl' => NULL,
-          'logged_in'=> NULL,
-          'name'=>NULL
-        ]
+    'gms_ocha_welcome' => [
+      'variables' => [
+        'welcome' => NULL,
+        'logoutUrl' => NULL,
+        'logged_in' => NULL,
+        'name' => NULL
+      ]
     ],
     'pooled_fund_sankey_chart' => [
       'render element'  => 'form',
@@ -26,11 +30,10 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
       ],
     ],
     'pooled_fund_explore_widget' => [
-      'variables' => [
-      ],
+      'variables' => [],
     ],
     'pooled_fund_widget' => [
-      'render element'  => 'form',
+      'render element' => 'form',
       'variables' => [
         'donation' => NULL,
         'pooled_fund_form' => NULL,
@@ -39,24 +42,29 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ * Implements Country callback.
+ */
 function gms_ocha_poolfund_donor_country_callback($form, $form_state) {
   $form_state->setRebuild();
   $sankey_chart = \Drupal::service('renderer')->render($form['sankey_chart']);
   $jsonURL = $form['jsonUrl'];
   $response = new AjaxResponse();
-  $settings['drupalSettings'] = ['sankey_chart' => ['path' => ['sankey' =>  $jsonURL]]];
+  $settings['drupalSettings'] = ['sankey_chart' => ['path' => ['sankey' => $jsonURL]]];
   $response->addCommand(new SettingsCommand($settings, TRUE));
-  $response->addCommand(new HtmlCommand('#pooled-fund-sankey-chart',$sankey_chart,$settings));
+  $response->addCommand(new HtmlCommand('#pooled-fund-sankey-chart', $sankey_chart, $settings));
   $form['#attached']['library'][] = 'gms_ocha/sankey_chart';
   $response->setAttachments($form['#attached']);
   return $response;
 }
 
+/**
+ * Implements poolfund callback.
+ */
 function gms_ocha_poolfund_callback($form, $form_state) {
   $form_state->setRebuild();
   $poolfund_badges = \Drupal::service('renderer')->render($form['poolfund_badges']);
   $response = new AjaxResponse();
-//  $form['#theme'] = 'pooled_fund_widget';
-  $response->addCommand(new HtmlCommand('#pooled-fund-badges',$poolfund_badges));
+  $response->addCommand(new HtmlCommand('#pooled-fund-badges', $poolfund_badges));
   return $response;
 }

@@ -2,10 +2,11 @@
 
 /**
  * @file
- * Yourtheme.theme .*/
+ * GMS Ocha Theme.
+ */
 
 /**
- *
+ * Implements hook_preprocess_page.
  */
 function gms_ocha_common_preprocess_page(&$variables) {
   $site_config = \Drupal::config('system.site');

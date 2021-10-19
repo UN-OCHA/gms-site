@@ -41,7 +41,6 @@ module:
   google_analytics: 0
   help: 0
   history: 0
-  html_export: 0
   image: 0
   imce: 0
   inline_entity_form: 0
