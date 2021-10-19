@@ -70,7 +70,7 @@ assignments:
     weight: -20
   profile:
     curated: true
-    minimal:
+    standard:
       files: true
       dependencies: true
     types:
