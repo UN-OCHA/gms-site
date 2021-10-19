@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_migrate_example_wine_regio
     - node.type.migrate_example_wine
-    - taxonomy.vocabulary.migrate_example_wine_regions
 _core:
   default_config_hash: SY0L1xid1zVRqtdbHoMATu_eJDGsXBoULcxzmqWuFXY
 id: node.migrate_example_wine.field_migrate_example_wine_regio
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      migrate_example_wine_regions: migrate_example_wine_regions
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false

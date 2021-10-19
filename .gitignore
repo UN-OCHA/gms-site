@@ -34,17 +34,16 @@
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
-/phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> phpunit/phpunit ###
-/phpunit.xml
 .phpunit.result.cache
+phpunit.xml.dist
 ###< phpunit/phpunit ###
 
 ###> squizlabs/php_codesniffer ###
 /.phpcs-cache
-phpcs.xml
+phpcs.xml.dist
 ###< squizlabs/php_codesniffer ###
 
 ###> symfony rubbish ###
@@ -55,7 +54,3 @@ config/packages
 config/routes.yaml
 config/routes
 ###< symfony rubbish ###
-
-phpcs.xml.dist
-phpunit.xml.dist
-/.gitattributes
