@@ -77,7 +77,6 @@ module:
   panelbutton: 0
   path: 0
   path_alias: 0
-  pdf_api: 0
   quickedit: 0
   rdf: 0
   redirect: 0
