@@ -1,0 +1,4 @@
+html_export.download_folder:
+  route_name: html_export.download_folder
+  title: 'Download html export'
+  weight: 10

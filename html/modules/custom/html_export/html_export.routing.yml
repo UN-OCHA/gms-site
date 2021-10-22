@@ -1,0 +1,21 @@
+html_export.job_page:
+  path: /html_export
+  defaults:
+    _title: 'HTML export'
+    _form: \Drupal\html_export\Form\HtmlExportJobPage
+  requirements:
+    _permission: 'use html export'
+html_export.settings:
+  path: /admin/config/html_export
+  defaults:
+    _title: 'HTML export'
+    _form: \Drupal\html_export\Form\HtmlExportSettings
+  requirements:
+    _permission: 'administer site configuration'
+html_export.download_folder:
+  path: '/html_export/download/export'
+  defaults:
+    _title: 'Download html export'
+    _controller: '\Drupal\html_export\Controller\DefaultController::htmlExportDownloadFolder'
+  requirements:
+    _permission: 'access content'

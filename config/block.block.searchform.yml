@@ -8,8 +8,8 @@ dependencies:
     - gms_ocha_common
 id: searchform
 theme: gms_ocha_common
-region: header_navigation
-weight: -9
+region: header_search
+weight: -15
 provider: null
 plugin: search_form_block
 settings:

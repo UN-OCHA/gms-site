@@ -1,0 +1,25 @@
+uuid: 4b42386d-21be-4d4f-9131-982ddc6e4b7d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a5fa71d9-a21c-44a9-8918-45edcff2d16b'
+  module:
+    - block_content
+  theme:
+    - gms_ocha_common
+id: specialfooter
+theme: gms_ocha_common
+region: footer_navigation
+weight: -15
+provider: null
+plugin: 'block_content:a5fa71d9-a21c-44a9-8918-45edcff2d16b'
+settings:
+  id: 'block_content:a5fa71d9-a21c-44a9-8918-45edcff2d16b'
+  label: 'Special Footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
