@@ -116,13 +116,13 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
         '#title' => t('Related to menu'),
         '#options' => $options,
         '#multiple' => TRUE,
-        '#default_value' => ($default_options['gsm_ocha']['related']) ? $default_options['gsm_ocha']['related'] : 0,
+        '#default_value' => (isset($default_options['gsm_ocha']['related'])) ? $default_options['gsm_ocha']['related'] : 0,
       ];
       $form['menu']['related']['show_parent'] = [
         '#type' => 'checkbox',
         '#title' => t('Show only for this parent term.'),
         // '#options' => array('1' =>'Yes'),
-        '#default_value' => ($default_options['gsm_ocha']['show_parent']) ? $default_options['gsm_ocha']['show_parent'] : 0,
+        '#default_value' => (isset($default_options['gsm_ocha']['show_parent'])) ? $default_options['gsm_ocha']['show_parent'] : 0,
       ];
       $form['#submit'][] = 'gms_ocha_form_submit';
       $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
@@ -154,7 +154,6 @@ function gms_ocha_form_submit($form, $form_state) {
 
 function gms_ocha_preprocess_block(&$variables) {
   if($variables['attributes']['id']=='block-ocha-2'){
-
     $current_path = \Drupal::service('path.current')->getPath();
     $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
     $query = \Drupal::entityQuery('path_alias');
@@ -173,11 +172,14 @@ function gms_ocha_preprocess_block(&$variables) {
     if(isset($menuData['parent']) && empty($menuData['parent'])) {
       $menuId = str_replace('menu_link_content:','',$menuData['id']);
     }
-    if(isset($_GET['query']) && !empty($_GET['query'])) {
-      $menuId = $_GET['query'];
+    $query = \Drupal::request()->query->get('query');
+    if (!empty($query)) {
+      $menuId = $query;
     }
     if(!empty($menuId)){
-      $variables['content']['#items']['menu_link_content:'.$menuId]['is_active_menu'] = true;
+      if (isset($variables['content']['#items']['menu_link_content:'.$menuId])) {
+        $variables['content']['#items']['menu_link_content:'.$menuId]['is_active_menu'] = true;
+      }
     }
   }
 }

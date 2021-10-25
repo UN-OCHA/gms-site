@@ -49,15 +49,15 @@ function gms_group_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface 
  */
 function getDomainSourceTargetId(int $nid) {
   $row_source_properties = [];
-
-  $domains = $this->select('domain_source', 'ds')
+  $query = \Drupal::database();
+  $domains = $query->select('domain_source', 'ds')
     ->fields('ds', ['domain_id'])
     ->condition('ds.nid', $nid)
     ->execute()
     ->fetchCol();
 
   foreach ($domains as $domain) {
-    $domain_target_ids = $this->select('domain', 'da')
+    $domain_target_ids = $query->select('domain', 'da')
       ->fields('da', ['machine_name'])
       ->condition('da.domain_id', $domain)
       ->execute()
