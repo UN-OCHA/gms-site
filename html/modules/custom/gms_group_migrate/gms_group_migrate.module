@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * GMS Migration.
+ */
+
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\migrate\MigrateSkipRowException;
 use Drupal\migrate\Plugin\MigrationInterface;
@@ -23,12 +28,9 @@ function gms_group_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface 
         'upgrade_d7_node_document' ||
         'upgrade_d7_node_special_page' ||
         'upgrade_d7_node_static_page'  :
-       //dump($row);
-
       if($row->getSourceProperty('language') == 'und'){
         $row->setSourceProperty('language', 'en');
       }
-
       break;
   }
 }

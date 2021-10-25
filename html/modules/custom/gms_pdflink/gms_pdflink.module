@@ -1,10 +1,16 @@
 <?php
-use Drupal\Core\Url;
 
+/**
+ * @file
+ * PDF Exort Module.
+ */
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
 function gms_pdflink_theme_registry_alter(&$theme_registry) {
- // dump($theme_registry);exit();
- // $theme_registry['page']['path'] = drupal_get_path('module', 'my_module') . '/templates';
 }
+
 /**
  * Implements hook_theme().
  */
@@ -15,7 +21,7 @@ function gms_pdflink_theme($existing, $type, $theme, $path) {
       'template' => 'entity-print',
       'variables' => [
         'title' => '',
-        'ochamenu'=> NULL,
+        'ochamenu' => NULL,
         'content' => NULL,
         'entity_print_css' => NULL,
       ],

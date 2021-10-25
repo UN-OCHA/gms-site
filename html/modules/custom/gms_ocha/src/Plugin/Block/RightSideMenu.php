@@ -37,8 +37,9 @@ class RightSideMenu extends BlockBase {
     if (isset($menuData['parent']) && empty($menuData['parent'])) {
       $menuId = str_replace('menu_link_content:', '', $menuData['id']);
     }
-    if (isset($_GET['query']) && !empty($_GET['query'])) {
-      $menuId = $_GET['query'];
+    $query = \Drupal::request()->query->get('query');
+    if (!empty($query)) {
+      $menuId = $query;
     }
     $menu_name = 'menu-ocha';
     $menu_tree = \Drupal::menuTree();
