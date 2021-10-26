@@ -20,6 +20,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  dblog: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
@@ -40,6 +41,7 @@ module:
   google_analytics: 0
   help: 0
   history: 0
+  html_export: 0
   image: 0
   imce: 0
   inline_entity_form: 0
@@ -52,6 +54,7 @@ module:
   media_entity_browser_media_library: 0
   media_library: 0
   menu_block: 0
+  menu_breadcrumb: 0
   menu_entity_index: 0
   menu_firstchild: 0
   menu_link_attributes: 0
@@ -63,6 +66,7 @@ module:
   migrate_file: 0
   migrate_plus: 0
   migrate_tools: 0
+  modules_weight: 0
   node: 0
   noreqnewpass: 0
   options: 0
@@ -86,6 +90,7 @@ module:
   tb_megamenu: 0
   text: 0
   token: 0
+  token_filter: 0
   tome_base: 0
   tome_static: 0
   toolbar: 0

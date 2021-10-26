@@ -1,25 +1,26 @@
 uuid: 33a8a2a9-a47d-483d-aea0-ecea4bddaff0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.menu-ocha
   module:
     - menu_block
+    - node
     - system
   theme:
     - gms_ocha_common
 id: ocha
 theme: gms_ocha_common
-region: highlighted
-weight: -9
+region: sidebar_first
+weight: -12
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:
   id: 'menu_block:menu-ocha'
   label: Partner
   provider: menu_block
-  label_display: visible
+  label_display: '0'
   follow: false
   follow_parent: child
   level: 1
@@ -32,5 +33,12 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /content/partner
+    pages: "<front>\r\n/content/home"
+    negate: true
+  node_type:
+    id: node_type
+    bundles:
+      static_page: static_page
     negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

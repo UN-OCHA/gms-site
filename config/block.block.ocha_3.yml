@@ -1,25 +1,26 @@
 uuid: 9c3a9ebc-cb3e-4d7d-8429-8135bc3bb553
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.menu-ocha
   module:
     - menu_block
+    - node
     - system
   theme:
     - gms_ocha_common
 id: ocha_3
 theme: gms_ocha_common
-region: highlighted
-weight: -8
+region: sidebar_first
+weight: -11
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:
   id: 'menu_block:menu-ocha'
   label: HUF
   provider: menu_block
-  label_display: visible
+  label_display: '0'
   follow: true
   follow_parent: child
   level: 1
@@ -32,5 +33,12 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /content/hfu
+    pages: "<front>\r\n/content/home"
+    negate: true
+  node_type:
+    id: node_type
+    bundles:
+      static_page: static_page
     negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

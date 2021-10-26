@@ -1,8 +1,9 @@
 uuid: d2c0f9ec-8b34-483a-acd4-4c15fa1246ac
 langcode: en
-status: false
+status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - gms_ocha_common
@@ -19,4 +20,15 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      static_page: static_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/content/home"
+    negate: true

@@ -1,0 +1,33 @@
+uuid: 07560f7d-fee6-4fbd-a135-b331240b5869
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: rightsidemenu
+theme: gms_ocha_common
+region: sidebar_first
+weight: -13
+provider: null
+plugin: rightside_menu
+settings:
+  id: rightside_menu
+  label: 'Left Side menu'
+  provider: gms_ocha
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      static_page: static_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/content/home"
+    negate: true

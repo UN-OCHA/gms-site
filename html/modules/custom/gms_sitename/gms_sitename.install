@@ -1,11 +1,12 @@
 <?php
+
+/**
+ * @file
+ * This file is used to write install Uninstall hooks that used in the module.
+ */
+
 /**
  * Implements hook_schema().
- *
- * Defines the database tables used by this module.
- *
- * @see hook_schema()
- *
  */
 function gms_sitename_schema() {
   $schema['gms_sitename_data'] = [

@@ -1,0 +1,12 @@
+<div class="login_text">
+  <div class="float_l">
+
+    <span>{{ welcome }}</span>
+  </div>
+  <div class="float_r" onload="display_ct();">
+    <span id='clock'> </span>
+    {% if logged_in %}
+      <span id='user-logout' class="float_r"><a href="/user/logout">Logout</a></span>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,8 @@
+html_export.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    html_export_other_paths:
+      type: string
+    html_export_dom_remove:
+      type: string

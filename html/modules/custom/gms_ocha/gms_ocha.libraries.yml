@@ -14,4 +14,19 @@ sankey_chart:
   - core/drupal
   - core/drupalSettings
   - core/jquery.once
-
+welcome_text:
+  js:
+    js/clock.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+menu_portal:
+  js:
+    js/gms_ocha_portal_menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once

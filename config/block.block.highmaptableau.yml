@@ -11,8 +11,8 @@ dependencies:
     - gms_ocha_common
 id: highmaptableau
 theme: gms_ocha_common
-region: content
-weight: -12
+region: block_content
+weight: -13
 provider: null
 plugin: 'block_content:768a5981-5ce1-4590-998d-7d0cd6a7b972'
 settings:

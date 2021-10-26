@@ -1,0 +1,14 @@
+uuid: 660af999-ea15-486b-abca-8dcd26eb6f78
+langcode: en
+status: true
+dependencies: {  }
+name: list_image
+label: 'List Image'
+effects:
+  b6b8cf4b-1003-4c5a-82fb-bd8aa4ffbdaa:
+    uuid: b6b8cf4b-1003-4c5a-82fb-bd8aa4ffbdaa
+    id: image_resize
+    weight: 1
+    data:
+      width: 480
+      height: 320

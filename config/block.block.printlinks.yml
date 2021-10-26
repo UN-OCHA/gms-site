@@ -11,7 +11,7 @@ dependencies:
 id: printlinks
 theme: gms_ocha_common
 region: content
-weight: -7
+weight: -11
 provider: null
 plugin: print_links
 settings:
@@ -32,5 +32,5 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: "<front>\r\n/content/home"
     negate: true
