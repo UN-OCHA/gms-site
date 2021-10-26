@@ -6,14 +6,10 @@
  */
 
 use Drupal\Core\File\FileSystemInterface;
-use GuzzleHttp\Client;
 use Drupal\Core\Url;
-use Drupal\html_export;
 use Drupal\path_alias\Entity\PathAlias;
 use Drupal\redirect\Entity\Redirect;
-
-define('HTML_EXPORT_PROCESS_LIMIT', 5);
-define('HTML_EXPORT_FILE_PROCESS_LIMIT', 2);
+use Drupal\html_export\SimpleHtmlDom;
 
 /**
  * Implements hook_html_export_add_path_provider().
@@ -29,11 +25,11 @@ function html_export_html_export_add_path_provider() {
       'callback' => '_html_export_all_menu_links',
     ],
   ];
-  // create an option for each type
-$avail_types = [
-  'faq' => 'faq',
-  'static_page' => 'static_page',
-];
+  // Create an option for each type.
+  $avail_types = [
+    'faq' => 'faq',
+    'static_page' => 'static_page',
+  ];
   foreach ($avail_types as $key => $type) {
     $items['types_' . $key] = [
       'title' => 'Node type: ' . $key,
@@ -44,14 +40,13 @@ $avail_types = [
   return $items;
 }
 
-
 /**
  * Callback for core_all_paths provider.
  */
 function _html_export_handle_view($view_name) {
   $paths = [];
   $results = views_get_view_result($view_name);
-  // list of nodes from a view
+  // List of nodes from a view.
   foreach ($results as $row) {
     if (isset($row->nid)) {
       $paths['node/' . $row->nid] = 'node/' . $row->nid;
@@ -69,8 +64,6 @@ function _html_export_all_menu_links() {
   $query->fields('gs', ['pattern_outline']);
   $result = $query->execute()->fetchAll();
   foreach ($result as $val) {
-   // dump($val->pattern_outline);
-    // ensure that % isn't taking context into account w/ the path
     if (strpos($val->pattern_outline, '%') === FALSE) {
       $paths[$val->pattern_outline] = $val->pattern_outline;
     }
@@ -83,15 +76,13 @@ function _html_export_all_menu_links() {
  */
 function _html_export_all_nodes() {
   $paths = [];
-  // grab all nodes the user has access to
   $result = \Drupal::database()->select('node', 'n')
-  ->fields('n', ['nid'])
-  ->addTag('node_access')
-  ->execute();
+    ->fields('n', ['nid'])
+    ->addTag('node_access')
+    ->execute();
   foreach ($result as $val) {
     $paths['node/' . $val->nid] = 'node/' . $val->nid;
   }
-  //dump($paths);exit();
   return $paths;
 }
 
@@ -100,43 +91,33 @@ function _html_export_all_nodes() {
  */
 function _html_export_node_type($type) {
   $paths = [];
-  // grab all nodes the user has access to for this type
   $result = \Drupal::database()->select('node', 'n')
-  ->fields('n', ['nid'])
-  ->condition('type', $type)
-  ->addTag('node_access')
-  ->execute();
+    ->fields('n', ['nid'])
+    ->condition('type', $type)
+    ->addTag('node_access')
+    ->execute();
   foreach ($result as $val) {
     $paths['node/' . $val->nid] = 'node/' . $val->nid;
   }
-  //dump($paths);exit();
   return $paths;
 }
 
 /**
- * Implements hook_html_export_data_alter().
- */
-
-/**
- * Helper function to pull in page data
+ * Helper function to pull in page data.
  */
 function _html_export_get_page_data($path, $anonymous, $render_errors) {
- // var_dump($render_errors);exit();
   $path = ltrim($path, '/');
- // print_r($path);exit();
   if ($anonymous) {
     $root = $_SERVER['HTTP_ORIGIN'] . base_path();
     $client = \Drupal::httpClient();
     $request = $client->get($root . $path);
     $http = $request->getBody()->getContents();
-   // print_r($http);exit();
-    // store http data object in variable for processing
     $error_codes = [403, 404, 500];
     if ($render_errors) {
-     // $data = $http->data;
+      $http;
     }
     elseif (!in_array($request->getStatusCode(), $error_codes)) {
-     // $data = $http->data;
+      $http;
     }
     else {
       $http = FALSE;
@@ -145,8 +126,10 @@ function _html_export_get_page_data($path, $anonymous, $render_errors) {
   return $http;
 }
 
-
-function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous, $front_found, $render_errors , &$context){
+/**
+ * Render pages.
+ */
+function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous, $front_found, $render_errors, &$context) {
   if (empty($context['sandbox'])) {
     $context['sandbox']['progress'] = 0;
     $context['sandbox']['max'] = count($paths);
@@ -154,7 +137,6 @@ function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous,
     $context['results']['asset_list'] = [];
     $context['results']['domains'] = [];
     if ($front_found) {
-//      $front = \Drupal::config('system.site')->get('page.front');
       $front = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
       $data = _html_export_get_page_data($front, $anonymous, $render_errors);
       \Drupal::moduleHandler()->alter('html_export_data', $data, $paths, $front, $dom_remove, FALSE);
@@ -164,15 +146,14 @@ function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous,
       }
     }
   }
-
   $new_path = [];
-  foreach ($paths as $path){
-    $new_path[] = '/node/'.$path;
+  foreach ($paths as $path) {
+    $new_path[] = '/node/' . $path;
   }
   $paths = [];
   $paths = $new_path;
   $count = 0;
-  while ($count < HTML_EXPORT_PROCESS_LIMIT && $context['sandbox']['progress'] < $context['sandbox']['max']) {
+  while ($count < 5 && $context['sandbox']['progress'] < $context['sandbox']['max']) {
     $active = $context['sandbox']['progress'];
 
     $context['message'] = t('Now processing %path', ['%path' => \Drupal::service('path_alias.manager')->getAliasByPath($paths[$active])]);
@@ -182,7 +163,6 @@ function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous,
     \Drupal::moduleHandler()->alter('html_export_data', $data, $paths, $paths[$active], $dom_remove);
     $tmp = explode('/', $paths[$active]);
     $folder_path = '';
-    // build path leading up to the current one
     foreach ($tmp as $folder) {
       $folder_path .= '/' . $folder;
       $tmppath = $export_path . $folder_path;
@@ -202,22 +182,26 @@ function html_export_render_pages($paths, $export_path, $dom_remove, $anonymous,
   }
 }
 
-function html_export_home_pages($export_path, $dom_remove, $anonymous, $render_errors){
+/**
+ * Export Index page.
+ */
+function html_export_home_pages($export_path, $dom_remove, $anonymous, $render_errors) {
   if (empty($context['sandbox'])) {
-      $front = \Drupal::config('system.site')->get('page.front');
-      $data = _html_export_get_page_data($front, $anonymous, $render_errors);
-      $front = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
-      \Drupal::moduleHandler()->alter('html_export_data', $data, $paths, $front, $dom_remove, FALSE);
-      if ($file = fopen($export_path . '/index.html', 'w')) {
-        fwrite($file, $data);
-        fclose($file);
-      }
+    $front = \Drupal::config('system.site')->get('page.front');
+    $data = _html_export_get_page_data($front, $anonymous, $render_errors);
+    $front = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
+    \Drupal::moduleHandler()->alter('html_export_data', $data, $paths, $front, $dom_remove, FALSE);
+    if ($file = fopen($export_path . '/index.html', 'w')) {
+      fwrite($file, $data);
+      fclose($file);
     }
+  }
 }
 
-
+/**
+ * Finished batch process.
+ */
 function batch_import_finished($success, $results, $operations) {
-
   $messenger = \Drupal::messenger();
   if ($success) {
     $source = 'sites/default/files/html_export/export/';
@@ -238,9 +222,12 @@ function batch_import_finished($success, $results, $operations) {
   }
 }
 
+/**
+ * Create zip.
+ */
 function gms_ocha_zip($source, $destination, $include_dir = TRUE) {
   if (file_exists($destination)) {
-     unlink($destination);
+    unlink($destination);
   }
   $rootPath = realpath($source);
   $zip = new ZipArchive();
@@ -258,7 +245,7 @@ function gms_ocha_zip($source, $destination, $include_dir = TRUE) {
     }
     $source = substr($source, 1);
   }
-  foreach ($files as $name => $file) {
+  foreach ($files as $file) {
     if (!$file->isDir()) {
       $filePath = $file->getRealPath();
       $relativePath = substr($filePath, strlen($rootPath) + 1);
@@ -269,11 +256,15 @@ function gms_ocha_zip($source, $destination, $include_dir = TRUE) {
   rmdir($source);
 }
 
+/**
+ * Html data alter.
+ */
 function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_remove = [], $remove_base = TRUE) {
   $front = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
-  if($active_path==$front){
+  if ($active_path == $front) {
     $absPathExt = './';
-  }else{
+  }
+  else {
     $absPathExt = '../../';
   }
   $large_path = getcwd() . '/sites/default/files/html_export/';
@@ -306,7 +297,7 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
   }
   // Advanced dom removal routine.
   // Create a DOM object.
-  $html_obj = new html_export\SimpleHtmlDom();
+  $html_obj = new SimpleHtmlDom();
   // Load HTML from a string.
   $html_obj->load($data);
 
@@ -342,8 +333,8 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
           if (!empty($aliasIds)) {
             $aliasIds = array_values($aliasIds);
             $path = PathAlias::load($aliasIds[0]);
-            if (preg_match('/node/i',$path->getPath())) {
-              $obj->href = $absPathExt . ltrim($path->getPath(),'/').'/index.html';
+            if (preg_match('/node/i', $path->getPath())) {
+              $obj->href = $absPathExt . ltrim($path->getPath(), '/') . '/index.html';
             }
           }
           else {
@@ -366,7 +357,7 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
           $url = $obj->href;
           $file_name = urldecode(basename(parse_url($url, PHP_URL_PATH)));
           $ext = pathinfo($file_name, PATHINFO_EXTENSION);
-          if($ext == 'js'){
+          if ($ext == 'js') {
             $path = $js;
             $absPath = $absJs;
           }
@@ -380,7 +371,7 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
           }
           $obj->href = $absPath . $file_name;
           if (!file_exists($path . $file_name)) {
-            file_put_contents($path . $file_name,file_get_contents($url));
+            file_put_contents($path . $file_name, file_get_contents($url));
           }
         }
       }
@@ -389,11 +380,11 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
         // Only replace first occurance as this will be base path.
         $parts = parse_url($obj->src);
         if (!isset($parts['host'])) {
-          $obj->src = $base_url.$obj->src;
+          $obj->src = $base_url . $obj->src;
           $url = $obj->src;
           $file_name = urldecode(basename(parse_url($url, PHP_URL_PATH)));
           $ext = pathinfo($file_name, PATHINFO_EXTENSION);
-          if($ext == 'js') {
+          if ($ext == 'js') {
             $path = $js;
             $absPath = $absJs;
           }
@@ -401,13 +392,13 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
             $path = $css;
             $absPath = $absCss;
           }
-          else{
+          else {
             $path = $images;
             $absPath = $absImages;
           }
           $obj->src = $absPath . $file_name;
           if (!file_exists($path . $file_name)) {
-              file_put_contents($path . $file_name, file_get_contents($url));
+            file_put_contents($path . $file_name, file_get_contents($url));
           }
         }
       }
@@ -417,4 +408,3 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
   $data = $html_obj->save();
   $data = str_replace('/index.html/', '/', $data);
 }
-

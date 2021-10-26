@@ -7,7 +7,6 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
 
 /**
  * Contains  Html Export Settings.
@@ -23,7 +22,7 @@ class HtmlExportSettings extends ConfigFormBase {
   protected $entityTypeManager;
 
   /**
-   * Creates an DevelLocalTask object.
+   * Creates an object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity manager.
@@ -40,7 +39,6 @@ class HtmlExportSettings extends ConfigFormBase {
       $container->get('entity_type.manager'),
     );
   }
-
 
   /**
    * {@inheritdoc}

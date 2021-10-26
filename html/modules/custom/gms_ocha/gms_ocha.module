@@ -11,7 +11,7 @@ use Drupal\Core\Ajax\SettingsCommand;
 use Drupal\path_alias\Entity\PathAlias;
 
 /**
- * Implements hook_preprocess_page.
+ * Implements hook_theme().
  */
 function gms_ocha_theme($existing, $type, $theme, $path) {
   return [
@@ -21,7 +21,7 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
         'logoutUrl' => NULL,
         'logged_in' => NULL,
         'name' => NULL,
-      ]
+      ],
     ],
     'pooled_fund_sankey_chart' => [
       'render element'  => 'form',
@@ -43,7 +43,7 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
     'gms_ocha_rightsidemenu' => [
       'variables' => [
         'menu_html' => NULL,
-      ]
+      ],
     ],
   ];
 }
@@ -85,7 +85,7 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
     $menu_link_content = current($menu_content_storage->loadByProperties(['id' => $menu_link_content_id]));
     $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
     $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
-    if(count($menu_link_content_childs)<=0){
+    if (count($menu_link_content_childs) <= 0) {
       $form['menu']['related'] = [
         '#type' => 'fieldset',
         '#weight' => 5,
@@ -102,7 +102,7 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
       ];
       $tree = $menu_tree->transform($tree, $manipulators);
       $options = [];
-      foreach ($tree as $key => $val){;
+      foreach ($tree as $val) {
         $options[$val->link->getPluginDefinition()['metadata']['entity_id']] = $val->link->getPluginDefinition()['title'];
       }
       $query = \Drupal::database()->select('menu_tree', 'menu_tree')
@@ -147,38 +147,41 @@ function gms_ocha_form_submit($form, $form_state) {
   $options['gsm_ocha']['related'] = $form_state->getValue('menus');
   $options['gsm_ocha']['show_parent'] = $form_state->getValue('show_parent');
   \Drupal::database()->update('menu_tree')
-    ->fields(['options' => serialize($options),])
+    ->fields(['options' => serialize($options)])
     ->condition('id', $parent_prop)
     ->execute();
 }
 
+/**
+ * Implements hook_preprocess_block().
+ */
 function gms_ocha_preprocess_block(&$variables) {
-  if($variables['attributes']['id']=='block-ocha-2'){
+  if ($variables['attributes']['id'] == 'block-ocha-2') {
     $current_path = \Drupal::service('path.current')->getPath();
     $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
     $query = \Drupal::entityQuery('path_alias');
-    $query->condition('alias',  $result, '=');
+    $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
     $path = PathAlias::load($aliasIds[0])->getPath();
     $nodeId = (int) str_replace("/node/", "", $path);
     $query = \Drupal::database()->select('menu_tree', 'menu_tree')
-      ->fields('menu_tree', ['id','parent'])
-      ->condition('route_param_key', "node=".$nodeId)
+      ->fields('menu_tree', ['id', 'parent'])
+      ->condition('route_param_key', "node=" . $nodeId)
       ->condition('menu_name', 'menu-ocha');
     $results = $query->execute();
     $menuData = $results->fetchAssoc();
-    $menuId = NUll;
-    if(isset($menuData['parent']) && empty($menuData['parent'])) {
-      $menuId = str_replace('menu_link_content:','',$menuData['id']);
+    $menuId = NULL;
+    if (isset($menuData['parent']) && empty($menuData['parent'])) {
+      $menuId = str_replace('menu_link_content:', '', $menuData['id']);
     }
     $query = \Drupal::request()->query->get('query');
     if (!empty($query)) {
       $menuId = $query;
     }
-    if(!empty($menuId)){
-      if (isset($variables['content']['#items']['menu_link_content:'.$menuId])) {
-        $variables['content']['#items']['menu_link_content:'.$menuId]['is_active_menu'] = true;
+    if (!empty($menuId)) {
+      if (isset($variables['content']['#items']['menu_link_content:' . $menuId])) {
+        $variables['content']['#items']['menu_link_content:' . $menuId]['is_active_menu'] = TRUE;
       }
     }
   }

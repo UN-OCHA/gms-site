@@ -30,8 +30,10 @@ class SanKeyForm extends FormBase {
   /**
    * Creates an DevelLocalTask object.
    *
-   * @param Drupal\gms_ocha\GraphData
+   * @param Drupal\gms_ocha\GraphData $graphData
    *   The GraphData service.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request
+   *   The request stack.
    */
   public function __construct(GraphData $graphData, RequestStack $request) {
     $this->graphData = $graphData;
@@ -47,6 +49,7 @@ class SanKeyForm extends FormBase {
       $container->get('request_stack'),
     );
   }
+
   /**
    * {@inheritdoc}
    */
@@ -108,7 +111,8 @@ class SanKeyForm extends FormBase {
       '#suffix' => '</div></div>',
     ];
     $string_year = implode('_', $years);
-    // $host = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
+    // $host = \Drupal::request()->getSchemeAndHttpHost()
+    // . \Drupal::request()->getBasePath();
     $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
     $json_url = $host . "/special/donor/chart/sankey/json/" . $string_year . "/select/select";
     $userInput = $form_state->getUserInput();

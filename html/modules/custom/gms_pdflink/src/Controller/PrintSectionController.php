@@ -7,7 +7,6 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\node\Entity\Node;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -55,15 +54,15 @@ class PrintSectionController extends ControllerBase {
    *   The entity manager.
    * @param \Drupal\Core\Render\RendererInterface $renderer
    *   The renderer service.
-   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request
    *   The request stack.
    * @param \Drupal\Core\Database\Connection $database
    *   The database connection.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request ,Connection $database) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request, Connection $database) {
     $this->entityTypeManager = $entity_type_manager;
     $this->renderer = $renderer;
-    $this->request = $request;//\Drupal::request();
+    $this->request = $request;
     $this->database = $database;
   }
 
@@ -142,7 +141,8 @@ class PrintSectionController extends ControllerBase {
                 </head>
                 <body>' . $content . '</body>
              </html>';
-      // $host = \Drupal::request()->getSchemeAndHttpHost() .  \Drupal::request()->getBasePath();
+      // $host = \Drupal::request()->getSchemeAndHttpHost()
+      // .  \Drupal::request()->getBasePath();
       $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
       $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
       $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";

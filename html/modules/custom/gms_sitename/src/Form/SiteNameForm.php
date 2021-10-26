@@ -38,6 +38,7 @@ class SiteNameForm extends FormBase {
       $container->get('database'),
     );
   }
+
   /**
    * {@inheritdoc}
    */
@@ -72,7 +73,7 @@ class SiteNameForm extends FormBase {
       '#type' => 'select',
       '#title' => $this->t('Types'),
       '#options' => $options,
-      '#default_value' => isset($sitename) ? $this->t($get_ctype) : '',
+      '#default_value' => isset($sitename) ? $get_ctype : '',
       '#empty_option' => $this->t('-select-'),
       '#description' => $this->t('Select check types'),
     ];
@@ -80,15 +81,15 @@ class SiteNameForm extends FormBase {
     $form['gms_sitename']['condition_types'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Condition'),
-      '#default_value' => isset($sitename) ? $this->t($get_condition) : '',
+      '#default_value' => isset($sitename) ? $get_condition : '',
       '#description' => '',
     ];
 
     $form['gms_sitename']['sitename'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Sitename'),
-      '#default_value' => isset($sitename) ? $this->t($get_sitename) : '',
-      '#description' => $this->t(''),
+      '#default_value' => isset($sitename) ? $get_sitename : '',
+      '#description' => '',
     ];
 
     $form['actions'] = [

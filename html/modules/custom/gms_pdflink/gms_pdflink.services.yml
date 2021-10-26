@@ -6,4 +6,3 @@ services:
 #  page_print.page_builder:
 #     class: Drupal\gms_pdflink\PageBuilder
 #     arguments: ['@entity_print.renderer_factory', '@event_dispatcher', '@string_translation']
-

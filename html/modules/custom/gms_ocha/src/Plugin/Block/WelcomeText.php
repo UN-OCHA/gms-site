@@ -32,14 +32,14 @@ class WelcomeText extends BlockBase implements ContainerFactoryPluginInterface {
    */
   protected $entityTypeManager;
 
-
   /**
    * Entity Manager call.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountInterface $current_user, EntityTypeManager $entityTypeManager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountInterface $currentUser, EntityTypeManager $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->currentUser = $current_user;
+    $this->currentUser = $currentUser;
     $this->entityTypeManager = $entityTypeManager;
+
   }
 
   /**
@@ -53,8 +53,6 @@ class WelcomeText extends BlockBase implements ContainerFactoryPluginInterface {
    *   The plugin Id.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Session\AccountInterface $current_user
-   *   Current user.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(

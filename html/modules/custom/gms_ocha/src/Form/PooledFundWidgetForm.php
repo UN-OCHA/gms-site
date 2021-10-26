@@ -22,15 +22,17 @@ class PooledFundWidgetForm extends FormBase {
   /**
    * The query.
    *
-   * @var Drupal\gms_ocha\GraphData
+   * @var Drupal\Core\Cache\CacheFactory
    */
   private $cache;
 
   /**
    * Creates an DevelLocalTask object.
    *
-   * @param Drupal\gms_ocha\GraphData
+   * @param Drupal\gms_ocha\GraphData $graphData
    *   The GraphData service.
+   * @param Drupal\Core\Cache\CacheFactory $cache
+   *   The Cache service.
    */
   public function __construct(GraphData $graphData, CacheFactory $cache) {
     $this->graphData = $graphData;

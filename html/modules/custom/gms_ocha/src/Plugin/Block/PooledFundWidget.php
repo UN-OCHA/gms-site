@@ -5,7 +5,6 @@ namespace Drupal\gms_ocha\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -16,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *  admin_label = @Translation("GMS Ocha Pooled Fund Widget")
  * )
  */
-class PooledFundWidget extends BlockBase  implements ContainerFactoryPluginInterface {
+class PooledFundWidget extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * The FormBuilder object.
@@ -44,8 +43,6 @@ class PooledFundWidget extends BlockBase  implements ContainerFactoryPluginInter
    *   The plugin Id.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
-   *   The form builder service.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(

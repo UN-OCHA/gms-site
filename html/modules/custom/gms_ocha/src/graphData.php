@@ -2,8 +2,6 @@
 
 namespace Drupal\gms_ocha;
 
-use Drupal\Core\Cache\CacheFactory;
-
 define('GMS_OCHA_HIGHMAP', 'http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial');
 define('GMS_OCHA_ADMIN_PARENT', 457);
 define('GMS_OCHA_STAG_POOLFUND', 'http://staging03.trigyn.com:8080/gmsapi/v1/poolfund.json');
@@ -218,7 +216,7 @@ class GraphData {
       if (empty($data)) {
         $data = $orgnization = $all_orgnization = $poolfundname = [];
         // $data['budget'][$y] = $data['beneficiaries'] = 0;
-        foreach ($results->value as  $value) {
+        foreach ($results->value as $value) {
           if ($value->AllocationYear == $y) {
             $data['budget'][$value->AllocationYear] = $data['budget'][$value->AllocationYear] + $value->Budget;
             $data['beneficiaries'] = $data['beneficiaries'] + $value->Men;
@@ -234,7 +232,7 @@ class GraphData {
         }
         $data['partners_funded'] = count($orgnization);
         $data['projects_funded'] = count($all_orgnization);
-        $data['beneficiaries_reached'] = !empty($poolfundname[$y])?array_sum($poolfundname[$y]):'0';
+        $data['beneficiaries_reached'] = !empty($poolfundname[$y]) ? array_sum($poolfundname[$y]) : '0';
         \Drupal::cache()->set('Poolfund_project_summary_' . $y, $data);
       }
     }

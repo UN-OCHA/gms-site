@@ -4,7 +4,6 @@ namespace Drupal\gms_ocha\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\path_alias\Entity\PathAlias;
@@ -72,10 +71,6 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
    *   The plugin Id.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\Core\Render\RendererInterface $renderer
-   *   The renderer service.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity manager.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -96,7 +91,6 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
     $current_path = \Drupal::service('path.current')->getPath();
     $result = $this->aliasManager->getAliasByPath($current_path);
     $query = \Drupal::entityQuery('path_alias');
-//    $query = $this->entityTypeManager->getStorage('path_alias');
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
@@ -112,9 +106,9 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
     if (isset($menuData['parent']) && empty($menuData['parent'])) {
       $menuId = str_replace('menu_link_content:', '', $menuData['id']);
     }
-    $GetQuery = \Drupal::request()->query->get('query');
-    if (!empty($GetQuery)) {
-      $menuId = $GetQuery;
+    $getQuery = \Drupal::request()->query->get('query');
+    if (!empty($getQuery)) {
+      $menuId = $getQuery;
     }
     $menu_name = 'menu-ocha';
     $menu_tree = \Drupal::menuTree();
