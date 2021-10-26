@@ -3,13 +3,14 @@
 namespace Drupal\gms_ocha\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\path_alias\Entity\PathAlias;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
  * Provides a RightSide Menu block.
@@ -50,14 +51,38 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
   protected $request;
 
   /**
+   * The config factory object.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * The config factory object.
+   *
+   * @var \Symfony\Component\DependencyInjection\ContainerInterface
+   */
+  protected $serviceData;
+
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $database;
+
+  /**
    * Entity Manager call.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, RendererInterface $renderer, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $alias_manager, RequestStack $request) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RendererInterface $renderer, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $alias_manager, RequestStack $request, ConfigFactoryInterface $config_factory, $serviceData, Connection $database) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->renderer = $renderer;
     $this->entityTypeManager = $entity_type_manager;
     $this->aliasManager = $alias_manager;
     $this->request = $request;
+    $this->configFactory = $config_factory;
+    $this->serviceData = $serviceData;
+    $this->database = $database;
   }
 
   /**
@@ -81,6 +106,9 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
       $container->get('entity_type.manager'),
       $container->get('path_alias.manager'),
       $container->get('request_stack'),
+      $container->get('config.factory'),
+      $container,
+      $container->get('database'),
     );
   }
 
@@ -88,15 +116,15 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
    * {@inheritdoc}
    */
   public function build() {
-    $current_path = \Drupal::service('path.current')->getPath();
+    $current_path = $this->serviceData->get('path.current')->getPath();
     $result = $this->aliasManager->getAliasByPath($current_path);
-    $query = \Drupal::entityQuery('path_alias');
+    $query = $this->entityTypeManager->getStorage('path_alias')->getQuery();
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
-    $path = PathAlias::load($aliasIds[0])->getPath();
+    $path = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0])->getPath();
     $nodeId = (int) str_replace("/node/", "", $path);
-    $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+    $query = $this->database->select('menu_tree', 'menu_tree')
       ->fields('menu_tree', ['id', 'parent'])
       ->condition('route_param_key', "node=" . $nodeId)
       ->condition('menu_name', 'menu-ocha');
@@ -106,12 +134,13 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
     if (isset($menuData['parent']) && empty($menuData['parent'])) {
       $menuId = str_replace('menu_link_content:', '', $menuData['id']);
     }
-    $getQuery = \Drupal::request()->query->get('query');
+    $getQuery = $this->request->getCurrentRequest()->query->get('query');
     if (!empty($getQuery)) {
       $menuId = $getQuery;
     }
     $menu_name = 'menu-ocha';
-    $menu_tree = \Drupal::menuTree();
+    // $menu_tree = \Drupal::menuTree();
+    $menu_tree = $this->serviceData->get('menu.link_tree');
     $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
     $parameters->setMinDepth(2);
     $parameters->setMaxDepth(NULL);
