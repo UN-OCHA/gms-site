@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_thumbnail_image
-    - image.style.large
+    - image.style.list_image
     - node.type.blog_entry
   module:
     - image
     - node
+    - semanticviews
     - user
 id: blog_view
 label: Blog_view
@@ -71,16 +72,22 @@ display:
             offset_label: Offset
           quantity: 9
       style:
-        type: grid
+        type: semanticviews_style
         options:
-          uses_fields: false
-          columns: 2
-          automatic_width: true
-          alignment: vertical
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
-          row_class_custom: ''
+          grouping: {  }
+          group:
+            element_type: h3
+            attributes: class|title
+          list:
+            element_type: ''
+            attributes: ''
+          row:
+            element_type: div
+            attributes: class|
+            last_every_nth: '0'
+            first_class: first
+            last_class: last
+            striping_classes: 'odd even'
       row:
         type: fields
         options:
@@ -142,7 +149,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: large
+            image_style: list_image
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -227,7 +234,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Posted By'
           exclude: false
           alter:
             alter_text: false
@@ -352,6 +359,108 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: field
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="{{ view_node }}"> Read More </a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         status:
           value: '1'
@@ -394,6 +503,21 @@ display:
           expose:
             label: ''
           granularity: second
+        changed:
+          id: changed
+          table: node_field_data
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: changed
+          plugin_id: date
       title: Blog_view
       header: {  }
       footer: {  }

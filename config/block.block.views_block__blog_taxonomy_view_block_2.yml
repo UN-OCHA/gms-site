@@ -12,7 +12,7 @@ dependencies:
 id: views_block__blog_taxonomy_view_block_2
 theme: gms_ocha_common
 region: sidebar_first
-weight: -14
+weight: -15
 provider: null
 plugin: 'views_block:blog_taxonomy_view-block_2'
 settings:

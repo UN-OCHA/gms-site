@@ -22,5 +22,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home"
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog"
     negate: true

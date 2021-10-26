@@ -1,0 +1,29 @@
+uuid: 3df2bff8-1959-4c54-9312-28c51189137a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_recent_post
+  module:
+    - system
+    - views
+  theme:
+    - gms_ocha_common
+id: views_block__blog_recent_post_block_1
+theme: gms_ocha_common
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'views_block:blog_recent_post-block_1'
+settings:
+  id: 'views_block:blog_recent_post-block_1'
+  label: 'Recent Post'
+  provider: views
+  label_display: visible
+  views_label: 'Recent Post'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/content/home-page-blog\r\n/categories/*\r\n/tags/*"
+    negate: false
