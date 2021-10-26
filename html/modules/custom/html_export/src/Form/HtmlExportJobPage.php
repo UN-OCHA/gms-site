@@ -2,17 +2,68 @@
 
 namespace Drupal\html_export\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Contains Html Export Job.
  */
 class HtmlExportJobPage extends FormBase {
+
+  /**
+   * The entity manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
+   * The file system service.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
+   */
+  protected $fileSystem;
+
+  /**
+   * Creates an DevelLocalTask object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity manager.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler.
+   * @param \Drupal\Core\File\FileSystemInterface $file_system
+   *   The file system service.
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler, FileSystemInterface $file_system) {
+    $this->entityTypeManager = $entity_type_manager;
+    $this->moduleHandler = $module_handler;
+    $this->fileSystem = $file_system;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('module_handler'),
+      $container->get('file_system')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -26,8 +77,8 @@ class HtmlExportJobPage extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = [];
-    $path_provders = \Drupal::moduleHandler()->invokeAll('html_export_add_path_provider');
-    \Drupal::moduleHandler()->alter('html_export_add_path_provider', $path_provders);
+    $path_provders = $this->moduleHandler->invokeAll('html_export_add_path_provider');
+    $this->moduleHandler->alter('html_export_add_path_provider', $path_provders);
     foreach ($path_provders as $key => $provider) {
       $options[$key] = $provider['title'];
     }
@@ -40,7 +91,7 @@ class HtmlExportJobPage extends FormBase {
     }
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => t('Export as html'),
+      '#value' => $this->t('Export as html'),
     ];
     return $form;
   }
@@ -53,8 +104,8 @@ class HtmlExportJobPage extends FormBase {
     if (file_exists($destination)) {
       unlink($destination);
     }
-    $path_provders = \Drupal::moduleHandler()->invokeAll('html_export_add_path_provider');
-    \Drupal::moduleHandler()->alter('html_export_add_path_provider', $path_provders);
+    $path_provders = $this->moduleHandler->invokeAll('html_export_add_path_provider');
+    $this->moduleHandler->alter('html_export_add_path_provider', $path_provders);
     $paths = [];
     $front_found = FALSE;
     $uid = NULL;
@@ -62,12 +113,12 @@ class HtmlExportJobPage extends FormBase {
     $menu_parameters->setMinDepth(1);
     $menu_parameters->setMaxDepth(NULL);
     $links = [];
-    $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+    $storage = $this->entityTypeManager->getStorage('menu_link_content');
     $menu_links = $storage->loadByProperties(['menu_name' => 'menu-ocha']);
     if (empty($menu_links)) {
       return $links;
     }
-    foreach ($menu_links as $mlid => $menu_link) {
+    foreach ($menu_links as $menu_link) {
       $link = [];
       if (isset($link['uri']) && substr($link['uri'], 0, 11) === 'entity:node') {
         $paths[] = substr($menu_link->link->uri, 7);
@@ -98,8 +149,8 @@ class HtmlExportJobPage extends FormBase {
     }
     $dir = 'sites/default/files/html_export';
     $export_path = $dir . '/' . $export_folder;
-    \Drupal::service('file_system')->prepareDirectory($export_path, FileSystemInterface::CREATE_DIRECTORY);
-    \Drupal::service('file_system')->prepareDirectory($export_path);
+    $this->fileSystem->prepareDirectory($export_path, FileSystemInterface::CREATE_DIRECTORY);
+    $this->fileSystem->prepareDirectory($export_path);
     $batch = [];
     $batch = $this->generateBatch2($anonymous, $export_path, $paths, $export_folder, $dom_remove = [], $uid = NULL, $front_found = FALSE, $render_errors = FALSE, $format = '');
     batch_set($batch);
@@ -109,12 +160,11 @@ class HtmlExportJobPage extends FormBase {
    * HTML Export Job Start batch Process.
    */
   public function generateBatch2($anonymous, $export_path, $paths, $export_folder, $dom_remove = [], $uid = NULL, $front_found = TRUE, $render_errors = FALSE, $format = '') {
-    $result = \Drupal::entityTypeManager()->getStorage('node')
+    $result = $this->entityTypeManager->getStorage('node')
       ->loadByProperties(['type' => 'static_page', 'status' => 1]);
     $paths = array_keys($result);
     // $paths = array_slice($paths, 0, 5, true);
     $operations = [];
-    $i = 0;
     $operations[] = ['html_export_render_pages',
       [$paths, $export_path, $dom_remove, $anonymous, $front_found, $render_errors,
       ],

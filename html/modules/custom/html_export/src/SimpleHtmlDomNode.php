@@ -591,7 +591,7 @@ class SimpleHtmlDomNode {
       $_debug_object->debug_log_entry(1);
     }
 
-    list($tag, $id, $class, $attributes, $cmb) = $selector;
+    list($tag, $id, $class, $attributes) = $selector;
     $nodes = [];
 
     // Descendant Combinator.
@@ -1170,8 +1170,6 @@ class SimpleHtmlDomNode {
    * Get display size.
    */
   public function getDisplaySize() {
-    global $_debug_object;
-
     $width = -1;
     $height = -1;
 

@@ -2,13 +2,50 @@
 
 namespace Drupal\gms_ocha\Form;
 
+use Drupal\Core\Cache\CacheFactory;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
+use Drupal\gms_ocha\GraphData;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Widget form.
  */
 class PooledFundWidgetForm extends FormBase {
+
+  /**
+   * The query.
+   *
+   * @var Drupal\gms_ocha\GraphData
+   */
+  private $graphData;
+  /**
+   * The query.
+   *
+   * @var Drupal\gms_ocha\GraphData
+   */
+  private $cache;
+
+  /**
+   * Creates an DevelLocalTask object.
+   *
+   * @param Drupal\gms_ocha\GraphData
+   *   The GraphData service.
+   */
+  public function __construct(GraphData $graphData, CacheFactory $cache) {
+    $this->graphData = $graphData;
+    $this->cache = $cache;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('gms_ocha.graph_data'),
+      $container->get('cache_factory'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -27,9 +64,9 @@ class PooledFundWidgetForm extends FormBase {
       $years[$y] = $y;
     }
     $donation = $project_summary = 0;
-    if (!empty($form_state->getValue('poolfund_years'))) {
-      $years = array_filter($form_state->getValue('poolfund_years'));
-      $years = array_filter($form_state->getValue('poolfund_years'));
+    $userInput = $form_state->getUserInput();
+    if (!empty($userInput['poolfund_years'])) {
+      $years = array_filter($userInput['poolfund_years']);
       if (isset($years['all'])) {
         $years = [];
         for ($i = 2; $i >= 0; $i--) {
@@ -38,17 +75,17 @@ class PooledFundWidgetForm extends FormBase {
         }
       }
     }
-    $budget = $beneficiaries = $projects_funded = $partners_funded = $beneficiaries_reached = 0;
+    $budget = $beneficiaries = $projects_funded = $partners_funded = $beneficiaries_reached = $donation = 0;
     $donors = $countries = [];
-    foreach ($years as $year_key => $year_value) {
-      $donations = \Drupal::service('gms_ocha.graph_data')->gmsOchaGetDonation($year_value);
+    foreach ($years as $year_value) {
+      $donations = $this->graphData->gmsOchaGetDonation($year_value);
       $donation += $donations[$year_value]['amt'];
       $donors = $donors + $donations[$year_value]['donor'];
       $countries = $countries + $donations[$year_value]['countries'];
-      $cached = \Drupal::cache()->get('Poolfund_project_summary_' . $year_value);
+      $cached = $this->cache->get('Poolfund_project_summary_' . $year_value);
       if (!isset($cached->data)) {
-        \Drupal::service('gms_ocha.graph_data')->gmsOchaGetProjectSummaryByYear();
-        $cached = \Drupal::cache()->get('Poolfund_project_summary_' . $year_value);
+        $this->graphData->gmsOchaGetProjectSummaryByYear();
+        $cached = $this->cache->get('Poolfund_project_summary_' . $year_value);
       }
       $budget += $cached->data['budget'][$year_value];
       $beneficiaries += $cached->data['beneficiaries'];

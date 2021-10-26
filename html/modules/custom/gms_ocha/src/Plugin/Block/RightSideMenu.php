@@ -3,7 +3,14 @@
 namespace Drupal\gms_ocha\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormBuilderInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\path_alias\Entity\PathAlias;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\path_alias\AliasManagerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a RightSide Menu block.
@@ -13,15 +20,83 @@ use Drupal\path_alias\Entity\PathAlias;
  *   admin_label = @Translation("RightSide Menu")
  * )
  */
-class RightSideMenu extends BlockBase {
+class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The renderer.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
+   * The entity manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Path\AliasManagerInterface
+   */
+  protected $aliasManager;
+
+  /**
+   * Retrieves the currently active request object.
+   *
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  protected $request;
+
+  /**
+   * Entity Manager call.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RendererInterface $renderer, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $alias_manager, RequestStack $request) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->renderer = $renderer;
+    $this->entityTypeManager = $entity_type_manager;
+    $this->aliasManager = $alias_manager;
+    $this->request = $request;
+  }
+
+  /**
+   * Create function.
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   A configuration array containing information about the plugin instance.
+   * @param array $configuration
+   *   The configuration.
+   * @param string $plugin_id
+   *   The plugin Id.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Render\RendererInterface $renderer
+   *   The renderer service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity manager.
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('renderer'),
+      $container->get('entity_type.manager'),
+      $container->get('path_alias.manager'),
+      $container->get('request_stack'),
+    );
+  }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
     $current_path = \Drupal::service('path.current')->getPath();
-    $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+    $result = $this->aliasManager->getAliasByPath($current_path);
     $query = \Drupal::entityQuery('path_alias');
+//    $query = $this->entityTypeManager->getStorage('path_alias');
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
@@ -37,9 +112,9 @@ class RightSideMenu extends BlockBase {
     if (isset($menuData['parent']) && empty($menuData['parent'])) {
       $menuId = str_replace('menu_link_content:', '', $menuData['id']);
     }
-    $query = \Drupal::request()->query->get('query');
-    if (!empty($query)) {
-      $menuId = $query;
+    $GetQuery = \Drupal::request()->query->get('query');
+    if (!empty($GetQuery)) {
+      $menuId = $GetQuery;
     }
     $menu_name = 'menu-ocha';
     $menu_tree = \Drupal::menuTree();
@@ -64,13 +139,13 @@ class RightSideMenu extends BlockBase {
         $val['url']->setOption("query", ['query' => $menuId]);
       }
       if (isset($val['below']) && !empty($val['below'])) {
-        foreach ($val['below'] as $bKey => $bVal) {
+        foreach ($val['below'] as $bVal) {
           $bVal['url']->setOption("query", ['query' => $menuId]);
         }
       }
       $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
     }
-    $menu_html = \Drupal::service('renderer')->render($menu);
+    $menu_html = $this->renderer->render($menu);
     $build = [
       '#theme' => 'gms_ocha_rightsidemenu',
       '#menu_html' => $menu_html,

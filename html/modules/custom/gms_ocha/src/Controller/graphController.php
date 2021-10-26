@@ -13,7 +13,7 @@ class GraphController extends ControllerBase {
    * Get the Sankeychart Data.
    */
   public function getJsonData($year = 2016, $country = NULL, $donor = NULL) {
-    $cached = \Drupal::cache()->get('Poolfund_project_sankey_chart_' . $year);
+    $cached = $this->cache()->get('Poolfund_project_sankey_chart_' . $year);
     $data = isset($cached->data) ? $cached->data : '';
     if ($data) {
       $colors = ['color1', 'color4', 'color2', 'color3', 'color5', 'color6'];
@@ -26,7 +26,7 @@ class GraphController extends ControllerBase {
         $rows = $data;
       }
 
-      foreach ($rows as $key => $value) {
+      foreach ($rows as $value) {
         if ($i == 5) {
           $i = 0;
         }
@@ -57,7 +57,7 @@ class GraphController extends ControllerBase {
           $i++;
         }
 
-        foreach ($data_donor as $donor_key => $donor_value) {
+        foreach ($data_donor as $donor_value) {
           if ($j == 5) {
             $j = 0;
           }

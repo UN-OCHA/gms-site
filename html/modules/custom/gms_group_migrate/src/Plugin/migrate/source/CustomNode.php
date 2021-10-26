@@ -21,7 +21,6 @@ class CustomNode extends Node {
   public function prepareRow(Row $row) {
     // Grab our nid and grab the Group ID from the D7 OG table.
     $nid = $row->getSourceProperty('nid');
-    $type = $row->getSourceProperty('type');
     $row->setSourceProperty('domain_access_node', $this->getDomainTargetIds($nid));
     return parent::prepareRow($row);
   }

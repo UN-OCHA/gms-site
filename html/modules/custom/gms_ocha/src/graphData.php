@@ -2,6 +2,8 @@
 
 namespace Drupal\gms_ocha;
 
+use Drupal\Core\Cache\CacheFactory;
+
 define('GMS_OCHA_HIGHMAP', 'http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial');
 define('GMS_OCHA_ADMIN_PARENT', 457);
 define('GMS_OCHA_STAG_POOLFUND', 'http://staging03.trigyn.com:8080/gmsapi/v1/poolfund.json');
@@ -26,16 +28,9 @@ define('GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY', 'http://cbpfapi.unocha.o
 class GraphData {
 
   /**
-   * Constructs a new graphData object.
-   */
-  public function __construct() {
-  }
-
-  /**
    * Get Year wise Data.
    */
   public function gmsOchaGetPoolfundYearwise($year_array = []) {
-
     $rows = $country_array = $donors_array = [];
     $cached = \Drupal::cache()->get('Poolfund_project_sankey_chart_' . implode('_', $year_array));
     $data = isset($cached->data) ? $cached->data : '';
@@ -44,7 +39,7 @@ class GraphData {
     $country_array = \Drupal::cache()->get('Poolfund_project_sankey_chart_country_' . implode('_', $year_array));
     $country_array = isset($country_array->data) ? $country_array->data : [];
     if (empty($data)) {
-      foreach ($year_array as $ykey => $yvalue) {
+      foreach ($year_array as $yvalue) {
         $cached = \Drupal::cache()->get('Poolfund_project_sankey_chart_response_' . $yvalue);
         $poolfund_response = isset($cached->data) ? $cached->data : '';
         if (empty($poolfund_response)) {
@@ -59,12 +54,12 @@ class GraphData {
             // Log the error.
             watchdog_exception('gms_ocha Http Request', $e);
           }
-          $responseStatus = $request->getStatusCode();
+          $request->getStatusCode();
           $response_data = $request->getBody()->getContents();
           $poolfund_response = json_decode($response_data, TRUE);
           \Drupal::cache()->set('Poolfund_project_sankey_chart_response_' . $yvalue, $poolfund_response);
         }
-        foreach ($poolfund_response['value'] as $key => $value) {
+        foreach ($poolfund_response['value'] as $value) {
           if (array_key_exists($value['PooledFundCodeAbbrv'], $rows)) {
             if (array_key_exists($value['GMSDonorID'], $rows[$value['PooledFundCodeAbbrv']]['donor'])) {
               $rows[$value['PooledFundCodeAbbrv']]['donor'][$value['GMSDonorID']]['name'] = $value['GMSDonorName'];
@@ -144,7 +139,7 @@ class GraphData {
       $data = [];
       if ($responseStatus == 200) {
         $poolfund_response = json_decode($response_data, TRUE);
-        foreach ($poolfund_response['value'] as $key => $value) {
+        foreach ($poolfund_response['value'] as $value) {
           if (!empty($value['PooledFundCodeAbbrv']) && $value['PooledFundCodeAbbrv'] != 'null') {
             $amount_paid = ($value['PaidAmt'] > 0) ? $value['PaidAmt'] : 0;
             if ($amount_paid == 0) {
@@ -186,7 +181,7 @@ class GraphData {
       // Log the error.
       watchdog_exception('gms_ocha JSON Request', $e);
     }
-    $responseStatus = $request->getStatusCode();
+    $request->getStatusCode();
     $response_data = $request->getBody()->getContents();
     $results = json_decode($response_data, TRUE);
     // dump($results);die;
@@ -202,11 +197,11 @@ class GraphData {
       // Log the error.
       watchdog_exception('gms_ocha JSON Request', $e);
     }
-    $responseStatus = $request_narrative->getStatusCode();
+    $request_narrative->getStatusCode();
     $response_data_narrative = $request_narrative->getBody()->getContents();
     $results_narrative = json_decode($response_data_narrative, TRUE);
     $actual_beneficiaries_total = [];
-    foreach ($results_narrative->value as $key_narrative => $value_narrative) {
+    foreach ($results_narrative->value as $value_narrative) {
       if (isset($actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName])) {
         $actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName]['ActualBeneficiariesTotal'] += $value_narrative->ActualBeneficiariesTotal;
       }
@@ -223,7 +218,7 @@ class GraphData {
       if (empty($data)) {
         $data = $orgnization = $all_orgnization = $poolfundname = [];
         // $data['budget'][$y] = $data['beneficiaries'] = 0;
-        foreach ($results->value as $key => $value) {
+        foreach ($results->value as  $value) {
           if ($value->AllocationYear == $y) {
             $data['budget'][$value->AllocationYear] = $data['budget'][$value->AllocationYear] + $value->Budget;
             $data['beneficiaries'] = $data['beneficiaries'] + $value->Men;
@@ -239,7 +234,7 @@ class GraphData {
         }
         $data['partners_funded'] = count($orgnization);
         $data['projects_funded'] = count($all_orgnization);
-        $data['beneficiaries_reached'] = array_sum($poolfundname[$y]);
+        $data['beneficiaries_reached'] = !empty($poolfundname[$y])?array_sum($poolfundname[$y]):'0';
         \Drupal::cache()->set('Poolfund_project_summary_' . $y, $data);
       }
     }

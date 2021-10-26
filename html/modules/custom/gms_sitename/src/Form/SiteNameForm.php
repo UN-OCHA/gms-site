@@ -2,15 +2,42 @@
 
 namespace Drupal\gms_sitename\Form;
 
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Link;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * SiteName form.
  */
 class SiteNameForm extends FormBase {
 
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $database;
+
+  /**
+   * Creates a ContentHasher object.
+   *
+   * @param \Drupal\Core\Database\Connection $database
+   *   The database connection.
+   */
+  public function __construct(Connection $database) {
+    $this->database = $database;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('database'),
+    );
+  }
   /**
    * {@inheritdoc}
    */
@@ -23,7 +50,7 @@ class SiteNameForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, $sitename = NULL) {
     if ($sitename) {
-      $query = \Drupal::database()->select('gms_sitename_data', 'gs');
+      $query = $this->database->select('gms_sitename_data', 'gs');
       $query->fields('gs', ['id', 'check_type', 'condition_type', 'sitename']);
       $query->condition('gs.sitename', $sitename);
       $result = $query->execute()->fetchAll();
@@ -54,7 +81,7 @@ class SiteNameForm extends FormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Condition'),
       '#default_value' => isset($sitename) ? $this->t($get_condition) : '',
-      '#description' => $this->t(''),
+      '#description' => '',
     ];
 
     $form['gms_sitename']['sitename'] = [
@@ -77,18 +104,18 @@ class SiteNameForm extends FormBase {
       '#value' => isset($sitename) ? $this->t('Update') : $this->t('Submit'),
     ];
 
-    $query = \Drupal::database()->select('gms_sitename_data', 'gs');
+    $query = $this->database->select('gms_sitename_data', 'gs');
     $query->fields('gs', ['id', 'check_type', 'condition_type', 'sitename']);
     $pager = $query->extend('Drupal\Core\Database\Query\PagerSelectExtender')->limit(10);
     $results = $pager->execute()->fetchAll();
     $output = [];
     $header = [
-      'ID' => t('ID'),
-      'Type' => t('Type'),
-      'Condition' => t('Condition'),
-      'Site Name' => t('Site Name'),
-      'Operation' => t('Operation'),
-      '' => t(''),
+      'ID' => $this->t('ID'),
+      'Type' => $this->t('Type'),
+      'Condition' => $this->t('Condition'),
+      'Site Name' => $this->t('Site Name'),
+      'Operation' => $this->t('Operation'),
+      '' => '',
     ];
 
     foreach ($results as $result) {
@@ -109,7 +136,7 @@ class SiteNameForm extends FormBase {
       '#header' => $header,
       '#rows' => $output,
       '#weight' => 100,
-      '#empty' => t('No records found'),
+      '#empty' => $this->t('No records found'),
     ];
     $form['pager'] = [
       '#type' => 'pager',
@@ -134,7 +161,7 @@ class SiteNameForm extends FormBase {
       $form_state->setErrorByName('check_type', $this->t('Please Set Sitename.'));
     }
     else {
-      $query = \Drupal::database()->select('gms_sitename_data', 'gs');
+      $query = $this->database->select('gms_sitename_data', 'gs');
       $query->fields('gs', ['sitename']);
       $query->condition('gs.sitename', $sitename);
       $query->condition('gs.condition_type', $condition_type);
@@ -160,22 +187,22 @@ class SiteNameForm extends FormBase {
       'sitename' => $sitename,
     ];
     if ($site_id != '') {
-      $query = \Drupal::database();
+      $query = $this->database;
       $query->update('gms_sitename_data')
         ->fields($data)
         ->condition('id', $site_id)
         ->execute();
       if ($query) {
-        \Drupal::messenger()->addMessage('Sitename record updated successfully.');
+        $this->messenger()->addMessage('Sitename record updated successfully.');
       }
     }
     else {
-      $query = \Drupal::database();
+      $query = $this->database;
       $query->insert('gms_sitename_data')
         ->fields($data)
         ->execute();
       if ($query) {
-        \Drupal::messenger()->addMessage('Sitename record added successfully.');
+        $this->messenger()->addMessage('Sitename record added successfully.');
       }
     }
   }
@@ -184,7 +211,7 @@ class SiteNameForm extends FormBase {
    * Load the site name data.
    */
   public function sitenameLoad($sitename_id) {
-    $query = \Drupal::database()->select('gms_sitename_data', 'gs');
+    $query = $this->database->select('gms_sitename_data', 'gs');
     $query->fields('gs', []);
     $query->condition('gs.id', $sitename_id);
     $result = $query->execute()->fetchAll();

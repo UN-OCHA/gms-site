@@ -331,7 +331,6 @@ class SimpleHtmlDom {
   $defaultBRText = DEFAULT_BR_TEXT,
   $defaultSpanText = DEFAULT_SPAN_TEXT,
   $options = 0) {
-    global $_debug_object;
 
     // Prepare.
     $this->prepare($str, $lowercase, $defaultBRText, $defaultSpanText);

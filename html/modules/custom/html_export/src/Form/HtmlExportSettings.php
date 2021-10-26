@@ -2,14 +2,45 @@
 
 namespace Drupal\html_export\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 
 /**
  * Contains  Html Export Settings.
  */
 class HtmlExportSettings extends ConfigFormBase {
+
+
+  /**
+   * The entity manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Creates an DevelLocalTask object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity manager.
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+    );
+  }
+
 
   /**
    * {@inheritdoc}
@@ -48,8 +79,7 @@ class HtmlExportSettings extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $options = [];
-    $types = \Drupal::entityTypeManager()
-      ->getStorage('node_type')
+    $types = $this->entityTypeManager->getStorage('node_type')
       ->loadMultiple();
     foreach ($types as $key => $type) {
       $options[$key] = $type->get('name');
@@ -57,22 +87,22 @@ class HtmlExportSettings extends ConfigFormBase {
     $form['html_export_available_types'] = [
       '#type' => 'select',
       '#multiple' => TRUE,
-      '#title' => t('Type based selectors'),
-      '#default_value' => \Drupal::config('html_export.settings')->get('html_export_available_types'),
+      '#title' => $this->t('Type based selectors'),
+      '#default_value' => $this->config('html_export.settings')->get('html_export_available_types'),
       '#options' => $options,
-      '#description' => t('Select the types that are available for publishing as options.'),
+      '#description' => $this->t('Select the types that are available for publishing as options.'),
     ];
     $form['html_export_other_paths'] = [
       '#type' => 'textarea',
-      '#title' => t('Other paths to export'),
-      '#description' => t("Provide one path per line of additional paths to export."),
-      '#default_value' => \Drupal::config('html_export.settings')->get('html_export_other_paths'),
+      '#title' => $this->t('Other paths to export'),
+      '#description' => $this->t("Provide one path per line of additional paths to export."),
+      '#default_value' => $this->config('html_export.settings')->get('html_export_other_paths'),
     ];
     $form['html_export_dom_remove'] = [
       '#type' => 'textarea',
-      '#title' => t('Default dom removal'),
-      '#description' => t("Supply a css style selector to target the removal of. This is especially useful for removing things like the admin toolbar, tabs, or other elements you don't want to have exported. One selectors per line."),
-      '#default_value' => \Drupal::config('html_export.settings')->get('html_export_dom_remove'),
+      '#title' => $this->t('Default dom removal'),
+      '#description' => $this->t("Supply a css style selector to target the removal of. This is especially useful for removing things like the admin toolbar, tabs, or other elements you don't want to have exported. One selectors per line."),
+      '#default_value' => $this->config('html_export.settings')->get('html_export_dom_remove'),
     ];
     return parent::buildForm($form, $form_state);
   }

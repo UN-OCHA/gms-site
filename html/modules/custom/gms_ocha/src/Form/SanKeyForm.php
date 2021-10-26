@@ -4,12 +4,49 @@ namespace Drupal\gms_ocha\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
+use Drupal\gms_ocha\GraphData;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Sankey chart form.
  */
 class SanKeyForm extends FormBase {
 
+  /**
+   * The query.
+   *
+   * @var Drupal\gms_ocha\GraphData
+   */
+  private $graphData;
+
+  /**
+   * Retrieves the currently active request object.
+   *
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  protected $request;
+
+  /**
+   * Creates an DevelLocalTask object.
+   *
+   * @param Drupal\gms_ocha\GraphData
+   *   The GraphData service.
+   */
+  public function __construct(GraphData $graphData, RequestStack $request) {
+    $this->graphData = $graphData;
+    $this->request = $request;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('gms_ocha.graph_data'),
+      $container->get('request_stack'),
+    );
+  }
   /**
    * {@inheritdoc}
    */
@@ -36,7 +73,7 @@ class SanKeyForm extends FormBase {
         $years = $years_state;
       }
     }
-    list($countries, $donors) = \Drupal::service('gms_ocha.graph_data')->gmsOchaGetPoolfundYearwise($years);
+    list($countries, $donors) = $this->graphData->gmsOchaGetPoolfundYearwise($years);
     $form['message_element'] = [
       '#prefix' => '<div class="container"><div class="row"><div class="poolfund-sankey-title">',
       '#suffix' => '</div>',
@@ -71,7 +108,8 @@ class SanKeyForm extends FormBase {
       '#suffix' => '</div></div>',
     ];
     $string_year = implode('_', $years);
-    $host = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
+    // $host = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
+    $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
     $json_url = $host . "/special/donor/chart/sankey/json/" . $string_year . "/select/select";
     $userInput = $form_state->getUserInput();
     if (isset($userInput['country']) || isset($userInput['donor'])) {
