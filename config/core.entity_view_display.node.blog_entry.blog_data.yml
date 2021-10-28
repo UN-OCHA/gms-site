@@ -1,9 +1,10 @@
-uuid: dd45f18a-1369-4099-8091-b3d3cd165a6e
+uuid: 657322bf-015b-44de-aa28-c913d9142e75
 langcode: en
 status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.blog_data
     - field.field.node.blog_entry.body
     - field.field.node.blog_entry.comment
     - field.field.node.blog_entry.field_categories
@@ -14,51 +15,76 @@ dependencies:
     - field.field.node.blog_entry.field_post_layout
     - field.field.node.blog_entry.field_tags
     - field.field.node.blog_entry.field_thumbnail_image
-    - image.style.large
     - node.type.blog_entry
   module:
+    - comment
     - image
+    - text
     - user
     - video_embed_field
-id: node.blog_entry.teaser
+id: node.blog_entry.blog_data
 targetEntityType: node
 bundle: blog_entry
-mode: teaser
+mode: blog_data
 content:
-  field_embedded_video:
-    type: video_embed_field_video
-    weight: 2
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment:
+    type: comment_default
+    weight: 5
     region: content
     label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+  field_categories:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_embedded_video:
+    type: video_embed_field_video
+    weight: 4
+    region: content
+    label: hidden
     settings:
       responsive: true
       width: 854
       height: 480
       autoplay: true
     third_party_settings: {  }
-  field_thumbnail_image:
+  field_image1:
     type: image
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: large
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
-  links:
-    weight: 1
+  field_tags:
+    type: entity_reference_label
+    weight: 2
     region: content
-    settings: {  }
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
 hidden:
-  body: true
-  comment: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_categories: true
-  field_image1: true
   field_page_header_bg_image: true
   field_page_header_style: true
   field_post_layout: true
-  field_tags: true
+  field_thumbnail_image: true
+  links: true

@@ -21,6 +21,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  ds_switch_view_mode: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
@@ -46,6 +47,7 @@ module:
   imce: 0
   inline_entity_form: 0
   jquery_ui: 0
+  layout_discovery: 0
   libraries: 0
   link: 0
   maintenance200: 0
@@ -103,7 +105,9 @@ module:
   views_block_area: 0
   views_ui: 0
   workflows: 0
+  ds: 1
   pathauto: 1
+  ds_extras: 2
   views: 10
   minimal: 1000
 theme:

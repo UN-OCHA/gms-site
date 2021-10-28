@@ -1,26 +1,26 @@
-uuid: 3df2bff8-1959-4c54-9312-28c51189137a
+uuid: 046efe01-d328-4c05-a4ad-4138196cdd89
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.blog_recent_post
+    - views.view.blog_taxonomy_view
   module:
     - ctools
     - views
   theme:
     - gms_ocha_common
-id: views_block__blog_recent_post_block_1
+id: views_block__blog_taxonomy_view_block_1_2
 theme: gms_ocha_common
 region: sidebar_first
-weight: -16
+weight: -19
 provider: null
-plugin: 'views_block:blog_recent_post-block_1'
+plugin: 'views_block:blog_taxonomy_view-block_1'
 settings:
-  id: 'views_block:blog_recent_post-block_1'
-  label: 'Recent Post'
+  id: 'views_block:blog_taxonomy_view-block_1'
+  label: Categories
   provider: views
   label_display: visible
-  views_label: 'Recent Post'
+  views_label: Categories
   items_per_page: none
 visibility:
   'entity_bundle:taxonomy_term':

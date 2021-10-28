@@ -1,9 +1,10 @@
-uuid: 0f39502e-47d4-4d49-be61-2f251bb46249
+uuid: b2e5d5d3-fbb0-4254-b40f-8ae33c985fee
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
     - field.field.node.blog_entry.body
     - field.field.node.blog_entry.comment
     - field.field.node.blog_entry.field_categories
@@ -17,45 +18,68 @@ dependencies:
     - node.type.blog_entry
   module:
     - comment
+    - ds
     - image
     - text
     - user
     - video_embed_field
-id: node.blog_entry.default
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_image1
+        - node_title
+        - 'dynamic_token_field:node-author_info'
+        - body
+        - comment
+        - field_embedded_video
+    fields:
+      'dynamic_token_field:node-author_info':
+        plugin_id: 'dynamic_token_field:node-author_info'
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.blog_entry.full
 targetEntityType: node
 bundle: blog_entry
-mode: default
+mode: full
 content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
   comment:
     type: comment_default
-    weight: 5
+    weight: 4
     region: content
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_categories:
-    type: entity_reference_label
-    weight: 3
+  field_embedded_video:
+    type: video_embed_field_lazyload
+    weight: 5
     region: content
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-  field_embedded_video:
-    type: video_embed_field_video
-    weight: 4
-    region: content
-    label: hidden
-    settings:
+      image_style: ''
+      link_image_to: ''
       responsive: true
       width: 854
       height: 480
@@ -70,20 +94,14 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_label
-    weight: 2
-    region: content
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_categories: true
   field_page_header_bg_image: true
   field_page_header_style: true
   field_post_layout: true
+  field_tags: true
   field_thumbnail_image: true
   links: true

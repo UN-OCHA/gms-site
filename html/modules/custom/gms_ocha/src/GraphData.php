@@ -6,6 +6,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use GuzzleHttp\Client;
 use Symfony\Component\HttpFoundation\RequestStack;
+use GuzzleHttp\Exception\RequestException;
 
 define('GMS_OCHA_HIGHMAP', 'http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial');
 define('GMS_OCHA_ADMIN_PARENT', 457);
@@ -225,67 +226,68 @@ class GraphData {
       $request = $client->request('GET', $url, $headers);
     }
     catch (RequestException $e) {
-      // Log the error.
       watchdog_exception('gms_ocha JSON Request', $e);
     }
-    $request->getStatusCode();
-    $response_data = $request->getBody()->getContents();
-    $results = json_decode($response_data, TRUE);
-    // dump($results);die;
-    // Narrative Report Summary
-    // $url_narrative = GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY; //.
-    $url_narrative = $host . '/sites/default/files/NarrativeReportSummary.json';
-    $headers = ['Accept' => 'application/json; charset=utf-8'];
-    try {
-      $client_narrative = $this->httpClient;
-      $request_narrative = $client_narrative->request('GET', $url_narrative, $headers);
-    }
-    catch (RequestException $e) {
-      // Log the error.
-      watchdog_exception('gms_ocha JSON Request', $e);
-    }
-    $request_narrative->getStatusCode();
-    $response_data_narrative = $request_narrative->getBody()->getContents();
-    $results_narrative = json_decode($response_data_narrative, TRUE);
-    $actual_beneficiaries_total = [];
-    foreach ($results_narrative->value as $value_narrative) {
-      if (isset($actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName])) {
-        $actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName]['ActualBeneficiariesTotal'] += $value_narrative->ActualBeneficiariesTotal;
+    if (!empty($request) && $request->getStatusCode() == 200) {
+      $response_data = $request->getBody()->getContents();
+      $results = json_decode($response_data, TRUE);
+      // Narrative Report Summary
+      // $url_narrative = GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY; //.
+      $url_narrative = $host . '/sites/default/files/NarrativeReportSummary.json';
+      $headers = ['Accept' => 'application/json; charset=utf-8'];
+      try {
+        $client_narrative = $this->httpClient;
+        $request_narrative = $client_narrative->request('GET', $url_narrative, $headers);
       }
-      else {
-        $actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName]['ActualBeneficiariesTotal'] = $value_narrative->ActualBeneficiariesTotal;
+      catch (RequestException $e) {
+        // Log the error.
+        watchdog_exception('gms_ocha JSON Request', $e);
       }
-    }
-
-    for ($i = 2; $i >= 0; $i--) {
-      $y = date("Y", strtotime("-" . $i . " year"));
-
-      $cached = $this->cache->get('Poolfund_project_summary_' . $y);
-      $data = isset($cached->data) ? $cached->data : '';
-      if (empty($data)) {
-        $data = $orgnization = $all_orgnization = $poolfundname = [];
-        // $data['budget'][$y] = $data['beneficiaries'] = 0;
-        foreach ($results->value as $value) {
-          if ($value->AllocationYear == $y) {
-            $data['budget'][$value->AllocationYear] = $data['budget'][$value->AllocationYear] + $value->Budget;
-            $data['beneficiaries'] = $data['beneficiaries'] + $value->Men;
-            $data['beneficiaries'] = $data['beneficiaries'] + $value->Women;
-            $data['beneficiaries'] = $data['beneficiaries'] + $value->Boys;
-            $data['beneficiaries'] = $data['beneficiaries'] + $value->Girls;
-            $all_orgnization[] = $value->OrganizationName;
-            $orgnization[$value->OrganizationName] = $value->OrganizationName;
-            if (isset($actual_beneficiaries_total[$y][$value->PooledFundName])) {
-              $poolfundname[$y][$value->PooledFundName] = $actual_beneficiaries_total[$y][$value->PooledFundName]['ActualBeneficiariesTotal'];
-            }
+      if (!empty($request_narrative) && $request_narrative->getStatusCode() == 200) {
+        $request_narrative->getStatusCode();
+        $response_data_narrative = $request_narrative->getBody()->getContents();
+        $results_narrative = json_decode($response_data_narrative, TRUE);
+        $actual_beneficiaries_total = [];
+        foreach ($results_narrative->value as $value_narrative) {
+          if (isset($actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName])) {
+            $actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName]['ActualBeneficiariesTotal'] += $value_narrative->ActualBeneficiariesTotal;
+          }
+          else {
+            $actual_beneficiaries_total[$value_narrative->AllocationYear][$value_narrative->PooledFundName]['ActualBeneficiariesTotal'] = $value_narrative->ActualBeneficiariesTotal;
           }
         }
-        $data['partners_funded'] = count($orgnization);
-        $data['projects_funded'] = count($all_orgnization);
-        $data['beneficiaries_reached'] = !empty($poolfundname[$y]) ? array_sum($poolfundname[$y]) : '0';
-        $this->cache->set('Poolfund_project_summary_' . $y, $data);
+
+        for ($i = 2; $i >= 0; $i--) {
+          $y = date("Y", strtotime("-" . $i . " year"));
+
+          $cached = $this->cache->get('Poolfund_project_summary_' . $y);
+          $data = isset($cached->data) ? $cached->data : '';
+          if (empty($data)) {
+            $data = $orgnization = $all_orgnization = $poolfundname = [];
+            // $data['budget'][$y] = $data['beneficiaries'] = 0;
+            foreach ($results->value as $value) {
+              if ($value->AllocationYear == $y) {
+                $data['budget'][$value->AllocationYear] = $data['budget'][$value->AllocationYear] + $value->Budget;
+                $data['beneficiaries'] = $data['beneficiaries'] + $value->Men;
+                $data['beneficiaries'] = $data['beneficiaries'] + $value->Women;
+                $data['beneficiaries'] = $data['beneficiaries'] + $value->Boys;
+                $data['beneficiaries'] = $data['beneficiaries'] + $value->Girls;
+                $all_orgnization[] = $value->OrganizationName;
+                $orgnization[$value->OrganizationName] = $value->OrganizationName;
+                if (isset($actual_beneficiaries_total[$y][$value->PooledFundName])) {
+                  $poolfundname[$y][$value->PooledFundName] = $actual_beneficiaries_total[$y][$value->PooledFundName]['ActualBeneficiariesTotal'];
+                }
+              }
+            }
+            $data['partners_funded'] = count($orgnization);
+            $data['projects_funded'] = count($all_orgnization);
+            $data['beneficiaries_reached'] = !empty($poolfundname[$y]) ? array_sum($poolfundname[$y]) : '0';
+            $this->cache->set('Poolfund_project_summary_' . $y, $data);
+          }
+        }
       }
+      return $data;
     }
-    return $data;
   }
 
 }

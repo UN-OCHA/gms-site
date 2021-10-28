@@ -40,6 +40,7 @@
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "9.2.7",
         "drupal/ctools": "^3.7",
+        "drupal/ds": "^3.13",
         "drupal/dxpr_theme": "^1.2",
         "drupal/entity_browser": "^2.6",
         "drupal/environment_indicator": "^4.0",

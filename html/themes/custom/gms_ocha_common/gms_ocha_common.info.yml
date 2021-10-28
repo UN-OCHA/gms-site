@@ -16,6 +16,7 @@ regions:
   header_logo: Header logo
   header_navigation: Header navigation
   header_second: Header Second
+  header_third: Header Third
   navigation: Navigation Bar
   highlighted: Highlighted
   banner: Banner

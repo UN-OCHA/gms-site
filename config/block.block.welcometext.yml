@@ -9,7 +9,7 @@ dependencies:
 id: welcometext
 theme: gms_ocha_common
 region: header_second
-weight: 0
+weight: -18
 provider: null
 plugin: welcome_text
 settings:
