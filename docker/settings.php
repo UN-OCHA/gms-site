@@ -29,6 +29,7 @@ $databases['default']['default'] = array_filter([
   'prefix'    => getenv('DRUPAL_DB_PREFIX'),
   'charset'   => getenv('DRUPAL_DB_CHARSET'),
   'collation' => getenv('DRUPAL_DB_COLLATION'),
+  'sql_mode'  => "SET sql_mode = 'ANSI,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'",
 ]);
 
 // Load everything else from snippets under /srv/www/shared/settings.
