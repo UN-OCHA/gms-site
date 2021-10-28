@@ -122,53 +122,60 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
-    $path = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0])->getPath();
-    $nodeId = (int) str_replace("/node/", "", $path);
-    $query = $this->database->select('menu_tree', 'menu_tree')
-      ->fields('menu_tree', ['id', 'parent'])
-      ->condition('route_param_key', "node=" . $nodeId)
-      ->condition('menu_name', 'menu-ocha');
-    $results = $query->execute();
-    $menuData = $results->fetchAssoc();
-    $menuId = NULL;
-    if (isset($menuData['parent']) && empty($menuData['parent'])) {
-      $menuId = str_replace('menu_link_content:', '', $menuData['id']);
-    }
-    $getQuery = $this->request->getCurrentRequest()->query->get('query');
-    if (!empty($getQuery)) {
-      $menuId = $getQuery;
-    }
-    $menu_name = 'menu-ocha';
-    // $menu_tree = \Drupal::menuTree();
-    $menu_tree = $this->serviceData->get('menu.link_tree');
-    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-    $parameters->setMinDepth(2);
-    $parameters->setMaxDepth(NULL);
-    $tree = $menu_tree->load($menu_name, $parameters);
-    $manipulators = [
-      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-      ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
-    ];
-    $treeOld = $menu_tree->transform($tree, $manipulators);
-    $manipulators = [
-      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-      ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-      ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
-    ];
-    $tree = $menu_tree->transform($tree, $manipulators);
-    $menu = $menu_tree->build($tree);
-    foreach ($menu['#items'] as $key => $val) {
-      if (!empty($menuId)) {
-        $val['url']->setOption("query", ['query' => $menuId]);
+
+    $path_var = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0]);
+    if (is_object($path_var)) {
+      $path = $path_var->getPath();
+      $nodeId = (int) str_replace("/node/", "", $path);
+      $query = $this->database->select('menu_tree', 'menu_tree')
+        ->fields('menu_tree', ['id', 'parent'])
+        ->condition('route_param_key', "node=" . $nodeId)
+        ->condition('menu_name', 'menu-ocha');
+      $results = $query->execute();
+      $menuData = $results->fetchAssoc();
+      $menuId = NULL;
+      if (isset($menuData['parent']) && empty($menuData['parent'])) {
+        $menuId = str_replace('menu_link_content:', '', $menuData['id']);
       }
-      if (isset($val['below']) && !empty($val['below'])) {
-        foreach ($val['below'] as $bVal) {
-          $bVal['url']->setOption("query", ['query' => $menuId]);
+      $getQuery = $this->request->getCurrentRequest()->query->get('query');
+      if (!empty($getQuery)) {
+        $menuId = $getQuery;
+      }
+      $menu_name = 'menu-ocha';
+      // $menu_tree = \Drupal::menuTree();
+      $menu_tree = $this->serviceData->get('menu.link_tree');
+      $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+      $parameters->setMinDepth(2);
+      $parameters->setMaxDepth(NULL);
+      $tree = $menu_tree->load($menu_name, $parameters);
+      $manipulators = [
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
+      ];
+      $treeOld = $menu_tree->transform($tree, $manipulators);
+      $manipulators = [
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+        ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
+      ];
+      $tree = $menu_tree->transform($tree, $manipulators);
+      $menu = $menu_tree->build($tree);
+      foreach ($menu['#items'] as $key => $val) {
+        if (!empty($menuId)) {
+          $val['url']->setOption("query", ['query' => $menuId]);
         }
+        if (isset($val['below']) && !empty($val['below'])) {
+          foreach ($val['below'] as $bVal) {
+            $bVal['url']->setOption("query", ['query' => $menuId]);
+          }
+        }
+        $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
       }
-      $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
+      $menu_html = $this->renderer->render($menu);
     }
-    $menu_html = $this->renderer->render($menu);
+    else{
+      $menu_html = '';
+    }
     $build = [
       '#theme' => 'gms_ocha_rightsidemenu',
       '#menu_html' => $menu_html,
