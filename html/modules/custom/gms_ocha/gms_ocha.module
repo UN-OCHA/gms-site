@@ -45,6 +45,11 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
         'menu_html' => NULL,
       ],
     ],
+    'page_title_blog' => [
+      'variables' => [
+        'pagetitle' => NULL,
+      ],
+    ],
   ];
 }
 

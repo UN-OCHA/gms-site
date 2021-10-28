@@ -13,7 +13,7 @@ dependencies:
 id: ocha_5
 theme: gms_ocha_common
 region: sidebar_first
-weight: -10
+weight: -11
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:

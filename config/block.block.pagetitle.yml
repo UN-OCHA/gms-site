@@ -10,7 +10,7 @@ dependencies:
 id: pagetitle
 theme: gms_ocha_common
 region: navigation
-weight: 0
+weight: -19
 provider: null
 plugin: page_title_block
 settings:
@@ -28,5 +28,5 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "<front>\r\n/content/home"
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog\r\n/tags/*\r\n/categories/*"
     negate: true

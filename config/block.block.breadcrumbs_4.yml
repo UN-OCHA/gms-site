@@ -1,18 +1,16 @@
-uuid: d2c0f9ec-8b34-483a-acd4-4c15fa1246ac
+uuid: 97835554-e141-4223-a6a0-bfed6cb068ed
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - ctools
     - system
   theme:
     - gms_ocha_common
-_core:
-  default_config_hash: KpBqqBIyNPTNavLklXPC1-cUAeuwAbBOsrvGussFh1E
-id: gms_ocha_common_breadcrumbs
+id: breadcrumbs_4
 theme: gms_ocha_common
-region: page_title
-weight: -19
+region: header_third
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -21,14 +19,10 @@ settings:
   provider: system
   label_display: '0'
 visibility:
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     bundles:
-      static_page: static_page
+      blog_entry: blog_entry
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: "<front>\r\n/content/home"
-    negate: true

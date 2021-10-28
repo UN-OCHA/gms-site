@@ -34,11 +34,17 @@ function gms_ocha_common_preprocess_html(&$variables) {
         $variables['attributes']['class'][] = 'help-portal-page';
       }
     }
-    elseif ($node->getType() == 'page') {
-      $variables['attributes']['class'][] = 'blog-page-home';
+    elseif ($node->getType() == 'page' || $node->getType() == 'blog_entry') {
+      $variables['attributes']['class'][] = 'blog-page';
     }
-    elseif ($node->getType() == 'blog_entry') {
-      $variables['attributes']['class'][] = 'blog-page-internal';
+  }
+  elseif ($variables['root_path'] == 'taxonomy') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    preg_match_all('/([\d]+)/', $current_path, $match);
+    $tid = end($match[0]);
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+    if (in_array($term->bundle(), ['tags', 'categories'])) {
+      $variables['attributes']['class'] = "blog-page";
     }
   }
 }

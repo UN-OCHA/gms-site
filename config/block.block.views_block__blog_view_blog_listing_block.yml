@@ -25,5 +25,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /content/home-page-blog
+    pages: /content/gms-blog
     negate: false

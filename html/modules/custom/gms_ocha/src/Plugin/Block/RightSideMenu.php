@@ -122,9 +122,8 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
-
-    $path_var = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0]);
-    if (is_object($path_var)) {
+    if (!empty($aliasIds)) {
+      $path_var = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0]);
       $path = $path_var->getPath();
       $nodeId = (int) str_replace("/node/", "", $path);
       $query = $this->database->select('menu_tree', 'menu_tree')
@@ -173,7 +172,7 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
       }
       $menu_html = $this->renderer->render($menu);
     }
-    else{
+    else {
       $menu_html = '';
     }
     $build = [
