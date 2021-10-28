@@ -40,3 +40,11 @@ if (file_exists('/srv/www/shared/settings')) {
 }
 
 $settings['config_sync_directory'] = dirname($app_root) . '/config';
+
+$databases['default']['default']['init_commands'] = [
+  'sql_mode' => "SET sql_mode = 'ANSI,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'",
+];
+
+ini_set('allow_url_fopen', 'On');
+ini_set('memory_limit', '-1');
+ini_set('max_execution_time ', '1000');
