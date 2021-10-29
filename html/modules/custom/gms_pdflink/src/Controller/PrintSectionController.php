@@ -138,10 +138,6 @@ class PrintSectionController extends ControllerBase {
              </html>';
       // $host = \Drupal::request()->getSchemeAndHttpHost()
       // .  \Drupal::request()->getBasePath();
-      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
-      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
-      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
-      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
       $html = preg_replace('/>\s+</', "><", $html);
       $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";
       // $filepath = 'sites/default/files/temp_generate_form_pdf/' . $fileName;
