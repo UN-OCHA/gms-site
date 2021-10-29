@@ -91,7 +91,8 @@ class GraphData {
         if (empty($poolfund_response)) {
           $url = GMS_OCHA_PROD_POOLFUND_CONTRIBUTION;
           $url .= '?year=' . $yvalue;
-          $headers = ['auth' => ['ocha', 'dev']];
+          $auth = 'Basic '. base64_encode ('ocha' . ':' . 'dev');
+          $headers = ['Authorization' => $auth];
           try {
             $client = $this->httpClient;
             $request = $client->request('POST', $url, $headers);
@@ -167,7 +168,8 @@ class GraphData {
     $cached = $this->cache->get('Poolfund_donation_' . $year);
     $data = isset($cached->data) ? $cached->data : '';
     if (empty($data)) {
-      $headers = ['auth' => ['ocha', 'dev']];
+      $auth = 'Basic '. base64_encode ('ocha' . ':' . 'dev');
+      $headers = ['Authorization' => $auth];
       $url = GMS_OCHA_PROD_POOLFUND_CONTRIBUTION;
       if ($year != NULL) {
         $url .= '?year=' . $year;
@@ -220,7 +222,11 @@ class GraphData {
     // . \Drupal::request()->getBasePath();
     $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
     $url = $host . '/sites/default/files/ProjectSummary.json';
-    $headers = ['Accept' => 'application/json; charset=utf-8'];
+    $auth = 'Basic '. base64_encode ('ocha' . ':' . 'dev');
+    $headers = [
+      'Accept' => 'application/json; charset=utf-8',
+      'Authorization' => $auth,
+      ];
     try {
       $client = $this->httpClient;
       $request = $client->request('GET', $url, $headers);
@@ -234,9 +240,10 @@ class GraphData {
       // Narrative Report Summary
       // $url_narrative = GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY; //.
       $url_narrative = $host . '/sites/default/files/NarrativeReportSummary.json';
+      $auth = 'Basic '. base64_encode ('ocha' . ':' . 'dev');
       $headers = [
         'Accept' => 'application/json; charset=utf-8',
-        'auth' => ['ocha', 'dev'],
+        'Authorization' => $auth,
       ];
       try {
         $client_narrative = $this->httpClient;
