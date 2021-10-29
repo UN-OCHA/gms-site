@@ -1157,14 +1157,22 @@ a {
   -o-transition: all .5s;
   transition: all .5s; }
 
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .view-content, .view-id-taxonomy_term .view-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch; }
+
 .blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .odd, .view-display-id-blog_listing_block .even, .view-taxonomy-term .odd, .view-taxonomy-term .even {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  float: left;
   margin-top: 0;
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  width: 33%; }
 
 .blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .odd .views-field-title a, .even .views-field-title a, .view-taxonomy-term .odd .views-field-title a, .even .views-field-title a {
   color: #333;
@@ -1174,9 +1182,10 @@ a {
   letter-spacing: 1px;
   margin: 0px;
   margin-bottom: 10px;
-  text-decoration: none; }
+  text-decoration: none;
+  display: block; }
 
-.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .odd .views-field-uid, .even .views-field-uid, .view-taxonomy-term .odd .views-field-uid, .even .views-field-uid {
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .odd .views-field-nothing-1, .even .views-field-nothing-1, .view-taxonomy-term .odd .views-field-nothing-1, .even .views-field-nothing-1 {
   font-size: 12px;
   color: #585858;
   font-weight: 400;
@@ -1224,7 +1233,7 @@ a {
   padding-top: 30px;
   padding-bottom: 30px; }
 
-.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item.is-active a {
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item.is-active a, .view-id-taxonomy_term .pager li.cd-pager__item.is-active a {
   line-height: 1.42857143;
   text-decoration: none;
   background-color: #333;
@@ -1235,7 +1244,7 @@ a {
   font-size: 12px;
   padding: 8px 15px; }
 
-.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item a {
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item a, .view-id-taxonomy_term .pager li.cd-pager__item a {
   margin-left: -5px;
   line-height: 1.42857143;
   text-decoration: none;
@@ -1248,7 +1257,7 @@ a {
   padding: 8px 15px;
   text-transform: uppercase; }
 
-.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item a:hover {
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content .view-display-id-blog_listing_block .pager li.cd-pager__item a:hover, .view-id-taxonomy_term .pager li.cd-pager__item a:hover {
   background-color: #333;
   color: #fff; }
 

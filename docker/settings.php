@@ -41,3 +41,10 @@ if (file_exists('/srv/www/shared/settings')) {
 }
 
 $settings['config_sync_directory'] = dirname($app_root) . '/config';
+$settings['install_profile'] = 'standard';
+$settings['file_temp_path'] = "sites/default/files/tmp" ;
+$settings['file_public_path'] = 'sites/default/files';
+$settings['file_private_path'] = 'sites/default/files/private';
+ini_set('allow_url_fopen', 'On');
+ini_set('memory_limit', '-1');
+ini_set('max_execution_time ', '1000');
