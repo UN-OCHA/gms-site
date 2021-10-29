@@ -851,6 +851,21 @@
 .blog-page .cd-layout-container main {
     margin-top: 50px;
 }
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-sidebar-first {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.blog-page .cd-layout-container .cd-layout-content-wrapper .layout--onecol {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-content {
+    margin-left: 0;
+}
 .blog-page .cd-layout-container .blog-title-panel {
     background-color: #f8f8f8;
     padding-top: 40px;
