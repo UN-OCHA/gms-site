@@ -8,9 +8,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Dompdf\Dompdf;
-use Dompdf\Options;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Mpdf\Mpdf;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -75,9 +73,6 @@ class ViewPdfController extends ControllerBase {
    *   The entity type.
    * @param int $entity_id
    *   The entity id.
-   *
-   * @return \Symfony\Component\HttpFoundation\Response
-   *   The response object on error otherwise the Print is sent.
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
     if (!empty($entity_id) && is_numeric($entity_id)) {
@@ -110,32 +105,15 @@ class ViewPdfController extends ControllerBase {
       // .  \Drupal::request()->getBasePath();
       $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
       $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
+      $html = preg_replace('/>\s+</', "><", $html);
       $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";
-      $options = new Options();
-      $options->set('isRemoteEnabled', TRUE);
-      $options->set('defaultFont', 'Calibri');
-      $options->set('isHtml5ParserEnabled', 'TRUE');
-      $dompdf = new Dompdf($options);
-      $dompdf->load_html($html);
-      $dompdf->setPaper('B4', 'landscape');
-      $dompdf->render();
-      $output = $dompdf->output();
-      if (!is_dir('public://temp_generate_form_pdf')) {
-        mkdir("public://temp_generate_form_pdf", 0777);
-      }
-      $filepath = 'sites/default/files/temp_generate_form_pdf/' . $fileName;
-      $fp = fopen($filepath, "w+");
-      fwrite($fp, $output);
-      fclose($fp);
-      $headers = [
-        'Content-Type'     => 'application/pdf',
-        'Content-Disposition' => 'attachment;filename="' . $fileName . '"',
-      ];
-      unset($html);
-      unset($options);
-      unset($fileName);
-      unset($host);
-      return new BinaryFileResponse($filepath, 200, $headers, TRUE);
+      // $filepath = 'sites/default/files/temp_generate_form_pdf/' . $fileName;
+      $mpdf = new Mpdf(['format' => 'B4']);
+      $mpdf->curlAllowUnsafeSslRequests = TRUE;
+      $mpdf->WriteHTML($html);
+      $mpdf->AddPage('L');
+      $mpdf->Output($fileName, 'D');
+      die;
     }
     else {
       global $base_url;
