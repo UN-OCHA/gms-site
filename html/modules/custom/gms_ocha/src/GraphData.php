@@ -237,7 +237,6 @@ class GraphData {
       // Narrative Report Summary
       // $url_narrative = GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY; //.
       $url_narrative = $host . '/sites/default/files/NarrativeReportSummary.json';
-      $auth = 'Basic ' . base64_encode('ocha:dev');
       $headers = [
         'Accept' => 'application/json; charset=utf-8',
         'auth' => ['ocha', 'dev', 'Basic'],
