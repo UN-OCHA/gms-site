@@ -103,6 +103,8 @@ class ViewPdfController extends ControllerBase {
              </html>';
       // $host = \Drupal::request()->getSchemeAndHttpHost()
       // .  \Drupal::request()->getBasePath();
+      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
+      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
       $html = preg_replace('/>\s+</', "><", $html);
       $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";
       $mpdf = new Mpdf(['format' => 'B4']);

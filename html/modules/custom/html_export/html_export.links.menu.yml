@@ -2,8 +2,9 @@ html_export.job_page:
   route_name: html_export.job_page
   title: 'HTML export'
   description: 'Export paths to HTML files'
-html_export.settings:
-  route_name: html_export.settings
-  title: 'HTML export'
-  description: 'Configure how HTML is exported'
   parent: system.admin_config
+#html_export.settings:
+#  route_name: html_export.settings
+#  title: 'HTML export'
+#  description: 'Configure how HTML is exported'
+#  parent: system.admin_config
