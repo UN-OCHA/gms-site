@@ -91,7 +91,7 @@ class GraphData {
         if (empty($poolfund_response)) {
           $url = GMS_OCHA_PROD_POOLFUND_CONTRIBUTION;
           $url .= '?year=' . $yvalue;
-          $headers = [];
+          $headers = ['auth' => ['ocha', 'dev']];
           try {
             $client = $this->httpClient;
             $request = $client->request('POST', $url, $headers);
@@ -167,7 +167,7 @@ class GraphData {
     $cached = $this->cache->get('Poolfund_donation_' . $year);
     $data = isset($cached->data) ? $cached->data : '';
     if (empty($data)) {
-      $headers = [];
+      $headers = ['auth' => ['ocha', 'dev']];
       $url = GMS_OCHA_PROD_POOLFUND_CONTRIBUTION;
       if ($year != NULL) {
         $url .= '?year=' . $year;
@@ -234,7 +234,10 @@ class GraphData {
       // Narrative Report Summary
       // $url_narrative = GMS_OCHA_PROD_POOLFUND_NARRATIVEREPORTSUMMARY; //.
       $url_narrative = $host . '/sites/default/files/NarrativeReportSummary.json';
-      $headers = ['Accept' => 'application/json; charset=utf-8'];
+      $headers = [
+        'Accept' => 'application/json; charset=utf-8',
+        'auth' => ['ocha', 'dev'],
+      ];
       try {
         $client_narrative = $this->httpClient;
         $request_narrative = $client_narrative->request('GET', $url_narrative, $headers);
