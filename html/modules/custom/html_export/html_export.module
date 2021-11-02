@@ -106,7 +106,6 @@ function _html_export_node_type($type) {
  * Helper function to pull in page data.
  */
 function _html_export_get_page_data($path, $anonymous, $render_errors) {
-  $path = ltrim($path, '/');
   if ($anonymous) {
     $root = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
     $client = \Drupal::httpClient();
