@@ -398,12 +398,38 @@ a {
   display: none; }
 
 .cd-site-header {
-  background: #3070b0 url(../img/header_bg.png) no-repeat right top;
-  height: 62px;
-  margin: 0 auto;
+  color: var(--cd-default-text-color);
+  border-bottom: 6px solid var(--cd-blue-grey);
+  background: var(--cd-white);
+  z-index: 1; }
+
+.cd-site-header__actions .cd-site-header__nav-holder ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.cd-site-header__actions .cd-site-header__nav-holder ul {
+  flex: 1 0 auto; }
+
+.cd-site-header__actions .cd-site-header__nav-holder ul > li {
+  flex: 1 1 auto; }
+
+.cd-site-header__actions .cd-site-header__nav-holder ul > li > a {
   position: relative;
-  z-index: 1;
-  border: none; }
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 14px;
+  transition: background .3s ease;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  color: var(--cd-default-text-color); }
+
+.cd-site-header__actions .cd-site-header__nav-holder ul > li > a:hover {
+  background: var(--cd-blue-grey); }
 
 .header__name-and-slogan {
   float: left; }

@@ -1,0 +1,31 @@
+uuid: a8de95b7-f3af-4ae2-bbc8-666abe517808
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ocha-navigation
+  module:
+    - menu_block
+  theme:
+    - gms_ocha_common
+id: ochanavigation
+theme: gms_ocha_common
+region: header_navigation
+weight: 0
+provider: null
+plugin: 'menu_block:ocha-navigation'
+settings:
+  id: 'menu_block:ocha-navigation'
+  label: 'Ocha Navigation'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'ocha-navigation:'
+  suggestion: ocha_navigation
+  label_type: block
+  label_link: false
+visibility: {  }

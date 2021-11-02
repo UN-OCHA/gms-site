@@ -1,12 +1,13 @@
 <div class="cd-site-header">
-  <div class="cd-container">
-    {% include '@gms_ocha_common/cd/cd-header/cd-logo.html.twig' %}
+  <div class="cd-container cd-site-header__inner">
+  <div class="region-header-logo">
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
       <img src="{{ site_logo }}" alt="{{ site_name }}" aria-label="{{ 'Home'|t }}" width="100%" height="60px" />
     </a>
-	<div class="header__site-name">{{ site_slogan }}</div>
+	<span class="header__site-name">{{ site_slogan }}</span>
+	</div>
     <div class="cd-site-header__actions">
-
+	{% include '@gms_ocha_common/cd/cd-header/cd-logo.html.twig' %}
       {% if page.header_search %}
 
         {% include '@common_design/cd/cd-header/cd-search.html.twig' %}
@@ -18,3 +19,5 @@
     </div>
   </div>
 </div>
+
+
