@@ -9,6 +9,7 @@ module:
   ckeditor: 0
   ckeditor_config: 0
   ckeditor_font: 0
+  ckeditor_iframe: 0
   codemirror_editor: 0
   color: 0
   colorbutton: 0
@@ -29,6 +30,7 @@ module:
   entity_browser_entity_form: 0
   entity_browser_example: 0
   environment_indicator: 0
+  fakeobjects: 0
   features: 0
   field: 0
   field_ui: 0
@@ -71,6 +73,7 @@ module:
   modules_weight: 0
   node: 0
   noreqnewpass: 0
+  ocha_snap: 0
   options: 0
   page_cache: 0
   panelbutton: 0
@@ -84,6 +87,9 @@ module:
   semanticviews: 0
   serialization: 0
   shortcut: 0
+  social_api: 0
+  social_auth: 0
+  social_auth_hid: 0
   stage_file_proxy: 0
   superfish: 0
   syslog: 0

@@ -1,0 +1,10 @@
+header: ' '
+footer: ''
+css: ''
+debug: false
+site_user: ''
+site_pass: ''
+service_name: Drupal
+url: ''
+_core:
+  default_config_hash: SplpLuY3iXEiC0YAaVK-gSK1_luoJg_qu_7wpNd0Swc
