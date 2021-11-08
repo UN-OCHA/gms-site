@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09e6255bba7d88ca8a696e8fd01ee627",
+    "content-hash": "ef5687683c77f03d6f3851ad14dbe12b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2443,6 +2443,61 @@
             }
         },
         {
+            "name": "drupal/ckeditor_iframe",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_iframe.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_iframe-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "a6e315348eb2cc26a6c845d956b1716810b0edff"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/fakeobjects": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1592830028",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Quillen (kevinquillen)",
+                    "homepage": "https://www.drupal.org/u/kevinquillen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Brian Osborne (bkosborne)",
+                    "homepage": "https://www.drupal.org/u/bkosborne",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Adds the iFrame dialog plugin to CKEditor.",
+            "homepage": "http://drupal.org/project/ckeditor_iframe",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor_iframe",
+                "issues": "https://drupal.org/project/issues/ckeditor_iframe"
+            }
+        },
+        {
             "name": "drupal/codemirror_editor",
             "version": "1.7.0",
             "source": {
@@ -3732,6 +3787,59 @@
             "homepage": "https://www.drupal.org/project/environment_indicator",
             "support": {
                 "source": "https://git.drupalcode.org/project/environment_indicator"
+            }
+        },
+        {
+            "name": "drupal/fakeobjects",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fakeobjects.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "0a7a3ead609d1efd62f4f4803a41317970d8292d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1592829875",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Quillen (kevinquillen)",
+                    "homepage": "https://www.drupal.org/u/kevinquillen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
+                }
+            ],
+            "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
+            "homepage": "http://drupal.org/project/fakeobjects",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/fakeobjects",
+                "issues": "http://drupal.org/project/issues/fakeobjects"
             }
         },
         {
@@ -14994,6 +15102,42 @@
                 "source": "https://github.com/UN-OCHA/common_design/tree/v4.1.1"
             },
             "time": "2021-07-23T10:34:36+00:00"
+        },
+        {
+            "name": "unocha/ocha_snap",
+            "version": "v8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/ocha_snap.git",
+                "reference": "36344c92c579b69b7451d2e4d8e5c4700ec1335b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_snap/zipball/36344c92c579b69b7451d2e4d8e5c4700ec1335b",
+                "reference": "36344c92c579b69b7451d2e4d8e5c4700ec1335b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.2",
+                "drupal/core": "^8 || ^9"
+            },
+            "conflict": {
+                "drupal/drupal": "*"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "sebastian/phpcpd": "^4.1"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "support": {
+                "issues": "https://github.com/UN-OCHA/ocha_snap/issues",
+                "source": "https://github.com/UN-OCHA/ocha_snap/tree/v8.2.0"
+            },
+            "time": "2021-02-08T10:22:22+00:00"
         },
         {
             "name": "webflo/drupal-finder",
