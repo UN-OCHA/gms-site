@@ -107,7 +107,7 @@ class ViewPdfController extends ControllerBase {
         'service'      => 'gms',
         'pdfLandscape' => 'true',
       ];
-      $pdf = ocha_snap($html, $params);
+      ocha_snap($html, $params);
       die;
     }
     else {
