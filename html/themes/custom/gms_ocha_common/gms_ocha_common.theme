@@ -129,33 +129,35 @@ function gms_ocha_common_preprocess_menu(&$variables) {
             if ($nodeParent > 0) {
               $nodeData = \Drupal::entityTypeManager()->getStorage('node')->load($nodeParent);
             }
-            if ($nodeId == 191 && $nodeParent == 191 && $flg === FALSE) {
-              $variables['items'][$key]['parent_active_class'] = TRUE;
-              $variables['items'][$key]['attributes']->addClass(['active-header-link']);
-              $flg = TRUE;
-            }
-            elseif ($nodeId == $nodeParent && $flg === FALSE
-              && in_array($nodeId, [2, 808]) && $nodeParent != 191) {
-              $variables['items'][$key]['parent_active_class'] = TRUE;
-              $variables['items'][$key]['attributes']->addClass(['active-header-link']);
-              $flg = TRUE;
-            }
-            elseif ($nodeData->bundle() == $node->bundle() && $flg === FALSE
-              && !in_array($nodeId, [191, 2, 808]) && $nodeParent != 191) {
-              $variables['items'][$key]['attributes']->addClass(['active-header-link']);
-              $variables['items'][$key]['parent_active_class'] = TRUE;
-              $flg = TRUE;
-            }
-            elseif ($node->bundle() == 'blog_entry' && $flg === FALSE && $nodeParent == 808) {
-              $variables['items'][$key]['parent_active_class'] = TRUE;
-              $variables['items'][$key]['attributes']->addClass(['active-header-link']);
-              $flg = TRUE;
-            }
-            elseif ((preg_match('/categories/i', $current_path_result)
-                || preg_match('/tags/i', $current_path_result))
-              && $nodeData->bundle() == 'page' && $flg === FALSE) {
-              $variables['items'][$key]['parent_active_class'] = TRUE;
-              $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+            if ($nodeId > 0) {
+              if ($nodeId == 191 && $nodeParent == 191 && $flg === FALSE) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ($nodeId == $nodeParent && $flg === FALSE
+                && in_array($nodeId, [2, 808]) && $nodeParent != 191) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ($nodeData->bundle() == $node->bundle() && $flg === FALSE
+                && !in_array($nodeId, [191, 2, 808]) && $nodeParent != 191) {
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $flg = TRUE;
+              }
+              elseif ($node->bundle() == 'blog_entry' && $flg === FALSE && $nodeParent == 808) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ((preg_match('/categories/i', $current_path_result)
+                  || preg_match('/tags/i', $current_path_result))
+                && $nodeData->bundle() == 'page' && $flg === FALSE) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+              }
             }
           }
         }
