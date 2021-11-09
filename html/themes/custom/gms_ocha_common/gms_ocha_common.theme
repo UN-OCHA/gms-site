@@ -7,6 +7,7 @@
 
 use Drupal\path_alias\Entity\PathAlias;
 use Drupal\redirect\Entity\Redirect;
+use Drupal\Core\Url;
 
 /**
  * Preprocess the page.
@@ -39,6 +40,9 @@ function gms_ocha_common_preprocess_html(&$variables) {
     }
     elseif ($node->getType() == 'page' || $node->getType() == 'blog_entry') {
       $variables['attributes']['class'][] = 'blog-page';
+    }
+    elseif ($node->getType() == 'cbpf_pages') {
+      $variables['attributes']['class'][] = 'gms-internal-page';
     }
     $variables['attributes']['type'] = $node->getType();
   }
@@ -164,5 +168,30 @@ function gms_ocha_common_preprocess_menu(&$variables) {
       }
     }
     $variables['#cache']['max-age'] = 0;
+  }
+}
+
+/**
+ * Preprocess the Breadcrumb.
+ */
+function gms_ocha_common_preprocess_breadcrumb(&$variables) {
+  $query = \Drupal::request()->query->get('query');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!empty($query)) {
+    if ($node->getType() == 'static_page') {
+      $menu_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+      $menu_link_content = $menu_content_storage->loadByProperties(['uuid' => $query]);
+      $menu_link_content = array_values($menu_link_content);
+      $match = [];
+      preg_match_all('/([\d]+)/', $menu_link_content[0]->get('link')->uri, $match);
+      $nodeData = end($match[0]);
+      if ($nodeData > 0) {
+        $variables['breadcrumb'][1] = [
+          'text' => $menu_link_content[0]->get('title')->value,
+          'url' => Url::fromRoute('entity.node.canonical', ['node' => $nodeData]),
+        ];
+      }
+      $variables['#cache']['max-age'] = 0;
+    }
   }
 }
