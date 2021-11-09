@@ -9,7 +9,6 @@
 /html/themes/*
 !/html/themes/custom/
 
-!/html/libraries/
 
 # Misc
 /vendor
