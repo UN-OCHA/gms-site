@@ -38,7 +38,6 @@ module:
   filter: 0
   genpass: 0
   gms_group_migrate: 0
-  gms_ocha: 0
   gms_pdflink: 0
   gms_sitename: 0
   google_analytics: 0
@@ -114,6 +113,7 @@ module:
   ds: 1
   pathauto: 1
   ds_extras: 2
+  gms_ocha: 5
   views: 10
   minimal: 1000
 theme:

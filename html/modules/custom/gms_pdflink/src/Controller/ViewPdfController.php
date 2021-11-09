@@ -8,6 +8,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Mpdf\Mpdf;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -102,14 +103,24 @@ class ViewPdfController extends ControllerBase {
              </html>';
       // $host = \Drupal::request()->getSchemeAndHttpHost()
       // .  \Drupal::request()->getBasePath();
-      $params = [
-        'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
-        'media'        => 'print',
-        'output'       => 'pdf',
-        'service'      => 'gms',
-        'pdfLandscape' => 'true',
-      ];
-      ocha_snap($html, $params);
+      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
+      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
+      // $html = str_replace("src=\"/sites/", "src=\"../sites/", $html);
+      $html = preg_replace('/>\s+</', "><", $html);
+      $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";
+      $mpdf = new Mpdf(['format' => 'B4']);
+      $mpdf->curlAllowUnsafeSslRequests = TRUE;
+      $mpdf->WriteHTML($html);
+      $mpdf->AddPage('L');
+      $mpdf->Output($fileName, 'D');
+      // $params = array(
+      // 'debug'=> (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+      // 'media'       => 'print',
+      // 'output'      => 'pdf',
+      // 'service'     => 'gms',
+      // 'pdfLandscape' => 'true',
+      // );
+      // ocha_snap($html, $params);
       die;
     }
     else {
