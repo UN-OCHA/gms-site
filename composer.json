@@ -17,12 +17,70 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/colorbutton",
+                "version": "4.11.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.11.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/panelbutton",
+                "version": "4.11.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.11.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/iframe",
+                "type": "drupal-library",
+                "version": "4.16.2",
+                "dist": {
+                    "url": "https://download.ckeditor.com/iframe/releases/iframe_4.16.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/fakeobjects",
+                "type": "drupal-library",
+                "version": "4.16.2",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
         }
     ],
     "require": {
         "php": ">=8.0 || ^7.3",
+        "ckeditor-plugin/colorbutton": "^4.11",
+        "ckeditor-plugin/panelbutton": "^4.11",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.7",
+        "ckeditor-plugin/iframe": "^4.16.2",
+        "ckeditor-plugin/fakeobjects": "^4.16.2",
         "drupal-composer/preserve-paths": "^0.1.6",
         "drupal/admin_denied": "^1.1",
         "drupal/admin_toolbar": "^3.0",
