@@ -169,28 +169,30 @@ function gms_ocha_preprocess_block(&$variables) {
     $query = \Drupal::entityQuery('path_alias');
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
-    $aliasIds = array_values($aliasIds);
-    $path = PathAlias::load($aliasIds[0])->getPath();
-    $nodeId = (int) str_replace("/node/", "", $path);
-    $query = \Drupal::database()->select('menu_tree', 'menu_tree')
-      ->fields('menu_tree', ['id', 'parent'])
-      ->condition('route_param_key', "node=" . $nodeId)
-      ->condition('menu_name', 'menu-ocha');
-    $results = $query->execute();
-    $menuData = $results->fetchAssoc();
-    $menuId = NULL;
-    if (isset($menuData['parent']) && empty($menuData['parent'])) {
-      $menuId = str_replace('menu_link_content:', '', $menuData['id']);
-    }
-    $query = \Drupal::request()->query->get('query');
-    if (!empty($query)) {
-      $menuId = $query;
-    }
-    if (!empty($menuId)) {
-      if (isset($variables['content']['#items']['menu_link_content:' . $menuId])) {
-        $variables['content']['#items']['menu_link_content:' . $menuId]['is_active_menu'] = TRUE;
+    if (!empty($aliasIds)) {
+      $aliasIds = array_values($aliasIds);
+      $path = PathAlias::load($aliasIds[0])->getPath();
+      $nodeId = (int) str_replace("/node/", "", $path);
+      $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+        ->fields('menu_tree', ['id', 'parent'])
+        ->condition('route_param_key', "node=" . $nodeId)
+        ->condition('menu_name', 'menu-ocha');
+      $results = $query->execute();
+      $menuData = $results->fetchAssoc();
+      $menuId = NULL;
+      if (isset($menuData['parent']) && empty($menuData['parent'])) {
+        $menuId = str_replace('menu_link_content:', '', $menuData['id']);
       }
+      $query = \Drupal::request()->query->get('query');
+      if (!empty($query)) {
+        $menuId = $query;
+      }
+      if (!empty($menuId)) {
+        if (isset($variables['content']['#items']['menu_link_content:' . $menuId])) {
+          $variables['content']['#items']['menu_link_content:' . $menuId]['is_active_menu'] = TRUE;
+        }
+      }
+      $variables['#cache']['max-age'] = 0;
     }
-    $variables['#cache']['max-age'] = 0;
   }
 }
