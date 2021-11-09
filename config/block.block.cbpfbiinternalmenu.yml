@@ -11,8 +11,8 @@ dependencies:
     - gms_ocha_common
 id: cbpfbiinternalmenu
 theme: gms_ocha_common
-region: header_top
-weight: -12
+region: header_second
+weight: -21
 provider: null
 plugin: 'superfish:menu-cbpf-menu'
 settings:

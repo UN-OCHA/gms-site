@@ -426,28 +426,64 @@ a {
   font-weight: 700;
   text-align: left;
   text-decoration: none;
-  color: var(--cd-default-text-color); }
+  color: var(--cd-default-text-color);
+  font-family: var(--cd-font--roboto);
+  letter-spacing: 1px; }
 
 .cd-site-header__actions .cd-site-header__nav-holder ul > li > a:hover {
   background: var(--cd-blue-grey); }
 
-.header__name-and-slogan {
+.cd-site-header__actions .cd-site-header__nav-holder ul li.active-header-link a::before {
+  background: var(--cd-highlight-red);
+  position: absolute;
+  right: -1px;
+  bottom: -6px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 6px;
+  content: "";
+  transition: background .3s ease; }
+
+.cd-site-header__actions .cd-search .cd-search__btn {
+  font-family: var(--cd-font--roboto);
+  letter-spacing: 1px; }
+
+.cd-site-header .cd-site-header__inner .region-header-logo .header__name-and-slogan {
   float: left; }
 
-.header__site-name {
+.cd-site-header .cd-site-header__inner .region-header-logo .header__site-name {
   font-size: 18px;
-  color: #c1dffe !important;
-  text-transform: uppercase;
+  color: #4a4a4a !important;
+  text-transform: capitalize;
   font-weight: normal;
   display: flex;
-  padding: 23px 0 0 13px;
-  text-decoration: none !important; }
+  padding: 0 0 0 10px;
+  margin-left: 10px;
+  text-decoration: none !important;
+  border-left: 1px solid #e6ecf1;
+  font-family: var(--cd-font--roboto); }
+
+.cd-site-header .cd-site-header__inner {
+  grid-template-columns: 2fr; }
+
+.cd-site-header .cd-site-header__inner .region-header-logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center; }
+
+.cd-site-header .cd-site-header__inner .region-header-logo a {
+  width: 120px; }
 
 .cd-container {
   padding: 0; }
 
 .cd-layout-container main {
-  padding-top: 0; }
+  padding-top: 0;
+  margin-top: 10px;
+  padding-bottom: 2rem !important; }
 
 #block-welcometext {
   background: #ed833f;
@@ -465,7 +501,7 @@ a {
   background: #fff;
   border: 1px solid #8db0d4;
   display: inline-block;
-  margin: 32px 0 10px 0;
+  margin: 0 0 10px 0;
   width: 100%;
   box-sizing: border-box;
   position: relative; }
@@ -693,6 +729,10 @@ a {
   line-height: 15px; }
 
 /* Help Portal Page CSS Start */
+.help-portal-page .cd-layout-container main {
+  padding-top: 0;
+  margin-top: 0; }
+
 .help-portal-page .cd-layout-banner .region-banner {
   background: url(../img/main_img.jpg) no-repeat;
   width: 1326px;
@@ -764,8 +804,7 @@ a {
 
 .help-portal-page .cd-layout-container .navigation {
   position: relative;
-  padding: 10px 0;
-  margin-top: 22px; }
+  padding: 10px 0; }
 
 .help-portal-page .cd-layout-container .navigation ul.custom-menu- {
   margin: 0;
@@ -1004,14 +1043,13 @@ a {
   text-decoration: none;
   line-height: normal; }
 
-.help-portal-page .cd-layout-content-wrapper .cd-layout-content .block-system-main-block .node--type-static-page h1 {
+.help-portal-page .cd-layout-content-wrapper .cd-layout-content .block-page-title-blog {
   font-size: 16px;
   font-weight: bold;
   color: #c96800;
   border-bottom: 1px solid #ccc;
-  line-height: 30px;
-  padding: 0 0 5px 0;
-  margin: 0; }
+  line-height: 26px;
+  padding: 0 0 5px 0; }
 
 .help-portal-page .cd-layout-content-wrapper .cd-layout-content .block-system-main-block .node--type-static-page .field--name-body {
   font-size: 13px; }
@@ -1346,5 +1384,77 @@ a {
   margin: 0;
   letter-spacing: 1px;
   margin-bottom: 40px; }
+
+/* GMS Internal Page CSS Start */
+.gms-internal-page .cd-layout-container main {
+  margin-top: 2em; }
+
+.gms-internal-page .cd-layout-container .gms-internal-nav {
+  background-color: #f8f8f8;
+  position: relative;
+  z-index: 0; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li a::before {
+  content: "";
+  background: url(../img/fund-menu-icon.svg) no-repeat left center;
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  filter: invert(0.5);
+  margin-bottom: -1px; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li.active-trail > a::before {
+  content: "";
+  background: url(../img/fund-menu-icon-hover.svg) no-repeat left center;
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  filter: none;
+  margin-bottom: -1px; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li.sf-depth-1 a.sf-external::before {
+  content: none; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li a {
+  font-family: var(--cd-font--roboto);
+  text-decoration: none;
+  font-size: 13px;
+  color: #333;
+  font-weight: 300; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li a:hover {
+  color: #3070ae; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li.active-trail > a {
+  color: #3070ae;
+  font-weight: 500; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu a, ul.sf-menu span.nolink {
+  padding: 0.8em 1em; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu .sf-with-ul {
+  padding-right: 2em; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu li > ul {
+  background-color: #fff;
+  border-bottom: 2px solid #3070ae; }
+
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu li:hover > ul, ul.sf-menu li.sfHover > ul {
+  top: 3.1em; }
+
+.gms-internal-page .cd-layout-container .region-content article {
+  border: 5px solid #f8f8f8;
+  margin: 10px 0 15px;
+  min-height: 600px;
+  padding: 10px; }
+
+.gms-internal-page .cd-layout-container .region-content article p, article p iframe {
+  max-width: 100%; }
+
+.gms-internal-page .cd-layout-container .region-content article p iframe {
+  width: 100%; }
+
+.gms-internal-page .cd-layout-container .region-content article iframe {
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */

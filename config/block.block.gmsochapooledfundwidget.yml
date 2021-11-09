@@ -10,7 +10,7 @@ dependencies:
 id: gmsochapooledfundwidget
 theme: gms_ocha_common
 region: content
-weight: -8
+weight: -14
 provider: null
 plugin: gms_ocha_pooled_fund_widget
 settings:

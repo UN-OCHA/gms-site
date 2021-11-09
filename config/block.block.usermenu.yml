@@ -11,7 +11,7 @@ dependencies:
 id: usermenu
 theme: gms_ocha_common
 region: header_top
-weight: 0
+weight: -21
 provider: null
 plugin: 'menu_block:account'
 settings:

@@ -109,7 +109,9 @@ function _html_export_get_page_data($path, $anonymous, $render_errors) {
   if ($anonymous) {
     $root = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
     $client = \Drupal::httpClient();
-    $request = $client->get($root . $path, ['auth' => ['ocha', 'dev', 'Basic']]);
+    // $request = $client->get($root . $path,
+    // ['auth' => ['ocha', 'dev', 'Basic']]);
+    $request = $client->get($root . $path);
     $http = $request->getBody()->getContents();
     $error_codes = [403, 404, 500];
     if ($render_errors) {

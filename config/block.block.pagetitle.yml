@@ -10,7 +10,7 @@ dependencies:
 id: pagetitle
 theme: gms_ocha_common
 region: navigation
-weight: -19
+weight: -22
 provider: null
 plugin: page_title_block
 settings:
