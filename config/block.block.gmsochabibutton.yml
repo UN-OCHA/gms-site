@@ -1,33 +1,28 @@
-uuid: 83d5d967-7e16-4d45-8464-ef600238b9be
+uuid: e5574ea5-d196-425d-9aac-56132dcc282f
 langcode: en
 status: true
 dependencies:
   module:
     - gms_ocha
     - node
-    - system
   theme:
     - gms_ocha_common
-id: pagetitleblog_4
+id: gmsochabibutton
 theme: gms_ocha_common
-region: content
-weight: -17
+region: header_second
+weight: 0
 provider: null
-plugin: page_title_blog
+plugin: gms_ocha_bibutton
 settings:
-  id: page_title_blog
-  label: 'Page Title Blog'
+  id: gms_ocha_bibutton
+  label: 'GMS Ocha BiButton'
   provider: gms_ocha
   label_display: '0'
 visibility:
   node_type:
     id: node_type
     bundles:
-      static_page: static_page
+      cbpf_pages: cbpf_pages
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: /content/home
-    negate: true
