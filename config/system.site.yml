@@ -3,8 +3,8 @@ name: 'Grant Management System (GMS) Support / Help Portal'
 mail: sagar.ramgade@trigyn.com
 slogan: 'CBPF GRANT MANAGEMENT SYSTEM (GMS)'
 page:
-  403: /
-  404: /
+  403: /node/815
+  404: /node/816
   front: /node/191
 admin_compact_mode: false
 weight_select_max: 100
