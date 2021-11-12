@@ -39,14 +39,7 @@ visibility:
     id: node_type
     bundles:
       page: page
-      special_page: special_page
       static_page: static_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  error_page:
-    id: error_page
-    status_codes:
-      403: '403'
-      404: '404'
-    negate: true
