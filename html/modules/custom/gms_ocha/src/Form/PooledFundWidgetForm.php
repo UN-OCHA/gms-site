@@ -140,6 +140,8 @@ class PooledFundWidgetForm extends FormBase {
       '#title' => '',
       '#type' => 'checkboxes',
       '#options' => $options,
+	  '#prefix' => '<div id="pooled-checkboxes" class="pooled-checkboxes">',
+      '#suffix' => '</div>',
       '#default_value' => ['all'],
       '#ajax' => [
         'path' => 'gms_ocha/ajax',
@@ -156,6 +158,8 @@ class PooledFundWidgetForm extends FormBase {
       '#suffix' => '</div>',
       '#markup' => $sting,
     ];
+	$form['#prefix'] = '<div id="pooled-fund-container" class="cd-container">';
+    $form['#suffix'] = '</div>';
     return $form;
   }
 
@@ -169,38 +173,38 @@ class PooledFundWidgetForm extends FormBase {
    * {@inheritdoc}
    */
   private function generateHtml($values) {
-    $html = '<div class="row row-1">
-    <div class="pooled-fund-donation col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    $html = '<div class="cd-grid">
+    <div class="pooled-fund-donation">
       <span class="title">' . $values['donation']['title'] . '</span>
       <span class="value">' . $values['donation']['value'] . '</span>
     </div>
-    <div class="pooled-fund-allocations col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-allocations">
       <span class="title">' . $values['allocations']['title'] . '</span>
       <span class="value">' . $values['donation']['value'] . '</span>
     </div>
-    <div class="pooled-fund-donors col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-donors">
       <span class="title">' . $values['donors']['title'] . '</span>
       <span class="value">' . $values['donors']['value'] . '</span>
     </div>
-    <div class="pooled-fund-countries col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-countries">
       <span class="title">' . $values['countries']['title'] . '</span>
       <span class="value">' . $values['countries']['value'] . '</span>
     </div>
   </div>
-  <div class="row row-2">
-    <div class="pooled-fund-target col-xs-12 col-sm-12 col-md-3 col-lg-3">
+  <div class="cd-grid">
+    <div class="pooled-fund-target">
       <span class="title">' . $values['target']['title'] . '</span>
       <span class="value">' . $values['target']['value'] . '</span>
     </div>
-    <div class="pooled-fund-reached col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-reached">
       <span class="title">' . $values['reached']['title'] . '</span>
       <span class="value">' . $values['reached']['value'] . '</span>
     </div>
-    <div class="pooled-fund-projects col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-projects">
       <span class="title">' . $values['projects']['title'] . '</span>
       <span class="value">' . $values['projects']['value'] . '</span>
     </div>
-    <div class="pooled-fund-partners col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="pooled-fund-partners">
        <span class="title">' . $values['partners']['title'] . '</span>
       <span class="value">' . $values['partners']['value'] . '</span>
     </div>

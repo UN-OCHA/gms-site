@@ -42,7 +42,7 @@
  * @see html.html.twig
  */
 #}
-
+{{ attach_library('common_design/cd-grid') }}
 {%
   set layout_classes = [
   'cd-container',
@@ -126,7 +126,6 @@
               </div>
             {% endblock %}
           {% endif %}
-          {{ abc.printpage }}
           {{ page.content }}
         </div>{# /.cd-layout-content #}
         {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
@@ -135,6 +134,9 @@
     </main>
   {% endblock %}
 
+  {% block fluid_content %}
+    {{ page.fluid_content }}
+  {% endblock %}
   {% block footer_soft %}
     {{ page.footer_soft }}
   {% endblock %}

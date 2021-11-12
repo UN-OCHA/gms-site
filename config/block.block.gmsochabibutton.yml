@@ -10,7 +10,7 @@ dependencies:
 id: gmsochabibutton
 theme: gms_ocha_common
 region: header_second
-weight: 0
+weight: -23
 provider: null
 plugin: gms_ocha_bibutton
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__blog_view_blog_listing_block
 theme: gms_ocha_common
 region: content
-weight: -12
+weight: -16
 provider: null
 plugin: 'views_block:blog_view-blog_listing_block'
 settings:
