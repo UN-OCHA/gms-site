@@ -140,7 +140,7 @@ class PooledFundWidgetForm extends FormBase {
       '#title' => '',
       '#type' => 'checkboxes',
       '#options' => $options,
-	  '#prefix' => '<div id="pooled-checkboxes" class="pooled-checkboxes">',
+      '#prefix' => '<div id="pooled-checkboxes" class="pooled-checkboxes">',
       '#suffix' => '</div>',
       '#default_value' => ['all'],
       '#ajax' => [
@@ -158,7 +158,7 @@ class PooledFundWidgetForm extends FormBase {
       '#suffix' => '</div>',
       '#markup' => $sting,
     ];
-	$form['#prefix'] = '<div id="pooled-fund-container" class="cd-container">';
+    $form['#prefix'] = '<div id="pooled-fund-container" class="cd-container">';
     $form['#suffix'] = '</div>';
     return $form;
   }
