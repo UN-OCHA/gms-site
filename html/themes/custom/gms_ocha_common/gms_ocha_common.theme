@@ -56,6 +56,11 @@ function gms_ocha_common_preprocess_html(&$variables) {
     }
     $variables['attributes']['type'] = 'blog-page';
   }
+  $current_path = \Drupal::service('path.current')->getPath();
+  $aliasByPath = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  if ($aliasByPath == '/user/login') {
+    $variables['attributes']['class'] = "login-page";
+  }
 }
 
 /**

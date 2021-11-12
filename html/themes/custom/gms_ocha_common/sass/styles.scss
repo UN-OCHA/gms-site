@@ -1308,3 +1308,34 @@
 .gms-internal-page .cd-layout-container .region-content article iframe {
     width: 100%;    
 }
+
+.login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login a img {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;    
+}
+.login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 50px;
+}
+.login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login a {
+    text-decoration: none;
+}
+.login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login a span.user-login-btn {
+    padding: 5px 15px;
+    border: 1px solid #3070b0;
+    border-radius: 3px;
+    background-color: #3070b0;
+    color: #fff;
+    transition: all 0.2s linear;
+    font-size: 0.80rem;
+}
+.login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login a span.user-login-btn:hover {
+    background-color: #144372;
+    border: 1px solid #144372;
+}

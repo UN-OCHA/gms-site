@@ -3,7 +3,7 @@ label: 'Author Info'
 ui_limit: ''
 properties:
   content:
-    value: 'POSTED BY [node:author:account-name] | [node:author:created:custom:d M Y] | [node:field_categories:entity:name]'
+    value: 'POSTED BY [node:author:account-name] | [node:created:custom:d M Y] | [node:field_categories:entity:name]'
     format: plain_text
 type: token
 type_label: 'Token field'
