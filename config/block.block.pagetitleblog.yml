@@ -11,7 +11,7 @@ dependencies:
 id: pagetitleblog
 theme: gms_ocha_common
 region: header_third
-weight: -18
+weight: -21
 provider: null
 plugin: page_title_blog
 settings:

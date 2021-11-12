@@ -156,66 +156,9 @@
   vertical-align: middle;
   overflow: hidden;
 }
-.sankey-headers {
-  color: #026cb6;
-}
-.sankey-headers .header-left h4 {
-  float: left;
-  font-size: 14px;
-  font-weight: bold;
-}
-.sankey-headers .header-right h4 {
-  float: right;
-  font-size: 14px;
-  font-weight: bold;
-}
-.pooled-fund-badges .poolfund-sankey-title {
-  float: left;
-  margin-right: 40px;
-}
-.pooled-fund-badges .poolfund-sankey-title h4 {
-  font-size: 12px;
-  font-weight: bold;
-  color: #545554;
-}
-.pooled-fund-badges .poolfund-sankey-title h4 span.poolfund-year {
-  color: #a6a8ab;
-}
-.pooled-fund-badges .poolfund-sankey-donor {
-  float: left;
-  margin-bottom: 5px;
-}
-.pooled-fund-badges .poolfund-sankey-donor select {
-  width: 275px;
-  border-radius: 0;
-  height: 30px;
-  margin-right: 10px;
-  padding: 4px 5px;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #a6a8ab;
-}
-.pooled-fund-badges .poolfund-sankey-donor label,
-.input-group-addon {
-  display: none;
-}
-.pooled-fund-badges .poolfund-sankey-country {
-  float: left;
-  margin-bottom: 5px;
-}
-.pooled-fund-badges .poolfund-sankey-country select {
-  width: 275px;
-  border-radius: 0;
-  height: 30px;
-  padding: 4px 5px;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #a6a8ab;
-}
-.pooled-fund-badges .poolfund-sankey-country label,
-.input-group-addon {
-  display: none;
-}
+
+
+
 
 .cd-site-header {
    color: var(--cd-default-text-color);
@@ -1263,8 +1206,8 @@
     filter: none;
     margin-bottom: -1px;
 }
-.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li.sf-depth-1 a.sf-external::before {
-    content: none;
+.gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li.sf-no-children a::before {
+    content: none !important;
 }
 .gms-internal-page .cd-layout-container .region-header-second .block-superfishmenu-cbpf-menu ul.sf-menu.menu li a {       
     font-family: var(--cd-font--roboto);
@@ -1309,6 +1252,222 @@
     width: 100%;    
 }
 
+/* BI Page CSS Start */
+.bi-page .cd-layout-container .blog-title-panel {
+    background: #026cb6 url(../img/promo_bg_img.png) center center no-repeat;
+    height: 474px;    
+    text-align: center;
+    border-bottom: 15px solid #f47932;
+}
+.bi-page .cd-layout-container .blog-title-panel .block-block-content h2.cd-block-title {
+    font-size: 37px;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0 30px 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.bi-page .cd-layout-container .blog-title-panel .block-block-content .field--type-text-with-summary p {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+    max-width: 745px;
+    margin: 0 auto;
+}
+.bi-page .cd-layout-container .blog-title-panel .block-block-content .field--type-text-with-summary a.more-info {
+    background: #fff;
+    border-radius: 4px;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #026cb6;
+    display: inline-block;
+    margin: 25px 0;
+    text-decoration: none;
+}
+.bi-page .cd-layout-container .blog-title-panel .block-block-content .field--type-text-with-summary a.more-info:hover {
+    background-color: #f47932;
+    color: #fff;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .cd-flow #chart_main{
+    clear: both;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .row .poolfund-sankey-title h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #545554;
+    margin-right: 40px;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .row .poolfund-sankey-title h4 span.poolfund-year {
+    color: #a6a8ab;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .poolfund-sankey-donor select {
+  width: 275px;
+  border-radius: 0;
+  height: 30px;
+  margin-right: 10px;
+  padding: 4px 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #a6a8ab;
+  border: 1px solid #ccc;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .poolfund-sankey-donor label,
+.input-group-addon {
+  display: none;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .poolfund-sankey-country select {
+  width: 275px;
+  border-radius: 0;
+  height: 30px;
+  padding: 4px 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #a6a8ab;
+  border: 1px solid #ccc;
+}
+.bi-page .cd-layout-container .pooled-fund-badges .poolfund-sankey-country label, .input-group-addon {
+  display: none;
+}
+.bi-page .cd-layout-container .sankey-headers {
+  color: #026cb6;
+}
+.bi-page .cd-layout-container .sankey-headers .header-left h4 {
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  color: #026cb6;
+}
+.bi-page .cd-layout-container .sankey-headers .header-right h4 {
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  color: #026cb6;
+}
+.bi-page .cd-layout-container .block-gms-ocha-pooled-fund-explore-widget .explore-main .first-box, .explore-main .second-box, .explore-main .third-box {
+    background: #e6e6e6;
+    padding: 20px;
+    height: 230px;
+    color: #333;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.bi-page .cd-layout-container .block-gms-ocha-pooled-fund-explore-widget .explore-main .first-box h1, .explore-main .second-box h1, .explore-main .third-box h1 {
+    font-size: 14px;
+    margin-top: 175px;
+    font-weight: 400;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-explore-widget {
+    background: #f1f1f2;
+    padding: 40px 0 30px 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-explore-widget .explore-main h2.lable-explore {
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget {
+    padding: 30px 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .js-form-item .form-checkboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .js-form-item .form-checkboxes .js-form-item {
+    margin: 0 10px;
+    font-size: 14px;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .js-form-item .form-checkboxes .js-form-item input {
+    vertical-align: middle;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .js-form-item .form-checkboxes .js-form-item label {
+    font-weight: 400;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .cd-grid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-donation {
+    background: url(../img/donations_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-allocations {
+    background: url(../img/allocations_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+} 
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-donors {
+    background: url(../img/donors_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-countries {
+    background: url(../img/countries_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-target {
+    background: url(../img/beneficiaries_targeted_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-reached {
+    background: url(../img/beneficiaries_reached_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-projects {
+    background: url(../img/projects_funded_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-partners {
+    background: url(../img/partners_funded_icon.png) top center no-repeat;
+    height: 200px;
+    text-align: center;
+    padding: 125px 0 0;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-donation .title, .pooled-fund-allocations .title, .pooled-fund-donors .title, .pooled-fund-countries .title, .pooled-fund-target .title, .pooled-fund-reached .title, .pooled-fund-projects .title, .pooled-fund-partners .title {
+    display: block;
+    text-transform: uppercase;
+    color: #545554;
+    font-size: 15px;
+}
+.bi-page .cd-layout-container .region-fluid-content .block-gms-ocha-pooled-fund-widget .gms-ocha-pooled-fund-widget-form .pooled-fund-badges .pooled-fund-donation .value, .pooled-fund-allocations .value, .pooled-fund-donors .value, .pooled-fund-countries .value, .pooled-fund-target .value, .pooled-fund-reached .value, .pooled-fund-projects .value, .pooled-fund-partners .value {
+    display: block;
+    text-transform: uppercase;
+    color: #545554;
+    font-size: 35px;
+}
+
+/* Login Page CSS Start */
 .login-page .cd-layout-container .cd-container .cd-layout-content .block-social-auth-login a img {
     width: 100%;
     display: block;

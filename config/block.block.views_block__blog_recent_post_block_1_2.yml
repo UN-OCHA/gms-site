@@ -32,12 +32,6 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  error_page:
-    id: error_page
-    status_codes:
-      403: '403'
-      404: '404'
-    negate: true
   request_path:
     id: request_path
     pages: "/access-denied\r\n/page-not-found"

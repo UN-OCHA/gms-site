@@ -10,7 +10,7 @@ dependencies:
 id: socialauthlogin
 theme: gms_ocha_common
 region: content
-weight: 0
+weight: -15
 provider: null
 plugin: social_auth_login
 settings:
