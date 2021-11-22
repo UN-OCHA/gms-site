@@ -102,14 +102,13 @@ class ViewPdfController extends ControllerBase {
              </html>';
       $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
       $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
-      // $html = str_replace("src=\"/sites/", "src=\"../sites/", $html);
       $html = preg_replace('/>\s+</', "><", $html);
-      // $html = 'https://dev.gms-unocha-org.ahconu.org/content/hfu';
+      $html = 'https://dev.gms-unocha-org.ahconu.org/content/hfu';
       $params = [
         'debug' => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
-        'media' => 'screen',
+        'media' => 'print',
         'output' => 'pdf',
-        'service' => 'drupal',
+        'service' => 'gms',
         'pdfLandscape' => 'true',
       ];
       ocha_snap($html, $params);
