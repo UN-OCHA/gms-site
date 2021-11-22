@@ -100,7 +100,7 @@ class ViewPdfController extends ControllerBase {
                 </head>
                 <body>' . $content . '</body>
              </html>';
-      $html = 'https://dev.gms-unocha-org.ahconu.org/content/hfu';
+      $html = '/content/hfu';
       $params = [
         'debug' => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'media' => 'print',
