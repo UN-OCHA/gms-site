@@ -100,6 +100,10 @@ class ViewPdfController extends ControllerBase {
                 </head>
                 <body>' . $content . '</body>
              </html>';
+      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
+      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
+      // $html = str_replace("src=\"/sites/", "src=\"../sites/", $html);
+      $html = preg_replace('/>\s+</', "><", $html);
       // $html = 'https://dev.gms-unocha-org.ahconu.org/content/hfu';
       $params = [
         'debug' => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
