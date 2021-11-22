@@ -6,7 +6,10 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -74,45 +77,45 @@ class ViewPdfController extends ControllerBase {
    *   The entity id.
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
+
     if (!empty($entity_id) && is_numeric($entity_id)) {
-      $new_nid = $entity_id;
       $entity_type = 'node';
-      $view_mode = 'default';
-      $content = '';
-      $node = $this->entityTypeManager->getStorage('node')->load($new_nid);
+
+      $node       = $this->entityTypeManager->getStorage('node')->load($entity_id);
       $node_title = $node->get('title')->value;
-      $output1 = $this->entityTypeManager->getViewBuilder($entity_type)->view($node, $view_mode);
-      $content .= Markup::create($this->renderer->render($output1));
-      $html = '<html>
-                <head>
-                  <title>' . $node_title . '</title>
-                  <style>
-                   table {
-                      max-width: 990px !important;
-                  }
-                  body {
-                      max-width: 990px !important;
-                  }
-                  img {
-                      max-width: 650px !important;
-                  }
-                  </style>
-                </head>
-                <body>' . $content . '</body>
-             </html>';
-      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
-      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
-      $html = preg_replace('/>\s+</', "><", $html);
-      $html = 'https://dev.gms-unocha-org.ahconu.org/content/hfu';
+      $filename   = Html::cleanCssIdentifier($node_title) . '.pdf';
+
+      // Optionally check if $filename exists in a local cache directory.
+      // If so, we could serve that file instead of generating it again.
+      // This would of course require us to save the generated file to a local
+      // cache after generating it.
+
       $params = [
-        'debug' => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
-        'media' => 'print',
-        'output' => 'pdf',
-        'service' => 'gms',
+        'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+        'media'        => 'print',
+        'output'       => 'pdf',
+        'service'      => 'gms',
         'pdfLandscape' => 'true',
       ];
-      ocha_snap($html, $params);
-      die;
+
+      $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString();
+      $pdf = ocha_snap($url, $params);
+      if (empty($pdf)) {
+        $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
+        $response = new RedirectResponse($url, 301);
+        $response->send();
+      }
+      else {
+        $response = new Response();
+        $response->headers->set('Pragma', 'no-cache');
+        $response->headers->set('Content-type', 'application/pdf; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+        $response->headers->set('Content-Transfer-Encoding', 'binary');
+        $response->headers->set('Cache-control', 'private');
+        $response->headers->set('Content-length', strlen($pdf));
+        $response->setContent($pdf);
+        $response->send();
+      }
     }
     else {
       global $base_url;
@@ -121,5 +124,4 @@ class ViewPdfController extends ControllerBase {
       $response->send();
     }
   }
-
 }
