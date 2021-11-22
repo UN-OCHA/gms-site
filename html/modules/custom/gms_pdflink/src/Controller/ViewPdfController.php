@@ -82,7 +82,7 @@ class ViewPdfController extends ControllerBase {
       $node = $this->entityTypeManager->getStorage('node')->load($new_nid);
       $node_title = $node->get('title')->value;
       $output1 = $this->entityTypeManager->getViewBuilder($entity_type)->view($node, $view_mode);
-      $content .= Markup::create($this->renderer->render($output1));
+      $content .= "TEST DATA"; // Markup::create($this->renderer->render($output1));
       $html = '<html>
                 <head>
                   <title>' . $node_title . '</title>
