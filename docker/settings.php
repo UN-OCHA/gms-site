@@ -48,3 +48,4 @@ $settings['file_private_path'] = 'sites/default/files/private';
 ini_set('allow_url_fopen', 'On');
 ini_set('memory_limit', '-1');
 ini_set('max_execution_time ', '1000');
+ini_set("pcre.backtrack_limit", "5000000");
