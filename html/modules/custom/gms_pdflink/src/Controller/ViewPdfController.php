@@ -4,7 +4,6 @@ namespace Drupal\gms_pdflink\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -81,8 +80,8 @@ class ViewPdfController extends ControllerBase {
       $content = '';
       $node = $this->entityTypeManager->getStorage('node')->load($new_nid);
       $node_title = $node->get('title')->value;
-      $output1 = $this->entityTypeManager->getViewBuilder($entity_type)->view($node, $view_mode);
-      $content .= "TEST DATA"; // Markup::create($this->renderer->render($output1));
+      $this->entityTypeManager->getViewBuilder($entity_type)->view($node, $view_mode);
+      $content .= "TEST DATA";
       $html = '<html>
                 <head>
                   <title>' . $node_title . '</title>
