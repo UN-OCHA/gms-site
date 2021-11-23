@@ -94,6 +94,9 @@ class ViewPdfController extends ControllerBase {
         'output'       => 'pdf',
         'service'      => 'gms',
         'pdfLandscape' => 'true',
+        'pdfMarginRight' => '20',
+        'pdfMarginLeft' => '20',
+        'pdfMarginUnit' => 'px',
       ];
 
       $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
