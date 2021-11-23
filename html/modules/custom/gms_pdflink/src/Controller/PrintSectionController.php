@@ -7,10 +7,12 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
-use Mpdf\Mpdf;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Component\Utility\Html;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Print controller.
@@ -88,6 +90,59 @@ class PrintSectionController extends ControllerBase {
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
     if (!empty($entity_id) && is_numeric($entity_id)) {
+      $node_id      = $entity_id;
+      $node_storage = $this->entityTypeManager->getStorage('node');
+      $node         = $node_storage->load($node_id);
+      $node_title   = $node->get('title')->value;
+      $filename     = Html::cleanCssIdentifier($node_title) . '.pdf';
+      $params       = [
+        'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+        'media'        => 'print',
+        'output'       => 'pdf',
+        'service'      => 'gms',
+        'pdfLandscape' => 'true',
+        'pdfMarginRight' => '20',
+        'pdfMarginLeft' => '20',
+        'pdfMarginUnit' => 'px',
+      ];
+      $url          = Url::fromUri("base:section/download/pdf/{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
+      $pdf          = ocha_snap($url, $params);
+      if (empty($pdf)) {
+        $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
+        $response = new RedirectResponse($url, 301);
+        $response->send();
+      }
+      else {
+        $response = new Response();
+        $response->headers->set('Pragma', 'no-cache');
+        $response->headers->set('Content-type', 'application/pdf; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+        $response->headers->set('Content-Transfer-Encoding', 'binary');
+        $response->headers->set('Cache-control', 'private');
+        $response->headers->set('Content-length', strlen($pdf));
+        $response->setContent($pdf);
+        $response->send();
+      }
+    }
+    else {
+      global $base_url;
+      $this->messenger()->addMessage($this->t('Access denied.'), 'error');
+      $response = new RedirectResponse($base_url, 301);
+      $response->send();
+    }
+
+  }
+
+  /**
+   * Print an entity to the selected format.
+   *
+   * @param string $entity_type
+   *   The entity type.
+   * @param int $entity_id
+   *   The entity id.
+   */
+  public function downloadPdf($entity_type, $entity_id) {
+    if (!empty($entity_id) && is_numeric($entity_id)) {
       $node_id = $entity_id;
       $node_storage = $this->entityTypeManager->getStorage('node');
       $node = $node_storage->load($node_id);
@@ -136,19 +191,7 @@ class PrintSectionController extends ControllerBase {
                 </head>
                 <body>' . $content . '</body>
              </html>';
-      // $host = \Drupal::request()->getSchemeAndHttpHost()
-      // .  \Drupal::request()->getBasePath();
-      $host = $this->request->getCurrentRequest()->getSchemeAndHttpHost();
-      $html = str_replace("src=\"/sites/", "src=\"" . $host . "/sites/", $html);
-      // $html = str_replace("src=\"/sites/", "src=\"../sites/", $html);
-      $html = preg_replace('/>\s+</', "><", $html);
-      $fileName = str_replace(" ", "_", strtolower($node_title)) . ".pdf";
-      // $filepath = 'sites/default/files/temp_generate_form_pdf/' . $fileName;
-      $mpdf = new Mpdf(['format' => 'B4']);
-      $mpdf->curlAllowUnsafeSslRequests = TRUE;
-      $mpdf->WriteHTML($html);
-      $mpdf->AddPage('L');
-      $mpdf->Output($fileName, 'D');
+      echo $html;
       die;
     }
     else {
@@ -157,7 +200,6 @@ class PrintSectionController extends ControllerBase {
       $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
-
   }
 
 }
