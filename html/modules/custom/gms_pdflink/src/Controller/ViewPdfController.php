@@ -96,7 +96,7 @@ class ViewPdfController extends ControllerBase {
         'pdfLandscape' => 'true',
       ];
 
-      $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString();
+      $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
       $pdf = ocha_snap($url, $params);
       if (empty($pdf)) {
         $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
