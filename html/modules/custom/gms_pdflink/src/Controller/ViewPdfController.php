@@ -8,6 +8,9 @@ use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Print controller.
