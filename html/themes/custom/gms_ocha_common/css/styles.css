@@ -337,6 +337,10 @@ a {
   vertical-align: middle;
   overflow: hidden; }
 
+.cd-site-logo img {
+  display: block;
+  width: 100%; }
+
 .cd-site-header {
   color: var(--cd-default-text-color);
   border-bottom: 6px solid var(--cd-blue-grey);
@@ -415,7 +419,8 @@ a {
   align-content: center; }
 
 .cd-site-header .cd-site-header__inner .region-header-logo a {
-  width: 120px; }
+  width: 120px;
+  display: flex; }
 
 .cd-container {
   padding: 0; }
