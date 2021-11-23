@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - condition_query
     - gms_ocha
     - node
     - system
@@ -30,4 +31,8 @@ visibility:
   request_path:
     id: request_path
     pages: "<front>\r\n/content/home"
+    negate: true
+  request_param:
+    id: request_param
+    request_param: menu_visibility=show
     negate: true
