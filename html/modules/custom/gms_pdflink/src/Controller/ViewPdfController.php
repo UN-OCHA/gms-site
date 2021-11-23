@@ -4,7 +4,6 @@ namespace Drupal\gms_pdflink\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
@@ -89,7 +88,6 @@ class ViewPdfController extends ControllerBase {
       // If so, we could serve that file instead of generating it again.
       // This would of course require us to save the generated file to a local
       // cache after generating it.
-
       $params = [
         'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'media'        => 'print',
