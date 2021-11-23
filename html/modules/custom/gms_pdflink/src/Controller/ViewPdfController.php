@@ -5,12 +5,12 @@ namespace Drupal\gms_pdflink\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\RendererInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Print controller.
@@ -76,11 +76,18 @@ class ViewPdfController extends ControllerBase {
    *   The entity id.
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
+
     if (!empty($entity_id) && is_numeric($entity_id)) {
       $entity_type = 'node';
-      $node = $this->entityTypeManager->getStorage('node')->load($entity_id);
+
+      $node       = $this->entityTypeManager->getStorage('node')->load($entity_id);
       $node_title = $node->get('title')->value;
-      $filename = Html::cleanCssIdentifier($node_title) . '.pdf';
+      $filename   = Html::cleanCssIdentifier($node_title) . '.pdf';
+
+      // Optionally check if $filename exists in a local cache directory.
+      // If so, we could serve that file instead of generating it again.
+      // This would of course require us to save the generated file to a local
+      // cache after generating it.
       $params = [
         'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'media'        => 'print',
@@ -88,6 +95,7 @@ class ViewPdfController extends ControllerBase {
         'service'      => 'gms',
         'pdfLandscape' => 'true',
       ];
+
       $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString();
       $pdf = ocha_snap($url, $params);
       if (empty($pdf)) {
