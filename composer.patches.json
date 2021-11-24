@@ -11,6 +11,9 @@
         },
         "drupal/redirect": {
           "Fix the migration of the status_code redirect property": "patches/Redirect/redirect-fix_status_code_property_migration-3082364-13.patch"
+        },
+        "unocha/ocha_snap": {
+          "timeoutChnage": "patches/ocha_snap/timeout_update.patch"
         }
     }
 }
