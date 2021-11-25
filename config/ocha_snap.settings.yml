@@ -1,7 +1,7 @@
-header: ' '
+header: " <header class=\"cd-header\">\r\n    <div class=\"cd-site-header\">\r\n        <div class=\"cd-container cd-site-header__inner\">\r\n            <div class=\"region-header-logo\">\r\n                <a href=\"/\" title=\"Home\" rel=\"home\" class=\"cd-site-logo\">\r\n                    <img src=\"/sites/default/files/ocha-logo.svg\" alt=\"Grant Management System (GMS) Support / Help Portal\" aria-label=\"Home\" width=\"100%\" height=\"60px\" />\r\n                </a>\r\n                <span>CBPF GRANT MANAGEMENT SYSTEM (GMS)</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</header>"
 footer: ''
 css: ''
-debug: false
+debug: 0
 site_user: ''
 site_pass: ''
 service_name: Drupal
