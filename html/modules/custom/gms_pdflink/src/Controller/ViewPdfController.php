@@ -2,6 +2,7 @@
 
 namespace Drupal\gms_pdflink\Controller;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\RendererInterface;
@@ -39,6 +40,13 @@ class ViewPdfController extends ControllerBase {
   protected $request;
 
   /**
+   * The config factory object.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Creates an DevelLocalTask object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -47,11 +55,14 @@ class ViewPdfController extends ControllerBase {
    *   The renderer service.
    * @param \Symfony\Component\HttpFoundation\RequestStack $request
    *   The request stack.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The config factory object.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request, ConfigFactoryInterface $configFactory) {
     $this->entityTypeManager = $entity_type_manager;
     $this->renderer = $renderer;
     $this->request = $request;
+    $this->configFactory = $configFactory;
   }
 
   /**
@@ -62,6 +73,7 @@ class ViewPdfController extends ControllerBase {
       $container->get('entity_type.manager'),
       $container->get('renderer'),
       $container->get('request_stack'),
+      $container->get('config.factory'),
     );
   }
 
@@ -88,6 +100,8 @@ class ViewPdfController extends ControllerBase {
       // If so, we could serve that file instead of generating it again.
       // This would of course require us to save the generated file to a local
       // cache after generating it.
+      // $pdf_header = \Drupal::config('ocha_snap.settings')->get('header');.
+      $pdf_header = $this->configFactory->get('ocha_snap.settings')->get('header');
       $params = [
         'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'media'        => 'print',
@@ -97,6 +111,7 @@ class ViewPdfController extends ControllerBase {
         'pdfMarginRight' => '20',
         'pdfMarginLeft' => '20',
         'pdfMarginUnit' => 'px',
+        'pdfHeader'     => $pdf_header,
       ];
 
       $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
