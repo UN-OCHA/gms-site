@@ -102,6 +102,7 @@ class ViewPdfController extends ControllerBase {
       // cache after generating it.
       // $pdf_header = \Drupal::config('ocha_snap.settings')->get('header');.
       $pdf_header = $this->configFactory->get('ocha_snap.settings')->get('header');
+      $pdf_footer = $this->configFactory->get('ocha_snap.settings')->get('footer');
       $params = [
         'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'media'        => 'print',
@@ -112,6 +113,7 @@ class ViewPdfController extends ControllerBase {
         'pdfMarginLeft' => '20',
         'pdfMarginUnit' => 'px',
         'pdfHeader'     => $pdf_header,
+        'pdfFooter'     => $pdf_footer,
       ];
 
       $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
