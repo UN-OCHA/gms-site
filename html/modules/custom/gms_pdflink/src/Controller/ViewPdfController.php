@@ -113,6 +113,7 @@ class ViewPdfController extends ControllerBase {
         'pdfLandscape' => 'true',
         'pdfMarginRight' => '20',
         'pdfMarginLeft' => '20',
+        'pdfMarginTop' => '200',
         'pdfMarginUnit' => 'px',
         'pdfHeader'     => $pdf_header,
       ];
