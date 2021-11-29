@@ -31,19 +31,13 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     region: content
-  field_search_keywords:
-    label: above
-    weight: 2
-    type: basic_string
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   links:
-    weight: 100
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_search_keywords: true

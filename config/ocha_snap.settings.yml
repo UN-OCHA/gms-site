@@ -1,6 +1,6 @@
-header: " <header class=\"cd-header\">\r\n    <div class=\"cd-site-header\">\r\n        <div class=\"cd-container cd-site-header__inner\">\r\n            <div class=\"region-header-logo\">\r\n                <a href=\"/\" title=\"Home\" rel=\"home\" class=\"cd-site-logo\">\r\n                    <img src=\"/sites/default/files/ocha-logo.svg\" alt=\"Grant Management System (GMS) Support / Help Portal\" aria-label=\"Home\" width=\"100%\" height=\"60px\" />\r\n                </a>\r\n                <span>CBPF GRANT MANAGEMENT SYSTEM (GMS)</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</header>"
+header: '<div class ="divcls"><img src="/sites/default/files/u2963/GMS LOGO.png"  width="100%" height="60px" style="display:block;"><span style="font-size:15px;">CBPF GRANT MANAGEMENT SYSTEM (GMS)</span></div>'
 footer: ''
-css: ''
+css: ".divcls {background-image: url('/sites/default/files/u2963/GMS LOGO.png');background-repeat: no-repeat;height: 200px;width: 100%;display: block;margin-bottom:200px}\r\n@media print {\r\n  * {\r\n    page-break-inside: avoid;\r\n    page-break-after: avoid;\r\n    page-break-before: avoid;\r\n  }\r\n}"
 debug: 0
 site_user: ''
 site_pass: ''
