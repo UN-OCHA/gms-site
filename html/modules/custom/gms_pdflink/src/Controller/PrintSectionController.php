@@ -96,14 +96,15 @@ class PrintSectionController extends ControllerBase {
       $node_title   = $node->get('title')->value;
       $filename     = Html::cleanCssIdentifier($node_title) . '.pdf';
       $params       = [
-        'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
-        'media'        => 'print',
-        'output'       => 'pdf',
-        'service'      => 'gms',
-        'pdfLandscape' => 'true',
+        'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+        'logo'           => 'gms',
+        'media'          => 'print',
+        'output'         => 'pdf',
+        'service'        => 'gms',
+        'pdfLandscape'   => 'true',
         'pdfMarginRight' => '20',
-        'pdfMarginLeft' => '20',
-        'pdfMarginUnit' => 'px',
+        'pdfMarginLeft'  => '20',
+        'pdfMarginUnit'  => 'px',
       ];
       $url          = Url::fromUri("base:section/download/pdf/{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
       $pdf          = ocha_snap($url, $params);
