@@ -1,6 +1,6 @@
-header: '<div class ="divcls"><img src="/sites/default/files/u2963/GMS LOGO.png"  width="100%" height="60px" style="display:block;"><span style="font-size:15px;">CBPF GRANT MANAGEMENT SYSTEM (GMS)</span></div>'
+header: '<div class ="divcls"><img src="__LOGO_SRC__"  width="100%" height="60px" style="display:block;"><span style="font-size:15px;">CBPF GRANT MANAGEMENT SYSTEM (GMS)</span></div>'
 footer: ''
-css: ".divcls {background-image: url('/sites/default/files/u2963/GMS LOGO.png');background-repeat: no-repeat;height: 200px;width: 100%;display: block;margin-bottom:200px}\r\n@media print {\r\n  * {\r\n    page-break-inside: avoid;\r\n    page-break-after: avoid;\r\n    page-break-before: avoid;\r\n  }\r\n}"
+css: ".divcls {height: 200px;width: 100%;display: block;margin-bottom:200px}\r\n@media print {\r\n  * {\r\n    page-break-inside: avoid;\r\n    page-break-after: avoid;\r\n    page-break-before: avoid;\r\n  }\r\n}"
 debug: 0
 site_user: ''
 site_pass: ''

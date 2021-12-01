@@ -106,16 +106,17 @@ class ViewPdfController extends ControllerBase {
         $pdf_header .= '<style type="text/css">' . $css . '</style>';
       }
       $params = [
-        'debug'        => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
-        'media'        => 'print',
-        'output'       => 'pdf',
-        'service'      => 'gms',
-        'pdfLandscape' => 'true',
+        'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+        'logo'           => 'gms',
+        'media'          => 'print',
+        'output'         => 'pdf',
+        'service'        => 'gms',
+        'pdfLandscape'   => 'true',
         'pdfMarginRight' => '20',
-        'pdfMarginLeft' => '20',
-        'pdfMarginTop' => '200',
-        'pdfMarginUnit' => 'px',
-        'pdfHeader'     => $pdf_header,
+        'pdfMarginLeft'  => '20',
+        'pdfMarginTop'   => '200',
+        'pdfMarginUnit'  => 'px',
+        'pdfHeader'      => $pdf_header,
       ];
 
       $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
