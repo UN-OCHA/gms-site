@@ -2,6 +2,7 @@
 
 namespace Drupal\gms_pdflink\Controller;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -48,6 +49,13 @@ class PrintSectionController extends ControllerBase {
   protected $database;
 
   /**
+   * The config factory object.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Creates an DevelLocalTask object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -58,12 +66,15 @@ class PrintSectionController extends ControllerBase {
    *   The request stack.
    * @param \Drupal\Core\Database\Connection $database
    *   The database connection.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The config factory object.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request, Connection $database) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request, Connection $database, ConfigFactoryInterface $configFactory) {
     $this->entityTypeManager = $entity_type_manager;
     $this->renderer = $renderer;
     $this->request = $request;
     $this->database = $database;
+    $this->configFactory = $configFactory;
   }
 
   /**
@@ -75,6 +86,7 @@ class PrintSectionController extends ControllerBase {
       $container->get('renderer'),
       $container->get('request_stack'),
       $container->get('database'),
+      $container->get('config.factory'),
     );
   }
 
