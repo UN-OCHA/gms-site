@@ -27,7 +27,7 @@
 {{ menus.menu_links(items, attributes, 0) }}
 
 {% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
+    {% import _self as menus %}
   {%
     set menu_classes_ul = [
     'navbar-nav' ~ menu_name|clean_class,
