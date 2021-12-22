@@ -169,6 +169,14 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
           }
         }
         $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
+        $pluginId = $val['original_link']->getPluginDefinition();
+        if (isset($pluginId['options']['gsm_ocha']['show_parent'])
+          && $pluginId['options']['gsm_ocha']['show_parent'] == 1) {
+          $parentId = str_replace('menu_link_content:', '', $pluginId['parent']);
+          if ($menuId != $parentId) {
+            unset($menu['#items'][$key]);
+          }
+        }
       }
       $menu_html = $this->renderer->render($menu);
     }

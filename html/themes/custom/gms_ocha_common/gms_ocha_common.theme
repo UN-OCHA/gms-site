@@ -203,3 +203,16 @@ function gms_ocha_common_preprocess_breadcrumb(&$variables) {
     }
   }
 }
+
+/**
+ * Preprocess the Block.
+ */
+function gms_ocha_common_preprocess_block(&$variables) {
+  if ($variables['attributes']['id'] == 'block-ochanavigation') {
+    $variables['attributes']['data-cd-toggable'] = 'Menu';
+    $variables['attributes']['data-cd-component'] = 'cd-nav';
+    $variables['attributes']['data-cd-icon'] = 'arrow-down';
+    $variables['attributes']['data-cd-processed'] = 'true';
+    $variables['attributes']['class'] = 'block block-menu navigation menu--main cd-nav cd-site-header__nav';
+  }
+}
