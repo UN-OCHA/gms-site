@@ -107,10 +107,6 @@ class PrintSectionController extends ControllerBase {
       $node         = $node_storage->load($node_id);
       $node_title   = $node->get('title')->value;
       $filename     = Html::cleanCssIdentifier($node_title) . '.pdf';
-      $pdf_header   = $this->configFactory->get('ocha_snap.settings')->get('header');
-      if ($css = $this->configFactory->get('ocha_snap.settings')->get('css')) {
-        $pdf_header .= '<style type="text/css">' . $css . '</style>';
-      }
       $params = [
         'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'logo'           => 'gms',
