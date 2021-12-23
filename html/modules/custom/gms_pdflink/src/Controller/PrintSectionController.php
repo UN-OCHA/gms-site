@@ -107,11 +107,7 @@ class PrintSectionController extends ControllerBase {
       $node         = $node_storage->load($node_id);
       $node_title   = $node->get('title')->value;
       $filename     = Html::cleanCssIdentifier($node_title) . '.pdf';
-      $pdf_header   = $this->configFactory->get('ocha_snap.settings')->get('header');
-      if ($css = $this->configFactory->get('ocha_snap.settings')->get('css')) {
-        $pdf_header .= '<style type="text/css">' . $css . '</style>';
-      }
-      $params = [
+      $params       = [
         'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'logo'           => 'gms',
         'media'          => 'print',
@@ -122,10 +118,9 @@ class PrintSectionController extends ControllerBase {
         'pdfMarginLeft'  => '20',
         'pdfMarginTop'   => '200',
         'pdfMarginUnit'  => 'px',
-        'pdfHeader'      => $pdf_header,
       ];
-      $url    = Url::fromUri("base:section/download/pdf/{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
-      $pdf    = ocha_snap($url, $params);
+      $url          = Url::fromUri("base:section/download/pdf/{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
+      $pdf          = ocha_snap($url, $params);
       if (empty($pdf)) {
         $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
         $response = new RedirectResponse($url, 301);
