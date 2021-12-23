@@ -122,7 +122,6 @@ class PrintSectionController extends ControllerBase {
         'pdfMarginLeft'  => '20',
         'pdfMarginTop'   => '200',
         'pdfMarginUnit'  => 'px',
-        'pdfHeader'      => $pdf_header,
       ];
       $url    = Url::fromUri("base:section/download/pdf/{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
       $pdf    = ocha_snap($url, $params);
