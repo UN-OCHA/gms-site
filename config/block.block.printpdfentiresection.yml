@@ -1,6 +1,6 @@
 uuid: 8267411f-0335-4f68-9517-c7c467a87c3f
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - gms_pdflink
