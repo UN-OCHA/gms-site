@@ -109,6 +109,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  user_login: 0
   userprotect: 0
   video_embed_field: 0
   views_base_url: 0
