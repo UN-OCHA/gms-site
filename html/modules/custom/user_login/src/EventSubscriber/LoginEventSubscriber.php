@@ -23,6 +23,10 @@ class LoginEventSubscriber implements EventSubscriberInterface {
    * Implementing hook_form_alter.
    */
   public function formModification($event) {
+    if ($event->getFormId() == 'user_login_form') {
+      $form = &$event->getForm();
+      $form['#access'] = FALSE;
+    }
   }
 
 }
