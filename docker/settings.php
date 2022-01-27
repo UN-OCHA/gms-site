@@ -45,6 +45,7 @@ $settings['install_profile'] = 'standard';
 $settings['file_temp_path'] = "sites/default/files/tmp" ;
 $settings['file_public_path'] = 'sites/default/files';
 $settings['file_private_path'] = 'sites/default/files/private';
+$settings['rebuild_access'] = FALSE;
 ini_set('allow_url_fopen', 'On');
 ini_set('memory_limit', '-1');
 ini_set('max_execution_time', '1000');
