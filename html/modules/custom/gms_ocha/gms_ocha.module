@@ -116,7 +116,7 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
           ->condition('id', $parent_prop);
         $results = $query->execute();
         $data = $results->fetchAssoc();
-        $default_options = unserialize($data['options']);
+        $default_options = unserialize($data['options'], ['allowed_classes' => FALSE]);
         $form['menu']['related']['menus'] = [
           '#type' => 'select',
           '#title' => t('Related to menu'),
@@ -150,7 +150,7 @@ function gms_ocha_form_submit($form, $form_state) {
     ->condition('id', $parent_prop);
   $results = $query->execute();
   $data = $results->fetchAssoc();
-  $options = unserialize($data['options']);
+  $options = unserialize($data['options'], ['allowed_classes' => FALSE]);
   $options['gsm_ocha']['related'] = $form_state->getValue('menus');
   $options['gsm_ocha']['show_parent'] = $form_state->getValue('show_parent');
   \Drupal::database()->update('menu_tree')

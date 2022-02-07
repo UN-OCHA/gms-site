@@ -79,15 +79,15 @@ class GraphData {
   public function gmsOchaGetPoolfundYearwise($year_array = []) {
     $rows = $country_array = $donors_array = [];
     $cached = $this->cache->get('Poolfund_project_sankey_chart_' . implode('_', $year_array));
-    $data = isset($cached->data) ? $cached->data : '';
+    $data = $cached->data ?? '';
     $donors_array = $this->cache->get('Poolfund_project_sankey_chart_donors_' . implode('_', $year_array));
-    $donors_array = isset($donors_array->data) ? $donors_array->data : [];
+    $donors_array = $donors_array->data ?? [];
     $country_array = $this->cache->get('Poolfund_project_sankey_chart_country_' . implode('_', $year_array));
-    $country_array = isset($country_array->data) ? $country_array->data : [];
+    $country_array = $country_array->data ?? [];
     if (empty($data)) {
       foreach ($year_array as $yvalue) {
         $cached = $this->cache->get('Poolfund_project_sankey_chart_response_' . $yvalue);
-        $poolfund_response = isset($cached->data) ? $cached->data : '';
+        $poolfund_response = $cached->data ?? '';
         if (empty($poolfund_response)) {
           $url = GMS_OCHA_PROD_POOLFUND_CONTRIBUTION;
           $url .= '?year=' . $yvalue;
@@ -166,7 +166,7 @@ class GraphData {
    */
   public function gmsOchaGetDonation($year = NULL) {
     $cached = $this->cache->get('Poolfund_donation_' . $year);
-    $data = isset($cached->data) ? $cached->data : '';
+    $data = $cached->data ?? '';
     if (empty($data)) {
       // $headers = ['auth' => ['ocha', 'dev', 'Basic']];
       $headers = [];
@@ -269,7 +269,7 @@ class GraphData {
           $y = date("Y", strtotime("-" . $i . " year"));
 
           $cached = $this->cache->get('Poolfund_project_summary_' . $y);
-          $data = isset($cached->data) ? $cached->data : '';
+          $data = $cached->data ?? '';
           if (empty($data)) {
             $data = $orgnization = $all_orgnization = $poolfundname = [];
             // $data['budget'][$y] = $data['beneficiaries'] = 0;
