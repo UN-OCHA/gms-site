@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55ecedac6dc1ae382f608fe923f0c2ca",
+    "content-hash": "a3a22b1137fb03c06abacd8fb29bb13c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6389,17 +6389,17 @@
         },
         {
             "name": "drupal/social_auth_hid",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/social_auth_hid.git",
-                "reference": "8.x-2.7"
+                "reference": "8.x-2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/social_auth_hid-8.x-2.7.zip",
-                "reference": "8.x-2.7",
-                "shasum": "f9c8384fb81b3fcfd2df50450dcb25161672622b"
+                "url": "https://ftp.drupal.org/files/projects/social_auth_hid-8.x-2.8.zip",
+                "reference": "8.x-2.8",
+                "shasum": "37d6689d98cd97d9f914e09d3434d5286555185a"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -6409,8 +6409,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.7",
-                    "datestamp": "1629377857",
+                    "version": "8.x-2.8",
+                    "datestamp": "1641290555",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

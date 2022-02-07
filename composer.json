@@ -137,7 +137,7 @@
         "drupal/seckit": "^2.0",
         "drupal/semanticviews": "^2.3",
         "drupal/social_auth": "^3.0",
-        "drupal/social_auth_hid": "^2.7",
+        "drupal/social_auth_hid": "^2.8",
         "drupal/stage_file_proxy": "^1.1",
         "drupal/superfish": "^1.4",
         "drupal/tb_megamenu": "^1.3",
