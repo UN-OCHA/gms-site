@@ -19,20 +19,20 @@ plugin: 'views_block:blog_recent_post-block_1'
 settings:
   id: 'views_block:blog_recent_post-block_1'
   label: 'Recent Post'
-  provider: views
   label_display: visible
+  provider: views
   views_label: 'Recent Post'
   items_per_page: none
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      blog_entry: blog_entry
-      page: page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry
+      page: page
   request_path:
     id: request_path
-    pages: "/access-denied\r\n/page-not-found"
     negate: true
+    pages: "/access-denied\r\n/page-not-found"

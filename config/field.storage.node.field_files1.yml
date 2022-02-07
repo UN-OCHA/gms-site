@@ -2,12 +2,12 @@ uuid: 8698ea7b-4c3b-4f71-ae6c-3343296fbfc9
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - entity_browser_example
   module:
     - file
     - node
+  enforced:
+    module:
+      - entity_browser_example
 _core:
   default_config_hash: _dMSUuE4uEJv834oV0SJQfsWoVDNzgmSyH7yOPMRsqc
 id: node.field_files1

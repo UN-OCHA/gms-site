@@ -15,6 +15,6 @@ plugin: welcome_text
 settings:
   id: welcome_text
   label: 'Welcome text'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility: {  }
