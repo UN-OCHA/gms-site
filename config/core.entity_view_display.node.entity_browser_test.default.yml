@@ -10,13 +10,13 @@ dependencies:
     - field.field.node.entity_browser_test.field_image_browser
     - field.field.node.entity_browser_test.field_nodes
     - node.type.entity_browser_test
-  enforced:
-    module:
-      - entity_browser_example
   module:
     - image
     - text
     - user
+  enforced:
+    module:
+      - entity_browser_example
 _core:
   default_config_hash: uEMF6uH3b7T4tdznp4-Yyl5ds3DYvcObjc8NoAGlKD8
 id: node.entity_browser_test.default
@@ -25,52 +25,52 @@ bundle: entity_browser_test
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_files:
-    weight: 102
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 102
     region: content
   field_files1:
-    weight: 103
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 103
     region: content
   field_files_over_ajax:
-    weight: 106
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 106
     region: content
   field_image_browser:
-    weight: 105
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 105
     region: content
   field_nodes:
-    weight: 104
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 104
     region: content
   links:
     weight: 100

@@ -17,8 +17,8 @@ plugin: 'block_content:e3562da4-6577-44ce-b813-92a89900a479'
 settings:
   id: 'block_content:e3562da4-6577-44ce-b813-92a89900a479'
   label: 'Print entire section'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

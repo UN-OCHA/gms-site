@@ -2,11 +2,11 @@ uuid: fe9a95a5-1272-462a-9283-190d2e70b725
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
   enforced:
     module:
       - entity_browser_example
-  module:
-    - node
 _core:
   default_config_hash: ercpizPs4tiZBhTyuf7lZmp_Okn6L5dns-RVYqIX_2U
 id: node.field_nodes

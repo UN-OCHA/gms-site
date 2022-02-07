@@ -18,8 +18,8 @@ plugin: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
 settings:
   id: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
   label: '<none>'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

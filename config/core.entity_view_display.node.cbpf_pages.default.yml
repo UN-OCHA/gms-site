@@ -15,23 +15,23 @@ bundle: cbpf_pages
 mode: default
 content:
   body:
-    label: hidden
-    weight: 0
     type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_search_keywords:
-    label: above
-    weight: 1
     type: basic_string
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   entity_print_view_epub: true
