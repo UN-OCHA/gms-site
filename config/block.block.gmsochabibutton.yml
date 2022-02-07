@@ -16,13 +16,13 @@ plugin: gms_ocha_bibutton
 settings:
   id: gms_ocha_bibutton
   label: 'GMS Ocha BiButton'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
   node_type:
     id: node_type
-    bundles:
-      cbpf_pages: cbpf_pages
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      cbpf_pages: cbpf_pages

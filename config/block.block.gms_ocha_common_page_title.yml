@@ -18,17 +18,17 @@ plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Page title'
-  provider: core
   label_display: '0'
+  provider: core
 visibility:
   request_path:
     id: request_path
-    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog\r\n/tags/*\r\n/categories/*"
     negate: true
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog\r\n/tags/*\r\n/categories/*"
   node_type:
     id: node_type
-    bundles:
-      blog_entry: blog_entry
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry

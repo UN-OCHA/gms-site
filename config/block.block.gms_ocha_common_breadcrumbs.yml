@@ -18,17 +18,17 @@ plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Breadcrumbs
-  provider: system
   label_display: '0'
+  provider: system
 visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/content/home"
   node_type:
     id: node_type
-    bundles:
-      static_page: static_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: "<front>\r\n/content/home"
-    negate: true
+    bundles:
+      static_page: static_page
