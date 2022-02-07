@@ -473,20 +473,8 @@
     "mehrpadin/superfish": {
         "version": "2.1"
     },
-    "mikehaertl/php-shellcommand": {
-        "version": "1.6.4"
-    },
-    "mikehaertl/php-tmpfile": {
-        "version": "1.2.1"
-    },
-    "mikehaertl/phpwkhtmltopdf": {
-        "version": "2.5.0"
-    },
     "mikey179/vfsstream": {
         "version": "v1.6.10"
-    },
-    "mpdf/mpdf": {
-        "version": "v8.0.15"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
@@ -657,9 +645,6 @@
     },
     "seld/phar-utils": {
         "version": "1.1.2"
-    },
-    "setasign/fpdi": {
-        "version": "v2.3.6"
     },
     "sirbrillig/phpcs-variable-analysis": {
         "version": "v2.11.2"

@@ -150,8 +150,6 @@
         "drupal/views_block_area": "^1.0@beta",
         "drupal/votingapi": "^3.0@beta",
         "drush/drush": "^10.3",
-        "mikehaertl/phpwkhtmltopdf": "^2.5",
-        "mpdf/mpdf": "^8.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^4.0.0",
