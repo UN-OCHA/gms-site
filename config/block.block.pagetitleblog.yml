@@ -17,17 +17,17 @@ plugin: page_title_blog
 settings:
   id: page_title_blog
   label: 'Page Title Blog'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
   request_path:
     id: request_path
-    pages: /content/home-page-blog
     negate: false
+    pages: /content/home-page-blog
   node_type:
     id: node_type
-    bundles:
-      blog_entry: blog_entry
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry

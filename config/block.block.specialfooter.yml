@@ -17,8 +17,8 @@ plugin: 'block_content:a5fa71d9-a21c-44a9-8918-45edcff2d16b'
 settings:
   id: 'block_content:a5fa71d9-a21c-44a9-8918-45edcff2d16b'
   label: 'Special Footer'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

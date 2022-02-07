@@ -169,6 +169,6 @@ destination:
   plugin: config
   config_name: google_analytics.settings
 migration_dependencies:
+  required: {  }
   optional:
     - upgrade_d7_user_role
-  required: {  }

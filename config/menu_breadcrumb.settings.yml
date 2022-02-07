@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: B_6w2RYqF6vEA_QZ8-0LRUI0AqnS4NZuQqlO9rXwfJs
 determine_menu: true
 disable_admin_page: true
 append_current_page: true
@@ -18,33 +20,33 @@ menu_breadcrumb_menus:
     taxattach: 0
     langhandle: 0
   menu-cbpf-menu:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   menu-faq-menu:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   features:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   footer:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   admin:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   tools:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   menu-ocha:
@@ -53,19 +55,17 @@ menu_breadcrumb_menus:
     taxattach: 0
     langhandle: 0
   quick-link:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   menu-special-page-menu:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
   account:
-    weight: 0
     enabled: 0
+    weight: 0
     taxattach: 0
     langhandle: 0
-_core:
-  default_config_hash: B_6w2RYqF6vEA_QZ8-0LRUI0AqnS4NZuQqlO9rXwfJs

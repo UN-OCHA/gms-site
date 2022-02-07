@@ -11,12 +11,12 @@ dependencies:
     - field.field.node.entity_browser_test.field_image_browser
     - field.field.node.entity_browser_test.field_nodes
     - node.type.entity_browser_test
-  enforced:
-    module:
-      - entity_browser_example
   module:
     - text
     - user
+  enforced:
+    module:
+      - entity_browser_example
 _core:
   default_config_hash: vu9Vq8OWfsOVQ6pAVqG1ez3LkA5f_7tsqthB7fJrRoI
 id: node.entity_browser_test.teaser
@@ -25,12 +25,12 @@ bundle: entity_browser_test
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
     weight: 100

@@ -19,26 +19,26 @@ plugin: 'menu_block:menu-ocha'
 settings:
   id: 'menu_block:menu-ocha'
   label: HUF
-  provider: menu_block
   label_display: '0'
+  provider: menu_block
   follow: true
   follow_parent: child
+  label_link: false
+  label_type: parent
   level: 1
   depth: 0
   expand_all_items: false
   parent: 'menu-ocha:menu_link_content:00487946-1370-4f1f-b349-e2d6f4426c56'
   suggestion: menu_ocha
-  label_type: parent
-  label_link: false
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/content/home"
     negate: true
+    pages: "<front>\r\n/content/home"
   node_type:
     id: node_type
-    bundles:
-      static_page: static_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page
