@@ -116,7 +116,7 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
           ->condition('id', $parent_prop);
         $results = $query->execute();
         $data = $results->fetchAssoc();
-        $default_options = unserialize($data['options']);
+        $default_options = unserialize($data['options'], ['allowed_classes' => TRUE]);
         $form['menu']['related']['menus'] = [
           '#type' => 'select',
           '#title' => t('Related to menu'),
