@@ -74,7 +74,7 @@
         }
     ],
     "require": {
-        "php": ">=8.0 || ^7.3",
+        "php": ">=8.0",
         "ckeditor-plugin/colorbutton": "^4.11",
         "ckeditor-plugin/fakeobjects": "^4.16.2",
         "ckeditor-plugin/iframe": "^4.16.2",
