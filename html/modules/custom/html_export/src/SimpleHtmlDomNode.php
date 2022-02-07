@@ -591,7 +591,7 @@ class SimpleHtmlDomNode {
       $_debug_object->debug_log_entry(1);
     }
 
-    list($tag, $id, $class, $attributes) = $selector;
+    [$tag, $id, $class, $attributes] = $selector;
     $nodes = [];
 
     // Descendant Combinator.
@@ -704,13 +704,13 @@ class SimpleHtmlDomNode {
         && is_array($attributes)
         && !empty($attributes)) {
         foreach ($attributes as $a) {
-          list (
+          [
             $att_name,
             $att_expr,
             $att_val,
             $att_inv,
-            $att_case_sensitivity
-            ) = $a;
+            $att_case_sensitivity,
+          ] = $a;
           if (is_numeric($att_name)
             && $att_expr === ''
             && $att_val === '') {

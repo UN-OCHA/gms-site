@@ -14,7 +14,7 @@ class GraphController extends ControllerBase {
    */
   public function getJsonData($year = 2016, $country = NULL, $donor = NULL) {
     $cached = $this->cache()->get('Poolfund_project_sankey_chart_' . $year);
-    $data = isset($cached->data) ? $cached->data : '';
+    $data = $cached->data ?? '';
     if ($data) {
       $colors = ['color1', 'color4', 'color2', 'color3', 'color5', 'color6'];
       $nodes = $node_check = $links = [];
