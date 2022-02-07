@@ -18,13 +18,13 @@ plugin: 'block_content:768a5981-5ce1-4590-998d-7d0cd6a7b972'
 settings:
   id: 'block_content:768a5981-5ce1-4590-998d-7d0cd6a7b972'
   label: 'High map tableau'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
+    pages: '<front>'

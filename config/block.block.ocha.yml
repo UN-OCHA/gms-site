@@ -19,26 +19,26 @@ plugin: 'menu_block:menu-ocha'
 settings:
   id: 'menu_block:menu-ocha'
   label: Partner
-  provider: menu_block
   label_display: '0'
+  provider: menu_block
   follow: false
   follow_parent: child
+  label_link: false
+  label_type: block
   level: 1
   depth: 0
   expand_all_items: false
   parent: 'menu-ocha:menu_link_content:454c4be4-1cf7-4b6a-a348-950e16395f2b'
   suggestion: menu_ocha
-  label_type: block
-  label_link: false
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/content/home"
     negate: true
+    pages: "<front>\r\n/content/home"
   node_type:
     id: node_type
-    bundles:
-      static_page: static_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

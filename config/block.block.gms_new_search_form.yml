@@ -18,8 +18,8 @@ plugin: search_form_block
 settings:
   id: search_form_block
   label: ''
-  provider: search
   label_display: '0'
+  provider: search
   page_id: ''
 visibility:
   request_path:

@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.storage.node.body
     - node.type.entity_browser_test
+  module:
+    - text
   enforced:
     module:
       - entity_browser_example
-  module:
-    - text
 _core:
   default_config_hash: ov1nt8D4VmcIfz4dEympmyJx0_UTu5AgX52ICMq0t4U
 id: node.entity_browser_test.body

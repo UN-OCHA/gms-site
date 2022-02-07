@@ -27,29 +27,29 @@ mode: teaser
 content:
   field_embedded_video:
     type: video_embed_field_video
-    weight: 2
-    region: content
     label: above
     settings:
+      autoplay: true
       responsive: true
       width: 854
       height: 480
-      autoplay: true
     third_party_settings: {  }
+    weight: 2
+    region: content
   field_thumbnail_image:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: large
       image_link: ''
+      image_style: large
     third_party_settings: {  }
-  links:
-    weight: 1
+    weight: 0
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   comment: true

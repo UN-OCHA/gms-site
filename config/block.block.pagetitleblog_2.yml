@@ -16,14 +16,14 @@ plugin: page_title_blog
 settings:
   id: page_title_blog
   label: 'Page Title Blog'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      blog_entry: blog_entry
-      page: page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry
+      page: page

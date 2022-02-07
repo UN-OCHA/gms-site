@@ -18,21 +18,21 @@ plugin: rightside_menu
 settings:
   id: rightside_menu
   label: 'Left Side menu'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      static_page: static_page
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "<front>\r\n/content/home"
     negate: true
+    pages: "<front>\r\n/content/home"
   request_param:
     id: request_param
     request_param: menu_visibility=show
     negate: true
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

@@ -57,43 +57,43 @@ bundle: blog_entry
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: content
   comment:
     type: comment_default
-    weight: 4
-    region: content
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_embedded_video:
     type: video_embed_field_lazyload
-    weight: 5
-    region: content
     label: above
     settings:
-      image_style: ''
-      link_image_to: ''
+      autoplay: true
       responsive: true
       width: 854
       height: 480
-      autoplay: true
+      image_style: ''
+      link_image_to: ''
     third_party_settings: {  }
+    weight: 5
+    region: content
   field_image1:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
