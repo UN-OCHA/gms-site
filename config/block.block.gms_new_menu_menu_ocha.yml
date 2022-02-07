@@ -15,8 +15,11 @@ plugin: 'system_menu_block:menu-ocha'
 settings:
   id: broken
   label: '<none>'
-  provider: core
   label_display: '0'
+  provider: core
+  level: 1
+  depth: 0
+  expand_all_items: false
 visibility:
   request_path:
     id: request_path

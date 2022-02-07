@@ -18,13 +18,13 @@ plugin: 'block_content:6c29f89b-efe8-4c05-9851-67a4bbb56fee'
 settings:
   id: 'block_content:6c29f89b-efe8-4c05-9851-67a4bbb56fee'
   label: 'Country based pooled funds'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /content/biv2
     negate: false
+    pages: /content/biv2
