@@ -76,7 +76,7 @@ class SanKeyForm extends FormBase {
         $years = $years_state;
       }
     }
-    list($countries, $donors) = $this->graphData->gmsOchaGetPoolfundYearwise($years);
+    [$countries, $donors] = $this->graphData->gmsOchaGetPoolfundYearwise($years);
     $form['message_element'] = [
       '#prefix' => '<div class="container"><div class="row"><div class="poolfund-sankey-title">',
       '#suffix' => '</div>',
