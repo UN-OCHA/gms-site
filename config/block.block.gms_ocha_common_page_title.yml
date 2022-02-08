@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - gms_ocha_common
@@ -11,16 +12,23 @@ _core:
 id: gms_ocha_common_page_title
 theme: gms_ocha_common
 region: page_title
-weight: -9
+weight: -20
 provider: null
 plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Page title'
-  provider: core
   label_display: '0'
+  provider: core
 visibility:
   request_path:
     id: request_path
-    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>"
     negate: true
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog\r\n/tags/*\r\n/categories/*"
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry

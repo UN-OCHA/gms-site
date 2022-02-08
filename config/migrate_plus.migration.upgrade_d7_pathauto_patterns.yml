@@ -48,6 +48,6 @@ process:
 destination:
   plugin: 'entity:pathauto_pattern'
 migration_dependencies:
+  required: {  }
   optional:
     - upgrade_d7_node_type
-  required: {  }

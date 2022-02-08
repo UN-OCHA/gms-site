@@ -19,6 +19,7 @@ settings:
           items:
             - Bold
             - Italic
+            - Iframe
             - Underline
             - Strike
             - Superscript
@@ -89,6 +90,8 @@ settings:
       font_sizes: ''
     colorbutton:
       colors: ''
+    tokenbrowser:
+      token_types: {  }
 image_upload:
   status: true
   scheme: public

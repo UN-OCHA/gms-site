@@ -11,15 +11,15 @@ dependencies:
     - gms_ocha_common
 id: cbpfbiinternalmenu
 theme: gms_ocha_common
-region: header_top
-weight: -12
+region: header_second
+weight: -24
 provider: null
 plugin: 'superfish:menu-cbpf-menu'
 settings:
   id: 'superfish:menu-cbpf-menu'
   label: 'CBPF BI internal Menu'
-  provider: superfish
   label_display: '0'
+  provider: superfish
   level: '1'
   depth: '0'
   expand_all_items: false
@@ -72,8 +72,8 @@ settings:
 visibility:
   node_type:
     id: node_type
-    bundles:
-      cbpf_pages: cbpf_pages
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      cbpf_pages: cbpf_pages

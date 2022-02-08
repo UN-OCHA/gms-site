@@ -9,14 +9,14 @@ _core:
 id: gms_ocha_common_local_tasks
 theme: gms_ocha_common
 region: content
-weight: -9
+weight: -22
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: Tabs
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: true
 visibility: {  }

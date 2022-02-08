@@ -1,0 +1,32 @@
+uuid: 61e1f179-0886-4ed4-8819-5177adbe3211
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: pagetitle
+theme: gms_ocha_common
+region: navigation
+weight: -22
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: visible
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/page/print/pdf/node/*\r\n/section/print/pdf/node/*\r\n/content/biv2\r\n<front>\r\n/content/home\r\n/content/home-page-blog\r\n/tags/*\r\n/categories/*"
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

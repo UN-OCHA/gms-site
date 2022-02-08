@@ -11,20 +11,20 @@ dependencies:
     - gms_ocha_common
 id: cbpfsmultidonorhumanitarian
 theme: gms_ocha_common
-region: content
-weight: -11
+region: block_content
+weight: -12
 provider: null
 plugin: 'block_content:887eb650-9e60-42df-a496-a062f3b8213c'
 settings:
   id: 'block_content:887eb650-9e60-42df-a496-a062f3b8213c'
   label: 'CBPFs multi-donor humanitarian'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
+    pages: '<front>'

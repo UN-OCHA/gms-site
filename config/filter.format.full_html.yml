@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.media_library
   module:
     - media
+    - token_filter
 _core:
   default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
 name: 'Full HTML'
@@ -38,7 +39,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <h1> <pre> <u> <span lang dir> <ul type class="p-0 ml-3 mt-4 mb-4"> <ol start type class="p-0 ml-3 mt-4 mb-4"> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <table class="table table-bordered table-default table-striped table-green-left-border table-green-border table-vertical-heading"> <p class="mt-4 mb-4"> <h2 id class="mt-5 mb-5 igf-text-primary"> <h5 id class="mt-5 mb-5 igf-text-primary"> <iframe>'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:
@@ -48,13 +49,20 @@ filters:
     weight: 100
     settings:
       default_view_mode: media_library
+      allowed_view_modes:
+        default: default
+        full: full
+        media_library: media_library
       allowed_media_types:
         audio: audio
         document: document
         image: image
         remote_video: remote_video
         video: video
-      allowed_view_modes:
-        default: default
-        full: full
-        media_library: media_library
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: 0
+    settings:
+      replace_empty: '0'

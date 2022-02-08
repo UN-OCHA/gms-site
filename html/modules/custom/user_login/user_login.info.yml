@@ -1,0 +1,5 @@
+name: GMS Ocha User Login
+type: module
+description: GMS Ocha Default userlogin disable
+package: GMS Custom Modules
+core_version_requirement: ^8.8 || ^9

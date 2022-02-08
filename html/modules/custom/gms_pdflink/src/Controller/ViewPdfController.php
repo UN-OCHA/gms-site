@@ -2,25 +2,80 @@
 
 namespace Drupal\gms_pdflink\Controller;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Render\Markup;
-use Drupal\node\Entity\Node;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-
-use Dompdf\Dompdf;
-use Dompdf\Options;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Print controller.
  */
 class ViewPdfController extends ControllerBase {
+
+  /**
+   * The entity manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The renderer.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
+   * Retrieves the currently active request object.
+   *
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  protected $request;
+
+  /**
+   * The config factory object.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * Creates an DevelLocalTask object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity manager.
+   * @param \Drupal\Core\Render\RendererInterface $renderer
+   *   The renderer service.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request
+   *   The request stack.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The config factory object.
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, RendererInterface $renderer, RequestStack $request, ConfigFactoryInterface $configFactory) {
+    $this->entityTypeManager = $entity_type_manager;
+    $this->renderer = $renderer;
+    $this->request = $request;
+    $this->configFactory = $configFactory;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('renderer'),
+      $container->get('request_stack'),
+      $container->get('config.factory'),
+    );
+  }
 
   /**
    * Print an entity to the selected format.
@@ -31,76 +86,64 @@ class ViewPdfController extends ControllerBase {
    *   The entity type.
    * @param int $entity_id
    *   The entity id.
-   *
-   * @return \Symfony\Component\HttpFoundation\Response
-   *   The response object on error otherwise the Print is sent.
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
-    if(!empty($entity_id) and is_numeric($entity_id)){
-      $new_nid =  $entity_id;
+
+    if (!empty($entity_id) && is_numeric($entity_id)) {
       $entity_type = 'node';
-      $view_mode = 'default';
-      $content = '';
-      $node = Node::load($new_nid);
+
+      $node       = $this->entityTypeManager->getStorage('node')->load($entity_id);
       $node_title = $node->get('title')->value;
-      $output1 = \Drupal::entityTypeManager()->getViewBuilder($entity_type)->view($node, $view_mode);
-      $content .= Markup::create(\Drupal::service('renderer')->render($output1));
-      $html = '<html>
-                <head>
-                  <title>'.$node_title.'</title>
-                  <style>
-                   table {
-                      max-width: 990px !important;
-                  }
-                  body {
-                      max-width: 990px !important;
-                  }
-                  img {
-                      max-width: 650px !important;
-                  }
-                  </style>
-                </head>
-                <body>'.$content.'</body>
-             </html>';
-      $host = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBasePath();
-      $html = str_replace("src=\"/sites/", "src=\"".$host."/sites/",$html);
-//    echo $html;die;
-//    dump($html);die;
-      $fileName = str_replace(" ","_",strtolower($node_title)).".pdf";
-      $options = new Options();
-      $options->set('isRemoteEnabled', true);
-      $options->set('defaultFont', 'Calibri');
-      $options->set('isHtml5ParserEnabled', 'TRUE');
-      $dompdf = new Dompdf($options);
-      $dompdf->load_html($html);
-      $dompdf->setPaper('B4', 'landscape');
-      $dompdf->render();
-//      $dompdf->stream($fileName, array("Attachment"=>0));
-      $output = $dompdf->output();
-      if (!is_dir('public://temp_generate_form_pdf')) {
-        mkdir("public://temp_generate_form_pdf", 0777);
+      $filename   = Html::cleanCssIdentifier($node_title) . '.pdf';
+
+      // Optionally check if $filename exists in a local cache directory.
+      // If so, we could serve that file instead of generating it again.
+      // This would of course require us to save the generated file to a local
+      // cache after generating it.
+      // $pdf_header = \Drupal::config('ocha_snap.settings')->get('header');.
+      $pdf_header = $this->configFactory->get('ocha_snap.settings')->get('header');
+      if ($css = $this->configFactory->get('ocha_snap.settings')->get('css')) {
+        $pdf_header .= '<style type="text/css">' . $css . '</style>';
       }
-      $filepath = 'sites/default/files/temp_generate_form_pdf/' . $fileName;
-      $fp = fopen($filepath, "w+");
-      fwrite($fp, $output);
-      fclose($fp);
-      $headers = [
-        'Content-Type'     => 'application/pdf',
-        'Content-Disposition' => 'attachment;filename="' . $fileName . '"',
+      $params = [
+        'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
+        'logo'           => 'gms',
+        'media'          => 'print',
+        'output'         => 'pdf',
+        'service'        => 'gms',
+        'pdfLandscape'   => 'true',
+        'pdfMarginRight' => '20',
+        'pdfMarginLeft'  => '20',
+        'pdfMarginTop'   => '200',
+        'pdfMarginUnit'  => 'px',
+        'pdfHeader'      => $pdf_header,
       ];
-      unset($html);
-      unset($options);
-      unset($fileName);
-      unset($host);
-      return new BinaryFileResponse($filepath, 200, $headers, TRUE);
-    }else{
+
+      $url = Url::fromUri("base:{$entity_type}/{$entity_id}")->setAbsolute(TRUE)->toString() . "?menu_visibility=show";
+      $pdf = ocha_snap($url, $params);
+      if (empty($pdf)) {
+        $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
+        $response = new RedirectResponse($url, 301);
+        $response->send();
+      }
+      else {
+        $response = new Response();
+        $response->headers->set('Pragma', 'no-cache');
+        $response->headers->set('Content-type', 'application/pdf; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+        $response->headers->set('Content-Transfer-Encoding', 'binary');
+        $response->headers->set('Cache-control', 'private');
+        $response->headers->set('Content-length', strlen($pdf));
+        $response->setContent($pdf);
+        $response->send();
+      }
+    }
+    else {
       global $base_url;
-      \Drupal::messenger()
-        ->addMessage(t('Access denied.'), 'error');
+      $this->messenger()->addMessage($this->t('Access denied.'), 'error');
       $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
   }
-
 
 }

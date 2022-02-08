@@ -10,16 +10,16 @@ dependencies:
 id: gmsochasankeychart
 theme: gms_ocha_common
 region: content
-weight: -6
+weight: -18
 provider: null
 plugin: gms_ocha_sankey_chart
 settings:
   id: gms_ocha_sankey_chart
   label: 'GMS Ocha Sankey Chart'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
   request_path:
     id: request_path
-    pages: /content/biv2
     negate: false
+    pages: /content/biv2

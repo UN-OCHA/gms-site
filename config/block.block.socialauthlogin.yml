@@ -1,0 +1,25 @@
+uuid: 47cb97c3-f019-405b-9d69-7b700dbcaa75
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_auth
+    - system
+  theme:
+    - gms_ocha_common
+id: socialauthlogin
+theme: gms_ocha_common
+region: content
+weight: -15
+provider: null
+plugin: social_auth_login
+settings:
+  id: social_auth_login
+  label: 'Social Auth Login'
+  label_display: '0'
+  provider: social_auth
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/login

@@ -1,0 +1,107 @@
+uuid: b2e5d5d3-fbb0-4254-b40f-8ae33c985fee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
+    - field.field.node.blog_entry.body
+    - field.field.node.blog_entry.comment
+    - field.field.node.blog_entry.field_categories
+    - field.field.node.blog_entry.field_embedded_video
+    - field.field.node.blog_entry.field_image1
+    - field.field.node.blog_entry.field_page_header_bg_image
+    - field.field.node.blog_entry.field_page_header_style
+    - field.field.node.blog_entry.field_post_layout
+    - field.field.node.blog_entry.field_tags
+    - field.field.node.blog_entry.field_thumbnail_image
+    - node.type.blog_entry
+  module:
+    - comment
+    - ds
+    - image
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_image1
+        - node_title
+        - 'dynamic_token_field:node-author_info'
+        - body
+        - comment
+        - field_embedded_video
+    fields:
+      'dynamic_token_field:node-author_info':
+        plugin_id: 'dynamic_token_field:node-author_info'
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.blog_entry.full
+targetEntityType: node
+bundle: blog_entry
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_embedded_video:
+    type: video_embed_field_lazyload
+    label: above
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+      image_style: ''
+      link_image_to: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image1:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_categories: true
+  field_page_header_bg_image: true
+  field_page_header_style: true
+  field_post_layout: true
+  field_tags: true
+  field_thumbnail_image: true
+  links: true

@@ -15,12 +15,19 @@ regions:
   header_search: Header search
   header_logo: Header logo
   header_navigation: Header navigation
+  header_second: Header Second
+  header_third: Header Third
+  navigation: Navigation Bar
   highlighted: Highlighted
+  banner: Banner
   page_title: Page title
   content: Content
+  printpage: Print Page
+  block_content: Block Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
   facets: Facets
+  fluid_content: Fluid Content
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 

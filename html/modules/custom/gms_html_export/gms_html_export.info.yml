@@ -1,6 +1,0 @@
-name: GMS HTML EXPORT
-type: module
-description: Custom html export
-package: Custom
-core: 8.x
-core_version_requirement: ^8 || ^9

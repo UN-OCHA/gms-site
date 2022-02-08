@@ -1,0 +1,90 @@
+uuid: 657322bf-015b-44de-aa28-c913d9142e75
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.blog_data
+    - field.field.node.blog_entry.body
+    - field.field.node.blog_entry.comment
+    - field.field.node.blog_entry.field_categories
+    - field.field.node.blog_entry.field_embedded_video
+    - field.field.node.blog_entry.field_image1
+    - field.field.node.blog_entry.field_page_header_bg_image
+    - field.field.node.blog_entry.field_page_header_style
+    - field.field.node.blog_entry.field_post_layout
+    - field.field.node.blog_entry.field_tags
+    - field.field.node.blog_entry.field_thumbnail_image
+    - node.type.blog_entry
+  module:
+    - comment
+    - image
+    - text
+    - user
+    - video_embed_field
+id: node.blog_entry.blog_data
+targetEntityType: node
+bundle: blog_entry
+mode: blog_data
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_embedded_video:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image1:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_page_header_bg_image: true
+  field_page_header_style: true
+  field_post_layout: true
+  field_thumbnail_image: true
+  links: true

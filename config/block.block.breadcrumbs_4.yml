@@ -1,0 +1,28 @@
+uuid: 97835554-e141-4223-a6a0-bfed6cb068ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - gms_ocha_common
+id: breadcrumbs_4
+theme: gms_ocha_common
+region: header_third
+weight: -19
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_entry: blog_entry

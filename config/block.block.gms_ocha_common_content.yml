@@ -11,12 +11,12 @@ _core:
 id: gms_ocha_common_content
 theme: gms_ocha_common
 region: content
-weight: -3
+weight: -17
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
   label: 'Main page content'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

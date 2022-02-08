@@ -12,3 +12,10 @@ gms_pdflink.view:
     _title: 'Section Print'
   requirements:
     _permission: 'access content'
+gms_pdflink.download:
+  path: 'section/download/pdf/{entity_type}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\gms_pdflink\Controller\PrintSectionController::downloadPdf'
+    _title: 'Section PDF download'
+  requirements:
+    _permission: 'access content'

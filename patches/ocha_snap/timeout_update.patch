@@ -1,0 +1,12 @@
+diff --git a/ocha_snap.module b/ocha_snap.module
+index 3742a8a..d996ca1 100644
+--- a/ocha_snap.module
++++ b/ocha_snap.module
+@@ -108,6 +108,7 @@ function ocha_snap($url, array $params = []) {
+       'X-Forwarded-For' => Drupal::request()->getClientIp(),
+       'User-Agent'      => $_SERVER['HTTP_USER_AGENT'],
+     ],
++    'timeout' => 600,
+     'method' => 'POST',
+   ];
+ 

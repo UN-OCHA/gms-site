@@ -1,0 +1,29 @@
+uuid: 59ff38fb-3893-48bb-9b12-46fa788f29c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - gms_ocha_common
+id: breadcrumbs_2
+theme: gms_ocha_common
+region: header_third
+weight: -20
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      categories: categories
+      tags: tags

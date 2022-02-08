@@ -1,36 +1,44 @@
 uuid: 3b318336-409f-46cf-9e7d-dd537983795f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.menu-ocha
   module:
     - menu_block
+    - node
     - system
   theme:
     - gms_ocha_common
 id: ocha_4
 theme: gms_ocha_common
-region: highlighted
+region: sidebar_first
 weight: -10
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:
   id: 'menu_block:menu-ocha'
   label: 'CBPF Finance'
+  label_display: '0'
   provider: menu_block
-  label_display: visible
   follow: false
   follow_parent: child
+  label_link: false
+  label_type: block
   level: 1
   depth: 0
   expand_all_items: false
   parent: 'menu-ocha:menu_link_content:c5f1f5bd-642c-4bfa-805b-369ead281e00'
   suggestion: menu_ocha
-  label_type: block
-  label_link: false
 visibility:
   request_path:
     id: request_path
-    pages: /content/cbpf-finance
+    negate: true
+    pages: "<front>\r\n/content/home"
+  node_type:
+    id: node_type
     negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

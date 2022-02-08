@@ -11,12 +11,12 @@ _core:
 id: gms_ocha_common_help
 theme: gms_ocha_common
 region: header_top
-weight: -13
+weight: -23
 provider: null
 plugin: help_block
 settings:
   id: help_block
   label: Help
-  provider: help
   label_display: '0'
+  provider: help
 visibility: {  }

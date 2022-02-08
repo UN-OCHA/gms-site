@@ -1,0 +1,33 @@
+uuid: 83d5d967-7e16-4d45-8464-ef600238b9be
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: pagetitleblog_4
+theme: gms_ocha_common
+region: content
+weight: -19
+provider: null
+plugin: page_title_blog
+settings:
+  id: page_title_blog
+  label: 'Page Title Blog'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/content/home\r\n<front>"
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

@@ -1,0 +1,20 @@
+uuid: 2f27fdf7-9bfc-467b-a874-d9c0e4cf082c
+langcode: en
+status: false
+dependencies:
+  module:
+    - gms_ocha
+  theme:
+    - gms_ocha_common
+id: welcometext
+theme: gms_ocha_common
+region: header_second
+weight: -22
+provider: null
+plugin: welcome_text
+settings:
+  id: welcome_text
+  label: 'Welcome text'
+  label_display: '0'
+  provider: gms_ocha
+visibility: {  }

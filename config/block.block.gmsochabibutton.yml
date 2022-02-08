@@ -1,0 +1,28 @@
+uuid: e5574ea5-d196-425d-9aac-56132dcc282f
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - node
+  theme:
+    - gms_ocha_common
+id: gmsochabibutton
+theme: gms_ocha_common
+region: header_second
+weight: -23
+provider: null
+plugin: gms_ocha_bibutton
+settings:
+  id: gms_ocha_bibutton
+  label: 'GMS Ocha BiButton'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      cbpf_pages: cbpf_pages

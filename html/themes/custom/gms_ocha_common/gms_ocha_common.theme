@@ -1,10 +1,218 @@
 <?php
-/* yourtheme.theme */
 
+/**
+ * @file
+ * Template overrides, preprocess, and hooks for the Custom Design theme.
+ */
+
+use Drupal\path_alias\Entity\PathAlias;
+use Drupal\redirect\Entity\Redirect;
+use Drupal\Core\Url;
+
+/**
+ * Preprocess the page.
+ */
 function gms_ocha_common_preprocess_page(&$variables) {
   $site_config = \Drupal::config('system.site');
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
-  // logo needs to be placed within specified folder
   $variables['site_logo'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+}
+
+/**
+ * Preprocess the Html.
+ */
+function gms_ocha_common_preprocess_html(&$variables) {
+  if (isset($variables['node_type'])) {
+    $front = \Drupal::config('system.site')->get('page.front');
+    $match = [];
+    preg_match_all('/([\d]+)/', $front, $match);
+    $nodeData = end($match[0]);
+    $fNode = $nodeData;
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node->getType() == 'static_page') {
+      if ($fNode == $node->id()) {
+        $variables['attributes']['class'][] = 'gms-home-page';
+      }
+      else {
+        $variables['attributes']['class'][] = 'help-portal-page';
+      }
+    }
+    elseif ($node->getType() == 'page' || $node->getType() == 'blog_entry') {
+      $variables['attributes']['class'][] = 'blog-page';
+    }
+    elseif ($node->getType() == 'cbpf_pages') {
+      $variables['attributes']['class'][] = 'gms-internal-page';
+    }
+    $variables['attributes']['type'] = $node->getType();
+  }
+  elseif ($variables['root_path'] == 'taxonomy') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    preg_match_all('/([\d]+)/', $current_path, $match);
+    $tid = end($match[0]);
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+    if (in_array($term->bundle(), ['tags', 'categories'])) {
+      $variables['attributes']['class'] = "blog-page";
+    }
+    $variables['attributes']['type'] = 'blog-page';
+  }
+  $current_path = \Drupal::service('path.current')->getPath();
+  $aliasByPath = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  if ($aliasByPath == '/user/login') {
+    $variables['attributes']['class'] = "login-page";
+  }
+  if ($aliasByPath == '/content/biv2') {
+    $variables['attributes']['class'] = "bi-page";
+  }
+}
+
+/**
+ * Preprocess the Menu.
+ */
+function gms_ocha_common_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] == 'ocha-navigation') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $current_path_result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+    $query = \Drupal::entityQuery('path_alias');
+    $query->condition('alias', $current_path_result, '=');
+    $aliasIds = $query->execute();
+    $aliasIds = array_values($aliasIds);
+    if (!empty($aliasIds)) {
+      $pathAlias = PathAlias::load($aliasIds[0]);
+      if (is_object($pathAlias)) {
+        $path = $pathAlias->getPath();
+        $nodeId = (int) str_replace("/node/", "", $path);
+        if ($nodeId > 0) {
+          $node = \Drupal::entityTypeManager()->getStorage('node')->load($nodeId);
+        }
+        $menu_name = 'ocha-navigation';
+        $menu_tree = \Drupal::menuTree();
+        $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+        $parameters->setMinDepth(0);
+        $tree = $menu_tree->load($menu_name, $parameters);
+        $manipulators = [
+          ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+          ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+        ];
+        $tree = $menu_tree->transform($tree, $manipulators);
+        $menu = $menu_tree->build($tree);
+        $flg = FALSE;
+        foreach ($menu['#items'] as $key => $val) {
+          $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+            ->fields('menu_tree')
+            ->condition('id', $key);
+          $results = $query->execute();
+          $data = $results->fetchAssoc();
+          if (!empty($data)) {
+            if ($data['route_name'] == '<front>') {
+              $front = \Drupal::config('system.site')->get('page.front');
+              $nodeParent = (int) str_replace("/node/", "", $front);
+            }
+            else {
+              $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+              $menu_item = $menu_link_manager->createInstance($data['id']);
+              $url = $menu_item->getUrlObject();
+              $url_string = $url->toString();
+              $urlPath = ltrim($url_string, '/');
+              $redirect = \Drupal::entityQuery('redirect')
+                ->condition('redirect_source.path', $urlPath)
+                ->execute();
+              if (!empty($redirect)) {
+                $redirect = array_values($redirect);
+                $redirect = Redirect::load($redirect['0']);
+                if (preg_match('/node/i', $redirect->getRedirect()['uri'])) {
+                  $nodeParentArr = $redirect->getRedirectUrl()->getRouteParameters();
+                  $nodeParent = $nodeParentArr['node'];
+                }
+              }
+              else {
+                $result = \Drupal::service('path_alias.manager')->getAliasByPath($url_string);
+                $query = \Drupal::entityQuery('path_alias');
+                $query->condition('alias', $result, '=');
+                $aliasIds = $query->execute();
+                $aliasIds = array_values($aliasIds);
+                $pathAlias = PathAlias::load($aliasIds[0]);
+                if (is_object($pathAlias)) {
+                  $path = $pathAlias->getPath();
+                  $nodeParent = (int) str_replace("/node/", "", $path);
+                }
+              }
+            }
+            if ($nodeParent > 0) {
+              $nodeData = \Drupal::entityTypeManager()->getStorage('node')->load($nodeParent);
+            }
+            if ($nodeId > 0) {
+              if ($nodeId == 191 && $nodeParent == 191 && $flg === FALSE) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ($nodeId == $nodeParent && $flg === FALSE
+                && in_array($nodeId, [2, 808]) && $nodeParent != 191) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ($nodeData->bundle() == $node->bundle() && $flg === FALSE
+                && !in_array($nodeId, [191, 2, 808]) && $nodeParent != 191) {
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $flg = TRUE;
+              }
+              elseif ($node->bundle() == 'blog_entry' && $flg === FALSE && $nodeParent == 808) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+                $flg = TRUE;
+              }
+              elseif ((preg_match('/categories/i', $current_path_result)
+                  || preg_match('/tags/i', $current_path_result))
+                && $nodeData->bundle() == 'page' && $flg === FALSE) {
+                $variables['items'][$key]['parent_active_class'] = TRUE;
+                $variables['items'][$key]['attributes']->addClass(['active-header-link']);
+              }
+            }
+          }
+        }
+      }
+    }
+    $variables['#cache']['max-age'] = 0;
+  }
+}
+
+/**
+ * Preprocess the Breadcrumb.
+ */
+function gms_ocha_common_preprocess_breadcrumb(&$variables) {
+  $query = \Drupal::request()->query->get('query');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!empty($query)) {
+    if ($node->getType() == 'static_page') {
+      $menu_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+      $menu_link_content = $menu_content_storage->loadByProperties(['uuid' => $query]);
+      $menu_link_content = array_values($menu_link_content);
+      $match = [];
+      preg_match_all('/([\d]+)/', $menu_link_content[0]->get('link')->uri, $match);
+      $nodeData = end($match[0]);
+      if ($nodeData > 0) {
+        $variables['breadcrumb'][1] = [
+          'text' => $menu_link_content[0]->get('title')->value,
+          'url' => Url::fromRoute('entity.node.canonical', ['node' => $nodeData]),
+        ];
+      }
+      $variables['#cache']['max-age'] = 0;
+    }
+  }
+}
+
+/**
+ * Preprocess the Block.
+ */
+function gms_ocha_common_preprocess_block(&$variables) {
+  if ($variables['attributes']['id'] == 'block-ochanavigation') {
+    $variables['attributes']['data-cd-toggable'] = 'Menu';
+    $variables['attributes']['data-cd-component'] = 'cd-nav';
+    $variables['attributes']['data-cd-icon'] = 'arrow-down';
+    $variables['attributes']['data-cd-processed'] = 'true';
+    $variables['attributes']['class'] = 'block block-menu navigation menu--main cd-nav cd-site-header__nav';
+  }
 }

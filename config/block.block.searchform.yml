@@ -1,6 +1,6 @@
 uuid: db5ec910-ea73-417f-9b71-32108704c323
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - search
@@ -8,14 +8,14 @@ dependencies:
     - gms_ocha_common
 id: searchform
 theme: gms_ocha_common
-region: header_navigation
-weight: -9
+region: header_search
+weight: -15
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
   label: 'Search form'
-  provider: search
   label_display: '0'
+  provider: search
   page_id: ''
 visibility: {  }

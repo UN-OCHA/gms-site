@@ -11,26 +11,26 @@ dependencies:
 id: printlinks
 theme: gms_ocha_common
 region: content
-weight: -7
+weight: -20
 provider: null
 plugin: print_links
 settings:
   id: print_links
   label: 'Print Links'
-  provider: gms_pdflink
   label_display: '0'
-  max_age: null
+  provider: gms_pdflink
   context_mapping:
     entity: '@node.node_route_context:node'
+  max_age: null
 visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/content/home"
   node_type:
     id: node_type
-    bundles:
-      static_page: static_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
+    bundles:
+      static_page: static_page

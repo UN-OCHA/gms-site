@@ -11,20 +11,20 @@ dependencies:
     - gms_ocha_common
 id: countrybasedpooledfunds
 theme: gms_ocha_common
-region: content
-weight: -13
+region: block_content
+weight: -14
 provider: null
 plugin: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
 settings:
   id: 'block_content:bc46f28d-2916-481a-b67e-a188790ded02'
   label: 'Country-based Pooled Funds'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
+    pages: '<front>'

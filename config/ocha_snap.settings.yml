@@ -1,0 +1,10 @@
+header: '<div class ="divcls"><img src="__LOGO_SRC__"  width="100%" height="60px" style="display:block;"><span style="font-size:15px;">CBPF GRANT MANAGEMENT SYSTEM (GMS)</span></div>'
+footer: ''
+css: ".divcls {height: 200px;width: 100%;display: block;margin-bottom:200px}\r\n@media print {\r\n  * {\r\n    page-break-inside: avoid;\r\n    page-break-after: avoid;\r\n    page-break-before: avoid;\r\n  }\r\n}"
+debug: 0
+site_user: ''
+site_pass: ''
+service_name: Drupal
+url: ''
+_core:
+  default_config_hash: SplpLuY3iXEiC0YAaVK-gSK1_luoJg_qu_7wpNd0Swc

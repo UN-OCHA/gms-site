@@ -1,4 +1,4 @@
 services:
   gms_ocha.graph_data:
-    class: Drupal\gms_ocha\graphData
-    arguments: []
+    class: Drupal\gms_ocha\GraphData
+    arguments: ['@cache.default', '@http_client','@request_stack']

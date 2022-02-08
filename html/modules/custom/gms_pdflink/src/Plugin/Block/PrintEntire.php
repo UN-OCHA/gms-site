@@ -3,17 +3,12 @@
 namespace Drupal\gms_pdflink\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
-use Drupal\printable\PrintableLinkBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Cache\Cache;
-use Drupal\Core\Url;
 
 /**
  * Provides a block with a link to print entities.
@@ -43,6 +38,9 @@ class PrintEntire extends BlockBase implements ContainerFactoryPluginInterface {
    */
   protected $entityTypeManager;
 
+  /**
+   * Entity Manager call.
+   */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $routematch, EntityTypeManager $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->routematch = $routematch;
@@ -50,12 +48,16 @@ class PrintEntire extends BlockBase implements ContainerFactoryPluginInterface {
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
+   * Create function.
    *
-   * @return static
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   A configuration array containing information about the plugin instance.
+   * @param array $configuration
+   *   The configuration.
+   * @param string $plugin_id
+   *   The plugin Id.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -74,17 +76,20 @@ class PrintEntire extends BlockBase implements ContainerFactoryPluginInterface {
     $settings = $form_state->getValue('cache');
     $this->configuration['max_age'] = $settings['max_age'];
   }
+
   /**
    * {@inheritdoc}
    */
   public function build() {
     $entity = $this->getContextValue('entity');
-    $markup = "<a href=\"/section/print/pdf/node/".$entity->id()."\" target=\"_blank\">".$this->t('Download Entire Section')."</a>";
+    $markup = "<a href=\"/section/print/pdf/node/" . $entity->id() . "\" target=\"_blank\">" . $this->t('Download Entire Section') . "</a>";
     return [
       '#markup' => Markup::create($markup . "\n"),
       '#cache' => [
         'max-age' => 0,
       ],
     ];
+
   }
+
 }

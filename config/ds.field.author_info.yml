@@ -1,0 +1,11 @@
+id: author_info
+label: 'Author Info'
+ui_limit: ''
+type: token
+type_label: 'Token field'
+entities:
+  node: node
+properties:
+  content:
+    value: 'POSTED BY [node:author:account-name] | [node:created:custom:d M Y] | [node:field_categories:entity:name]'
+    format: plain_text

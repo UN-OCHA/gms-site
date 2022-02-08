@@ -1,8 +1,9 @@
 uuid: d2c0f9ec-8b34-483a-acd4-4c15fa1246ac
 langcode: en
-status: false
+status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - gms_ocha_common
@@ -11,12 +12,23 @@ _core:
 id: gms_ocha_common_breadcrumbs
 theme: gms_ocha_common
 region: page_title
-weight: -8
+weight: -19
 provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Breadcrumbs
-  provider: system
   label_display: '0'
-visibility: {  }
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/content/home"
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

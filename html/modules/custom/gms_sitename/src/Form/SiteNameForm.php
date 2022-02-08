@@ -1,14 +1,43 @@
 <?php
+
 namespace Drupal\gms_sitename\Form;
 
-use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Link;
-use Drupal\Core\Url;
-use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class SiteNameForm extends FormBase{
+/**
+ * SiteName form.
+ */
+class SiteNameForm extends FormBase {
+
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $database;
+
+  /**
+   * Creates a ContentHasher object.
+   *
+   * @param \Drupal\Core\Database\Connection $database
+   *   The database connection.
+   */
+  public function __construct(Connection $database) {
+    $this->database = $database;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('database'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -20,39 +49,31 @@ class SiteNameForm extends FormBase{
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, $sitename=NULL) {
-//    $get_sitename = '';
-//    $get_ctype = '';
-//    $get_condition = '';
-
-    if($sitename){
-    //  echo '<pre>';
-      // print $sitename; exit();
-      $query = \Drupal::database()->select('gms_sitename_data', 'gs');
-      $query->fields('gs', array('id','check_type','condition_type','sitename'));
+  public function buildForm(array $form, FormStateInterface $form_state, $sitename = NULL) {
+    if ($sitename) {
+      $query = $this->database->select('gms_sitename_data', 'gs');
+      $query->fields('gs', ['id', 'check_type', 'condition_type', 'sitename']);
       $query->condition('gs.sitename', $sitename);
       $result = $query->execute()->fetchAll();
-      // print_r($result); exit();
       $get_id = $result[0]->id;
       $get_sitename = $result[0]->sitename;
       $get_ctype = $result[0]->check_type;
       $get_condition = $result[0]->condition_type;
     }
-
-    $options = array('ctype' => 'Content Type', 'url' => 'URL');
+    $options = ['ctype' => 'Content Type', 'url' => 'URL'];
     $form['gms_sitename'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('GMS Sitename Settings'),
     ];
     $form['description'] = [
-      '#markup' => '<p>' . $this->t('Submitting this form will initiate site name.').'</p>'
+      '#markup' => '<p>' . $this->t('Submitting this form will initiate site name.') . '</p>',
     ];
 
     $form['gms_sitename']['check_types'] = [
       '#type' => 'select',
       '#title' => $this->t('Types'),
       '#options' => $options,
-      '#default_value' => isset($sitename) ? $this->t($get_ctype) : $this->t(''),
+      '#default_value' => isset($sitename) ? $get_ctype : '',
       '#empty_option' => $this->t('-select-'),
       '#description' => $this->t('Select check types'),
     ];
@@ -60,73 +81,67 @@ class SiteNameForm extends FormBase{
     $form['gms_sitename']['condition_types'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Condition'),
-      '#default_value' => isset($sitename) ? $this->t($get_condition) : $this->t(''),
-      '#description' => $this->t(''),
+      '#default_value' => isset($sitename) ? $get_condition : '',
+      '#description' => '',
     ];
 
     $form['gms_sitename']['sitename'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Sitename'),
-      '#default_value' => isset($sitename) ? $this->t($get_sitename) : $this->t(''),
-      '#description' => $this->t(''),
+      '#default_value' => isset($sitename) ? $get_sitename : '',
+      '#description' => '',
     ];
 
     $form['actions'] = [
       '#type' => 'actions',
     ];
-    $form['gms_sitename']['site_id'] = array(
+    $form['gms_sitename']['site_id'] = [
       '#type' => 'hidden',
-      '#value' => isset($sitename) ? $get_id : $this->t(''),
-    );
+      '#value' => isset($sitename) ? $get_id : '',
+    ];
 
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => isset($sitename) ? $this->t('Update') : $this->t('Submit'),
     ];
 
-    $query = \Drupal::database()->select('gms_sitename_data', 'gs');
-    $query->fields('gs', ['id','check_type','condition_type','sitename']);
-    //For the pagination we need to extend the pagerselectextender and
-    //limit in the query
+    $query = $this->database->select('gms_sitename_data', 'gs');
+    $query->fields('gs', ['id', 'check_type', 'condition_type', 'sitename']);
     $pager = $query->extend('Drupal\Core\Database\Query\PagerSelectExtender')->limit(10);
     $results = $pager->execute()->fetchAll();
-    $output = array();
+    $output = [];
     $header = [
-      'ID'=>t('ID'),
-      'Type'=>t('Type'),
-      'Condition'=>t('Condition'),
-      'Site Name'=>t('Site Name'),
-      'Operation'=>t('Operation'),
-      ''=>t('')
-
+      'ID' => $this->t('ID'),
+      'Type' => $this->t('Type'),
+      'Condition' => $this->t('Condition'),
+      'Site Name' => $this->t('Site Name'),
+      'Operation' => $this->t('Operation'),
+      '' => '',
     ];
 
     foreach ($results as $result) {
-    //  $delete = Url::fromUserInput('/admin/config/system/gms_sitename/confirm/'.$result->id);
-      $edit_link = Link::createFromRoute($this->t('Edit'), 'gms_sitename.edit', ['sitename'=>$result->sitename], [ 'absolute' => TRUE]);
-      $delete_link = Link::createFromRoute($this->t('Delete'),'gms_sitename.confirm',['sitename'=>$result->sitename], ['absolute' => TRUE]);
-
-        $output[$result->id] = [
-          'ID' => $result->id,
-          'Type' => $result->check_type,
-          'Condition' => $result->condition_type,
-          'Site Name' => $result->sitename,
-          'Operation'=> $edit_link->toString() ,
-          ''=>$delete_link->toString()
-        ];
+      $edit_link = Link::createFromRoute($this->t('Edit'), 'gms_sitename.edit', ['sitename' => $result->sitename], ['absolute' => TRUE]);
+      $delete_link = Link::createFromRoute($this->t('Delete'), 'gms_sitename.confirm', ['sitename' => $result->sitename], ['absolute' => TRUE]);
+      $output[$result->id] = [
+        'ID' => $result->id,
+        'Type' => $result->check_type,
+        'Condition' => $result->condition_type,
+        'Site Name' => $result->sitename,
+        'Operation' => $edit_link->toString(),
+        '' => $delete_link->toString(),
+      ];
     }
 
     $form['table'] = [
       '#type' => 'table',
       '#header' => $header,
       '#rows' => $output,
-      '#weight'=> 100,
-      '#empty' => t('No records found'),
+      '#weight' => 100,
+      '#empty' => $this->t('No records found'),
     ];
-    $form['pager'] = array(
-      '#type' => 'pager'
-    );
-
+    $form['pager'] = [
+      '#type' => 'pager',
+    ];
     return $form;
   }
 
@@ -145,14 +160,14 @@ class SiteNameForm extends FormBase{
     }
     if (empty($sitename)) {
       $form_state->setErrorByName('check_type', $this->t('Please Set Sitename.'));
-    }else{
-      $query = \Drupal::database()->select('gms_sitename_data', 'gs');
-      $query->fields('gs', array('sitename'));
+    }
+    else {
+      $query = $this->database->select('gms_sitename_data', 'gs');
+      $query->fields('gs', ['sitename']);
       $query->condition('gs.sitename', $sitename);
       $query->condition('gs.condition_type', $condition_type);
       $query->condition('gs.check_type', $check_type);
       $result = $query->execute()->fetchField();
-     // print_r($result); exit();
       if ($result) {
         $form_state->setErrorByName('sitename', 'Sitename with this condition already exists.');
       }
@@ -163,43 +178,32 @@ class SiteNameForm extends FormBase{
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-  //  print \Drupal::request()->request->get('sitename'); exit();
-   // print_r($form_state->getValue('id'));exit();
     $site_id = $form_state->getValue('site_id');
-//    if ($site_id == '') {
-//      echo "Variable is empty.<br>";
-//    }
-//    if (isset($site_id)) {
-//      echo "Variable is set.";
-//    }
-//    echo empty($site_id); exit();
-    $get_sitename = \Drupal::request()->request->get('sitename');
-   // echo $get_sitename .'--'.$site_id; exit();
     $check_type = $form_state->getValue('check_types');
     $condition_type = $form_state->getValue('condition_types');
     $sitename = $form_state->getValue('sitename');
-    $data = array(
+    $data = [
       'check_type' => $check_type,
       'condition_type' => $condition_type,
-       'sitename' => $sitename
-    );
-   // print_r($check_type);exit();
-    if($site_id != ''){
-      $query = \Drupal::database();
+      'sitename' => $sitename,
+    ];
+    if ($site_id != '') {
+      $query = $this->database;
       $query->update('gms_sitename_data')
         ->fields($data)
         ->condition('id', $site_id)
         ->execute();
-      if($query){
-        \Drupal::messenger()->addMessage('Sitename record updated successfully.');
+      if ($query) {
+        $this->messenger()->addMessage('Sitename record updated successfully.');
       }
-    }else {
-      $query = \Drupal::database();
+    }
+    else {
+      $query = $this->database;
       $query->insert('gms_sitename_data')
         ->fields($data)
         ->execute();
       if ($query) {
-        \Drupal::messenger()->addMessage('Sitename record added successfully.');
+        $this->messenger()->addMessage('Sitename record added successfully.');
       }
     }
   }
@@ -207,18 +211,15 @@ class SiteNameForm extends FormBase{
   /**
    * Load the site name data.
    */
-  function sitename_load($sitename_id) {
-    $query = \Drupal::database()->select('gms_sitename_data', 'gs');
-    $query->fields('gs', array());
+  public function sitenameLoad($sitename_id) {
+    $query = $this->database->select('gms_sitename_data', 'gs');
+    $query->fields('gs', []);
     $query->condition('gs.id', $sitename_id);
     $result = $query->execute()->fetchAll();
     if ($result) {
       return $result[0];
     }
+
   }
+
 }
-
-
-
-
-

@@ -9,17 +9,17 @@ dependencies:
     - gms_ocha_common
 id: gmsochabanner
 theme: gms_ocha_common
-region: highlighted
-weight: -12
+region: banner
+weight: -14
 provider: null
 plugin: gms_ocha_banner
 settings:
   id: gms_ocha_banner
   label: 'GMS Ocha Banner'
-  provider: gms_ocha
   label_display: '0'
+  provider: gms_ocha
 visibility:
   request_path:
     id: request_path
-    pages: /content/home
     negate: false
+    pages: /content/home
