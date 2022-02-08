@@ -112,7 +112,6 @@ class PrintSectionController extends ControllerBase {
         $pdf_header .= '<style type="text/css">' . $css . '</style>';
       }
       $params  = [
-        'debug'          => (getenv("PHP_ENVIRONMENT") == "development") ? TRUE : FALSE,
         'logo'           => 'gms',
         'media'          => 'print',
         'output'         => 'pdf',
