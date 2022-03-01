@@ -11,7 +11,7 @@ use Drupal\Core\Ajax\SettingsCommand;
 use Drupal\path_alias\Entity\PathAlias;
 
 /**
- * Implements hook_theme()
+ * Implements hook_theme().
  */
 function gms_ocha_theme($existing, $type, $theme, $path) {
   return [
