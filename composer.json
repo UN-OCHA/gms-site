@@ -144,6 +144,7 @@
         "drupal/token": "^1.9",
         "drupal/token_filter": "^1.2",
         "drupal/tome": "^1.4",
+        "drupal/user_expire": "^1.0",
         "drupal/userprotect": "^1.1",
         "drupal/video_embed_field": "^2.4",
         "drupal/views_base_url": "^2.0@beta",
