@@ -14,6 +14,9 @@
         },
         "unocha/ocha_snap": {
           "timeoutChnage": "patches/ocha_snap/timeout_update.patch"
+        },
+        "drupal/scrollup": {
+          "title update": "patches/ScrollUp/3151294-3.patch"
         }
     }
 }
