@@ -50,8 +50,11 @@ settings:
         -
           name: Linking
           items:
-            - DrupalLink
-            - DrupalUnlink
+            - Link
+            - Unlink
+            - Anchor
+            - ImceLink
+            - tokenbrowser
         -
           name: Lists
           items:
