@@ -6,7 +6,7 @@ index 674c00e28f..d46e6f0f6d 100644
    public function getCacheableRenderArray(array $elements) {
      $data = [
 -      '#markup' => $elements['#markup'],
-+      '#markup' => (isset($elements['#markup'])?$elements['#markup']:""),
++      '#markup' => isset($elements['#markup']) ? $elements['#markup'] : '',
        '#attached' => $elements['#attached'],
        '#cache' => [
          'contexts' => $elements['#cache']['contexts'],
