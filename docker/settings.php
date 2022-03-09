@@ -31,7 +31,6 @@ $databases['default']['default'] = array_filter([
   'collation' => getenv('DRUPAL_DB_COLLATION'),
   'sql_mode'  => "SET sql_mode = 'ANSI,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'",
 ]);
-$config['system.logging']['error_level'] = 'hide'; 
 // Load everything else from snippets under /srv/www/shared/settings.
 // @TODO: Use some sort of key/value store.
 if (file_exists('/srv/www/shared/settings')) {
