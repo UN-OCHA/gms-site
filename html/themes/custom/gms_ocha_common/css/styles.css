@@ -1692,4 +1692,16 @@ a {
   -moz-box-shadow: 0px 10px 15px -2px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 10px 15px -2px rgba(0, 0, 0, 0.16); }
 
+.cd-global-header .menu > li a .cd-icon--user {
+  display: none; }
+
+.scroll-title {
+  min-width: auto !important;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  color: #fff;
+  background: #1f69b3;
+  border-radius: 3px; }
+
 /*# sourceMappingURL=styles.css.map */
