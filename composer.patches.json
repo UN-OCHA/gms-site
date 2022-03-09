@@ -1,7 +1,8 @@
 {
     "patches": {
         "drupal/core": {
-          "CKeditor Image": "patches/ckeditor/2642808-69.patch"
+          "CKeditor Image": "patches/ckeditor/2642808-69.patch",
+          "Warning": "patches/core/CoreError.patch"
         },
         "drupal/entity_browser": {
           "expects parameter 1 to be array": "patches/entity_browser/entity_browser-key-2914385-6.patch"
