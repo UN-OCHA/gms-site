@@ -3392,7 +3392,7 @@
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.3.8",
+            "version": "9.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -3436,13 +3436,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.3.8"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.3.9"
             },
             "time": "2022-02-24T17:40:56+00:00"
         },
         {
             "name": "drupal/core-dev",
-            "version": "9.3.8",
+            "version": "9.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -3486,13 +3486,13 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/9.3.8"
+                "source": "https://github.com/drupal/core-dev/tree/9.3.9"
             },
             "time": "2021-11-30T05:41:29+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.3.8",
+            "version": "9.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -3527,7 +3527,7 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.3.8"
+                "source": "https://github.com/drupal/core-project-message/tree/9.3.9"
             },
             "time": "2022-02-24T17:40:56+00:00"
         },
