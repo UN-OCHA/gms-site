@@ -1,0 +1,42 @@
+diff --git a/anchor_link.libraries.yml b/anchor_link.libraries.yml
+new file mode 100644
+index 0000000..7c9d906
+--- /dev/null
++++ b/anchor_link.libraries.yml
+@@ -0,0 +1,4 @@
++popup:
++  css:
++    theme:
++      css/anchor_link_popup.css: {}
+diff --git a/css/anchor_link_popup.css b/css/anchor_link_popup.css
+new file mode 100644
+index 0000000..61923b1
+--- /dev/null
++++ b/css/anchor_link_popup.css
+@@ -0,0 +1,11 @@
++legend + .cke_dialog_ui_hbox {
++  margin-top: 12px !important;
++}
++.cke_dialog_ui_hbox {
++  width: 100% !important;
++}
++.cke_dialog_ui_vbox table,
++.cke_dialog_ui_hbox table {
++  margin-left: 0 !important;
++  margin-right: 0 !important;
++}
+diff --git a/src/Plugin/CKEditorPlugin/AnchorLink.php b/src/Plugin/CKEditorPlugin/AnchorLink.php
+index 036eb06..e04f4ae 100755
+--- a/src/Plugin/CKEditorPlugin/AnchorLink.php
++++ b/src/Plugin/CKEditorPlugin/AnchorLink.php
+@@ -36,7 +36,9 @@ class AnchorLink extends CKEditorPluginBase {
+    * {@inheritdoc}
+    */
+   public function getLibraries(Editor $editor) {
+-    return [];
++    return [
++      'anchor_link/popup',
++    ];
+   }
+ 
+   /**
