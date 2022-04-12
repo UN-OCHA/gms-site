@@ -30,21 +30,23 @@ function gms_ocha_common_preprocess_html(&$variables) {
     $nodeData = end($match[0]);
     $fNode = $nodeData;
     $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node->getType() == 'static_page') {
-      if ($fNode == $node->id()) {
-        $variables['attributes']['class'][] = 'gms-home-page';
+    if (!empty($node)) {
+      if ($node->getType() == 'static_page') {
+        if ($fNode == $node->id()) {
+          $variables['attributes']['class'][] = 'gms-home-page';
+        }
+        else {
+          $variables['attributes']['class'][] = 'help-portal-page';
+        }
       }
-      else {
-        $variables['attributes']['class'][] = 'help-portal-page';
+      elseif ($node->getType() == 'page' || $node->getType() == 'blog_entry') {
+        $variables['attributes']['class'][] = 'blog-page';
       }
+      elseif ($node->getType() == 'cbpf_pages') {
+        $variables['attributes']['class'][] = 'gms-internal-page';
+      }
+      $variables['attributes']['type'] = $node->getType();
     }
-    elseif ($node->getType() == 'page' || $node->getType() == 'blog_entry') {
-      $variables['attributes']['class'][] = 'blog-page';
-    }
-    elseif ($node->getType() == 'cbpf_pages') {
-      $variables['attributes']['class'][] = 'gms-internal-page';
-    }
-    $variables['attributes']['type'] = $node->getType();
   }
   elseif ($variables['root_path'] == 'taxonomy') {
     $current_path = \Drupal::service('path.current')->getPath();
