@@ -49,16 +49,16 @@ filters:
     weight: 100
     settings:
       default_view_mode: media_library
+      allowed_view_modes:
+        default: default
+        full: full
+        media_library: media_library
       allowed_media_types:
         audio: audio
         document: document
         image: image
         remote_video: remote_video
         video: video
-      allowed_view_modes:
-        default: default
-        full: full
-        media_library: media_library
   token_filter:
     id: token_filter
     provider: token_filter

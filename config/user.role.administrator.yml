@@ -1,7 +1,30 @@
 uuid: 28919d64-3be9-42c7-82dd-583818684f7f
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.php_code
+    - filter.format.svg_embed
+    - node.type.cbpf_pages
+    - node.type.faq
+    - node.type.special_page
+    - node.type.static_page
+  module:
+    - block
+    - content_access
+    - contextual
+    - filter
+    - image
+    - imce
+    - node
+    - path
+    - pathauto
+    - redirect
+    - search
+    - system
+    - views_ui
 _core:
   default_config_hash: Om6FEO7vZZMkPIbVvfxtdkWerQ2PvQM4sWUd6Q3ZnfI
 id: administrator
