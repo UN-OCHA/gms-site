@@ -1,7 +1,12 @@
 uuid: 21b700a2-bbd5-4213-bd1b-e7907869702e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.document
+    - node.type.donor_page
+  module:
+    - node
 id: fcs_admin_users
 label: 'FCS admin users'
 weight: 51
