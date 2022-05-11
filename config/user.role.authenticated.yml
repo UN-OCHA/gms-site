@@ -6,7 +6,6 @@ dependencies:
     - filter.format.svg_embed
   module:
     - comment
-    - content_access
     - filter
     - media
     - search
@@ -25,8 +24,6 @@ permissions:
   - 'change own openid'
   - 'change own password'
   - 'edit own account'
-  - 'grant content access'
-  - 'grant own content access'
   - 'search content'
   - 'use text format svg_embed'
   - 'view media'
