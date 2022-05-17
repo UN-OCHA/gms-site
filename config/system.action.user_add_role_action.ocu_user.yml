@@ -1,0 +1,14 @@
+uuid: 25aa0b38-8944-46fb-a289-a906b0a0a76a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ocu_user
+  module:
+    - user
+id: user_add_role_action.ocu_user
+label: 'Add the OCU User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: ocu_user

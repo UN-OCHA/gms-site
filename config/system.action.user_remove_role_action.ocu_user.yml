@@ -1,0 +1,14 @@
+uuid: d84ab37f-4019-4626-bed1-1e892d6e8886
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ocu_user
+  module:
+    - user
+id: user_remove_role_action.ocu_user
+label: 'Remove the OCU User role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: ocu_user
