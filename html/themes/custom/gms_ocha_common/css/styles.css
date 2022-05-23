@@ -1704,4 +1704,8 @@ a {
   background: #1f69b3;
   border-radius: 3px; }
 
+u {
+  text-decoration: underline;
+  font-weight: normal; }
+
 /*# sourceMappingURL=styles.css.map */
