@@ -1,7 +1,20 @@
 uuid: 558448bc-c5c3-4e1a-8fc9-a91d49e74ca6
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.php_code
+    - filter.format.svg_embed
+    - node.type.faq
+    - node.type.static_page
+  module:
+    - filter
+    - node
+    - path
+    - search
+    - system
 id: editor
 label: editor
 weight: 2

@@ -12,6 +12,10 @@
         },
         "drupal/scrollup": {
           "title update": "patches/ScrollUp/3151294-3.patch"
+        },
+		"drupal/anchor_link": {
+          "Design Issue": "patches/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
+		  "CSS dialog Design Issue": "patches/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         }
     }
 }

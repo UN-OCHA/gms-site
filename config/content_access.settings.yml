@@ -1,0 +1,24 @@
+_core:
+  default_config_hash: 7LkiviGITIpniIOOIzpuxR7r4XzqqYN_cwu0fb0kx1M
+content_access_roles_gids:
+  anonymous: 1
+  authenticated: 2
+  editor: 3
+  administrator: 4
+  super_editor: 5
+  non_verified: 6
+  verified: 7
+  fcs_admin_users: 8
+content_access_node_type:
+  static_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  article: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  migrate_example_beer: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  blog_entry: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  cbpf_pages: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  document: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  donor_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  entity_browser_test: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  special_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  migrate_example_producer: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  migrate_example_wine: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
