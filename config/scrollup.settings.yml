@@ -1,0 +1,8 @@
+scrollup_position: '1'
+scrollup_button_bg_color: '#dddddd'
+scrollup_button_hover_bg_color: '#bbbbbb'
+scrollup_title: Top
+scrollup_window_position: '600'
+scrollup_speed: '400'
+scrollup_themename:
+  gms_ocha_common: gms_ocha_common

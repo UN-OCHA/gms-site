@@ -8,9 +8,6 @@
     "behat/mink": {
         "version": "v1.9.0"
     },
-    "behat/mink-goutte-driver": {
-        "version": "v1.3.0"
-    },
     "behat/mink-selenium2-driver": {
         "version": "v1.5.0"
     },
@@ -25,6 +22,9 @@
     },
     "ckeditor-plugin/iframe": {
         "version": "4.16.2"
+    },
+    "ckeditor-plugin/link": {
+        "version": "4.17.2"
     },
     "ckeditor-plugin/panelbutton": {
         "version": "4.11.1"
@@ -80,9 +80,6 @@
     "consolidation/site-process": {
         "version": "4.1.0"
     },
-    "container-interop/container-interop": {
-        "version": "1.2.0"
-    },
     "cweagans/composer-patches": {
         "version": "1.7.1"
     },
@@ -137,20 +134,23 @@
     "doctrine/reflection": {
         "version": "1.2.2"
     },
-    "dompdf/dompdf": {
-        "version": "v1.0.2"
-    },
     "drupal-ckeditor-libraries-group/font": {
         "version": "4.16.2"
     },
     "drupal-composer/preserve-paths": {
         "version": "0.1.6"
     },
+    "drupal/acl": {
+        "version": "1.0.0-beta1"
+    },
     "drupal/admin_denied": {
         "version": "1.1.0"
     },
     "drupal/admin_toolbar": {
         "version": "3.0.3"
+    },
+    "drupal/anchor_link": {
+        "version": "2.5.0"
     },
     "drupal/auto_config_form": {
         "version": "1.0.x-dev"
@@ -205,6 +205,9 @@
     },
     "drupal/console-extend-plugin": {
         "version": "0.9.5"
+    },
+    "drupal/content_access": {
+        "version": "1.0.0-alpha3"
     },
     "drupal/core": {
         "version": "9.2.0"
@@ -344,6 +347,9 @@
     "drupal/redis": {
         "version": "1.5.0"
     },
+    "drupal/scrollup": {
+        "version": "3.0.0"
+    },
     "drupal/seckit": {
         "version": "2.0.0"
     },
@@ -413,8 +419,8 @@
     "egulias/email-validator": {
         "version": "2.1.25"
     },
-    "fabpot/goutte": {
-        "version": "v3.3.1"
+    "enlightn/security-checker": {
+        "version": "v1.10.0"
     },
     "friends-of-behat/mink-browserkit-driver": {
         "version": "v1.5.0"
@@ -460,9 +466,6 @@
     },
     "laminas/laminas-stdlib": {
         "version": "3.3.1"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.2.0"
     },
     "league/container": {
         "version": "2.5.0"
@@ -511,12 +514,6 @@
     },
     "phar-io/version": {
         "version": "3.1.0"
-    },
-    "phenx/php-font-lib": {
-        "version": "0.5.2"
-    },
-    "phenx/php-svg-lib": {
-        "version": "v0.3.3"
     },
     "phpcompatibility/php-compatibility": {
         "version": "9.3.5"
@@ -591,9 +588,6 @@
     },
     "react/promise": {
         "version": "v2.8.0"
-    },
-    "sabberworm/php-css-parser": {
-        "version": "8.3.1"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
