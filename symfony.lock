@@ -140,6 +140,9 @@
     "drupal-composer/preserve-paths": {
         "version": "0.1.6"
     },
+    "drupal/acl": {
+        "version": "1.0.0-beta1"
+    },
     "drupal/admin_denied": {
         "version": "1.1.0"
     },
@@ -202,6 +205,9 @@
     },
     "drupal/console-extend-plugin": {
         "version": "0.9.5"
+    },
+    "drupal/content_access": {
+        "version": "1.0.0-alpha3"
     },
     "drupal/core": {
         "version": "9.2.0"
