@@ -19,16 +19,6 @@ services:
     networks:
       - default
 
-  redis:
-    restart: always
-    image: public.ecr.aws/unocha/redis:5
-    hostname: gms9-test-redis
-    container_name: gms9-test-redis
-    ports:
-      - "6379"
-    networks:
-      - default
-
   drupal:
     image: public.ecr.aws/unocha/gms9-site:local
     hostname: gms9-test-site
@@ -56,4 +46,3 @@ services:
       - default
     depends_on:
       - mysql
-      - redis
