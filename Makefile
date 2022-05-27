@@ -14,6 +14,7 @@ build:  clean
 				--build-arg GITHUB_SHA=`git rev-parse --short HEAD` \
 		. --file docker/Dockerfile --tag public.ecr.aws/unocha/gms9-site:local \
 		2>&1 | tee buildlog.txt
+	@echo "Built a shiny new public.ecr.aws/unocha/gms9-site:local for you."
 
 clean:
 	rm -rf ./buildlog.txt
