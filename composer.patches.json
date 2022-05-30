@@ -1,5 +1,9 @@
 {
     "patches": {
+        "drupal/anchor_link": {
+              "Design Issue": "patches/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
+          "CSS dialog Design Issue": "patches/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
+        },
         "drupal/core": {
           "CKeditor Image": "patches/ckeditor/2642808-69.patch",
           "Warning": "patches/core/CoreError.patch"
@@ -13,9 +17,9 @@
         "drupal/scrollup": {
           "title update": "patches/ScrollUp/3151294-3.patch"
         },
-		"drupal/anchor_link": {
-          "Design Issue": "patches/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
-		  "CSS dialog Design Issue": "patches/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
+        "drupal/user_expire": {
+          "Allow the notification email to be customised": "https://git.drupalcode.org/project/user_expire/-/merge_requests/5.diff",
+          "Reset expiration when user is reactivated": "https://git.drupalcode.org/project/user_expire/-/merge_requests/6.diff"
         }
     }
 }
