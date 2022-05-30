@@ -1521,17 +1521,14 @@
     background-color: #144372;
     border: 1px solid #144372;
 }
-
 .cd-search .cd-search__form {
     -webkit-box-shadow: 0px 10px 15px -2px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 10px 15px -2px rgba(0,0,0,0.16);
     box-shadow: 0px 10px 15px -2px rgba(0,0,0,0.16);
 }
-
 .cd-global-header .menu>li a .cd-icon--user {
 	display: none;
 }
-
 .scroll-title {
 	min-width: auto !important;
 	text-align: center;
@@ -1540,4 +1537,8 @@
 	color: #fff;
 	background: #1f69b3;
     border-radius: 3px;
+}
+u {
+	text-decoration: underline;
+	font-weight: normal;
 }
