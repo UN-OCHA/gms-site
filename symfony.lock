@@ -344,9 +344,6 @@
     "drupal/redirect": {
         "version": "1.6.0"
     },
-    "drupal/redis": {
-        "version": "1.5.0"
-    },
     "drupal/scrollup": {
         "version": "3.0.0"
     },
