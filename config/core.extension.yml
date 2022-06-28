@@ -79,6 +79,7 @@ module:
   migrate_plus: 0
   migrate_tools: 0
   modules_weight: 0
+  mysql: 0
   node: 0
   noreqnewpass: 0
   ocha_snap: 0
@@ -90,7 +91,6 @@ module:
   quickedit: 0
   rdf: 0
   redirect: 0
-  redis: 0
   rest: 0
   scrollup: 0
   search: 0

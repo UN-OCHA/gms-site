@@ -55,3 +55,4 @@ config/packages
 config/routes.yaml
 config/routes
 ###< symfony rubbish ###
+/.gitattributes

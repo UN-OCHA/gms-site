@@ -26,7 +26,7 @@ RUN cd html/themes/custom/gms_ocha_common && \
     rm -rf ./node_modules
 
 # Copy settings to default site location.
-RUN cp -a docker/settings.php docker/services.yml docker/redis.services.yml html/sites/default
+RUN cp -a docker/settings.php docker/services.yml html/sites/default
 
 ################################################################################
 
