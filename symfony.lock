@@ -347,9 +347,6 @@
     "drupal/scrollup": {
         "version": "3.0.0"
     },
-    "drupal/seckit": {
-        "version": "2.0.0"
-    },
     "drupal/semanticviews": {
         "version": "2.3.0"
     },
