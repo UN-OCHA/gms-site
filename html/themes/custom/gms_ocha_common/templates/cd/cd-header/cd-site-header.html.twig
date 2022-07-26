@@ -4,7 +4,11 @@
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
       <img src="{{ site_logo }}" alt="{{ site_name }}" aria-label="{{ 'Home'|t }}" width="100%" height="60px" />
     </a>
-	<span class="header__site-name">{{ site_slogan }}</span>
+    {% if page.one_gms_header_logo %}
+       {{ page.one_gms_header_logo }}
+    {% else %}
+      <span class="header__site-name">{{ site_slogan }}</span>
+    {% endif %}
 	</div>
     <div class="cd-site-header__actions">
 	{% include '@gms_ocha_common/cd/cd-header/cd-logo.html.twig' %}
