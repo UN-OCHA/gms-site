@@ -27,8 +27,10 @@ module:
   content_moderation: 0
   contextual: 0
   core_event_dispatcher: 0
+  csp: 0
   ctools: 0
   datetime: 0
+  dblog: 0
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
   editor: 0
