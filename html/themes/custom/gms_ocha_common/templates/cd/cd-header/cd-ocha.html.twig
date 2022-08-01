@@ -1,10 +1,25 @@
 {% embed '@common_design/cd/cd-header/cd-ocha.html.twig' %}
 
   {% block related_platforms %}
-    <li class="cd-ocha-dropdown__link"><a href="https://example.com">{{ 'This is Customizable'|t }}</a></li>
-    <li class="cd-ocha-dropdown__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
-    <li class="cd-ocha-dropdown__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
-    <li class="cd-ocha-dropdown__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://cbpf.unocha.org" target="_blank">{{ 'CBPF Grant Management system'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://pfdata.unocha.org" target="_blank">{{ 'Pooled Fund Data Hub'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://cerf.data.unocha.org/" target="_blank">{{ 'CERF Data Hub'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://cbpf.data.unocha.org" target="_blank">{{ 'CBPF Data Hub'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://gms.unocha.org/content/home" target="_blank">{{ 'GMS Help portal'|t }}</a></li>
   {% endblock %}
 
+  {% block other_services_first %}
+    <li class="cd-ocha-dropdown__link"><a href="https://fts.unocha.org/" target="_blank">{{ 'Financial Tracking Service'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://data.humdata.org/" target="_blank">{{ 'Humanitarian Data Exchange'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://auth.humanitarian.id/" target="_blank">{{ 'Humanitarian ID'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://humanitarianresponse.info/" target="_blank">{{ 'Humanitarian Response'|t }}</a></li>
+  {% endblock %}
+
+  {% block other_services_second %}
+    <li class="cd-ocha-dropdown__link"><a href="https://interagencystandingcommittee.org" target="_blank">{{ 'Inter-Agency Standing Committee'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://unocha.org/" target="_blank">{{ 'OCHA website'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://reliefweb.int/" target="_blank">{{ 'ReliefWeb'|t }}</a></li>
+    <li class="cd-ocha-dropdown__link"><a href="https://vosocc.unocha.org/" target="_blank">{{ 'Virtual OSOCC'|t }}</a></li>
+  {% endblock %}
+  
 {% endembed %}
