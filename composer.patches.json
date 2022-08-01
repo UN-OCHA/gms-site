@@ -1,25 +1,28 @@
 {
     "patches": {
         "drupal/anchor_link": {
-              "Design Issue": "patches/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
-          "CSS dialog Design Issue": "patches/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
+            "Design Issue": "patches/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
+            "CSS dialog Design Issue": "patches/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         },
         "drupal/core": {
-          "CKeditor Image": "patches/ckeditor/2642808-69.patch",
-          "Warning": "patches/core/CoreError.patch"
+            "CKeditor Image": "patches/ckeditor/2642808-69.patch",
+            "Warning": "patches/core/CoreError.patch"
+        },
+        "drupal/csp": {
+            "Simplify log format": "patches/csp-log-format.patch"
         },
         "drupal/entity_browser": {
-          "expects parameter 1 to be array": "patches/entity_browser/entity_browser-key-2914385-6.patch"
+            "expects parameter 1 to be array": "patches/entity_browser/entity_browser-key-2914385-6.patch"
         },
         "drupal/google_analytics": {
-          "D7 to D9 migration fails with error The migration plugin does not exist": "patches/google_analytics/3170816-migrate_d9.patch"
+            "D7 to D9 migration fails with error The migration plugin does not exist": "patches/google_analytics/3170816-migrate_d9.patch"
         },
         "drupal/scrollup": {
-          "title update": "patches/ScrollUp/3151294-3.patch"
+            "title update": "patches/ScrollUp/3151294-3.patch"
         },
         "drupal/user_expire": {
-          "Allow the notification email to be customised": "https://git.drupalcode.org/project/user_expire/-/merge_requests/5.diff",
-          "Reset expiration when user is reactivated": "https://git.drupalcode.org/project/user_expire/-/merge_requests/6.diff"
+            "Allow the notification email to be customised": "https://git.drupalcode.org/project/user_expire/-/merge_requests/5.diff",
+            "Reset expiration when user is reactivated": "https://git.drupalcode.org/project/user_expire/-/merge_requests/6.diff"
         }
     }
 }
