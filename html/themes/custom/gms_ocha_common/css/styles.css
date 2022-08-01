@@ -852,6 +852,15 @@ a {
 .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-guest.active-parent {
   background: #3070ae url(../img/icon_guest_active.gif) no-repeat left center; }
 
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role{
+  background: url(../img/icon_secured.gif)no-repeat left center;margin: 0 23px 0 0; }
+  
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role:hover {
+  background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center; }
+
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role.active-parent {
+  background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center; }
+
 .help-portal-page .field--type-text-with-summary .content_panel p {
   font-size: 13px;
   color: #3c3c3c;
