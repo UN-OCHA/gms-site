@@ -13,6 +13,7 @@
 // if you want something to get you started quickly.
 //——————————————————————————————————————————————————————————————————————————————
 
+@import "base/fonts";
 @import "base/typography";
 
 
@@ -682,6 +683,19 @@
 .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-guest.active-parent {
     background: #3070ae url(../img/icon_guest_active.gif)no-repeat left center;
 }
+
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role{
+    background: url(../img/icon_secured.gif)no-repeat left center;
+    margin: 0 23px 0 0;
+}
+
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role:hover {
+    background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center;
+}
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role.active-parent {
+    background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center;
+}
+
 .help-portal-page .field--type-text-with-summary .content_panel p {
     font-size: 13px;
     color: #3c3c3c;
@@ -1541,4 +1555,194 @@
 u {
 	text-decoration: underline;
 	font-weight: normal;
+}
+
+/* OneGMS homepage css */
+.onegms-home-pg {
+    .cd-layout-container {
+        background-color: #f5f5f5;
+        
+        .region-one-gms-header-logo {
+            #block-logo {
+              margin-left: 10px;
+              padding-left: 10px;
+              border-left: 1px solid #e6ecf2;
+            }
+        }
+
+        .cd-layout-flude-banner {
+            .region.region-fluid-banner {
+                background-color: #01375e;
+                background-image: url('../img/helpportal-home-hd-img.jpg');
+                background-repeat: no-repeat;
+                min-height: 270px;
+                color: $cd-white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+        
+                #block-gmsonebanner {
+                    text-align: center;
+                    h1 {
+                        color: $cd-white;
+                        font-family: $cd-font--roboto-slab;  
+                        font-weight: 400;  
+                        margin: 0 20px 22px;
+                        text-shadow: 0px 3px 4px $cd-black;
+                        text-transform: uppercase;
+                        @media (min-width:1024px) {
+                            font-size: 3rem;
+                            line-height: 38px;
+                        }
+                        @media (max-width:768px) {
+                            font-size: 2.2rem;
+                            line-height: 38px;
+                            margin: 0 20px 14px;
+                        }
+                    }
+                    p {
+                        color: $cd-white;
+                        font-family: $cd-font--roboto;
+                        font-weight: 300;
+                        margin: 0 18%;
+                        text-shadow: 0px 3px 4px $cd-black;
+                        @media (min-width:1024px) {
+                            font-size: 1.125rem;
+                            line-height: 24px;
+                        }
+                    }
+        
+                }
+        
+            }
+        }
+
+        main {
+            @media (min-width: 768px) {
+                margin-bottom: 18px;
+            }
+            .cd-layout-content-wrapper {
+                .onegms-user-rl-container {
+                    align-items: center;
+                    display: flex; 
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin: 0 auto;
+                    width: 75%;
+                    .column {
+                        padding: 0 2%;
+                        @media (min-width:1024px) {
+                            width: 33.33%;
+                            &:nth-child(2) {
+                                border-left: 1px solid #dddddd;
+                            }
+                        }
+                        @media (max-width:1023px) {
+                            &:not(:first-child) {
+                                width: 50%;
+                            }
+                        }
+                        @media (max-width:767px) {
+                            &:not(:first-child) {
+                                padding: 0 0 40px;
+                                width: 100%;
+                            }
+                        }
+                        &.column1 {
+                            @media (max-width:1023px) {
+                                border-bottom: 1px solid #dddddd;
+                                margin: 0 0 30px;
+                                padding-bottom: 25px;
+                                text-align: center;
+                                width: 100%;
+                            }
+                            h2 {
+                                color: #3189c9;
+                                font-family: $cd-font--roboto-slab;
+                                font-size: 1.5rem;
+                                line-height: 24px;
+                                text-transform: uppercase;
+                                @media (max-width: 1200px) {
+                                    font-size: 1.22rem;
+                                    line-height: 20px;
+                                }
+                            }
+                            p {
+                                color: #333333;
+                                font-family: $cd-font--roboto;
+                                font-size: 0.938rem;
+                                line-height: 24px;
+                                margin: 0;
+                                @media (max-width: 1200px) {
+                                    font-size: 0.838rem;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                        &.column2 {
+                            @media (min-width: 1024px) {
+                                padding-right: 1%;
+                            }
+                        }
+                        &.column3 {
+                            @media (min-width: 1024px) {
+                                padding-left: 1%;
+                            }
+                        }
+                        a {
+                            &.square-box {
+                                background-color: #3189c9;
+                                border-radius: 3px;
+                                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                                display: block;
+                                margin: 0 auto;
+                                max-width: 286px;
+                                text-decoration: none;
+                                transition: all .3s cubic-bezier(0.175, 0.885, 0.92, 1);
+                                overflow: hidden;
+                                img {
+                                    border-radius: 0 0 3px 3px;
+                                    display: block;
+                                    width: 100%;
+                                }
+                                .box-title {
+                                    color: $cd-white;
+                                    display: block;
+                                    font-family: $cd-font--roboto-slab;
+                                    font-size: 1.5rem;
+                                    line-height: 24px;
+                                    padding: 20px 0;
+                                    position: relative;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    width: 100%;
+                                    z-index: 1;
+                                }
+                            }
+                            &:hover {
+                                transform: scale(1.02, 1.02);
+                                box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+                                .box-title {
+                                    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+                                }
+                            }
+                            &.cbpf {
+                                &:hover {
+                                    background-color: #f27362;
+                                }
+                            }
+                            &.cerf {
+                                &:hover {
+                                    background-color: #fbd45b;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }

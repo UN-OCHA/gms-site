@@ -1,0 +1,30 @@
+quuid: 14b5f1fb-aae8-4ac3-8310-7baf2b158132
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c61d1e2e-293d-459f-a9bb-5165ee84d9ac'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: gmsonebanner
+theme: gms_ocha_common
+region: fluid_banner
+weight: 0
+provider: null
+plugin: 'block_content:c61d1e2e-293d-459f-a9bb-5165ee84d9ac'
+settings:
+  id: 'block_content:c61d1e2e-293d-459f-a9bb-5165ee84d9ac'
+  label: 'GMS One banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/gms-one
