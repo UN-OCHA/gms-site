@@ -1,0 +1,30 @@
+uuid: 0adbcb4b-d9c3-4bd5-9958-ea970e1b4cca
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:43d450ce-4a1b-4771-86a4-a6dcf840c530'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: logo
+theme: gms_ocha_common
+region: one_gms_header_logo
+weight: -24
+provider: null
+plugin: 'block_content:43d450ce-4a1b-4771-86a4-a6dcf840c530'
+settings:
+  id: 'block_content:43d450ce-4a1b-4771-86a4-a6dcf840c530'
+  label: logo
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/gms-one
