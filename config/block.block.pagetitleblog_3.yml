@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - gms_ocha
+    - taxonomy
   theme:
     - gms_ocha_common
 id: pagetitleblog_3

@@ -1,23 +1,23 @@
-uuid: c8095c86-b0b7-4d82-b98f-7d38895d1fb7
+uuid: e30caeed-1b79-4599-a3bf-4e42d24e04f7
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
+    - 'block_content:basic:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
   module:
     - block_content
     - system
   theme:
     - gms_ocha_common
-id: gmsonebanner
+id: gmsonelogo
 theme: gms_ocha_common
-region: fluid_banner
+region: one_gms_header_logo
 weight: 0
 provider: null
-plugin: 'block_content:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
+plugin: 'block_content:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
 settings:
-  id: 'block_content:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
-  label: 'GMS One banner'
+  id: 'block_content:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
+  label: 'GMS One logo'
   label_display: '0'
   provider: block_content
   status: true
