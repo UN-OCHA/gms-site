@@ -1,0 +1,7 @@
+gms_secure_role.add:
+  path: '/gms_secure_role/requestform'
+  defaults:
+    _form: 'Drupal\gms_secure_role\Form\RequestForm'
+    _title: 'GMS Secure Role Request Form'
+  requirements:
+    _role: 'pending_approval'
