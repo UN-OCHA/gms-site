@@ -5,10 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
   module:
+    - block_class
     - block_content
     - system
   theme:
     - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: onegms-logo-block
 id: gmsonelogo
 theme: gms_ocha_common
 region: one_gms_header_logo

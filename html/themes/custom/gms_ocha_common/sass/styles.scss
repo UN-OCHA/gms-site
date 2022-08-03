@@ -1563,7 +1563,7 @@ u {
         background-color: #f5f5f5;
         
         .region-one-gms-header-logo {
-            #block-logo {
+            .onegms-logo-block {
               margin-left: 10px;
               padding-left: 10px;
               border-left: 1px solid #e6ecf2;
@@ -1574,6 +1574,7 @@ u {
             .region.region-fluid-banner {
                 background-color: #01375e;
                 background-image: url('../img/helpportal-home-hd-img.jpg');
+                background-position: center center;
                 background-repeat: no-repeat;
                 min-height: 270px;
                 color: $cd-white;
