@@ -1561,15 +1561,29 @@ u {
 .onegms-home-pg {
     .cd-layout-container {
         background-color: #f5f5f5;
-        
-        .region-one-gms-header-logo {
-            .onegms-logo-block {
-              margin-left: 10px;
-              padding-left: 10px;
-              border-left: 1px solid #e6ecf2;
+        .cd-global-header {
+            section.cd-ocha {
+                @media (max-width:1340px) {
+                    margin-left: 10px;
+                }
             }
         }
-
+        .cd-site-header {
+            .cd-site-header__inner {
+                .region-header-logo {
+                    .cd-site-logo {
+                        display: none;
+                    }
+                }
+            }
+        } 
+        .region-one-gms-header-logo {
+            .onegms-logo-block {
+              @media (max-width:1340px) {
+                margin-left: 10px;
+              }
+            }
+        }
         .cd-layout-flude-banner {
             .region.region-fluid-banner {
                 background-color: #01375e;

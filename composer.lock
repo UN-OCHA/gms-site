@@ -6624,6 +6624,67 @@
                 "issues": "https://www.drupal.org/project/issues/social_auth_hid"
             }
         },
+		{
+            "name": "drupal/social_auth_roles",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/social_auth_roles.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/social_auth_roles-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "6f5ed89e52f6e3ab10a0f23ce9a8ed45818280d8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/social_auth": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1622002084",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ethan Aho (eahonet)",
+                    "homepage": "https://www.drupal.org/u/eahonet",
+                    "email": "ethan@eaho.net"
+                },
+                {
+                    "name": "devkinetic",
+                    "homepage": "https://www.drupal.org/user/114708"
+                },
+                {
+                    "name": "eahonet",
+                    "homepage": "https://www.drupal.org/user/3546806"
+                }
+            ],
+            "description": "Set Roles for users created via Social Auth.",
+            "homepage": "https://www.drupal.org/project/social_auth_roles",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/social_auth_roles",
+                "issues": "https://www.drupal.org/project/issues/social_auth_roles"
+            }
+        },
         {
             "name": "drupal/stage_file_proxy",
             "version": "1.2.0",
