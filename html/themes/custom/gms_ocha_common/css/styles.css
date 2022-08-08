@@ -1722,10 +1722,14 @@ u {
 /* OneGMS homepage css */
 .onegms-home-pg .cd-layout-container {
   background-color: #f5f5f5; }
-  .onegms-home-pg .cd-layout-container .region-one-gms-header-logo .onegms-logo-block {
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left: 1px solid #e6ecf2; }
+  @media (max-width: 1340px) {
+    .onegms-home-pg .cd-layout-container .cd-global-header section.cd-ocha {
+      margin-left: 10px; } }
+  .onegms-home-pg .cd-layout-container .cd-site-header .cd-site-header__inner .region-header-logo .cd-site-logo {
+    display: none; }
+  @media (max-width: 1340px) {
+    .onegms-home-pg .cd-layout-container .region-one-gms-header-logo .onegms-logo-block {
+      margin-left: 10px; } }
   .onegms-home-pg .cd-layout-container .cd-layout-flude-banner .region.region-fluid-banner {
     background-color: #01375e;
     background-image: url("../img/helpportal-home-hd-img.jpg");
