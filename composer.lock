@@ -6624,7 +6624,7 @@
                 "issues": "https://www.drupal.org/project/issues/social_auth_hid"
             }
         },
-		{
+        {
             "name": "drupal/social_auth_roles",
             "version": "1.3.0",
             "source": {
@@ -6650,9 +6650,6 @@
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
                     }
                 }
             },
