@@ -74,7 +74,6 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
    *   The user event object.
    */
   public function showPopup(UserEvent $event) {
-    $account = $event->getUser();
 
   }
 
