@@ -7,22 +7,31 @@ report-only:
       base: self
       sources:
         - fonts.gstatic.com
+        - '*.unocha.org'
     font-src:
       base: self
       sources:
         - fonts.gstatic.com
     img-src:
       base: self
+      sources:
+        - github.com
     object-src:
       base: none
     script-src:
       base: self
       sources:
         - www.googletagmanager.com
+    script-src-elem:
+      base: self
+      flags:
+        - unsafe-inline
     style-src:
       base: self
     style-src-attr:
       base: self
+      flags:
+        - unsafe-inline
     style-src-elem:
       base: self
     frame-ancestors:
