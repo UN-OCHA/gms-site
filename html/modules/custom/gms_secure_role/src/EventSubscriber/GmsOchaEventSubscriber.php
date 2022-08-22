@@ -36,8 +36,10 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
    *   The user event object.
    */
   public function showPopup(UserEvent $event) {
-    //$account = $event->getUser();
-    \Drupal::logger('Showpopup')->error('Calling');
+    $account = $event->getUser();
+	if(in_array('non_verified', $account->getRoles())){
+      $_SESSION['show_pop_up'] = TRUE;
+    }
   }
 
   /**
