@@ -4,3 +4,31 @@
  * @file
  * GMS Sitename.
  */
+
+/**
+ * Implements hook_mail().
+ */
+function gms_secure_role_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+  switch ($key) {
+    case 'request_form':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Request Form Records', $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function gms_secure_role_form_alter(&$form, &$form_state, $form_id) {
+  $currentUser = \Drupal::currentUser();
+  if ($form_id == 'contact_message_request_form_form') {
+    $id = $currentUser->id();
+    $form['field_user']['widget']['#default_value'] = $id;
+    $form['field_user']['#attributes']['style'][] = 'display:none';
+  }
+}
