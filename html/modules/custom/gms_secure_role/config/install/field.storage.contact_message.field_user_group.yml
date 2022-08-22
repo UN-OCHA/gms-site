@@ -1,0 +1,26 @@
+uuid: 7bd6ac50-5ec2-4659-be56-66654f19e28d
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+_core:
+  default_config_hash: DPDdSo2bgjXKvRvUgm2UdRhBaXXKo_7cDeVhE1-GRU0
+id: contact_message.field_user_group
+field_name: field_user_group
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: XYZ
+      label: XYZ
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

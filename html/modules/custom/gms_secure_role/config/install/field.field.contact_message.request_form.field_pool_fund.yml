@@ -1,0 +1,23 @@
+uuid: fc2d5360-a2b4-4e18-8cfa-41b8f8528aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.request_form
+    - field.storage.contact_message.field_pool_fund
+  module:
+    - options
+_core:
+  default_config_hash: Mye7h-61b_1pDMc-pw6tMlVWmMVsGRXS6bK7LvWp-bA
+id: contact_message.request_form.field_pool_fund
+field_name: field_pool_fund
+entity_type: contact_message
+bundle: request_form
+label: 'Pool Fund'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+gms_secure_role.showpopup:
+  path: '/gms_secure_role/show_popup'
+  defaults:
+    _controller: '\Drupal\gms_secure_role\Controller\GmsSecureRoleController::login_modal'
+    _title: 'GMS Secure Role Request'
+  requirements:
+    _permission: 'access content'
+gms_secure_role.request_form_data:
+  path: '/request_form_data/approve/{id}'
+  defaults:
+    _controller: '\Drupal\gms_secure_role\Controller\AssignRoleController::approve'
+    _title: 'Assign Role'
+  requirements:
+    _permission: 'access content'
+gms_secure_role.request_form_reject_data:
+  path: '/request_form_data/reject/{id}'
+  defaults:
+    _controller: '\Drupal\gms_secure_role\Controller\AssignRoleController::reject'
+    _title: 'Block User'
+  requirements:
+    _permission: 'access content'  

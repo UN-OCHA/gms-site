@@ -1,13 +1,12 @@
 <?php
 
-namespace Drupal\gms_ocha\EventSubscriber;
+namespace Drupal\gms_secure_role\EventSubscriber;
 
-use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+
+use Drupal\preprocess_event_dispatcher\Event\PagePreprocessEvent;
 use Drupal\social_auth\Event\UserEvent;
 use Drupal\social_auth\Event\SocialAuthEvents;
+use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -18,43 +17,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class GmsOchaEventSubscriber implements EventSubscriberInterface {
 
   /**
-   * The messenger service.
-   *
-   * @var \Drupal\Core\Messenger\MessengerInterface
-   */
-  private $messenger;
-
-  /**
-   * The config factory service.
-   *
-   * @var \Drupal\Core\Config\ConfigFactory
-   */
-  private $configFactory;
-
-  /**
-   * The logger factory service.
-   *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
-   */
-  protected $loggerFactory;
-
-  /**
-   * SocialAuthSubscriber constructor.
-   *
-   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
-   *   The messenger service.
-   * @param \Drupal\Core\Config\ConfigFactory $config_factory
-   *   Used for accessing configuration object factory.
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
-   *   The logger factory.
-   */
-  public function __construct(MessengerInterface $messenger, ConfigFactory $config_factory, LoggerChannelFactoryInterface $logger_factory) {
-    $this->messenger = $messenger;
-    $this->configFactory = $config_factory;
-    $this->loggerFactory = $logger_factory;
-  }
-
-  /**
    * {@inheritdoc}
    *
    * @return array
@@ -63,7 +25,7 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
   public static function getSubscribedEvents() {
     return [
       SocialAuthEvents::USER_LOGIN => ['showPopup'],
-      HookEventDispatcherInterface::USER_LOGIN => ['showPopup'],
+      HookEventDispatcherInterface::USER_LOGIN => 'showNormalPopup',
     ];
   }
 
@@ -75,7 +37,17 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
    */
   public function showPopup(UserEvent $event) {
     //$account = $event->getUser();
-
+    \Drupal::logger('Showpopup')->error('Calling');
   }
 
+  /**
+   * React to a user being created.
+   *   The user event object.
+   */
+  public function showNormalPopup($event) {
+    $account = $event->getAccount();
+    if(in_array('non_verified', $account->getRoles())){
+      $_SESSION['show_pop_up'] = TRUE;
+    }
+  }
 }
