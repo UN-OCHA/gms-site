@@ -2,7 +2,6 @@
 
 namespace Drupal\gms_secure_role\Controller;
 
-use Drupal;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Controller\ControllerBase;
@@ -15,7 +14,7 @@ class GmsSecureRoleController extends ControllerBase {
   /**
    * Custom login Modal function.
    */
-  public function LoginModal() {
+  public function loginModal() {
 
     $response = new AjaxResponse();
     $options = [
@@ -24,14 +23,14 @@ class GmsSecureRoleController extends ControllerBase {
       'title' => $this->t('Request for Secure role.'),
     ];
 
-    $message = Drupal::entityTypeManager()
+    $message = \Drupal::entityTypeManager()
       ->getStorage('contact_message')
       ->create([
         'contact_form' => 'request_form',
       ]);
 
     // Get the modal form using the form builder.
-    $modal_form = Drupal::service('entity.form_builder')
+    $modal_form = \Drupal::service('entity.form_builder')
       ->getForm($message);
     // Add an AJAX command to open a modal dialog with the form as the content.
     $response->addCommand(new OpenModalDialogCommand('Login', $modal_form, $options));

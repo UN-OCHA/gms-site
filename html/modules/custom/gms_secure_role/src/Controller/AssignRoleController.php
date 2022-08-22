@@ -2,7 +2,6 @@
 
 namespace Drupal\gms_secure_role\Controller;
 
-use Drupal;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -16,7 +15,7 @@ class AssignRoleController extends ControllerBase {
    * Custom approve function.
    */
   public function approve($id) {
-    $message_by_id = Drupal::entityTypeManager()
+    $message_by_id = \Drupal::entityTypeManager()
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
@@ -29,12 +28,12 @@ class AssignRoleController extends ControllerBase {
       $user->removeRole('non_verified');
       $user->save();
       /*Mail Functionality*/
-      $mailManager = Drupal::service('plugin.manager.mail');
+      $mailManager = \Drupal::service('plugin.manager.mail');
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
       $params['message'] = $body;
-      $langcode = Drupal::currentUser()->getPreferredLangcode();
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
@@ -56,7 +55,7 @@ class AssignRoleController extends ControllerBase {
    * Custom approve function.
    */
   public function reject($id) {
-    $message_by_id = Drupal::entityTypeManager()
+    $message_by_id = \Drupal::entityTypeManager()
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
@@ -68,12 +67,12 @@ class AssignRoleController extends ControllerBase {
       $user->block();
       $user->save();
       /*Mail Functionality*/
-      $mailManager = Drupal::service('plugin.manager.mail');
+      $mailManager = \Drupal::service('plugin.manager.mail');
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
       $params['message'] = $body;
-      $langcode = Drupal::currentUser()->getPreferredLangcode();
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
