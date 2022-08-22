@@ -2,8 +2,6 @@
 
 namespace Drupal\gms_secure_role\EventSubscriber;
 
-
-use Drupal\preprocess_event_dispatcher\Event\PagePreprocessEvent;
 use Drupal\social_auth\Event\UserEvent;
 use Drupal\social_auth\Event\SocialAuthEvents;
 use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
@@ -37,19 +35,19 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
    */
   public function showPopup(UserEvent $event) {
     $account = $event->getUser();
-	if(in_array('non_verified', $account->getRoles())){
+    if (in_array('non_verified', $account->getRoles())) {
       $_SESSION['show_pop_up'] = TRUE;
-    }
+    } 	
   }
 
   /**
-   * React to a user being created.
-   *   The user event object.
+   * React to a user being created.The user event object.
    */
   public function showNormalPopup($event) {
     $account = $event->getAccount();
-    if(in_array('non_verified', $account->getRoles())){
+    if (in_array('non_verified', $account->getRoles())) {
       $_SESSION['show_pop_up'] = TRUE;
-    }
+    } 	
   }
+  
 }

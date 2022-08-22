@@ -6,6 +6,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Block\BlockBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+
 /**
  * Banner block.
  *
@@ -15,20 +16,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-  /**
+  
+   /**
    * The current user.
    *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $currentUser;
-
-  /**
-   * Entity Manager call.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-  }
 
   /**
    * Create function.
@@ -49,7 +43,7 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
       $plugin_definition,
     );
   }
-
+  
   /**
    * {@inheritdoc}
    */
@@ -58,14 +52,14 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
     $markup = '<a href="/gms_secure_role/show_popup" id="show_popup" style="display:none" class="use-ajax ajax-login" >Click</a>';
     $attached = [];
     if (isset($_SESSION['show_pop_up']) && $_SESSION['show_pop_up'] == TRUE) {
-    $attached = [
-      'library' => [
+      $attached = [
+       'library' => [
         'gms_secure_role/gms_secure_role_js',
-      ],
-      'drupalSettings' => [
+       ],
+       'drupalSettings' => [
         'siteBaseUrl' => $base_url,
-      ],
-    ];
+       ],
+      ];
       unset($_SESSION['show_pop_up']);
     }
 
