@@ -13,17 +13,15 @@ entity_type: contact_message
 type: list_string
 settings:
   allowed_values:
-    -
-      value: ABC
+    - value: ABC
       label: ABC
-    -
-      value: CDE
+    - value: CDE
       label: CDE
   allowed_values_function: ''
 module: options
 locked: false
 cardinality: 1
 translatable: true
-indexes: {  }
+indexes: { }
 persist_with_no_fields: false
 custom_storage: false

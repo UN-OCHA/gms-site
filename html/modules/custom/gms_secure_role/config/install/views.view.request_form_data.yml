@@ -84,7 +84,7 @@ display:
           settings:
             link_to_entity: false
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -146,9 +146,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: basic_string
-          settings: {  }
+          settings: { }
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -208,9 +208,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: list_default
-          settings: {  }
+          settings: { }
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -270,9 +270,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: list_default
-          settings: {  }
+          settings: { }
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -332,9 +332,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: basic_string
-          settings: {  }
+          settings: { }
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -400,7 +400,7 @@ display:
             thousand_separator: ''
             prefix_suffix: true
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -541,10 +541,10 @@ display:
           sort_desc_label: Desc
       access:
         type: none
-        options: {  }
+        options: { }
       cache:
         type: tag
-        options: {  }
+        options: { }
       empty:
         area:
           id: area
@@ -559,8 +559,8 @@ display:
             value: '<h4>No result found.</h4>'
             format: basic_html
           tokenize: false
-      sorts: {  }
-      arguments: {  }
+      sorts: { }
+      arguments: { }
       filters:
         contact_form:
           id: contact_form
@@ -573,7 +573,7 @@ display:
             request_form: request_form
           expose:
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
         roles_target_id:
           id: roles_target_id
           table: user__roles
@@ -596,7 +596,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -614,8 +614,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
           reduce_duplicates: false
         status:
           id: status
@@ -638,7 +638,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -655,8 +655,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
       style:
         type: table
       row:
@@ -668,7 +668,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: {  }
+          query_tags: { }
       relationships:
         field_user:
           id: field_user
@@ -679,9 +679,9 @@ display:
           admin_label: 'field_user: User'
           plugin_id: standard
           required: false
-      header: {  }
-      footer: {  }
-      display_extenders: {  }
+      header: { }
+      footer: { }
+      display_extenders: { }
     cache_metadata:
       max-age: -1
       contexts:
@@ -698,7 +698,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders: { }
       path: request_form_data
     cache_metadata:
       max-age: -1

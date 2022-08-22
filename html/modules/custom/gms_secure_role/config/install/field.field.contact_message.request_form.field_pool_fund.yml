@@ -17,7 +17,7 @@ label: 'Pool Fund'
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value: { }
 default_value_callback: ''
-settings: {  }
+settings: { }
 field_type: list_string

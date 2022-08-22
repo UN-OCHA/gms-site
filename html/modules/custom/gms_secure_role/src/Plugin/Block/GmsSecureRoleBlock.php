@@ -16,19 +16,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInterface {
-  
-   /**
-   * The current user.
-   *
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  protected $currentUser;
 
   /**
    * Create function.
    *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   A configuration array containing information about the plugin instance.
+   *   A configuration array containing information about the plugin
+   *     instance.
    * @param array $configuration
    *   The configuration.
    * @param string $plugin_id
@@ -43,7 +37,7 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
       $plugin_definition,
     );
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -53,12 +47,12 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
     $attached = [];
     if (isset($_SESSION['show_pop_up']) && $_SESSION['show_pop_up'] == TRUE) {
       $attached = [
-       'library' => [
-        'gms_secure_role/gms_secure_role_js',
-       ],
-       'drupalSettings' => [
-        'siteBaseUrl' => $base_url,
-       ],
+        'library' => [
+          'gms_secure_role/gms_secure_role_js',
+        ],
+        'drupalSettings' => [
+          'siteBaseUrl' => $base_url,
+        ],
       ];
       unset($_SESSION['show_pop_up']);
     }

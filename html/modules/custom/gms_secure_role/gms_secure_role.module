@@ -9,7 +9,6 @@
  * Implements hook_mail().
  */
 function gms_secure_role_mail($key, &$message, $params) {
-	
   $options = [
     'langcode' => $message['langcode'],
   ];

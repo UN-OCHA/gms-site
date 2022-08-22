@@ -37,7 +37,7 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
     $account = $event->getUser();
     if (in_array('non_verified', $account->getRoles())) {
       $_SESSION['show_pop_up'] = TRUE;
-    } 	
+    }
   }
 
   /**
@@ -47,7 +47,7 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
     $account = $event->getAccount();
     if (in_array('non_verified', $account->getRoles())) {
       $_SESSION['show_pop_up'] = TRUE;
-    } 	
+    }
   }
-  
+
 }
