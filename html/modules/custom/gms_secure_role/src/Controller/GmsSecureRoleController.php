@@ -24,32 +24,24 @@ class GmsSecureRoleController extends ControllerBase {
   /**
    * The form builder service.
    *
-   * @var  \Drupal\Core\Entity\EntityFormBuilderInterface
+   * @var \Drupal\Core\Entity\EntityFormBuilderInterface
    */
   protected $formBuilder;
 
   /**
    * Constructs a MyModuleController object.
    *
-   * @param array $configuration
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    * @param \Drupal\Core\Entity\EntityFormBuilderInterface $formBuilder
-   *   The path alias manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
-
-  public function __construct(
-    EntityFormBuilderInterface $formBuilder,
-    EntityTypeManagerInterface $entityTypeManager,
-  ) {
+  public function __construct(EntityFormBuilderInterface $formBuilder, EntityTypeManagerInterface $entityTypeManager) {
     $this->formBuilder = $formBuilder;
     $this->entityTypeManager = $entityTypeManager;
   }
 
-
   /**
    * {@inheritdoc}
    */
-
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity.form_builder'),
@@ -78,7 +70,7 @@ class GmsSecureRoleController extends ControllerBase {
     // Get the modal form using the form builder.
     $modal_form = $this->formBuilder
       ->getForm($message);
-    //dump($message); die;
+
     // Add an AJAX command to open a modal dialog with the form as the content.
     $response->addCommand(new OpenModalDialogCommand('Login', $modal_form, $options));
     return $response;

@@ -42,12 +42,8 @@ class AssignRoleController extends ControllerBase {
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    * @param \Drupal\Core\Mail\MailManagerInterface $mail_manager
    * @param \Drupal\Core\Session\AccountProxyInterface $current_user
-   *   The path alias manager.
    */
-  public function __construct(
-    EntityTypeManagerInterface $entityTypeManager,
-    MailManagerInterface       $mail_manager,
-    AccountProxyInterface      $current_user) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, MailManagerInterface $mail_manager, AccountProxyInterface $current_user) {
     $this->entityTypeManager = $entityTypeManager;
     $this->mailManager = $mail_manager;
     $this->currentUser = $current_user;
@@ -63,7 +59,6 @@ class AssignRoleController extends ControllerBase {
       $container->get('current_user')
     );
   }
-
 
   /**
    * Custom approve function.
@@ -143,5 +138,4 @@ class AssignRoleController extends ControllerBase {
     $dest_url = Url::fromUri('internal:/request_form_data')->toString();
     return new RedirectResponse($dest_url);
   }
-
 }
