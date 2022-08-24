@@ -3,7 +3,11 @@
 namespace Drupal\gms_secure_role\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -12,10 +16,60 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class AssignRoleController extends ControllerBase {
 
   /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The mail manager service.
+   *
+   * @var \Drupal\Core\Mail\MailManagerInterface
+   */
+  protected $mailManager;
+
+  /**
+   * The current active user.
+   *
+   * @var \Drupal\Core\Session\AccountProxyInterface
+   */
+  protected $currentUser;
+
+  /**
+   * Constructs a MyModuleController object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Mail\MailManagerInterface $mail_manager
+   * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   *   The path alias manager.
+   */
+  public function __construct(
+    EntityTypeManagerInterface $entityTypeManager,
+    MailManagerInterface       $mail_manager,
+    AccountProxyInterface      $current_user) {
+    $this->entityTypeManager = $entityTypeManager;
+    $this->mailManager = $mail_manager;
+    $this->currentUser = $current_user;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('plugin.manager.mail'),
+      $container->get('current_user')
+    );
+  }
+
+
+  /**
    * Custom approve function.
    */
   public function approve($id) {
-    $message_by_id = \Drupal::entityTypeManager()
+    $message_by_id = $this->entityTypeManager
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
@@ -28,12 +82,12 @@ class AssignRoleController extends ControllerBase {
       $user->removeRole('non_verified');
       $user->save();
       /*Mail Functionality*/
-      $mailManager = \Drupal::service('plugin.manager.mail');
+      $mailManager = $this->mailManager;
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
       $params['message'] = $body;
-      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $langcode = $this->currentUser->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
@@ -55,7 +109,7 @@ class AssignRoleController extends ControllerBase {
    * Custom approve function.
    */
   public function reject($id) {
-    $message_by_id = \Drupal::entityTypeManager()
+    $message_by_id = $this->entityTypeManager
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
@@ -67,12 +121,12 @@ class AssignRoleController extends ControllerBase {
       $user->block();
       $user->save();
       /*Mail Functionality*/
-      $mailManager = \Drupal::service('plugin.manager.mail');
+      $mailManager = $this->mailManager;
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
       $params['message'] = $body;
-      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $langcode = $this > $this->currentUser->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
