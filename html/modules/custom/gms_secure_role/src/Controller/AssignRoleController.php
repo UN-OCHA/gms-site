@@ -71,7 +71,7 @@ class AssignRoleController extends ControllerBase {
     $username = $message_by_id->get('name')->getValue()[0]['value'];
     $user = user_load_by_mail($email);
     $user_role = $user->get('roles')->getValue()[0]['target_id'];
-    $body = 'Dear ' . $username . ', <br></br> We have approved your contact request. <br></br> Thanks & Regards, <br><br> GMS Team';
+    $body = 'Dear ' . $username . ', <br><br><br><br><br> Your GMS Help Portal account has been activated. You may now log in by clicking this link or copying and pasting it to your browser: https://gms.unocha.org/user/login . <br><br><br><br><br> Thanks & Regards, <br><br><br><br><br> GMS Team';
     if ($user_role == 'non_verified') {
       $user->addRole('gms_secure');
       $user->removeRole('non_verified');
@@ -81,6 +81,7 @@ class AssignRoleController extends ControllerBase {
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
+      $params['subject'] = 'GMS Help Portal Account Activated';
       $params['message'] = $body;
       $langcode = $this->currentUser->getPreferredLangcode();
       $send = TRUE;
@@ -111,7 +112,7 @@ class AssignRoleController extends ControllerBase {
     $username = $message_by_id->get('name')->getValue()[0]['value'];
     $user = user_load_by_mail($email);
     $user_status = $user->get('status')->getValue()[0]['value'];
-    $body = 'Dear ' . $username . ', <br></br> We have reject your contact request. <br></br> Thanks & Regards, <br><br> GMS Team';
+    $body = 'Dear ' . $username . ', <br><br><br> You do not have the necessary rights to register on the GMS Help Portal. Your access has been denied. <br><br><br> Thanks & Regards, <br><br><br> GMS Support Team';
     if ($user_status == '1') {
       $user->block();
       $user->save();
@@ -120,6 +121,7 @@ class AssignRoleController extends ControllerBase {
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
+	  $params['subject'] = 'GMS Help Portal Account Deactivated';
       $params['message'] = $body;
       $langcode = $this > $this->currentUser->getPreferredLangcode();
       $send = TRUE;
