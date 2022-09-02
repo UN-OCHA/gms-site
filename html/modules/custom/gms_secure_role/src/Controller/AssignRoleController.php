@@ -3,7 +3,11 @@
 namespace Drupal\gms_secure_role\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -12,28 +16,74 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class AssignRoleController extends ControllerBase {
 
   /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The mail manager service.
+   *
+   * @var \Drupal\Core\Mail\MailManagerInterface
+   */
+  protected $mailManager;
+
+  /**
+   * The current active user.
+   *
+   * @var \Drupal\Core\Session\AccountProxyInterface
+   */
+  protected $currentUser;
+
+  /**
+   * Constructs a MyModuleController object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Mail\MailManagerInterface $mail_manager
+   * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   */
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, MailManagerInterface $mail_manager, AccountProxyInterface $current_user) {
+    $this->entityTypeManager = $entityTypeManager;
+    $this->mailManager = $mail_manager;
+    $this->currentUser = $current_user;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('plugin.manager.mail'),
+      $container->get('current_user')
+    );
+  }
+
+  /**
    * Custom approve function.
    */
   public function approve($id) {
-    $message_by_id = \Drupal::entityTypeManager()
+    $message_by_id = $this->entityTypeManager
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
     $username = $message_by_id->get('name')->getValue()[0]['value'];
     $user = user_load_by_mail($email);
     $user_role = $user->get('roles')->getValue()[0]['target_id'];
-    $body = 'Dear ' . $username . ', <br></br> We have approved your contact request. <br></br> Thanks & Regards, <br><br> GMS Team';
+    $body = 'Dear ' . $username . ', <br><br><br><br><br> Your GMS Help Portal account has been activated. You may now log in by clicking this link or copying and pasting it to your browser: https://gms.unocha.org/user/login . <br><br><br><br><br> Thanks & Regards, <br><br><br><br><br> GMS Team';
     if ($user_role == 'non_verified') {
       $user->addRole('gms_secure');
       $user->removeRole('non_verified');
       $user->save();
       /*Mail Functionality*/
-      $mailManager = \Drupal::service('plugin.manager.mail');
+      $mailManager = $this->mailManager;
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
+      $params['subject'] = 'GMS Help Portal Account Activated';
       $params['message'] = $body;
-      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $langcode = $this->currentUser->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
@@ -55,24 +105,25 @@ class AssignRoleController extends ControllerBase {
    * Custom approve function.
    */
   public function reject($id) {
-    $message_by_id = \Drupal::entityTypeManager()
+    $message_by_id = $this->entityTypeManager
       ->getStorage('contact_message')
       ->load($id);
     $email = $message_by_id->get('mail')->getValue()[0]['value'];
     $username = $message_by_id->get('name')->getValue()[0]['value'];
     $user = user_load_by_mail($email);
     $user_status = $user->get('status')->getValue()[0]['value'];
-    $body = 'Dear ' . $username . ', <br></br> We have reject your contact request. <br></br> Thanks & Regards, <br><br> GMS Team';
+    $body = 'Dear ' . $username . ', <br><br><br> You do not have the necessary rights to register on the GMS Help Portal. Your access has been denied. <br><br><br> Thanks & Regards, <br><br><br> GMS Support Team';
     if ($user_status == '1') {
       $user->block();
       $user->save();
       /*Mail Functionality*/
-      $mailManager = \Drupal::service('plugin.manager.mail');
+      $mailManager = $this->mailManager;
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
+	  $params['subject'] = 'GMS Help Portal Account Deactivated';
       $params['message'] = $body;
-      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $langcode = $this > $this->currentUser->getPreferredLangcode();
       $send = TRUE;
 
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
@@ -89,5 +140,4 @@ class AssignRoleController extends ControllerBase {
     $dest_url = Url::fromUri('internal:/request_form_data')->toString();
     return new RedirectResponse($dest_url);
   }
-
 }

@@ -1,5 +1,10 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
+
 /**
  * @file
  * GMS Sitename.
@@ -22,6 +27,34 @@ function gms_secure_role_mail($key, &$message, $params) {
 }
 
 /**
+ * Implements hook_mail_alter().
+ *
+ * @param $message
+ */
+function gms_secure_role_mail_alter(&$message) {
+  if ($message['key'] == 'page_mail' && $message['id'] == 'contact_page_mail') {
+	$old_body = $message['body'];
+	 $variables = [
+      '@sender-name' => $old_body->name->value,
+    ];
+    $contact_message = $message['params']['contact_message'];
+	$sender_name = $contact_message->getSenderName();
+    $message['subject'] = 'Account details for '.$sender_name.' and user role is Non Verified (pending admin approval)'; 
+	$body = $sender_name.' and user role is Non Verified has applied for an account. <br></br><br></br> <a href="/request_form_data">User approval list is below</a>';
+    $message['body'][] = 'Dear GMS Support, <br></br><br></br>' .$body.'<br></br><br></br>';
+  }
+  
+  if ($message['key'] == 'page_autoreply' && $message['id'] == 'contact_page_autoreply') {
+	$body = 'Thank you for registering to https://gms.unocha.org/. Your application for an account is currently pending approval. Once it has been approved, you will receive another confirmation e-mail';
+    $body_footer = 'Best Regards,<br> GMS Support Team';
+    $message['subject'] = 'GMS Help Portal Pending Admin Approval'; 
+    $contact_message = $message['params']['contact_message'];
+    $sender_name = $contact_message->getSenderName();
+    $message['body'][] = 'Dear '.$sender_name.','."\r\n\n".$body."\r\n\n".$body_footer;
+   }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function gms_secure_role_form_alter(&$form, &$form_state, $form_id) {
@@ -30,5 +63,63 @@ function gms_secure_role_form_alter(&$form, &$form_state, $form_id) {
     $id = $currentUser->id();
     $form['field_user']['widget']['#default_value'] = $id;
     $form['field_user']['#attributes']['style'][] = 'display:none';
+	 $form['field_pool_fund']['widget']['#states'] = [
+        'required' => [
+          [':input[name="field_user_group"]' => ['value' => '0']],[':input[name="field_user_group"]' => ['value' => '1']],
+        ],
+      ];
+	 $form['#validate'][] = 'field_pool_fund_validate';
+	 gms_secure_role_add_ajax_form($form_id, $form);
+  } 	
+}
+
+/**
+ * Add field to the form.
+ */
+function gms_secure_role_add_ajax_form($form_id, &$form) {
+ 
+  $form['#prefix'] = '<div id="modal-form">';
+  $form['#suffix'] = '</div>';
+  $form['messages'] = [
+    '#weight' => -9999,
+    '#type' => 'status_messages',
+  ];
+
+  $form['actions']['submit']['#ajax']  = [
+    'callback' => 'gms_secure_role_form_ajax_validate',
+    'wrapper' => 'modal-form',
+  ];
+
+  $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
+
+  return $form;
+}
+
+/**
+ * Define a validation for forms.
+ */
+function gms_secure_role_form_ajax_validate(&$form, $form_state) {
+   $response = new AjaxResponse();
+
+  if (!empty($form_state->getErrors())) {
+    $response->addCommand(new ReplaceCommand('#modal-form', $form));
+    return $response;
   }
+  $frontPage = \Drupal::configFactory()->get('system.site')->get('page.front');
+  $response->addCommand(new RedirectCommand($frontPage));
+
+  return $response;
+}
+
+/**
+ * Define a validation for pool fund.
+ */
+function field_pool_fund_validate(array $form, FormStateInterface $form_state){
+	$countries = $form_state->getValue('field_pool_fund');
+	$userInput = $form_state->getUserInput();
+	if(isset($userInput['field_user_group']) && (($userInput['field_user_group'] == '0') || ($userInput['field_user_group'] == '1'))){
+		if(empty($countries)){
+		$form_state->setErrorByName('field_pool_fund', 'Pool Fund field is required.');
+		}		
+	}
 }
