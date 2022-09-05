@@ -1,0 +1,23 @@
+uuid: 9b410c4b-4e1a-445d-99ec-3f8bac6ee714
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send message'
+    show_preview: true
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 100
+    page_autoreply_format: plain_text
+_core:
+  default_config_hash: n1wCfZ2ZWwy1sRFH9TZWNvc-dWnY-yAI9RJQNX9v_Sc
+id: request_form
+label: 'Request Form'
+recipients:
+  - nitesh.pawar@trigyn.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

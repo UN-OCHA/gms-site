@@ -1,0 +1,21 @@
+uuid: 9f4d1568-ccd2-4eaa-9180-b9f2c7a3cc7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.request_form
+    - field.storage.contact_message.field_user
+id: contact_message.request_form.field_user
+field_name: field_user
+entity_type: contact_message
+bundle: request_form
+label: User
+description: ''
+required: false
+translatable: false
+default_value: { }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings: { }
+field_type: entity_reference
