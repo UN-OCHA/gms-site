@@ -37,7 +37,7 @@ function gms_group_migrate_migrate_prepare_row(Row $row, MigrateSourceInterface 
  * @return array
  *   returns target ids of domains
  */
-function get_domain_source_target_id(int $nid) {
+function gms_group_migrate_get_domain_source_target_id(int $nid) {
   $row_source_properties = [];
   $query = \Drupal::database();
   $domains = $query->select('domain_source', 'ds')
