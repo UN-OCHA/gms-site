@@ -33,8 +33,8 @@ visibility:
     id: request_path
     negate: false
     pages: "/content/partner\r\n/content/hfu\r\n/content/cbpf-finance\r\n/content/cluster-coordinator\r\n/content/guest"
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

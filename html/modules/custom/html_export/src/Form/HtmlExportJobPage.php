@@ -175,7 +175,7 @@ class HtmlExportJobPage extends FormBase {
     ];
     $batch = [
       'operations' => $operations,
-      'finished' => 'batch_import_finished',
+      'finished' => 'html_export_batch_import_finished',
       'title' => $this->t('Processing html export'),
       'init_message' => $this->t('HTML export is starting.'),
       'progress_message' => $this->t('Processed @current out of @total.'),
