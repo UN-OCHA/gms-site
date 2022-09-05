@@ -1555,3 +1555,77 @@ u {
 	text-decoration: underline;
 	font-weight: normal;
 }
+/* Request form data page css */
+.view-request-form-data {
+    table.cols-6 {
+        width: 100%;
+        th {
+            background-color: #ebf4fa;
+            padding: 7px 5px;
+            font-size: 12px;
+            color: #35688F;
+            font-weight: normal;
+            border: 1px solid #d4e7f6;
+            text-align: left;
+        }
+        td {
+            border: 1px solid #f0f0f0;
+            padding: 7px 5px;
+            font-size: 12px;
+        }
+    }
+}
+
+.help-portal-page {
+    .cd-layout-container {
+        .navigation {
+            ul.custom-menu- {
+                li {
+                    margin: 0 23px 0 0;
+                    &.nav-item-agency {
+                        background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center;
+                    }
+                    &.nav-item-cerf-finance {
+                        background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center;
+                    }
+                    &.nav-item-cerf-hq {
+                        background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center;
+                    }
+                    &.nav-item-country-office {
+                        background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center;
+                    }
+                    &.nav-item-agency:hover,
+                    &.nav-item-agency.active-parent,
+                    &.nav-item-agency.is-active {
+                        background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center;
+                    }
+                    &.nav-item-cerf-finance:hover,
+                    &.nav-item-cerf-finance.active-parent,
+                    &.nav-item-cerf-finance.is-active {
+                        background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center;
+                    }
+                    &.nav-item-cerf-hq:hover,
+                    &.nav-item-cerf-hq.active-parent,
+                    &.nav-item-cerf-hq.is-active {
+                        background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center;
+                    }
+                    &.nav-item-country-office:hover,
+                    &.nav-item-country-office.active-parent,
+                    &.nav-item-country-office.is-active {
+                        background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center;
+                    }
+                    &.is-leaf.active-parent,
+                    &.is-leaf.is-active {
+                        background-color: #3070ae;
+                        a {
+                            background: url(/themes/custom/gms_ocha_common/img/nav_arrow_active.gif) no-repeat right center;
+                            color: #fff !important;
+                            display: block;
+
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

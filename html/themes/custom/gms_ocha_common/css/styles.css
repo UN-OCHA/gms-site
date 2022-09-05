@@ -1717,4 +1717,45 @@ u {
   text-decoration: underline;
   font-weight: normal; }
 
+/* Request form data page css */
+.view-request-form-data table.cols-6 {
+  width: 100%; }
+  .view-request-form-data table.cols-6 th {
+    background-color: #ebf4fa;
+    padding: 7px 5px;
+    font-size: 12px;
+    color: #35688F;
+    font-weight: normal;
+    border: 1px solid #d4e7f6;
+    text-align: left; }
+  .view-request-form-data table.cols-6 td {
+    border: 1px solid #f0f0f0;
+    padding: 7px 5px;
+    font-size: 12px; }
+
+.help-portal-page .cd-layout-container .navigation ul.custom-menu- li {
+  margin: 0 23px 0 0; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-agency {
+    background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-finance {
+    background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-hq {
+    background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-country-office {
+    background: url(/themes/custom/gms_ocha_common/img/icon_partner.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-agency:hover, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-agency.active-parent, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-agency.is-active {
+    background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-finance:hover, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-finance.active-parent, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-finance.is-active {
+    background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-hq:hover, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-hq.active-parent, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-cerf-hq.is-active {
+    background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-country-office:hover, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-country-office.active-parent, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-country-office.is-active {
+    background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_partner_active.gif) no-repeat left center; }
+  .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.is-leaf.active-parent, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.is-leaf.is-active {
+    background-color: #3070ae; }
+    .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.is-leaf.active-parent a, .help-portal-page .cd-layout-container .navigation ul.custom-menu- li.is-leaf.is-active a {
+      background: url(/themes/custom/gms_ocha_common/img/nav_arrow_active.gif) no-repeat right center;
+      color: #fff !important;
+      display: block; }
+	  
 /*# sourceMappingURL=styles.css.map */
