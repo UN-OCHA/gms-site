@@ -20,7 +20,7 @@ function gms_secure_role_mail($key, &$message, $params) {
   switch ($key) {
     case 'request_form':
       $message['from'] = \Drupal::config('system.site')->get('mail');
-      $message['subject'] = t('Request Form Records', $options);
+      $message['subject'] = $params['subject'];
       $message['body'][] = $params['message'];
       break;
   }
