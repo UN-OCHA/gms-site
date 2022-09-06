@@ -32,7 +32,9 @@ class GmsSecureRoleController extends ControllerBase {
    * Constructs a MyModuleController object.
    *
    * @param \Drupal\Core\Entity\EntityFormBuilderInterface $formBuilder
+   *   Comment for fombuilder.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Comment for Entity Type Manager.
    */
   public function __construct(EntityFormBuilderInterface $formBuilder, EntityTypeManagerInterface $entityTypeManager) {
     $this->formBuilder = $formBuilder;
