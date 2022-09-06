@@ -40,8 +40,11 @@ class AssignRoleController extends ControllerBase {
    * Constructs a MyModuleController object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   To fetch the entity.
    * @param \Drupal\Core\Mail\MailManagerInterface $mail_manager
+   *   To send the email.
    * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   *   This is current user.
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager, MailManagerInterface $mail_manager, AccountProxyInterface $current_user) {
     $this->entityTypeManager = $entityTypeManager;
@@ -121,7 +124,7 @@ class AssignRoleController extends ControllerBase {
       $module = 'gms_secure_role';
       $key = 'request_form';
       $to = $email;
-	  $params['subject'] = 'GMS Help Portal Account Deactivated';
+      $params['subject'] = 'GMS Help Portal Account Deactivated';
       $params['message'] = $body;
       $langcode = $this > $this->currentUser->getPreferredLangcode();
       $send = TRUE;
@@ -140,4 +143,5 @@ class AssignRoleController extends ControllerBase {
     $dest_url = Url::fromUri('internal:/request_form_data')->toString();
     return new RedirectResponse($dest_url);
   }
+
 }
