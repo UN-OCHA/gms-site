@@ -1,0 +1,9 @@
+social_auth_roles:
+  non_verified: non_verified
+  editor: 0
+  administrator: 0
+  super_editor: 0
+  verified: 0
+  fcs_admin_users: 0
+  ocu_user: 0
+  gms_secure: 0

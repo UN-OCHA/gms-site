@@ -22,6 +22,7 @@ module:
   config: 0
   config_update: 0
   contact: 0
+  contact_storage: 0
   content_access: 0
   content_moderation: 0
   contextual: 0
@@ -29,6 +30,7 @@ module:
   csp: 0
   ctools: 0
   datetime: 0
+  dblog: 0
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
   editor: 0
@@ -47,6 +49,7 @@ module:
   genpass: 0
   gms_group_migrate: 0
   gms_pdflink: 0
+  gms_secure_role: 0
   gms_sitename: 0
   google_analytics: 0
   help: 0
@@ -60,6 +63,7 @@ module:
   layout_discovery: 0
   libraries: 0
   link: 0
+  mailcontrol: 0
   maintenance200: 0
   media: 0
   media_entity_browser: 0
@@ -100,6 +104,7 @@ module:
   social_api: 0
   social_auth: 0
   social_auth_hid: 0
+  social_auth_roles: 0
   stage_file_proxy: 0
   superfish: 0
   syslog: 0
@@ -115,6 +120,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  user_event_dispatcher: 0
   user_expire: 0
   user_login: 0
   userprotect: 0

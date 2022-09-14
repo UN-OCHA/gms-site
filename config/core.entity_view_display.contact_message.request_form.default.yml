@@ -1,0 +1,31 @@
+uuid: 2a5526b3-b517-461e-9dd5-3ebb62aaac81
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.request_form
+    - field.field.contact_message.request_form.field_comments
+    - field.field.contact_message.request_form.field_pool_fund
+    - field.field.contact_message.request_form.field_user
+    - field.field.contact_message.request_form.field_user_group
+id: contact_message.request_form.default
+targetEntityType: contact_message
+bundle: request_form
+mode: default
+content:
+  subject:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_comments: true
+  field_pool_fund: true
+  field_user: true
+  field_user_group: true
+  mail: true
+  message: true
+  name: true
