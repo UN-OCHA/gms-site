@@ -1,0 +1,35 @@
+uuid: 7bd6ac50-5ec2-4659-be56-66654f19e28d
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+_core:
+  default_config_hash: 8TakDj1f9NIhMqJPX0Z6KzuMOpFtd3C-fj_CCh7WOBI
+id: contact_message.field_user_group
+field_name: field_user_group
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 'HFU Compliance'
+    -
+      value: '1'
+      label: 'HFU Fund Manager'
+    -
+      value: '2'
+      label: OCU
+    -
+      value: '3'
+      label: 'CPBF Finance'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

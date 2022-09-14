@@ -1,0 +1,14 @@
+uuid: 850f9774-38bc-42e3-9359-a8ac601cda11
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.gms_secure
+  module:
+    - user
+id: user_remove_role_action.gms_secure
+label: 'Remove the gms secure role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: gms_secure
