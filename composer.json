@@ -136,6 +136,7 @@
         "drupal/jquery_ui": "^1.4",
         "drupal/libraries": "^3.0@beta",
         "drupal/login_destination": "^2.0@beta",
+		"drupal/mailcontrol": "^1.5",
         "drupal/maintenance200": "^1.1",
         "drupal/media_entity_browser": "^2.0@alpha",
         "drupal/menu_block": "^1.7",
