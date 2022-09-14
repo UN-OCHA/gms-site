@@ -2,6 +2,8 @@ uuid: bd45fc3a-3930-4cc4-b61a-4d2917f97756
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - gms_ocha_common
 _core:
@@ -19,4 +21,8 @@ settings:
   provider: core
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/

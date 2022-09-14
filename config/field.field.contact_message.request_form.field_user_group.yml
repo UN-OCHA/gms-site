@@ -1,0 +1,23 @@
+uuid: 420f0722-f2a9-4212-907a-adc3e3db9f81
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.request_form
+    - field.storage.contact_message.field_user_group
+  module:
+    - options
+_core:
+  default_config_hash: hJtb6qKSyPJRkR4Nz0Fu7Sem1XrjxIIB3OVo-JBmDAQ
+id: contact_message.request_form.field_user_group
+field_name: field_user_group
+entity_type: contact_message
+bundle: request_form
+label: 'User Group'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,9 +1,12 @@
 uuid: b7b07377-c170-45d4-823a-6d9002f68a82
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - contact
 id: non_verified
 label: non-verified
 weight: 50
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access site-wide contact form'

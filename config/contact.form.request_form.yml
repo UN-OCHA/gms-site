@@ -1,0 +1,24 @@
+uuid: 9b410c4b-4e1a-445d-99ec-3f8bac6ee714
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: Register
+    show_preview: true
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 1
+    page_autoreply_format: plain_text
+_core:
+  default_config_hash: rgH4zpgNu-werW3M-ciZvGSrvoQ3T4vB6Dzne2p1gJQ
+id: request_form
+label: 'Request Form'
+recipients:
+  - gms-support@un.org
+  - yasmina.nousseir@un.org
+reply: '  '
+weight: 0
+message: ''
+redirect: ''

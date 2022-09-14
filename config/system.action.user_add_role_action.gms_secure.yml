@@ -1,0 +1,14 @@
+uuid: b7562cef-6650-4e25-bfc3-287c344b48e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.gms_secure
+  module:
+    - user
+id: user_add_role_action.gms_secure
+label: 'Add the gms secure role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: gms_secure

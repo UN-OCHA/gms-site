@@ -1,0 +1,86 @@
+uuid: dd07f3a0-5d97-4d42-9258-900d707eb016
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+_core:
+  default_config_hash: GIzibXJZov_RHUeSqldD3HYYnXbgiMZGllTukWOt4sQ
+id: contact_message.field_pool_fund
+field_name: field_pool_fund
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Afghanistan
+    -
+      value: '1'
+      label: 'Burkina Faso'
+    -
+      value: '2'
+      label: CAR
+    -
+      value: '3'
+      label: DRC
+    -
+      value: '4'
+      label: Ethiopia
+    -
+      value: '5'
+      label: Iraq
+    -
+      value: '6'
+      label: Jordan
+    -
+      value: '7'
+      label: Lebanon
+    -
+      value: '8'
+      label: Myanmar
+    -
+      value: '9'
+      label: Niger
+    -
+      value: '10'
+      label: Nigeria
+    -
+      value: '11'
+      label: oPt
+    -
+      value: '12'
+      label: Pakistan
+    -
+      value: '13'
+      label: Somalia
+    -
+      value: '14'
+      label: 'South Sudan'
+    -
+      value: '15'
+      label: Sudan
+    -
+      value: '16'
+      label: Syria
+    -
+      value: '17'
+      label: 'Syria Cross Border'
+    -
+      value: '18'
+      label: Ukraine
+    -
+      value: '19'
+      label: Venezuela
+    -
+      value: '20'
+      label: Yemen
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
