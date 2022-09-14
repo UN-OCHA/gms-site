@@ -1,0 +1,21 @@
+uuid: 01960ec0-46a3-4e98-a2a2-8e1a273958af
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.request_form
+    - field.storage.contact_message.field_comments
+_core:
+  default_config_hash: 49N86tL0hX4a0MjdS1klG-RoXapd7OtREHj-Av7-qB0
+id: contact_message.request_form.field_comments
+field_name: field_comments
+entity_type: contact_message
+bundle: request_form
+label: Comments
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

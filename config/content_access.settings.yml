@@ -10,6 +10,7 @@ content_access_roles_gids:
   verified: 7
   fcs_admin_users: 8
   ocu_user: 9
+  gms_secure: 10
 content_access_node_type:
   static_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
   article: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'

@@ -1,0 +1,33 @@
+uuid: f56f83c2-a943-42f1-b09b-40bc79aaf2a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_secure_role
+    - system
+    - user
+  theme:
+    - gms_ocha_common
+id: gmssecurerolerequest
+theme: gms_ocha_common
+region: footer_navigation
+weight: 0
+provider: null
+plugin: gms_secure_role
+settings:
+  id: gms_secure_role
+  label: 'GMS Secure Role request'
+  label_display: '0'
+  provider: gms_secure_role
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      non_verified: non_verified
