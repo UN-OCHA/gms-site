@@ -2,10 +2,7 @@ uuid: 41746efb-2d25-46e9-98f0-f73c1251c86e
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:0d45ecf6-14ca-4241-9831-f86edb86d05b'
   module:
-    - block_content
     - system
   theme:
     - gms_ocha_common
