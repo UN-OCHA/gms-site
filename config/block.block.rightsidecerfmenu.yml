@@ -1,0 +1,25 @@
+uuid: bdb308c1-bd2a-4dd2-9b53-3ce35eb897c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+id: rightsidecerfmenu
+theme: gms_ocha_common
+region: sidebar_first
+weight: 0
+provider: null
+plugin: rightsidecerf_menu
+settings:
+  id: rightsidecerf_menu
+  label: 'RightSide CERF Menu'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/cerf/*'
