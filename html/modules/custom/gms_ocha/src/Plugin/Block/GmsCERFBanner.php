@@ -2,12 +2,11 @@
 
 namespace Drupal\gms_ocha\Plugin\Block;
 
+use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
-use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -71,8 +70,6 @@ class GmsCERFBanner extends BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $form = $this->formBuilder->getForm('Drupal\search\Form\SearchBlockForm');
     $output = $this->renderer->render($form);
-    $gmaOverview = Url::fromRoute('entity.node.canonical', ['node' => 200])->toString();
-    $tooltip = Url::fromRoute('entity.node.canonical', ['node' => 155])->toString();
     $markup = "<h1>Welcome to the CERF Help portal</h1>
     <p>The GMS Help portal has been designed to assist each user group of the system to be able to navigate through  the GMS system.</p>
     <div class=\"block block-gms-ocha first last odd\" id=\"block-gms-ocha-gms-portal\"></div>" . $output . "</p>";
