@@ -24,7 +24,7 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "<front>\r\n/content/home\r\n/cerf-home\r\n/cerf/*"
+    pages: "<front>\r\n/content/home\r\n/cerf-home\r\n/cerf/*\r\n/content/cerf\r\n/content/cbpf"
   request_param:
     id: request_param
     request_param: menu_visibility=show

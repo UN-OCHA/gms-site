@@ -1,0 +1,22 @@
+uuid: cd065d3f-8761-4177-8db0-726b1e2627fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.duel_reference
+id: node.duel_reference.status
+field_name: status
+entity_type: node
+bundle: duel_reference
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

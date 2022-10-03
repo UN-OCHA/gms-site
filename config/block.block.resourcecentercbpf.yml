@@ -1,23 +1,23 @@
-uuid: c8095c86-b0b7-4d82-b98f-7d38895d1fb7
+uuid: feb3e1bc-0a67-4c42-a641-e4a8aedd7d73
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
+    - 'block_content:basic:f7c29135-7ec3-4120-86ad-280489f7fd50'
   module:
     - block_content
     - system
   theme:
     - gms_ocha_common
-id: gmsonebanner
+id: resourcecentercbpf
 theme: gms_ocha_common
-region: fluid_banner
+region: fluid_content
 weight: -26
 provider: null
-plugin: 'block_content:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
+plugin: 'block_content:f7c29135-7ec3-4120-86ad-280489f7fd50'
 settings:
-  id: 'block_content:9a20eb9e-58b3-435a-b7cc-54ba1c9d88e1'
-  label: 'GMS One banner'
+  id: 'block_content:f7c29135-7ec3-4120-86ad-280489f7fd50'
+  label: 'Resource Center CBPF'
   label_display: '0'
   provider: block_content
   status: true
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /content/gms-one
+    pages: /content/cbpf

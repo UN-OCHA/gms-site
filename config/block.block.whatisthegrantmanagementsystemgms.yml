@@ -1,0 +1,34 @@
+uuid: 68525c80-e6ba-4587-90b5-bc282f6227f9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6bb5a791-d162-4019-ba5f-50241a1602a8'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: cd-container
+id: whatisthegrantmanagementsystemgms
+theme: gms_ocha_common
+region: fluid_content
+weight: -28
+provider: null
+plugin: 'block_content:6bb5a791-d162-4019-ba5f-50241a1602a8'
+settings:
+  id: 'block_content:6bb5a791-d162-4019-ba5f-50241a1602a8'
+  label: 'What is the Grant Management System (GMS)'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cbpf
