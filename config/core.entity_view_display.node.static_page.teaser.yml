@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.static_page.body
+    - field.field.node.static_page.field_duel_reference
     - field.field.node.static_page.field_pdf
     - field.field.node.static_page.field_search_keywords
     - node.type.static_page
@@ -33,5 +34,6 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_duel_reference: true
   field_pdf: true
   field_search_keywords: true

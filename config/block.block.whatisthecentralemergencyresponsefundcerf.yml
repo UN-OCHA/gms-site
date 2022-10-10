@@ -1,0 +1,34 @@
+uuid: e779feb7-96ed-4655-b05e-4d0af6a68c0a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8e8ee08b-854f-4735-89ee-18ed991ece98'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: cd-container
+id: whatisthecentralemergencyresponsefundcerf
+theme: gms_ocha_common
+region: fluid_content
+weight: -25
+provider: null
+plugin: 'block_content:8e8ee08b-854f-4735-89ee-18ed991ece98'
+settings:
+  id: 'block_content:8e8ee08b-854f-4735-89ee-18ed991ece98'
+  label: 'What is the Central Emergency Response Fund (CERF)'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cerf

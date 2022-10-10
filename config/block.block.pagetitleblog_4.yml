@@ -23,7 +23,7 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/content/home\r\n<front>"
+    pages: "/content/home\r\n<front>\r\n/content/cerf\r\n/content/cbpf"
   node_type:
     id: node_type
     negate: false

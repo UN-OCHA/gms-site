@@ -1,0 +1,29 @@
+uuid: 8bd86bcd-bfa6-4c63-8ffe-19199e9cf6cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: cd-container
+id: gmsochacbpfbanner
+theme: gms_ocha_common
+region: fluid_banner
+weight: -25
+provider: null
+plugin: gms_ocha_cbpf_banner
+settings:
+  id: gms_ocha_cbpf_banner
+  label: 'GMS Ocha CBPF Banner'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cbpf

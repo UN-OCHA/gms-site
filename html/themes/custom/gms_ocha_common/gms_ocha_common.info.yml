@@ -20,6 +20,7 @@ regions:
   header_third: Header Third
   navigation: Navigation Bar
   highlighted: Highlighted
+  fluid_navigation: Fluid Navigation
   fluid_banner: Fluid Banner
   banner: Banner
   page_title: Page title
