@@ -1,5 +1,5 @@
 name: GMS Ocha
 type: module
-description: GMS Ocha custom functionality
+description: This module use to extend Drupal core hooks for the GMS functionality
 package: GMS Custom Modules
 core_version_requirement: ^8.8 || ^9
