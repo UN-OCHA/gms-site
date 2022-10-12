@@ -7238,6 +7238,7 @@ u {
 .cd-fluid_navigation {
   padding: 20px 0px;
   background-color: #333333;
+  margin-bottom: 15px;
 }
 .cd-fluid_navigation ul.custom-menu-cbpf, .cd-fluid_navigation ul.custom-menu-cerf {
   margin: 0px;
