@@ -362,7 +362,6 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: true
-<<<<<<< HEAD
       pager:
         type: full
         options:
