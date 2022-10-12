@@ -18,6 +18,9 @@ label: 'Request Form'
 recipients:
   - nitesh.pawar@trigyn.com
 reply: '    '
+  - gms-support@un.org
+  - yasmina.nousseir@un.org
+reply: '  '
 weight: 0
 message: ''
 redirect: ''

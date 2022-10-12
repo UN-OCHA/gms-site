@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Html Exort Module.
+ * Html Export Module.
  */
 
 use Drupal\Core\File\FileSystemInterface;
@@ -202,12 +202,12 @@ function html_export_home_pages($export_path, $dom_remove, $anonymous, $render_e
 /**
  * Finished batch process.
  */
-function batch_import_finished($success, $results, $operations) {
+function html_export_batch_import_finished($success, $results, $operations) {
   $messenger = \Drupal::messenger();
   if ($success) {
     $source = 'sites/default/files/html_export/export/';
     $destination = 'sites/default/files/html_export/html_export.zip';
-    gms_ocha_zip($source, $destination);
+    html_export_gms_ocha_zip($source, $destination);
     $messenger->addMessage(t('<a href=":download">Click here to download export</a>', [':download' => Url::fromRoute('html_export.download_folder')->toString()]));
   }
   else {
@@ -226,7 +226,7 @@ function batch_import_finished($success, $results, $operations) {
 /**
  * Create zip.
  */
-function gms_ocha_zip($source, $destination, $include_dir = TRUE) {
+function html_export_gms_ocha_zip($source, $destination, $include_dir = TRUE) {
   if (file_exists($destination)) {
     unlink($destination);
   }
