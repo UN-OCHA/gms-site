@@ -11,8 +11,8 @@ dependencies:
     - gms_ocha_common
 id: cerfmenu
 theme: gms_ocha_common
-region: navigation
-weight: 0
+region: fluid_navigation
+weight: -29
 provider: null
 plugin: 'menu_block:agency'
 settings:

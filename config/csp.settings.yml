@@ -21,7 +21,7 @@ report-only:
       base: self
       sources:
         - github.com
-        - https://github.com/CBPFGMS
+        - 'https://github.com/CBPFGMS'
     object-src:
       base: none
     script-src:
