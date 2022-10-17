@@ -5394,15 +5394,6 @@ a:focus {
   background: #3070ae url(/themes/custom/gms_ocha_common/img/icon_secured_active.gif) no-repeat left center;
 }
 
-.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role{
-  background: url(../img/icon_secured.gif)no-repeat left center;margin: 0 23px 0 0; }
-  
-.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role:hover {
-  background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center; }
-
-.help-portal-page .cd-layout-container .navigation ul.custom-menu- li.nav-item-gms-secure-role.active-parent {
-  background: #3070ae url(../img/icon_secured_active.gif)no-repeat left center; }
-
 .help-portal-page .field--type-text-with-summary .content_panel p {
   font-size: 13px;
   color: #3c3c3c;
@@ -7236,14 +7227,14 @@ u {
   height: 18px;
 }
 .cd-fluid_navigation {
-  padding: 20px 0px;
-  background-color: #333333;
   margin-bottom: 15px;
+  padding: 20px 15px;
+  background-color: #333333;
 }
 .cd-fluid_navigation ul.custom-menu-cbpf, .cd-fluid_navigation ul.custom-menu-cerf {
   margin: 0px;
   padding: 0px;
-  display: table;
+  display: flex;
 }
 .cd-fluid_navigation ul.custom-menu-cbpf li, .cd-fluid_navigation ul.custom-menu-cerf li {
   margin: 0 15px 0 0;
@@ -7251,16 +7242,19 @@ u {
   position: relative;
   line-height: 40px;
   float: left;
-  width: 245px;
+  width: 20%;
   height: 40px;
   font-family: "Roboto Slab", Roboto;
-  font-size: 16px;
+  font-size: 14px;
   text-indent: 50px;
   text-transform: uppercase;
   transition: all 0.2s linear;
   border-radius: 5px;
   overflow: hidden;
   background-color: #EDEDED;
+}
+.cd-fluid_navigation ul.custom-menu-cbpf li:last-child, .cd-fluid_navigation ul.custom-menu-cerf li:last-child {
+  margin: 0px;
 }
 .cd-fluid_navigation ul.custom-menu-cbpf li:hover {
   background: #418FDE;
