@@ -3363,7 +3363,7 @@ html[dir=rtl] .cd-site-header__nav-holder .cd-nav button {
 
 .cd-footer a {
   text-decoration: none;
-  color: var(--cd-white)
+  color: var(--cd-white) !important;
 }
 
 .cd-footer a.cd-button {
@@ -6443,6 +6443,10 @@ article p iframe {
 u {
   text-decoration: underline;
   font-weight: normal;
+}
+
+strong u {
+  font-weight: bold !important;
 }
 
 .onegms-home-pg .cd-layout-container {
