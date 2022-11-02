@@ -6839,26 +6839,26 @@ strong u {
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section {
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   float: left;
   width: 100%;
   position: relative;
 }
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role {
-  margin-right: 1%;
-  padding: 15px;
-  float: left;
-  position: relative;
-  top: 0px;
-  width: 19%;
-  height: 70px;
-  color: #333;
-  transition: height 0.5s;
-  -webkit-transition: height 0.5s;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #ffffff;
+	margin-right: 1%;
+	padding: 15px;
+	float: left;
+	position: absolute;
+	top: 0px;
+	width: 19%;
+	height: 70px;
+	color: #333;
+	transition: height 0.5s;
+	-webkit-transition: height 0.5s;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: #ffffff;
 }
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section a {
   display: block;
@@ -6869,6 +6869,25 @@ strong u {
   color: #333;
 }
 
+
+.help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(2) {
+	left: 20%;
+}
+
+.help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(3) {
+	left: 40%;
+}
+
+.help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(4) {
+	left: 60%;
+}
+
+.help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(5) {
+	left: 80%;
+}
+.help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(4) {
+	margin: 0%;
+}
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:nth-child(4) {
   margin: 0%;
 }
@@ -6906,7 +6925,7 @@ strong u {
 }
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover {
-  height: 150px;
+  height: 160px;
   background-color: #fbd45c;
 }
 

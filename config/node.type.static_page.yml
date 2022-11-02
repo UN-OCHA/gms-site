@@ -7,8 +7,9 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
+      - agency
       - menu-ocha
-    parent: 'menu-ocha:0:'
+    parent: 'menu-ocha:'
 name: 'Basic Page'
 type: static_page
 description: 'Use this to add a basic page.'

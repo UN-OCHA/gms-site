@@ -21,7 +21,7 @@ provider: null
 plugin: 'block_content:8e8ee08b-854f-4735-89ee-18ed991ece98'
 settings:
   id: 'block_content:8e8ee08b-854f-4735-89ee-18ed991ece98'
-  label: 'What is the Central Emergency Response Fund (CERF)'
+  label: 'What is the One Grant Management System (OneGMS)'
   label_display: visible
   provider: block_content
   status: true
