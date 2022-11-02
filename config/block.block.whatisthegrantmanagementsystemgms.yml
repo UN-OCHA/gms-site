@@ -21,7 +21,7 @@ provider: null
 plugin: 'block_content:6bb5a791-d162-4019-ba5f-50241a1602a8'
 settings:
   id: 'block_content:6bb5a791-d162-4019-ba5f-50241a1602a8'
-  label: 'What is the Grant Management System (GMS)'
+  label: 'What is the One Grant Management System (OneGMS)'
   label_display: visible
   provider: block_content
   status: true
