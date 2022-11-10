@@ -995,16 +995,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "ee63c57f929e7131c714783193512ea4f76de74c"
+                "reference": "76835d35fcb0b879170129e82adfa1536b72921f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/ee63c57f929e7131c714783193512ea4f76de74c",
-                "reference": "ee63c57f929e7131c714783193512ea4f76de74c",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/76835d35fcb0b879170129e82adfa1536b72921f",
+                "reference": "76835d35fcb0b879170129e82adfa1536b72921f",
                 "shasum": ""
             },
             "require": {
@@ -1045,9 +1045,9 @@
             "description": "Initialize Symfony Console commands from annotated command class methods.",
             "support": {
                 "issues": "https://github.com/consolidation/annotated-command/issues",
-                "source": "https://github.com/consolidation/annotated-command/tree/4.6.0"
+                "source": "https://github.com/consolidation/annotated-command/tree/4.6.1"
             },
-            "time": "2022-10-30T22:08:00+00:00"
+            "time": "2022-11-09T18:31:17+00:00"
         },
         {
             "name": "consolidation/config",
@@ -2217,17 +2217,17 @@
         },
         {
             "name": "drupal/admin_denied",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_denied.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_denied-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "3cf7186ea16c0dd08b58b3a27cf018b53da3f677"
+                "url": "https://ftp.drupal.org/files/projects/admin_denied-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "133400906d43a55e8f14ac428b106271e9f19b24"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -2235,8 +2235,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1654054587",
+                    "version": "8.x-1.3",
+                    "datestamp": "1667786705",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3352,27 +3352,27 @@
         },
         {
             "name": "drupal/contact_storage",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/contact_storage.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/contact_storage-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "94bcf775912a5e4271e657353617224b38248e50"
+                "url": "https://ftp.drupal.org/files/projects/contact_storage-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "719dad5a991aa32e14c9bcb7b9dc76830e2331df"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9",
+                "drupal/core": "^9.1 || ^10",
                 "drupal/token": "^1.6"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1655840518",
+                    "version": "8.x-1.3",
+                    "datestamp": "1667651867",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
