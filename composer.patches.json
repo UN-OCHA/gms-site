@@ -6,7 +6,8 @@
         },
         "drupal/core": {
             "CKeditor Image": "patches/ckeditor/2642808-69.patch",
-            "Warning": "patches/core/CoreError.patch"
+            "Warning": "patches/core/CoreError.patch",
+            "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
         },
         "drupal/csp": {
             "Simplify log format": "patches/csp-log-format.patch"
