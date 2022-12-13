@@ -7,10 +7,8 @@ report-only:
       base: self
       sources:
         - fonts.gstatic.com
-        - gov-bam.nr-data.net
         - www.google-analytics.com
-        - analytics.google.com
-        - '*.doubleclick.net'
+        - gov-bam.nr-data.net
         - '*.analytics.google.com'
         - '*.unocha.org'
     font-src:
@@ -22,6 +20,7 @@ report-only:
       sources:
         - github.com
         - https://github.com/CBPFGMS
+        - '*.google-analytics.com'
     object-src:
       base: none
     script-src:
@@ -29,12 +28,12 @@ report-only:
       flags:
         - unsafe-inline
       sources:
-        - js-agent.newrelic.com
         - fonts.googleapis.com
         - www.gstatic.com
         - www.google.com
         - www.googletagmanager.com
-        - www.google-analytics.com
+        - js-agent.newrelic.com
+        - '*.google-analytics.com'
     script-src-attr:
       base: self
     script-src-elem:
@@ -42,12 +41,12 @@ report-only:
       flags:
         - unsafe-inline
       sources:
-        - js-agent.newrelic.com
         - fonts.googleapis.com
         - www.gstatic.com
         - www.google.com
         - www.googletagmanager.com
-        - www.google-analytics.com
+        - js-agent.newrelic.com
+        - '*.google-analytics.com'
     style-src:
       base: self
     style-src-attr:
