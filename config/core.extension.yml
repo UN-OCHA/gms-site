@@ -51,7 +51,7 @@ module:
   gms_pdflink: 0
   gms_secure_role: 0
   gms_sitename: 0
-  google_analytics: 0
+  google_tag: 0
   help: 0
   history: 0
   hook_event_dispatcher: 0
