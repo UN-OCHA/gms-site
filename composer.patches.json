@@ -21,6 +21,9 @@
         "drupal/google_analytics": {
             "D7 to D9 migration fails with error The migration plugin does not exist": "patches/google_analytics/3170816-migrate_d9.patch"
         },
+        "drupal/google_tag": {
+            "Error during cache rebuild when assets are stored on NFS": "patches/google_tag/3250315-google-tag-nfs-locks-5.patch"
+        },
         "drupal/scrollup": {
             "title update": "patches/ScrollUp/3151294-3.patch"
         },
