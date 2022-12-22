@@ -15,12 +15,6 @@
         "drupal/entity_browser": {
             "expects parameter 1 to be array": "patches/entity_browser/entity_browser-key-2914385-6.patch"
         },
-        "drupal/environment_indicator": {
-            "Handle lack of title": "https://www.drupal.org/files/issues/2022-12-08/3324429-16.patch"
-        },
-        "drupal/google_analytics": {
-            "D7 to D9 migration fails with error The migration plugin does not exist": "patches/google_analytics/3170816-migrate_d9.patch"
-        },
         "drupal/google_tag": {
             "Error during cache rebuild when assets are stored on NFS": "patches/google_tag/3250315-google-tag-nfs-locks-5.patch"
         },
