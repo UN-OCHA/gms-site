@@ -96,7 +96,8 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
 
       $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
       $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
-      if (count($menu_link_content_childs) <= 0) {
+     // if (count($menu_link_content_childs) <= 0) {
+
         $form['menu']['related'] = [
           '#type' => 'fieldset',
           '#weight' => 5,
@@ -138,7 +139,8 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
         ];
         $form['#submit'][] = 'gms_ocha_form_submit';
         $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
-      }
+     // }
+
     }
   }
 }
