@@ -168,9 +168,9 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
             $bVal['url']->setOption("query", ['query' => $menuId]);
 
             if (isset($bVal['below']) && !empty($bVal['below'])) {
-                foreach ($bVal['below'] as $bbVal) {
-                    $bbVal['url']->setOption("query", ['query' => $menuId]);
-                }
+              foreach ($bVal['below'] as $bbVal) {
+                $bbVal['url']->setOption("query", ['query' => $menuId]);
+              }
             }
           }
         }
