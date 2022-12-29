@@ -95,13 +95,14 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
       $menu_name = $menu_link_content->get('menu_name')->getValue()[0]['value'];
 
       $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
-      // $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
+      // $menu_link_content_childs = $menu_content_storage->
+      // LoadByProperties(['parent' => $parent_prop]);
       // If (count($menu_link_content_childs) <= 0) {
       $form['menu']['related'] = [
-          '#type' => 'fieldset',
-          '#weight' => 5,
-          '#title' => t('Menu relation settings'),
-        ];
+        '#type' => 'fieldset',
+        '#weight' => 5,
+        '#title' => t('Menu relation settings'),
+      ];
       $menu_name = $menu_name;
       $menu_tree = \Drupal::menuTree();
       $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
