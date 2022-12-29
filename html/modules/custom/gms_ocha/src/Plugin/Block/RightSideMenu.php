@@ -166,6 +166,12 @@ class RightSideMenu extends BlockBase implements ContainerFactoryPluginInterface
         if (isset($val['below']) && !empty($val['below'])) {
           foreach ($val['below'] as $bVal) {
             $bVal['url']->setOption("query", ['query' => $menuId]);
+
+            if (isset($bVal['below']) && !empty($bVal['below'])) {
+                foreach ($bVal['below'] as $bbVal) {
+                    $bbVal['url']->setOption("query", ['query' => $menuId]);
+                }
+            }
           }
         }
         $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
