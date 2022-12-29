@@ -95,52 +95,49 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
       $menu_name = $menu_link_content->get('menu_name')->getValue()[0]['value'];
 
       $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
-      $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
-     // if (count($menu_link_content_childs) <= 0) {
-
-        $form['menu']['related'] = [
+      // $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
+      // If (count($menu_link_content_childs) <= 0) {
+      $form['menu']['related'] = [
           '#type' => 'fieldset',
           '#weight' => 5,
           '#title' => t('Menu relation settings'),
         ];
-        $menu_name = $menu_name;
-
-        $menu_tree = \Drupal::menuTree();
-        $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-        $parameters->setMinDepth(1);
-        $tree = $menu_tree->load($menu_name, $parameters);
-        $manipulators = [
-          ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-          ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-        ];
-        $tree = $menu_tree->transform($tree, $manipulators);
-        $options = [];
-        foreach ($tree as $val) {
-          $options[$val->link->getPluginDefinition()['metadata']['entity_id']] = $val->link->getPluginDefinition()['title'];
-        }
-        $query = \Drupal::database()->select('menu_tree', 'menu_tree')
-          ->fields('menu_tree', ['options'])
-          ->condition('id', $parent_prop);
-        $results = $query->execute();
-        $data = $results->fetchAssoc();
-        $default_options = unserialize($data['options'], ['allowed_classes' => FALSE]);
-        $form['menu']['related']['menus'] = [
-          '#type' => 'select',
-          '#title' => t('Related to menu'),
-          '#options' => $options,
-          '#multiple' => TRUE,
-          '#default_value' => (isset($default_options['gsm_ocha']['related'])) ? $default_options['gsm_ocha']['related'] : 0,
-        ];
-        $form['menu']['related']['show_parent'] = [
-          '#type' => 'checkbox',
-          '#title' => t('Show only for this parent term.'),
-          // '#options' => array('1' =>'Yes'),
-          '#default_value' => (isset($default_options['gsm_ocha']['show_parent'])) ? $default_options['gsm_ocha']['show_parent'] : 0,
-        ];
-        $form['#submit'][] = 'gms_ocha_form_submit';
-        $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
-     // }
-
+      $menu_name = $menu_name;
+      $menu_tree = \Drupal::menuTree();
+      $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+      $parameters->setMinDepth(1);
+      $tree = $menu_tree->load($menu_name, $parameters);
+      $manipulators = [
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+      ];
+      $tree = $menu_tree->transform($tree, $manipulators);
+      $options = [];
+      foreach ($tree as $val) {
+        $options[$val->link->getPluginDefinition()['metadata']['entity_id']] = $val->link->getPluginDefinition()['title'];
+      }
+      $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+        ->fields('menu_tree', ['options'])
+        ->condition('id', $parent_prop);
+      $results = $query->execute();
+      $data = $results->fetchAssoc();
+      $default_options = unserialize($data['options'], ['allowed_classes' => FALSE]);
+      $form['menu']['related']['menus'] = [
+        '#type' => 'select',
+        '#title' => t('Related to menu'),
+        '#options' => $options,
+        '#multiple' => TRUE,
+        '#default_value' => (isset($default_options['gsm_ocha']['related'])) ? $default_options['gsm_ocha']['related'] : 0,
+      ];
+      $form['menu']['related']['show_parent'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Show only for this parent term.'),
+        // '#options' => array('1' =>'Yes'),
+        '#default_value' => (isset($default_options['gsm_ocha']['show_parent'])) ? $default_options['gsm_ocha']['show_parent'] : 0,
+      ];
+      $form['#submit'][] = 'gms_ocha_form_submit';
+      $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
+      // }
     }
   }
 }
