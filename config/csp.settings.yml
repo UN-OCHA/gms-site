@@ -13,15 +13,11 @@ report-only:
         - '*.doubleclick.net'
         - '*.analytics.google.com'
         - '*.unocha.org'
+        - '*.github.io'
     font-src:
       base: self
       sources:
         - fonts.gstatic.com
-    img-src:
-      base: self
-      sources:
-        - github.com
-        - 'https://github.com/CBPFGMS'
     object-src:
       base: none
     script-src:
@@ -35,6 +31,7 @@ report-only:
         - www.google.com
         - www.googletagmanager.com
         - www.google-analytics.com
+        - '*.github.io'
     script-src-attr:
       base: self
     script-src-elem:
@@ -48,14 +45,19 @@ report-only:
         - www.google.com
         - www.googletagmanager.com
         - www.google-analytics.com
+        - '*.github.io'
     style-src:
       base: self
+      sources:
+        - '*.github.io'
     style-src-attr:
       base: self
       flags:
         - unsafe-inline
     style-src-elem:
       base: self
+      sources:
+        - '*.github.io'
     frame-ancestors:
       base: self
   reporting:
