@@ -7384,3 +7384,5 @@ strong u {
 .cd-fluid_navigation ul.custom-menu-cerf li.nav-item-country-office:hover::before, .cd-fluid_navigation ul.custom-menu-cerf li.is-active.nav-item-country-office::before {
   background: rgba(0, 0, 0, 0.10) url(../img/icon-country-office-active.svg) no-repeat center center;
 }
+
+#block-highmaptableau .field--name-body{ width: 100%; aspect-ratio: 2.5;}
