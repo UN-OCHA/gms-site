@@ -72,16 +72,16 @@ function gms_ocha_common_preprocess_html(&$variables) {
  * Preprocess the Menu.
  */
 function gms_ocha_common_preprocess_menu(&$variables, $hook) {
-	if ($variables['menu_name'] == 'ocha-navigation') {
-        $current_path = \Drupal::request()->getRequestUri();
-        foreach ($variables['items'] as &$item) {
-			if ($item['url']->toString() == $current_path) {
-				$item['in_active_trail'] = TRUE;
-			}
-        }		
-    }
+  if ($variables['menu_name'] == 'ocha-navigation') {
+    $current_path = \Drupal::request()->getRequestUri();
+    foreach ($variables['items'] as &$item) {
+      if ($item['url']->toString() == $current_path) {
+        $item['in_active_trail'] = TRUE;
+      }
+    }		
+  }
 	
-  /*if($variables['menu_name'] == 'ocha-navigation'){
+  if ($variables['menu_name'] == 'ocha-navigation11') {
 	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $current_path = \Drupal::service('path.current')->getPath();
     $current_path_result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path, $language);
@@ -89,46 +89,15 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
     $query->condition('alias', $current_path_result, '=');
 	$query->condition('langcode', $language, '=');
     $aliasIds = $query->execute();
-    $aliasIds = array_values($aliasIds);	
-      $pathAlias = PathAlias::load($aliasIds[0]);
-	  $path = $pathAlias->getPath();
-        $nodeId = (int) str_replace("/node/", "", $path);
-		
-		if ($nodeId > 0) {
-			 if ($nodeId == 1832 && $flg === FALSE) {
-                $variables['items']['in_active_trail'] = TRUE;
-                $variables['items']['attributes']->addClass(['active-header-link']);
-				
-                $flg = TRUE;
-			 }
-        }
-		//dump($variables['items'][$key]['in_active_trail']); die;
-  }*/ 
-  if ($variables['menu_name'] == 'ocha-navigation11') {
-	  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $current_path = \Drupal::service('path.current')->getPath();
-    $current_path_result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path, $language);
-	//dump($current_path_result);
-    $query = \Drupal::entityQuery('path_alias');
-    $query->condition('alias', $current_path_result, '=');
-	$query->condition('langcode', $language, '=');
-    $aliasIds = $query->execute();
-	//dump($aliasIds);
     $aliasIds = array_values($aliasIds);
     if (!empty($aliasIds)) {
-		
       $pathAlias = PathAlias::load($aliasIds[0]);
-	 // dump($pathAlias);
-      if (is_object($pathAlias)) {
-		 
+      if (is_object($pathAlias)) {		 
         $path = $pathAlias->getPath();
-		//dump($path);
         $nodeId = (int) str_replace("/node/", "", $path);
         if ($nodeId > 0) {
-          $node = \Drupal::entityTypeManager()->getStorage('node')->load($nodeId);
-		  
-        }
-		
+          $node = \Drupal::entityTypeManager()->getStorage('node')->load($nodeId);		  
+        }		
         $menu_name = 'ocha-navigation';
         $menu_tree = \Drupal::menuTree();
         $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
@@ -141,17 +110,12 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
         $tree = $menu_tree->transform($tree, $manipulators);
         $menu = $menu_tree->build($tree);
         $flg = FALSE;
-		//dump($menu['#items']);
-		
-		//dump($language);
         foreach ($menu['#items'] as $key => $val) {
-			//dump($key);
           $query = \Drupal::database()->select('menu_tree', 'menu_tree')
             ->fields('menu_tree')
             ->condition('id', $key);
           $results = $query->execute();
           $data = $results->fetchAssoc();
-		 // dump($data);
           if (!empty($data)) {
             if ($data['route_name'] == '<front>') {
               $front = \Drupal::config('system.site')->get('page.front');
@@ -161,11 +125,8 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
               $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
               $menu_item = $menu_link_manager->createInstance($data['id']);
               $url = $menu_item->getUrlObject();
-			 // dump($url);
               $url_string = $url->toString();
-			 // dump($url_string);
               $urlPath = ltrim($url_string, '/');
-			 //  dump($urlPath);
               $redirect = \Drupal::entityQuery('redirect')
                 ->condition('redirect_source.path', $urlPath)
                 ->execute();
@@ -178,17 +139,12 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
                 }
               }
               else {
-				//dump($url_string); die;
                 $result = \Drupal::service('path_alias.manager')->getAliasByPath($url_string, $language);
-				//dump($result);
                 $query = \Drupal::entityQuery('path_alias');
                 $query->condition('alias', $result, '=');
                 $aliasIds = $query->execute();
-				 //dump($aliasIds); 
-				// die;
                 $aliasIds = array_values($aliasIds);
                 $pathAlias = PathAlias::load($aliasIds[0]);
-				//dump($pathAlias);
                 if (is_object($pathAlias)) {
                   $path = $pathAlias->getPath();
                   $nodeParent = (int) str_replace("/node/", "", $path);
@@ -229,9 +185,6 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
               }
             }
           }
-		
-		  
-
         }
       }
     }
