@@ -48,7 +48,9 @@
       {% endif %}
       {%
         set menu_classes_li = [
-        'nav-item', parent_active_class ~ menu_name|clean_class,
+        'nav-item', 
+		parent_active_class ~ menu_name|clean_class, 
+		item.in_active_trail ? 'active-header-link',
       ]
       %}
       <li{{ item.attributes.addClass(menu_classes_li) }}>
