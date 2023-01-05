@@ -9,7 +9,7 @@ report-only:
         - fonts.gstatic.com
         - www.google-analytics.com
         - gov-bam.nr-data.net
-        - '*.analytics.google.com'
+        - analytics.google.com
         - '*.unocha.org'
     font-src:
       base: self
@@ -19,7 +19,6 @@ report-only:
       base: self
       sources:
         - github.com
-        - https://github.com/CBPFGMS
         - '*.google-analytics.com'
     object-src:
       base: none
