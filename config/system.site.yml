@@ -4,7 +4,7 @@ langcode: en
 uuid: 8426c366-b035-4eb5-98e1-914c8e753c52
 name: 'Grant Management System (GMS) Support / Help Portal'
 mail: sagar.ramgade@trigyn.com
-slogan: 'CBPF GRANT MANAGEMENT SYSTEM (GMS)'
+slogan: ''
 page:
   403: ''
   404: ''

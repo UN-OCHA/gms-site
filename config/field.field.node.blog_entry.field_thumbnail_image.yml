@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_thumbnail_image
     - node.type.blog_entry
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.blog_entry.field_thumbnail_image
 field_name: field_thumbnail_image
 entity_type: node
@@ -14,7 +21,7 @@ bundle: blog_entry
 label: 'Thumbnail Image'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

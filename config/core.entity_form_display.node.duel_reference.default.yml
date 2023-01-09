@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.duel_reference.body
+    - field.field.node.duel_reference.field_embedded_video
     - node.type.duel_reference
   module:
     - text
+    - video_embed_field
 id: node.duel_reference.default
 targetEntityType: node
 bundle: duel_reference
@@ -22,6 +24,19 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  field_embedded_video:
+    type: video_embed_field_textfield
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -29,6 +44,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

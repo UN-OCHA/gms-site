@@ -1,0 +1,18 @@
+uuid: 8453526a-9e00-4468-9d8b-3bbbc5c88022
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.migrate_example_wine
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.migrate_example_wine
+target_entity_type_id: node
+target_bundle: migrate_example_wine
+default_langcode: current_interface
+language_alterable: true

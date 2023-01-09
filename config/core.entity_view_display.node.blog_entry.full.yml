@@ -106,4 +106,5 @@ hidden:
   field_post_layout: true
   field_tags: true
   field_thumbnail_image: true
+  langcode: true
   links: true

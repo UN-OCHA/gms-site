@@ -44,3 +44,4 @@ hidden:
   field_files_over_ajax: true
   field_image_browser: true
   field_nodes: true
+  langcode: true
