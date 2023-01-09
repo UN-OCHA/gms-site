@@ -14,7 +14,7 @@ bundle: migrate_example_wine
 label: 'Migrate Example Wine Varieties'
 description: 'Select the variety of this wine'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

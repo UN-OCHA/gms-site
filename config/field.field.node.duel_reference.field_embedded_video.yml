@@ -1,0 +1,25 @@
+uuid: f3f8aedd-bdd1-4db7-ba49-53b557f4dbcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_embedded_video
+    - node.type.duel_reference
+  module:
+    - video_embed_field
+id: node.duel_reference.field_embedded_video
+field_name: field_embedded_video
+entity_type: node
+bundle: duel_reference
+label: 'Embedded Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: '0'
+field_type: video_embed_field

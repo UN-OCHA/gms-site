@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_image_browser
     - node.type.entity_browser_test
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: 90OFTzwrZUSZv1r4ddG-N055U3jM8r0sppAwB1CksD8
 id: node.entity_browser_test.field_image_browser
@@ -16,7 +23,7 @@ bundle: entity_browser_test
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

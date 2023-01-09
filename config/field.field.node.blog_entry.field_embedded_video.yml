@@ -14,7 +14,7 @@ bundle: blog_entry
 label: 'Embedded Video'
 description: 'Supports embedded video youtube or vimeo'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
