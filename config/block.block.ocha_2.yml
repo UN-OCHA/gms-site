@@ -16,7 +16,7 @@ third_party_settings:
 id: ocha_2
 theme: gms_ocha_common
 region: header_top
-weight: -30
+weight: -26
 provider: null
 plugin: 'menu_block:menu-ocha'
 settings:

@@ -1907,8 +1907,13 @@ ul[data-cd-hidden=true]>ul {
   float: right
 }
 
+.cd-global-header .cd-global-header__actions nav {
+    float: right;
+}
+
 .cd-global-header__language-switcher {
-  float: left
+  float: left;
+  position:relative;
 }
 
 .cd-global-header__user-menu {
@@ -1918,7 +1923,8 @@ ul[data-cd-hidden=true]>ul {
 .cd-user-menu,
 .cd-global-header .menu {
   margin: 0;
-  list-style: none
+  list-style: none;
+  padding: 0;
 }
 
 .cd-user-menu svg,
@@ -2056,6 +2062,39 @@ ul[data-cd-hidden=true]>ul {
     max-width: none;
     padding: 0 20px
   }
+}
+
+.language-switcher-language-url ul.links {
+    margin:0;
+    padding: 0 15px 0 0;
+    list-style: none;
+    display: flex;
+}
+
+.language-switcher-language-url ul.links li {
+    height: 35px;
+    line-height: 35px
+}
+
+.language-switcher-language-url ul.links li a {
+    color:#8bc1f7;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.language-switcher-language-url ul.links li a.is-active {
+    color:#fff;
+}
+
+.language-switcher-language-url ul.links::after {
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    width: 2px;
+    height: calc(35px / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: var(--cd-blue--light);
 }
 
 .cd-user-menu__dropdown {
@@ -4889,6 +4928,13 @@ a:focus {
   width: 120px;
   display: flex;
 }
+.cd-site-header .cd-site-header__inner .region-header-logo a.cd-site-logo-2 {
+  width: 169px;
+  display: flex;
+  padding-left: 10px;
+  border-left: 1px solid #ccc;
+  margin-left: 10px;
+}
 
 /*.cd-container {
   padding: 0;
@@ -4967,8 +5013,7 @@ a:focus {
     display: inline-block;
     border-bottom: 2px solid #d15834;
     border-radius:3px;
-    line-height: normal;
-    margin-right: 10px;
+    line-height: normal;    
     cursor: pointer;
 }
 #block-countrybasedpooledfunds .cbpf_map_links .fund_btns .cbpf:hover {
@@ -4984,6 +5029,7 @@ a:focus {
     border-bottom: 2px solid #c08c1e;
     border-radius:3px;
     line-height: normal;
+    margin-right: 10px;
 }
 #block-countrybasedpooledfunds .cbpf_map_links .fund_btns .cerf:hover {
     background-color: #dfb943;
@@ -6504,10 +6550,6 @@ strong u {
   }
 }
 
-.onegms-home-pg .cd-layout-container .cd-site-header .cd-site-header__inner .region-header-logo .cd-site-logo {
-  display: none;
-}
-
 @media (max-width:1340px) {
   .onegms-home-pg .cd-layout-container .region-one-gms-header-logo .onegms-logo-block {
     margin-left: 10px;
@@ -6860,17 +6902,22 @@ strong u {
   background-color: #333333;
 }
 
-.help-portal-page .browse-user-roles .cd-container .cd-content h2 {
-  font-size: 22px !important;
-  color: #ffc417;
+.help-portal-page .cbpf-help-portal .browse-user-roles .cd-container .cd-content h2 {
+  font-size: 22px;
+  color: #f37061 !important;
 }
 
-.help-portal-page .browse-user-roles .cd-container .cd-content p {
+.help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content h2 {
+  font-size: 22px !important;
+  color: #ffc417 !important;
+}
+
+.help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content p {
   font-family: "Roboto Slab", serif !important;
   font-size: 15px !important;
 }
 
-.help-portal-page .browse-user-roles .cd-container .cd-content h2:after {
+.help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content h2:after {
   content: "";
   width: 60px;
   height: 2px;
@@ -6970,9 +7017,14 @@ strong u {
   border-top: 1px solid rgba(51, 51, 51, 0.2);
 }
 
+.help-portal-page .cbpf-help-portal .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover {
+  height: 160px;
+  background-color: #fd8779 !important;
+}
+
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover {
   height: 160px;
-  background-color: #fbd45c;
+  background-color: #fbd45c !important;
 }
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover h3 i {
@@ -7038,6 +7090,10 @@ strong u {
   float: left;
   font-size: 46px;
   color: #418fde;
+}
+
+.help-portal-page .resource-center-section .resource-center h3 a {
+    text-decoration: none;
 }
 
 .help-portal-page .resource-center-section .resource-center p {

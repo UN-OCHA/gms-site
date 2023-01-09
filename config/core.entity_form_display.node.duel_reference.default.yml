@@ -26,7 +26,7 @@ content:
     third_party_settings: {  }
   field_embedded_video:
     type: video_embed_field_textfield
-    weight: 27
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -37,6 +37,13 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -46,7 +53,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -54,7 +61,6 @@ hidden:
   created: true
   path: true
   promote: true
-  status: true
   sticky: true
   uid: true
   url_redirects: true
