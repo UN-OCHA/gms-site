@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - condition_query
     - gms_ocha
+    - node
     - system
   theme:
     - gms_ocha_common
@@ -21,5 +23,16 @@ settings:
 visibility:
   request_path:
     id: request_path
+    negate: true
+    pages: "<front>\r\n/content/home\r\n/cerf-home\r\n/content/cerf\r\n/content/cbpf\r\n/content/*"
+  request_param:
+    id: request_param
+    request_param: menu_visibility=show
+    negate: true
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    pages: '/cerf/*'
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page
