@@ -241,13 +241,12 @@ function gms_ocha_common_preprocess_block(&$variables) {
   }
 }
 
-
 /**
- * Use language code for the language switcher
+ * Use language code for the language switcher.
  */
 function gms_ocha_common_preprocess_links__language_block(&$variables) {
   foreach ($variables['links'] as $i => $link) {
-    // @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage
+    /** @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage */
     $linkLanguage = $link['link']['#options']['language'];
     $variables['links'][$i]['link']['#title'] = strtoupper($linkLanguage->get('id'));
   }

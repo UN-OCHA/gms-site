@@ -8,8 +8,6 @@ use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\node\Entity\Node;
-use Drupal\node\NodeInterface;
 use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -125,8 +123,8 @@ class RightSideCerfMenu extends BlockBase implements ContainerFactoryPluginInter
       ->condition('path', $result, '=')
       ->condition('alias', $result, '=');
     $aliasIds = $query->condition($group)->execute();
-    //$query->condition('alias', $result, '=');
-    //$aliasIds = $query->execute();
+    // $query->condition('alias', $result, '=');
+    // $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
     if (!empty($aliasIds)) {
       $path_var = $this->entityTypeManager->getStorage('path_alias')
