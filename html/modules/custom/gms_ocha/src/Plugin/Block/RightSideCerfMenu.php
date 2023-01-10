@@ -3,16 +3,16 @@
 namespace Drupal\gms_ocha\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\path_alias\AliasManagerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\node\NodeInterface;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\path_alias\AliasManagerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a RightSide Menu block.
@@ -121,15 +121,16 @@ class RightSideCerfMenu extends BlockBase implements ContainerFactoryPluginInter
     $current_path = $this->serviceData->get('path.current')->getPath();
     $result = $this->aliasManager->getAliasByPath($current_path);
     $query = $this->entityTypeManager->getStorage('path_alias')->getQuery();
-	$group = $query->orConditionGroup()
-			->condition('path', $result, '=')
-			->condition('alias', $result, '=');
-	$aliasIds = $query->condition($group)->execute();
+    $group = $query->orConditionGroup()
+      ->condition('path', $result, '=')
+      ->condition('alias', $result, '=');
+    $aliasIds = $query->condition($group)->execute();
     //$query->condition('alias', $result, '=');
     //$aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);
     if (!empty($aliasIds)) {
-      $path_var = $this->entityTypeManager->getStorage('path_alias')->load($aliasIds[0]);
+      $path_var = $this->entityTypeManager->getStorage('path_alias')
+        ->load($aliasIds[0]);
       $path = $path_var->getPath();
       $nodeId = (int) str_replace("/node/", "", $path);
       $query = $this->database->select('menu_tree', 'menu_tree')
@@ -165,27 +166,27 @@ class RightSideCerfMenu extends BlockBase implements ContainerFactoryPluginInter
       ];
       $tree = $menu_tree->transform($tree, $manipulators);
       $menu = $menu_tree->build($tree);
-	  if(isset($menu['#menu_name'])){
-       foreach ($menu['#items'] as $key => $val) {
-        if (!empty($menuId)) {
-          $val['url']->setOption("query", ['query' => $menuId]);
-        }
-        if (isset($val['below']) && !empty($val['below'])) {
-          foreach ($val['below'] as $bVal) {
-            $bVal['url']->setOption("query", ['query' => $menuId]);
+      if (isset($menu['#menu_name'])) {
+        foreach ($menu['#items'] as $key => $val) {
+          if (!empty($menuId)) {
+            $val['url']->setOption("query", ['query' => $menuId]);
+          }
+          if (isset($val['below']) && !empty($val['below'])) {
+            foreach ($val['below'] as $bVal) {
+              $bVal['url']->setOption("query", ['query' => $menuId]);
+            }
+          }
+          $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
+          $pluginId = $val['original_link']->getPluginDefinition();
+          if (isset($pluginId['options']['gsm_ocha']['show_parent'])
+            && $pluginId['options']['gsm_ocha']['show_parent'] == 1) {
+            $parentId = str_replace('menu_link_content:', '', $pluginId['parent']);
+            if ($menuId != $parentId) {
+              unset($menu['#items'][$key]);
+            }
           }
         }
-        $menu['#items'][$key]['is_expandable'] = $treeOld[$key]->hasChildren;
-        $pluginId = $val['original_link']->getPluginDefinition();
-        if (isset($pluginId['options']['gsm_ocha']['show_parent'])
-          && $pluginId['options']['gsm_ocha']['show_parent'] == 1) {
-          $parentId = str_replace('menu_link_content:', '', $pluginId['parent']);
-          if ($menuId != $parentId) {
-            unset($menu['#items'][$key]);
-          }
-        }
-       }
-	  }
+      }
       $menu_html = $this->renderer->render($menu);
     }
     else {
