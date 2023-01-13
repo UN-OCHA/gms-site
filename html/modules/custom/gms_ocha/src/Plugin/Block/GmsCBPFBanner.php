@@ -7,6 +7,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -70,8 +71,9 @@ class GmsCBPFBanner extends BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $form = $this->formBuilder->getForm('Drupal\search\Form\SearchBlockForm');
     $output = $this->renderer->render($form);
-    $markup = "<h1>Welcome to the CBPF Help portal</h1>
-    <p>The GMS Help portal has been designed to assist each user group of the system to be able to navigate through  the GMS system.</p>
+    $welcometext = $this->t('Welcome to the CBPF Help portal');
+    $smalltext = $this->t('The OneGMS help portal has been designed to assist each user to navigate through the OneGMS.');
+    $markup = "<h1>". $welcometext ."</h1><p>". $smalltext ."</p>
     <div class=\"block block-gms-ocha first last odd\" id=\"block-gms-ocha-gms-portal\"></div>" . $output . "</p>";
     return [
       '#markup' => Markup::create($markup . "\n"),
@@ -80,5 +82,5 @@ class GmsCBPFBanner extends BlockBase implements ContainerFactoryPluginInterface
       ],
     ];
   }
-
+  
 }

@@ -1,0 +1,48 @@
+uuid: c114be83-7f13-481a-9515-986078aa5887
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.agency
+  module:
+    - block_class
+    - menu_block
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: cd-container
+id: cerfmenu_2
+theme: gms_ocha_common
+region: fluid_navigation
+weight: 0
+provider: null
+plugin: 'menu_block:agency'
+settings:
+  id: 'menu_block:agency'
+  label: 'CERF Menu'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'agency:'
+  suggestion: agency
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/cerf-home\r\n/cerf/*"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

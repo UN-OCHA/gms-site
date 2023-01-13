@@ -1,0 +1,14 @@
+uuid: 2187566e-3c6e-4560-ba39-be87f6bfab82
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.cbpf_finance
+  module:
+    - user
+id: user_remove_role_action.cbpf_finance
+label: 'Remove the CBPF Finance role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cbpf_finance
