@@ -9,9 +9,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\StringTranslation\TranslationInterface;
-use Drupal\Core\Language\LanguageManagerInterface;
 
 /**
  * Banner block.
@@ -74,11 +71,9 @@ class GmsCBPFBanner extends BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $form = $this->formBuilder->getForm('Drupal\search\Form\SearchBlockForm');
     $output = $this->renderer->render($form);
-    $gmaOverview = Url::fromRoute('entity.node.canonical', ['node' => 200])->toString();
-    $tooltip = Url::fromRoute('entity.node.canonical', ['node' => 155])->toString();
-	$welcometext = t('Welcome to the CBPF Help portal');
-	$smalltext = t('The OneGMS help portal has been designed to assist each user to navigate through the OneGMS.');
-    $markup = "<h1>".$welcometext."</h1><p>".$smalltext."</p>
+    $welcometext = $this->t('Welcome to the CBPF Help portal');
+    $smalltext = $this->t('The OneGMS help portal has been designed to assist each user to navigate through the OneGMS.');
+    $markup = "<h1>". $welcometext ."</h1><p>". $smalltext ."</p>
     <div class=\"block block-gms-ocha first last odd\" id=\"block-gms-ocha-gms-portal\"></div>" . $output . "</p>";
     return [
       '#markup' => Markup::create($markup . "\n"),
@@ -87,4 +82,5 @@ class GmsCBPFBanner extends BlockBase implements ContainerFactoryPluginInterface
       ],
     ];
   }
+  
 }
