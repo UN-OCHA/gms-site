@@ -1,0 +1,14 @@
+uuid: 77c6a1cf-46da-4caf-b640-d2a67358cb95
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hfu_fund_manager
+  module:
+    - user
+id: user_add_role_action.hfu_fund_manager
+label: 'Add the HFU Fund Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: hfu_fund_manager

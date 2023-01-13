@@ -1,0 +1,14 @@
+uuid: 102d12fc-0e81-4b5b-8446-c7489d368914
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.cbpf_finance
+  module:
+    - user
+id: user_add_role_action.cbpf_finance
+label: 'Add the CBPF Finance role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cbpf_finance

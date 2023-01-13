@@ -1,0 +1,9 @@
+uuid: a3861279-33a0-4338-b991-fff93dc0fb42
+langcode: en
+status: true
+dependencies: {  }
+id: cbpf_finance
+label: 'CBPF Finance'
+weight: 54
+is_admin: null
+permissions: {  }
