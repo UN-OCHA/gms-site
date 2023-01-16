@@ -1,0 +1,30 @@
+uuid: 569cbcd8-36ae-4b3c-b0f4-0221a134c389
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4db53ec7-5a7c-42dd-86c0-05fb6d99af8c'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: browsebyuserrolescbpf
+theme: gms_ocha_common
+region: fluid_content
+weight: -27
+provider: null
+plugin: 'block_content:4db53ec7-5a7c-42dd-86c0-05fb6d99af8c'
+settings:
+  id: 'block_content:4db53ec7-5a7c-42dd-86c0-05fb6d99af8c'
+  label: 'Browse by User Roles CBPF'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cbpf

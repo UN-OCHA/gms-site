@@ -3,8 +3,12 @@
   <div class="region-header-logo">
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
       <img src="{{ site_logo }}" alt="{{ site_name }}" aria-label="{{ 'Home'|t }}" width="100%" height="60px" />
+    </a>  
+	<a href="{{ path('<front>') }}" title="{{ 'OneGMS'|t }}" rel="home" class="cd-site-logo-2">
+      <img src="/themes/custom/gms_ocha_common/img/logo-onegms.svg" alt="{{ site_name }}" aria-label="{{ 'Home'|t }}" width="169px" height="22px" />
     </a>
-	<span class="header__site-name">{{ site_slogan }}</span>
+      <span class="header__site-name">{{ site_slogan }}</span>
+    
 	</div>
     <div class="cd-site-header__actions">
 	{% include '@gms_ocha_common/cd/cd-header/cd-logo.html.twig' %}

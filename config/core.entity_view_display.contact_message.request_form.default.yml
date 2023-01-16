@@ -1,4 +1,4 @@
-uuid: 2a5526b3-b517-461e-9dd5-3ebb62aaac81
+uuid: 89a2422d-8547-4836-ae11-dcdf760678a1
 langcode: en
 status: true
 dependencies:
@@ -26,6 +26,7 @@ hidden:
   field_pool_fund: true
   field_user: true
   field_user_group: true
+  langcode: true
   mail: true
   message: true
   name: true

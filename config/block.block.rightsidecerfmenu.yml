@@ -1,0 +1,38 @@
+uuid: bdb308c1-bd2a-4dd2-9b53-3ce35eb897c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - condition_query
+    - gms_ocha
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: rightsidecerfmenu
+theme: gms_ocha_common
+region: sidebar_first
+weight: 0
+provider: null
+plugin: rightsidecerf_menu
+settings:
+  id: rightsidecerf_menu
+  label: 'RightSide CERF Menu'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/content/home\r\n/cerf-home\r\n/content/cerf\r\n/content/cbpf\r\n/content/*"
+  request_param:
+    id: request_param
+    request_param: menu_visibility=show
+    negate: true
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      static_page: static_page

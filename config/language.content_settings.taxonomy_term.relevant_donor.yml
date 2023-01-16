@@ -1,0 +1,18 @@
+uuid: 26deb5a2-2a6b-4e08-a561-b1bd6f7f4667
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.relevant_donor
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.relevant_donor
+target_entity_type_id: taxonomy_term
+target_bundle: relevant_donor
+default_langcode: current_interface
+language_alterable: true

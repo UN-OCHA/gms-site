@@ -1,0 +1,14 @@
+uuid: e1e34dfe-f982-4b3b-8818-141d69474bcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.hfu_fund_manager
+  module:
+    - user
+id: user_remove_role_action.hfu_fund_manager
+label: 'Remove the HFU Fund Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: hfu_fund_manager

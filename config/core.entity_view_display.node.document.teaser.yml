@@ -37,3 +37,4 @@ hidden:
   field_relevant_donor: true
   field_signed_date: true
   field_type: true
+  langcode: true

@@ -55,4 +55,5 @@ hidden:
   field_phone_number: true
   field_relevant_donor: true
   field_terms_and_condition: true
+  langcode: true
   member_for: true

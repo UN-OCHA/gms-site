@@ -45,3 +45,4 @@ hidden:
   field_migrate_example_wine_ratin: true
   field_migrate_example_wine_regio: true
   field_migrate_example_wine_var: true
+  langcode: true

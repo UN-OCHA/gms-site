@@ -1,0 +1,30 @@
+uuid: 890aee39-fb66-4d29-bdb9-a6196096ef23
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f84c731f-699c-4a1d-9b49-960644e93dc2'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: browsebyuserrolescerf
+theme: gms_ocha_common
+region: fluid_content
+weight: -24
+provider: null
+plugin: 'block_content:f84c731f-699c-4a1d-9b49-960644e93dc2'
+settings:
+  id: 'block_content:f84c731f-699c-4a1d-9b49-960644e93dc2'
+  label: 'Browse by User Roles CERF'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cerf

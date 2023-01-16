@@ -1,0 +1,22 @@
+uuid: 76090992-10fa-4d3f-835e-1788d64f040e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media.document.status
+field_name: status
+entity_type: media
+bundle: document
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

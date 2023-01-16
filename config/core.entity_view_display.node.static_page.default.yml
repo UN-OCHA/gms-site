@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.static_page.body
+    - field.field.node.static_page.field_duel_reference
+    - field.field.node.static_page.field_embedded_video
     - field.field.node.static_page.field_pdf
     - field.field.node.static_page.field_search_keywords
     - node.type.static_page
@@ -11,6 +13,7 @@ dependencies:
     - file
     - text
     - user
+    - video_embed_field
 id: node.static_page.default
 targetEntityType: node
 bundle: static_page
@@ -23,21 +26,42 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_duel_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_embedded_video:
+    type: video_embed_field_video
+    label: above
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_pdf:
     type: file_default
     label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_search_keywords: true
+  langcode: true

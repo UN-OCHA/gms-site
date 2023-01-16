@@ -14,7 +14,7 @@ bundle: migrate_example_wine
 label: 'Migrate Example Wine Regions'
 description: 'Select the region this wine comes from'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
