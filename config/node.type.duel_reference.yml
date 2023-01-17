@@ -1,0 +1,17 @@
+uuid: 99d5cf47-3c0b-450e-917a-db2fb1d67bca
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Duel reference'
+type: duel_reference
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

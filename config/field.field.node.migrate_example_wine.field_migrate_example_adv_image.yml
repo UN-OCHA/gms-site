@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_migrate_example_adv_image
     - node.type.migrate_example_wine
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: dde5g37whYUHPGt2O6lHpPCd4oKV-jKmJChum1XXHSI
 id: node.migrate_example_wine.field_migrate_example_adv_image
@@ -16,7 +23,7 @@ bundle: migrate_example_wine
 label: Image
 description: 'Upload an image to go with this wine.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

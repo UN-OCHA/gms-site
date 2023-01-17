@@ -3,8 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - gms_ocha
+    - node
+    - system
   theme:
     - gms_ocha_common
 id: pagetitleblog_2
@@ -27,3 +28,7 @@ visibility:
     bundles:
       blog_entry: blog_entry
       page: page
+  request_path:
+    id: request_path
+    negate: true
+    pages: /content/gms-one

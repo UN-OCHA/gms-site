@@ -1,0 +1,23 @@
+uuid: c684107a-f474-40c9-a6d8-5e72764a7906
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.duel_reference
+  module:
+    - text
+id: node.duel_reference.body
+field_name: body
+entity_type: node
+bundle: duel_reference
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

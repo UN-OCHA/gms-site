@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: ocu_user
-label: 'OCU users'
+label: 'OCU and Compliance users'
 weight: 52
 is_admin: null
 permissions: {  }

@@ -16,7 +16,7 @@ bundle: migrate_example_wine
 label: Comments
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     status: 2

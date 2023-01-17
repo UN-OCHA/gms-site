@@ -16,9 +16,8 @@ _core:
 id: request_form
 label: 'Request Form'
 recipients:
-  - gms-support@un.org
-  - yasmina.nousseir@un.org
-reply: '  '
+  - nitesh.pawar@trigyn.com
+reply: '    '
 weight: 0
 message: ''
 redirect: ''

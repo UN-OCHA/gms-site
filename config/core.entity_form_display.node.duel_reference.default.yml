@@ -1,0 +1,66 @@
+uuid: e1081997-b987-4777-8ce3-b221a5582f3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.duel_reference.body
+    - field.field.node.duel_reference.field_embedded_video
+    - node.type.duel_reference
+  module:
+    - text
+    - video_embed_field
+id: node.duel_reference.default
+targetEntityType: node
+bundle: duel_reference
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_embedded_video:
+    type: video_embed_field_textfield
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

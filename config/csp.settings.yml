@@ -11,6 +11,7 @@ report-only:
         - gov-bam.nr-data.net
         - analytics.google.com
         - '*.unocha.org'
+        - '*.github.io'
     font-src:
       base: self
       sources:
@@ -33,6 +34,8 @@ report-only:
         - www.googletagmanager.com
         - js-agent.newrelic.com
         - '*.google-analytics.com'
+        - www.google-analytics.com
+        - '*.github.io'
     script-src-attr:
       base: self
     script-src-elem:
@@ -46,14 +49,20 @@ report-only:
         - www.googletagmanager.com
         - js-agent.newrelic.com
         - '*.google-analytics.com'
+        - www.google-analytics.com
+        - '*.github.io'
     style-src:
       base: self
+      sources:
+        - '*.github.io'
     style-src-attr:
       base: self
       flags:
         - unsafe-inline
     style-src-elem:
       base: self
+      sources:
+        - '*.github.io'
     frame-ancestors:
       base: self
   reporting:

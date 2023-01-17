@@ -124,3 +124,4 @@ hidden:
   entity_print_view_word_docx: true
   field_migrate_example_favbeers: true
   field_migrate_example_gender: true
+  langcode: true

@@ -1,0 +1,6 @@
+display_configuration:
+  link_text: 'Choisir un média'
+widgets:
+  552cfb05-063f-47a9-81d1-e1260fc8a402:
+    settings:
+      submit_text: 'Choisir un média'
