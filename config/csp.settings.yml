@@ -7,17 +7,20 @@ report-only:
       base: self
       sources:
         - fonts.gstatic.com
-        - gov-bam.nr-data.net
         - www.google-analytics.com
+        - gov-bam.nr-data.net
         - analytics.google.com
-        - '*.doubleclick.net'
-        - '*.analytics.google.com'
         - '*.unocha.org'
         - '*.github.io'
     font-src:
       base: self
       sources:
         - fonts.gstatic.com
+    img-src:
+      base: self
+      sources:
+        - github.com
+        - '*.google-analytics.com'
     object-src:
       base: none
     script-src:
@@ -25,11 +28,12 @@ report-only:
       flags:
         - unsafe-inline
       sources:
-        - js-agent.newrelic.com
         - fonts.googleapis.com
         - www.gstatic.com
         - www.google.com
         - www.googletagmanager.com
+        - js-agent.newrelic.com
+        - '*.google-analytics.com'
         - www.google-analytics.com
         - '*.github.io'
     script-src-attr:
@@ -39,11 +43,12 @@ report-only:
       flags:
         - unsafe-inline
       sources:
-        - js-agent.newrelic.com
         - fonts.googleapis.com
         - www.gstatic.com
         - www.google.com
         - www.googletagmanager.com
+        - js-agent.newrelic.com
+        - '*.google-analytics.com'
         - www.google-analytics.com
         - '*.github.io'
     style-src:
