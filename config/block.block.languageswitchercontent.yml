@@ -1,0 +1,20 @@
+uuid: e10de800-ee48-41d7-b893-1e7f25bb6168
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - gms_ocha_common
+id: languageswitchercontent
+theme: gms_ocha_common
+region: header_top
+weight: -28
+provider: null
+plugin: 'language_block:language_content'
+settings:
+  id: 'language_block:language_content'
+  label: 'Language switcher (Content)'
+  label_display: '0'
+  provider: language
+visibility: {  }

@@ -215,6 +215,7 @@ display:
     position: 1
     display_options:
       display_description: 'A list of users that are currently logged in.'
+      rendering_language: '***LANGUAGE_entity_translation***'
       display_extenders: {  }
       block_description: 'Who''s online'
     cache_metadata:

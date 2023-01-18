@@ -24,7 +24,7 @@ function gms_ocha_theme($existing, $type, $theme, $path) {
       ],
     ],
     'pooled_fund_sankey_chart' => [
-      'render element'  => 'form',
+      'render element' => 'form',
       'variables' => [
         'sankey' => NULL,
         'form_var' => NULL,
@@ -74,7 +74,8 @@ function gms_ocha_poolfund_donor_country_callback($form, $form_state) {
  */
 function gms_ocha_poolfund_callback($form, $form_state) {
   $form_state->setRebuild();
-  $poolfund_badges = \Drupal::service('renderer')->render($form['poolfund_badges']);
+  $poolfund_badges = \Drupal::service('renderer')
+    ->render($form['poolfund_badges']);
   $response = new AjaxResponse();
   $response->addCommand(new HtmlCommand('#pooled-fund-badges', $poolfund_badges));
   return $response;
@@ -85,54 +86,59 @@ function gms_ocha_poolfund_callback($form, $form_state) {
  */
 function gms_ocha_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'menu_link_content_menu_link_content_form') {
-    $menu_link_content_id = $form_state->getBuildInfo()['callback_object']->getEntity()->id();
+    $menu_link_content_id = $form_state->getBuildInfo()['callback_object']->getEntity()
+      ->id();
     if (!empty($menu_link_content_id)) {
-      $menu_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+      $menu_content_storage = \Drupal::entityTypeManager()
+        ->getStorage('menu_link_content');
       $menu_link_content = current($menu_content_storage->loadByProperties(['id' => $menu_link_content_id]));
+      $menu_name = $menu_link_content->get('menu_name')->getValue()[0]['value'];
+
       $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
-      $menu_link_content_childs = $menu_content_storage->loadByProperties(['parent' => $parent_prop]);
-      if (count($menu_link_content_childs) <= 0) {
-        $form['menu']['related'] = [
-          '#type' => 'fieldset',
-          '#weight' => 5,
-          '#title' => t('Menu relation settings'),
-        ];
-        $menu_name = 'menu-ocha';
-        $menu_tree = \Drupal::menuTree();
-        $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-        $parameters->setMinDepth(1);
-        $tree = $menu_tree->load($menu_name, $parameters);
-        $manipulators = [
-          ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-          ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-        ];
-        $tree = $menu_tree->transform($tree, $manipulators);
-        $options = [];
-        foreach ($tree as $val) {
-          $options[$val->link->getPluginDefinition()['metadata']['entity_id']] = $val->link->getPluginDefinition()['title'];
-        }
-        $query = \Drupal::database()->select('menu_tree', 'menu_tree')
-          ->fields('menu_tree', ['options'])
-          ->condition('id', $parent_prop);
-        $results = $query->execute();
-        $data = $results->fetchAssoc();
-        $default_options = unserialize($data['options'], ['allowed_classes' => FALSE]);
-        $form['menu']['related']['menus'] = [
-          '#type' => 'select',
-          '#title' => t('Related to menu'),
-          '#options' => $options,
-          '#multiple' => TRUE,
-          '#default_value' => (isset($default_options['gsm_ocha']['related'])) ? $default_options['gsm_ocha']['related'] : 0,
-        ];
-        $form['menu']['related']['show_parent'] = [
-          '#type' => 'checkbox',
-          '#title' => t('Show only for this parent term.'),
-          // '#options' => array('1' =>'Yes'),
-          '#default_value' => (isset($default_options['gsm_ocha']['show_parent'])) ? $default_options['gsm_ocha']['show_parent'] : 0,
-        ];
-        $form['#submit'][] = 'gms_ocha_form_submit';
-        $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
+      // $menu_link_content_childs = $menu_content_storage->
+      // LoadByProperties(['parent' => $parent_prop]);
+      // If (count($menu_link_content_childs) <= 0) {
+      $form['menu']['related'] = [
+        '#type' => 'fieldset',
+        '#weight' => 5,
+        '#title' => t('Menu relation settings'),
+      ];
+      $menu_name = $menu_name;
+      $menu_tree = \Drupal::menuTree();
+      $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+      $parameters->setMinDepth(1);
+      $tree = $menu_tree->load($menu_name, $parameters);
+      $manipulators = [
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+      ];
+      $tree = $menu_tree->transform($tree, $manipulators);
+      $options = [];
+      foreach ($tree as $val) {
+        $options[$val->link->getPluginDefinition()['metadata']['entity_id']] = $val->link->getPluginDefinition()['title'];
       }
+      $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+        ->fields('menu_tree', ['options'])
+        ->condition('id', $parent_prop);
+      $results = $query->execute();
+      $data = $results->fetchAssoc();
+      $default_options = unserialize($data['options'], ['allowed_classes' => FALSE]);
+      $form['menu']['related']['menus'] = [
+        '#type' => 'select',
+        '#title' => t('Related to menu'),
+        '#options' => $options,
+        '#multiple' => TRUE,
+        '#default_value' => (isset($default_options['gsm_ocha']['related'])) ? $default_options['gsm_ocha']['related'] : 0,
+      ];
+      $form['menu']['related']['show_parent'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Show only for this parent term.'),
+        // '#options' => array('1' =>'Yes'),
+        '#default_value' => (isset($default_options['gsm_ocha']['show_parent'])) ? $default_options['gsm_ocha']['show_parent'] : 0,
+      ];
+      $form['#submit'][] = 'gms_ocha_form_submit';
+      $form['actions']['submit']['#submit'][] = 'gms_ocha_form_submit';
+      // }
     }
   }
 }
@@ -141,8 +147,10 @@ function gms_ocha_form_alter(&$form, $form_state, $form_id) {
  * Implements hook_form_submit().
  */
 function gms_ocha_form_submit($form, $form_state) {
-  $menu_link_content_id = $form_state->getBuildInfo()['callback_object']->getEntity()->id();
-  $menu_content_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+  $menu_link_content_id = $form_state->getBuildInfo()['callback_object']->getEntity()
+    ->id();
+  $menu_content_storage = \Drupal::entityTypeManager()
+    ->getStorage('menu_link_content');
   $menu_link_content = current($menu_content_storage->loadByProperties(['id' => $menu_link_content_id]));
   $parent_prop = "menu_link_content:{$menu_link_content->uuid()}";
   $query = \Drupal::database()->select('menu_tree', 'menu_tree')
@@ -165,7 +173,8 @@ function gms_ocha_form_submit($form, $form_state) {
 function gms_ocha_preprocess_block(&$variables) {
   if ($variables['attributes']['id'] == 'block-ocha-2') {
     $current_path = \Drupal::service('path.current')->getPath();
-    $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+    $result = \Drupal::service('path_alias.manager')
+      ->getAliasByPath($current_path);
     $query = \Drupal::entityQuery('path_alias');
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
@@ -195,6 +204,41 @@ function gms_ocha_preprocess_block(&$variables) {
       $variables['#cache']['max-age'] = 0;
     }
   }
+
+  if ($variables['attributes']['id'] == 'block-cerfmenu') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $result = \Drupal::service('path_alias.manager')
+      ->getAliasByPath($current_path);
+    $query = \Drupal::entityQuery('path_alias');
+    $query->condition('alias', $result, '=');
+    $aliasIds = $query->execute();
+    if (!empty($aliasIds)) {
+      $aliasIds = array_values($aliasIds);
+      $path = PathAlias::load($aliasIds[0])->getPath();
+      $nodeId = (int) str_replace("/node/", "", $path);
+      $query = \Drupal::database()->select('menu_tree', 'menu_tree')
+        ->fields('menu_tree', ['id', 'parent'])
+        ->condition('route_param_key', "node=" . $nodeId)
+        ->condition('menu_name', 'agency');
+      $results = $query->execute();
+      $menuData = $results->fetchAssoc();
+      $menuId = NULL;
+      if (isset($menuData['parent']) && empty($menuData['parent'])) {
+        $menuId = str_replace('menu_link_content:', '', $menuData['id']);
+      }
+      $query = \Drupal::request()->query->get('query');
+      if (!empty($query)) {
+        $menuId = $query;
+      }
+      if (!empty($menuId)) {
+        if (isset($variables['content']['#items']['menu_link_content:' . $menuId])) {
+          $variables['content']['#items']['menu_link_content:' . $menuId]['is_active_menu'] = TRUE;
+        }
+      }
+      $variables['#cache']['max-age'] = 0;
+    }
+  }
+
   if ($variables['attributes']['id'] == 'block-socialauthlogin') {
     $variables['content']['#social_networks']['social_auth_hid']['img_path'] = 'themes/custom/gms_ocha_common/img/hid-logo.svg';
   }

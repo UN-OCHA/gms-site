@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="23.999" viewBox="0 0 24 23.999">
+  <g id="Layer_2" data-name="Layer 2" transform="translate(0 0)">
+    <g id="Icons" transform="translate(0 0)">
+      <path id="Path_176" data-name="Path 176" d="M23.25,45H.75a.75.75,0,1,0,0,1.5h22.5a.75.75,0,1,0,0-1.5Z" transform="translate(0 -22.498)" fill="#fff"/>
+      <path id="Path_177" data-name="Path 177" d="M4.75,41.5h18.5a.75.75,0,1,0,0-1.5H4.75a.75.75,0,1,0,0,1.5Z" transform="translate(-2.001 -19.997)" fill="#fff"/>
+      <rect id="Rectangle_48" data-name="Rectangle 48" width="2" height="11" transform="translate(5.003 8.008)" fill="#fff"/>
+      <rect id="Rectangle_49" data-name="Rectangle 49" width="2" height="11" transform="translate(9.005 8.008)" fill="#fff"/>
+      <rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="11" transform="translate(13.008 8.008)" fill="#fff"/>
+      <rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="11" transform="translate(17.01 8.008)" fill="#fff"/>
+      <path id="Path_178" data-name="Path 178" d="M4.751,7.495H23.493a.507.507,0,0,0,.275-.935L14.4.079a.52.52,0,0,0-.55,0L4.476,6.56a.507.507,0,0,0,.275.935ZM14.122,3a1.5,1.5,0,1,1-1.061.438A1.5,1.5,0,0,1,14.122,3Z" transform="translate(-2.122 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

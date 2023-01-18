@@ -41,3 +41,4 @@ hidden:
   field_migrate_example_beer_style: true
   field_migrate_example_country: true
   field_migrate_example_image: true
+  langcode: true

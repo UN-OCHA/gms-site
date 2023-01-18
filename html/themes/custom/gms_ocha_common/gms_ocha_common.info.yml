@@ -13,12 +13,15 @@ libraries:
 regions:
   header_top: Header top
   header_search: Header search
+  one_gms_header_logo: One GMS Header logo
   header_logo: Header logo
   header_navigation: Header navigation
   header_second: Header Second
   header_third: Header Third
   navigation: Navigation Bar
   highlighted: Highlighted
+  fluid_navigation: Fluid Navigation
+  fluid_banner: Fluid Banner
   banner: Banner
   page_title: Page title
   content: Content

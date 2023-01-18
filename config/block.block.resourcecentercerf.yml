@@ -1,0 +1,30 @@
+uuid: b2e0d276-cd71-44c9-80a9-a57ca94c12ad
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:064a5687-bd02-45df-a71b-b2c463f582d0'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: resourcecentercerf
+theme: gms_ocha_common
+region: fluid_content
+weight: -23
+provider: null
+plugin: 'block_content:064a5687-bd02-45df-a71b-b2c463f582d0'
+settings:
+  id: 'block_content:064a5687-bd02-45df-a71b-b2c463f582d0'
+  label: 'Resource Center CERF'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cerf

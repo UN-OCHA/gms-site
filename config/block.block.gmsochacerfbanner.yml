@@ -1,0 +1,29 @@
+uuid: abdb6b4f-c42d-421c-88b2-8d350f9c487b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - gms_ocha
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: cd-container
+id: gmsochacerfbanner
+theme: gms_ocha_common
+region: fluid_banner
+weight: 0
+provider: null
+plugin: gms_ocha_cerf_banner
+settings:
+  id: gms_ocha_cerf_banner
+  label: 'GMS Ocha CERF Banner'
+  label_display: '0'
+  provider: gms_ocha
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cerf

@@ -1,0 +1,34 @@
+uuid: e30caeed-1b79-4599-a3bf-4e42d24e04f7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: onegms-logo-block
+id: gmsonelogo
+theme: gms_ocha_common
+region: one_gms_header_logo
+weight: 0
+provider: null
+plugin: 'block_content:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
+settings:
+  id: 'block_content:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
+  label: 'GMS One logo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/gms-one

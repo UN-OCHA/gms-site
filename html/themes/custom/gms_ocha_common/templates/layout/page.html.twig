@@ -74,6 +74,20 @@
       </div>
     {% endblock %}
   {% endif %}
+  {% if page.fluid_navigation %}
+    {% block fluid_navigation %}
+      <div class="cd-container-fluid cd-fluid_navigation">
+        {{ page.fluid_navigation }}
+      </div>
+    {% endblock %}
+  {% endif %}
+  {% if page.fluid_banner %}
+    {% block fluid_banner %}
+      <div class="cd-layout-flude-banner">
+        {{ page.fluid_banner }}
+      </div>
+    {% endblock %}
+  {% endif %}
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
     <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(layout_classes) }}>
@@ -99,7 +113,7 @@
     {% endblock %}
   {% endif %}
   {{ page.help }}
-  
+
       {{ page.page_title }}
       <div class="cd-layout-content-wrapper">
 

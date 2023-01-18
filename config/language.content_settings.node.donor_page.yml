@@ -1,0 +1,18 @@
+uuid: 075a0cbe-ce14-42c5-a43a-1fa251f7df9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.donor_page
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.donor_page
+target_entity_type_id: node
+target_bundle: donor_page
+default_langcode: current_interface
+language_alterable: true

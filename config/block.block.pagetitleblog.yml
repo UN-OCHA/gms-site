@@ -23,7 +23,7 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /content/home-page-blog
+    pages: "/content/home-page-blog\r\n/content/cerf/*\r\n/content/cbpf/*"
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false

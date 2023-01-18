@@ -73,8 +73,8 @@ class GmsBanner extends BlockBase implements ContainerFactoryPluginInterface {
     $output = $this->renderer->render($form);
     $gmaOverview = Url::fromRoute('entity.node.canonical', ['node' => 200])->toString();
     $tooltip = Url::fromRoute('entity.node.canonical', ['node' => 155])->toString();
-    $markup = "<h1>GMS Help portal</h1>
-    <p>The GMS Help portal has been designed to assist each user group of the system to be able to navigate through  the GMS system.</p>
+    $markup = "<h1>OneGMS Help Portal</h1>
+    <p>The OneGMS help portal has been designed to assist each user group to navigate through the OneGMS.</p>
     <div class=\"block block-gms-ocha first last odd\" id=\"block-gms-ocha-gms-portal\"></div>
     <p><a href='" . $gmaOverview . "'>" . $this->t('GMS Overview') . "</a>
     <a href='" . $tooltip . "'>" . $this->t('Tool Tips') . "</a> " . $output . "</p>";

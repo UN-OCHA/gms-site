@@ -85,3 +85,4 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_signed_date: true
+  langcode: true

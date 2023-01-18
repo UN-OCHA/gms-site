@@ -1,0 +1,30 @@
+uuid: feb3e1bc-0a67-4c42-a641-e4a8aedd7d73
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f7c29135-7ec3-4120-86ad-280489f7fd50'
+  module:
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: resourcecentercbpf
+theme: gms_ocha_common
+region: fluid_content
+weight: -26
+provider: null
+plugin: 'block_content:f7c29135-7ec3-4120-86ad-280489f7fd50'
+settings:
+  id: 'block_content:f7c29135-7ec3-4120-86ad-280489f7fd50'
+  label: 'Resource Center CBPF'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/cbpf

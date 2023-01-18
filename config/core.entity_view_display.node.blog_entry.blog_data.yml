@@ -89,4 +89,5 @@ hidden:
   field_page_header_style: true
   field_post_layout: true
   field_thumbnail_image: true
+  langcode: true
   links: true

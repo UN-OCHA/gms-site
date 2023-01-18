@@ -5,7 +5,7 @@ dependencies:
   config:
     - views.view.blog_recent_post
   module:
-    - ctools
+    - taxonomy
     - views
   theme:
     - gms_ocha_common
