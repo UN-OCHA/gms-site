@@ -67,7 +67,7 @@
         'nav-item-' ~ menuTitle|replace({' ': '-','/':''}),
         item.is_expanded ? 'is-expanded',
         item.is_collapsed ? 'is-collapsed',
-        item.in_active_trail ? 'is-active' ~ menu_name|clean_class,
+        item.in_active_trail ? 'active-parent is-active' ~ menu_name|clean_class,
       ]
       %}
     {% else %}
