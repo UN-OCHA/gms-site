@@ -18,12 +18,9 @@
         "drupal/google_tag": {
             "Error during cache rebuild when assets are stored on NFS": "patches/google_tag/3250315-google-tag-nfs-locks-5.patch"
         },
-        "drupal/scrollup": {
-            "title update": "patches/ScrollUp/3151294-3.patch"
-        },
         "drupal/user_expire": {
-            "Allow the notification email to be customised": "https://git.drupalcode.org/project/user_expire/-/merge_requests/5.diff",
-            "Reset expiration when user is reactivated": "https://git.drupalcode.org/project/user_expire/-/merge_requests/6.diff"
+            "Allow the notification email to be customised": "patches/user_expire/customize-notification-email.patch",
+            "Reset expiration when user is reactivated": "patches/user_expire/reset-expiration-on-reactivation.patch"
         }
     }
 }
