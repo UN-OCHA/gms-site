@@ -99,7 +99,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal-composer/preserve-paths": "^0.1.6",
         "drupal/acl": "^1.0@beta",
-        "drupal/admin_denied": "^1.1",
+        "drupal/admin_denied": "^2",
         "drupal/admin_toolbar": "^3.1",
         "drupal/anchor_link": "^2.5",
         "drupal/auto_config_form": "1.0.x-dev@dev",
