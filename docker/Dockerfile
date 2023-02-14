@@ -12,9 +12,6 @@ WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
-    # Update composer to avoid issues with missing drupal files.
-    # @see https://github.com/drupal-composer/drupal-project/issues/282
-    composer selfupdate && \
     composer install --no-interaction
 
 # Clean up previous npm installation and run new one. Those commands correspond
@@ -31,7 +28,7 @@ RUN cp -a docker/settings.php docker/services.yml html/sites/default
 ################################################################################
 
 # Generate the image.
-FROM public.ecr.aws/unocha/php-k8s:8.0-NR-stable
+FROM public.ecr.aws/unocha/php-k8s:8.0-stable
 
 ARG VCS_REF
 ARG VCS_URL
