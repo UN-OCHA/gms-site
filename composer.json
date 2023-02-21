@@ -158,7 +158,7 @@
         "drupal/pathologic": "^1.0@alpha",
         "drupal/redirect": "^1.6",
         "drupal/scrollup": "^3.0",
-		"drupal/search_api": "^1.28"
+		"drupal/search_api": "^1.28",
         "drupal/semanticviews": "^2.3",
         "drupal/social_auth": "^3.0",
         "drupal/social_auth_hid": "^2.8",
