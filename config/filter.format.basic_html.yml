@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - editor
+    - onomasticon
+    - token_filter
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -43,3 +45,25 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  filter_onomasticon:
+    id: filter_onomasticon
+    provider: onomasticon
+    status: true
+    weight: 0
+    settings:
+      onomasticon_vocabulary: glossary
+      onomasticon_tag: dfn
+      onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
+      onomasticon_implement: attr_title
+      onomasticon_orientation: below
+      onomasticon_cursor: default
+      onomasticon_ignorecase: '0'
+      onomasticon_repetition: '1'
+      onomasticon_termlink: '0'
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'

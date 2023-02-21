@@ -82,10 +82,10 @@ settings:
             - ShowBlocks
             - Source
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: "table.table.table-bordered|Table bordered\r\ntable.table.table-default|Table default\r\ntable.table.table-striped|Table strip\r\ntable.table.table-green-left-border|Table green left border\r\ntable.table.table-green-border|Table green border\r\ntable.table.table-vertical-heading|Table vertical heading\r\nul.p-0.ml-3|Left spacing none (Unordered List)\r\nul.mt-4|Top spacing (Unordered List)\r\nul.mb-4|Bottom spacing (Unordered List)\r\nol.p-0.ml-3|Left spacing none (Ordered List)\r\nol.mt-4|Top spacing (Ordered List)\r\nol.mb-4|Bottom spacing (Ordered List)\r\np.mt-4|Top spacing (Paragraph)\r\np.mb-4|Bottom spacing (Paragraph)\r\nh2.mt-5|Top spacing (Heading 2)\r\nh2.mb-5|Bottom spacing (Heading 2)\r\nh2.igf-text-primary|Green Text (Heading 2)\r\nh5.mt-5|Top spacing (Heading 5)\r\nh5.mb-5|Bottom spacing (Heading 5)\r\nh5.igf-text-primary|Green Text (Heading 5)"
+    language:
+      language_list: un
     customconfig:
       ckeditor_custom_config: ''
     font:
