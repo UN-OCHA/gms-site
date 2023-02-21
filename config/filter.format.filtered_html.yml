@@ -1,7 +1,10 @@
 uuid: 8cf3e015-87ba-453c-9d2a-6e52420e83d1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - onomasticon
+    - token_filter
 name: 'Filtered HTML'
 format: filtered_html
 weight: 0
@@ -28,3 +31,25 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  filter_onomasticon:
+    id: filter_onomasticon
+    provider: onomasticon
+    status: true
+    weight: 0
+    settings:
+      onomasticon_vocabulary: glossary
+      onomasticon_tag: dfn
+      onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
+      onomasticon_implement: extra_element
+      onomasticon_orientation: below
+      onomasticon_cursor: default
+      onomasticon_ignorecase: '0'
+      onomasticon_repetition: '1'
+      onomasticon_termlink: '0'
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'

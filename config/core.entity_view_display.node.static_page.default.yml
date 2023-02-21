@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.static_page.body
     - field.field.node.static_page.field_duel_reference
     - field.field.node.static_page.field_embedded_video
+    - field.field.node.static_page.field_page_type
     - field.field.node.static_page.field_pdf
     - field.field.node.static_page.field_search_keywords
     - node.type.static_page
   module:
     - file
+    - options
     - text
     - user
     - video_embed_field
@@ -46,6 +48,13 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_page_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_pdf:
     type: file_default
     label: above
@@ -65,3 +74,4 @@ hidden:
   entity_print_view_word_docx: true
   field_search_keywords: true
   langcode: true
+  search_api_excerpt: true

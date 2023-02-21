@@ -7,11 +7,12 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
-    - image.style.thumbnail
+    - image.style.media_library
     - node.type.article
   module:
     - comment
     - image
+    - imce
     - path
     - text
 _core:
@@ -49,8 +50,10 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
+      preview_image_style: media_library
+    third_party_settings:
+      imce:
+        enabled: false
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 3
@@ -102,6 +105,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

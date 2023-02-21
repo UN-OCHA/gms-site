@@ -1,0 +1,19 @@
+uuid: 9f55f18b-1217-4958-89ef-916c071db308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_spelled_out
+    - taxonomy.vocabulary.glossary
+id: taxonomy_term.glossary.field_spelled_out
+field_name: field_spelled_out
+entity_type: taxonomy_term
+bundle: glossary
+label: 'Spelled Out'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
