@@ -7,8 +7,6 @@ tips:
     label: 'Nom système'
   search-api-index-fields-type:
     label: Type
-  search-api-index-fields-boost:
-    label: Boost
   search-api-index-fields-edit:
     label: 'Modifier le champ'
   search-api-index-fields-remove:

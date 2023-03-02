@@ -1,22 +1,28 @@
-uuid: f07d3a60-ff70-4817-83aa-43e485266b82
+uuid: 0aa55d65-a75a-447b-88c8-7b0986d6feb1
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_page_type
-field_name: field_page_type
+id: node.field_cerf_menu
+field_name: field_cerf_menu
 entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
+      value: '0'
+      label: Agency
+    -
       value: '1'
-      label: CBPF
+      label: 'CERF Finance'
     -
       value: '2'
-      label: CERF
+      label: 'CERF HQ'
+    -
+      value: '3'
+      label: 'Country Office'
   allowed_values_function: ''
 module: options
 locked: false

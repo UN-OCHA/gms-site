@@ -1,17 +1,17 @@
-uuid: 7c26249f-eaa5-45be-8c19-083e500c7a6f
+uuid: 9f6c09fb-e3da-4434-bc44-d89f1e517442
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_type
+    - field.storage.node.field_cbpf_menu
     - node.type.static_page
   module:
     - options
-id: node.static_page.field_page_type
-field_name: field_page_type
+id: node.static_page.field_cbpf_menu
+field_name: field_cbpf_menu
 entity_type: node
 bundle: static_page
-label: Fund
+label: 'User Role'
 description: ''
 required: false
 translatable: false

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.static_page.body
+    - field.field.node.static_page.field_cbpf_menu
+    - field.field.node.static_page.field_cerf_menu
     - field.field.node.static_page.field_duel_reference
     - field.field.node.static_page.field_embedded_video
     - field.field.node.static_page.field_page_type
@@ -36,6 +38,50 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_cbpf_menu:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        737e4416-ebdd-4ad5-a587-2535326d8d89:
+          entity_type: node
+          bundle: static_page
+          dependee: field_page_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: '1'
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_cerf_menu:
+    type: options_select
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        7c04c2f1-845b-4ee3-81cd-096813036402:
+          entity_type: node
+          bundle: static_page
+          dependee: field_page_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: '2'
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_duel_reference:
     type: entity_reference_autocomplete
     weight: 2
