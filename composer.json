@@ -190,7 +190,9 @@
         "drupal/stage_file_proxy": "^2.0",
         "phpcompatibility/php-compatibility": "^9.3.5",
         "phpmd/phpmd": "^2.9.1",
-        "phpunit/phpunit": "^9.5.4"
+        "phpunit/php-code-coverage": "^9.2",
+        "phpunit/phpunit": "^9.5",
+        "weitzman/drupal-test-traits": "^2"
     },
     "conflict": {
         "drupal/drupal": "*"
