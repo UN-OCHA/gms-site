@@ -31,6 +31,7 @@ services:
       # Mount the folders needed for the tests.
       - "../tests:/srv/www/tests"
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
+      - "../phpunit.xml:/srv/www/phpunit.xml:ro"
     environment:
       - TERM=xterm
       - ENVIRONMENT=dev
@@ -42,6 +43,8 @@ services:
       - DRUPAL_DB_PASSWORD=gms
       - DRUPAL_DB_HOST=mysql
       - DRUPAL_DB_DRIVER=mysql
+      - PHP_ENVIRONMENT=dev
+      - PHP_XDEBUG=true
     networks:
       - default
     depends_on:

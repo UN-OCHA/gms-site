@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f127ab0ce46cd27e5ce6977e61434ff6",
+    "content-hash": "99d22ddeb3d1300538308903a4ed5fe4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -17822,6 +17822,56 @@
                 }
             ],
             "time": "2023-01-13T08:34:10+00:00"
+        },
+        {
+            "name": "weitzman/drupal-test-traits",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:weitzman/drupal-test-traits.git",
+                "reference": "63c674f8437d62dec3ea3785616a1fd44bf94c3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=63c674f8437d62dec3ea3785616a1fd44bf94c3b",
+                "reference": "63c674f8437d62dec3ea3785616a1fd44bf94c3b",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "installer-paths": {
+                    "web/core": [
+                        "type:drupal-core"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "web/"
+                    },
+                    "file-mapping": {
+                        "[project-root]/.editorconfig": false,
+                        "[project-root]/.gitattributes": false,
+                        "[project-root]/.gitignore": false
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "weitzman\\DrupalTestTraits\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moshe Weitzman",
+                    "email": "weitzman@tejasa.com"
+                }
+            ],
+            "description": "Traits for testing Drupal sites that have user content (versus unpopulated sites).",
+            "time": "2022-12-14T18:51:18+00:00"
         }
     ],
     "aliases": [],
