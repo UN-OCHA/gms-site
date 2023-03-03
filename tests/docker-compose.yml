@@ -43,6 +43,8 @@ services:
       - DRUPAL_DB_PASSWORD=gms
       - DRUPAL_DB_HOST=mysql
       - DRUPAL_DB_DRIVER=mysql
+      - PHP_ENVIRONMENT=dev
+      - PHP_XDEBUG=true
     networks:
       - default
     depends_on:
