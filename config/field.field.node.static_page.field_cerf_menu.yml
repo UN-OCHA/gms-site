@@ -1,17 +1,17 @@
-uuid: 7c26249f-eaa5-45be-8c19-083e500c7a6f
+uuid: c604e1a4-d62a-4443-8c41-2aabf2b1f14e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_type
+    - field.storage.node.field_cerf_menu
     - node.type.static_page
   module:
     - options
-id: node.static_page.field_page_type
-field_name: field_page_type
+id: node.static_page.field_cerf_menu
+field_name: field_cerf_menu
 entity_type: node
 bundle: static_page
-label: Fund
+label: 'User Role'
 description: ''
 required: false
 translatable: false

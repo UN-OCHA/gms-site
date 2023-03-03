@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_cbpf_menu
+    - field.storage.node.field_cerf_menu
     - field.storage.node.field_duel_reference
     - field.storage.node.field_page_type
     - field.storage.node.field_tags
@@ -64,6 +66,22 @@ field_settings:
     dependencies:
       module:
         - node
+  field_cbpf_menu:
+    label: 'CBPF Menu'
+    datasource_id: 'entity:node'
+    property_path: field_cbpf_menu
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cbpf_menu
+  field_cerf_menu:
+    label: 'CERF Menu'
+    datasource_id: 'entity:node'
+    property_path: field_cerf_menu
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cerf_menu
   field_page_type:
     label: 'Page Type'
     datasource_id: 'entity:node'
