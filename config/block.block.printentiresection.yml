@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - dxpr_theme
+    - gms_ocha_common
 id: printentiresection
-theme: dxpr_theme
+theme: gms_ocha_common
 region: content
 weight: -2
 provider: null
