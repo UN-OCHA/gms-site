@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd6c474bf298f705521c18fd89a65803",
+    "content-hash": "d9af9913b00dfffcc74f7c1ed882611c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2395,23 +2395,26 @@
         },
         {
             "name": "drupal/auto_config_form",
-            "version": "dev-1.0.x",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/auto_config_form.git",
-                "reference": "599be48be7c35546276f201c79d38b8d6bb2e522"
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/auto_config_form-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "bd61b3e21f987717ccf45b1cd2ac8d474317bb07"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.0.x": "1.0.x-dev"
-                },
                 "drupal": {
-                    "version": "1.0.0+3-dev",
-                    "datestamp": "1668506290",
+                    "version": "1.0.1",
+                    "datestamp": "1668506497",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3148,15 +3151,21 @@
         },
         {
             "name": "drupal/component_library",
-            "version": "dev-1.x",
+            "version": "1.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/component_library.git",
-                "reference": "6ad9ed3086c176cdc2c554e6ffbe378cfe5f7d5e"
+                "reference": "1.0.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/component_library-1.0.0-alpha3.zip",
+                "reference": "1.0.0-alpha3",
+                "shasum": "e8d09d9d3437610833e7925bf4c6677021d9fa43"
             },
             "require": {
                 "drupal/codemirror_editor": "^1.5",
-                "drupal/core": "^9",
+                "drupal/core": "^9 || ^10",
                 "drupal/entity": "^1.0"
             },
             "conflict": {
@@ -3171,12 +3180,9 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "1.x-dev",
-                    "datestamp": "1652478023",
+                    "version": "1.0.0-alpha3",
+                    "datestamp": "1658236832",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3195,7 +3201,7 @@
                 },
                 {
                     "name": "Contributors",
-                    "homepage": "https://www.drupal.org/node/NID/committers",
+                    "homepage": "https://www.drupal.org/node/3208960/committers",
                     "role": "Contributors"
                 },
                 {
@@ -17967,8 +17973,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/acl": 10,
-        "drupal/auto_config_form": 20,
-        "drupal/component_library": 20,
+        "drupal/component_library": 15,
         "drupal/components": 10,
         "drupal/conditional_fields": 15,
         "drupal/content_access": 15,
