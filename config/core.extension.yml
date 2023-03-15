@@ -149,7 +149,6 @@ module:
   minimal: 1000
 theme:
   seven: 0
-  bootstrap: 0
   stable: 0
   common_design: 0
   gms_ocha_common: 0
