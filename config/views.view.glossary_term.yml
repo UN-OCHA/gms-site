@@ -313,6 +313,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: glossary-pg-view
       header:
         view:
           id: view

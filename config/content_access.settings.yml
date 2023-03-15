@@ -13,6 +13,7 @@ content_access_roles_gids:
   gms_secure: 10
   cbpf_finance: 11
   hfu_fund_manager: 12
+  spanish_editor: 13
 content_access_node_type:
   static_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
   article: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
@@ -26,3 +27,4 @@ content_access_node_type:
   special_page: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
   migrate_example_producer: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
   migrate_example_wine: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
+  duel_reference: 'a:3:{s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:13:"administrator";}s:8:"per_node";i:1;}'
