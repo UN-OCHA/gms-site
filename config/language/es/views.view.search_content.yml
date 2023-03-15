@@ -1,0 +1,28 @@
+label: 'Buscar contenido'
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Buscar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: '‹ anterior'
+            next: 'siguiente ›'
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Buscar
+      title: 'Buscar Contenido'
+  page_1:
+    display_title: Página

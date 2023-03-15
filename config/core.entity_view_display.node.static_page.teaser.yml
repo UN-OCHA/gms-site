@@ -5,8 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.static_page.body
+    - field.field.node.static_page.field_cbpf_menu
+    - field.field.node.static_page.field_cerf_menu
     - field.field.node.static_page.field_duel_reference
     - field.field.node.static_page.field_embedded_video
+    - field.field.node.static_page.field_page_type
     - field.field.node.static_page.field_pdf
     - field.field.node.static_page.field_search_keywords
     - node.type.static_page
@@ -35,8 +38,12 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_cbpf_menu: true
+  field_cerf_menu: true
   field_duel_reference: true
   field_embedded_video: true
+  field_page_type: true
   field_pdf: true
   field_search_keywords: true
   langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: 9f6c09fb-e3da-4434-bc44-d89f1e517442
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cbpf_menu
+    - node.type.static_page
+  module:
+    - options
+id: node.static_page.field_cbpf_menu
+field_name: field_cbpf_menu
+entity_type: node
+bundle: static_page
+label: 'User Role'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

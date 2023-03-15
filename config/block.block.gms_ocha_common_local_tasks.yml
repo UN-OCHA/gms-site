@@ -11,7 +11,7 @@ _core:
 id: gms_ocha_common_local_tasks
 theme: gms_ocha_common
 region: content
-weight: -22
+weight: -29
 provider: null
 plugin: local_tasks_block
 settings:

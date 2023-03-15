@@ -11,7 +11,7 @@ dependencies:
 id: printlinks
 theme: gms_ocha_common
 region: content
-weight: -20
+weight: -27
 provider: null
 plugin: print_links
 settings:

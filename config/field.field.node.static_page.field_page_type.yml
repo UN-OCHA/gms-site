@@ -1,0 +1,21 @@
+uuid: 7c26249f-eaa5-45be-8c19-083e500c7a6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_type
+    - node.type.static_page
+  module:
+    - options
+id: node.static_page.field_page_type
+field_name: field_page_type
+entity_type: node
+bundle: static_page
+label: Fund
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

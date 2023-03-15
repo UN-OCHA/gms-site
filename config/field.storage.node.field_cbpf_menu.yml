@@ -1,0 +1,33 @@
+uuid: b18765a5-80d2-4f37-b420-0cca8e45df04
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_cbpf_menu
+field_name: field_cbpf_menu
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Partner
+    -
+      value: '1'
+      label: HFU
+    -
+      value: '2'
+      label: 'CBPF Finance'
+    -
+      value: '3'
+      label: 'Cluster Coordinator'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

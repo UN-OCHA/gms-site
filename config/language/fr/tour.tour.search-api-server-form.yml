@@ -1,0 +1,14 @@
+label: 'Ajouter ou modifier un serveur Search API'
+tips:
+  search-api-server-form-introduction:
+    label: 'Ajouter ou modifier un serveur'
+    body: 'Ce formulaire peut être utilisé pour modifier un serveur existant ou ajouter un nouveau serveur à votre site. Les serveurs conserveront vos données indexées.'
+  search-api-server-form-name:
+    label: 'Nom du serveur'
+    body: 'Saisir un nom pour identifier ce serveur. Par exemple, "Serveur Solr". Ceci ne sera affiché que dans l''interface d''administration.'
+  search-api-server-form-description:
+    label: 'Description du serveur'
+    body: 'Éventuellement, saisir une description pour expliquer plus en détail la fonction du serveur. Ceci ne sera affiché que dans l''interface d''administration.'
+  search-api-server-form-backend:
+    label: 'Type de backend du serveur'
+    body: 'Les serveurs peuvent être basés sur différentes technologies. Celles-ci sont appelées "backends". Un serveur utilise exactement un backend et ne peut pas en changer ultérieurement. Vous pouvez rendre disponible le backend "Base de données" en activant le module "Database Search". Un autre backend très courant est <a href="https://www.drupal.org/project/search_api_solr">"Solr"</a>, qui doit être configuré séparément.'

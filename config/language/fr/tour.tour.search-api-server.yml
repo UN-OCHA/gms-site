@@ -1,0 +1,17 @@
+label: 'Informations sur un serveur'
+tips:
+  search-api-server-introduction:
+    label: 'Informations sur un serveur'
+    body: 'Cette page affiche le résumé d''un serveur de recherche.'
+  search-api-server-status:
+    label: État
+    body: 'Indique si le serveur est actuellement activé ou désactivé.'
+  search-api-server-backend:
+    label: 'Type de backend'
+    body: 'Le plugin de backend utilisé pour ce serveur. Le plugin de backend détermine comment les éléments sont indexés et recherchés — par exemple, en utilisant la base de données ou un serveur Apache Solr.'
+  search-api-server-indexes:
+    label: 'Indexes de recherche'
+    body: 'Répertorie tous les index de recherche qui sont rattachés à ce serveur.'
+  search-api-server-clear:
+    label: 'Supprimer toutes les données indexées'
+    body: 'Ceci retirera définitivement toutes les données actuellement indexées sur ce serveur pour les index qui ne sont pas en lecture seule. Les éléments sont mis en attente pour la réindexation. Jusqu''à ce que la réindexation se produise, les recherches pour les index concernés ne renverront aucun résultat.'

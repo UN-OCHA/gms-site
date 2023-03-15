@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.media_library
   module:
     - media
+    - onomasticon
     - token_filter
 _core:
   default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
@@ -66,3 +67,18 @@ filters:
     weight: 0
     settings:
       replace_empty: '0'
+  filter_onomasticon:
+    id: filter_onomasticon
+    provider: onomasticon
+    status: true
+    weight: 0
+    settings:
+      onomasticon_vocabulary: categories
+      onomasticon_tag: dfn
+      onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
+      onomasticon_implement: attr_title
+      onomasticon_orientation: below
+      onomasticon_cursor: default
+      onomasticon_ignorecase: '0'
+      onomasticon_repetition: '1'
+      onomasticon_termlink: '0'

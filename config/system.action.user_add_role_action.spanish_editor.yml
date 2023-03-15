@@ -1,0 +1,14 @@
+uuid: 5c46ae7f-30dc-48fd-b68c-971957ada9b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.spanish_editor
+  module:
+    - user
+id: user_add_role_action.spanish_editor
+label: 'Add the Spanish Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: spanish_editor

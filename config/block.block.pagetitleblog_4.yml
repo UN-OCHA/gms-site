@@ -10,7 +10,7 @@ dependencies:
 id: pagetitleblog_4
 theme: gms_ocha_common
 region: content
-weight: -19
+weight: -26
 provider: null
 plugin: page_title_blog
 settings:
