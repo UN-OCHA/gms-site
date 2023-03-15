@@ -214,16 +214,18 @@ function gms_ocha_common_preprocess_breadcrumb(&$variables) {
         ->getStorage('menu_link_content');
       $menu_link_content = $menu_content_storage->loadByProperties(['uuid' => $query]);
       $menu_link_content = array_values($menu_link_content);
-      $match = [];
-      preg_match_all('/([\d]+)/', $menu_link_content[0]->get('link')->uri, $match);
-      $nodeData = end($match[0]);
-      if ($nodeData > 0) {
-        $variables['breadcrumb'][1] = [
-          'text' => $menu_link_content[0]->get('title')->value,
-          'url' => Url::fromRoute('entity.node.canonical', ['node' => $nodeData]),
-        ];
+      if (!empty($menu_link_content)) {
+        $match = [];
+        preg_match_all('/([\d]+)/', $menu_link_content[0]->get('link')->uri, $match);
+        $nodeData = end($match[0]);
+        if ($nodeData > 0) {
+          $variables['breadcrumb'][1] = [
+            'text' => $menu_link_content[0]->get('title')->value,
+            'url' => Url::fromRoute('entity.node.canonical', ['node' => $nodeData]),
+          ];
+        }
+        $variables['#cache']['max-age'] = 0;
       }
-      $variables['#cache']['max-age'] = 0;
     }
   }
 }
@@ -257,24 +259,24 @@ function gms_ocha_common_preprocess_links__language_block(&$variables) {
  */
 function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
   if (in_array($form['#form_id'], ['views_exposed_form'])) {
-    if(in_array($form['#id'], ['views-exposed-form-search-api-page-page-1'])) {
+    if (in_array($form['#id'], ['views-exposed-form-search-api-page-page-1'])) {
       $form['field_page_type']['#options']['All'] = t('Select Fund');
       $form['field_cbpf_menu']['#options']['All'] = t('Select Section');
       $form['field_cerf_menu']['#options']['All'] = t('Select Section');
       $form['field_page_type']['#attributes']['id'] = t('field_page_type_page');
-      $states_when_category_is_design = array(
-        'visible' => array(
-        ':input[id="field_page_type_page"]' => array('value' => '1'),
-        ),
-      );
+      $states_when_category_is_design = [
+        'visible' => [
+          ':input[id="field_page_type_page"]' => ['value' => '1'],
+        ],
+      ];
       if (isset($form['field_cbpf_menu'])) {
         $form['field_cbpf_menu']['#states'] = $states_when_category_is_design;
       };
-      $states_when_category_is_design_cerf = array(
-        'visible' => array(
-        ':input[id="field_page_type_page"]' => array('value' => '2'),
-        ),
-      );
+      $states_when_category_is_design_cerf = [
+        'visible' => [
+          ':input[id="field_page_type_page"]' => ['value' => '2'],
+        ],
+      ];
       if (isset($form['field_cerf_menu'])) {
         $form['field_cerf_menu']['#states'] = $states_when_category_is_design_cerf;
       };
@@ -284,19 +286,19 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
       $form['field_cbpf_menu']['#options']['All'] = t('Select Section');
       $form['field_cerf_menu']['#options']['All'] = t('Select Section');
       $form['field_page_type']['#attributes']['id'] = t('field_page_type_block_new');
-      $states_when_category_is_design = array(
-        'visible' => array(
-        ':input[id="field_page_type_block_new"]' => array('value' => '1'),
-        ),
-      );
+      $states_when_category_is_design = [
+        'visible' => [
+          ':input[id="field_page_type_block_new"]' => ['value' => '1'],
+        ],
+      ];
       if (isset($form['field_cbpf_menu'])) {
         $form['field_cbpf_menu']['#states'] = $states_when_category_is_design;
       };
-      $states_when_category_is_design_cerf = array(
-        'visible' => array(
-        ':input[id="field_page_type_block_new"]' => array('value' => '2'),
-        ),
-      );
+      $states_when_category_is_design_cerf = [
+        'visible' => [
+          ':input[id="field_page_type_block_new"]' => ['value' => '2'],
+        ],
+      ];
       if (isset($form['field_cerf_menu'])) {
         $form['field_cerf_menu']['#states'] = $states_when_category_is_design_cerf;
       };
