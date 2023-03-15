@@ -1,0 +1,30 @@
+uuid: 1efd6e94-cccc-4f18-9854-ef282bcd7681
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.duel_reference
+    - node.type.static_page
+  module:
+    - content_translation
+    - contextual
+    - filter
+    - path
+    - system
+id: spanish_editor
+label: 'Spanish Editor'
+weight: 56
+is_admin: null
+permissions:
+  - 'update content translations'
+  - 'translate editable entities'
+  - 'translate static_page node'
+  - 'translate duel_reference node'
+  - 'access contextual links'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'link to any page'
