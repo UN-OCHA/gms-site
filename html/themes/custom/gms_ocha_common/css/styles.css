@@ -841,7 +841,7 @@ input::-webkit-search-decoration {
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
-  border: 2px solid var(--cd-contrast-red);
+  border: 2px solid var(--cd-contrast-red) !important;
 }
 
 .form-item--error-message::before {
@@ -2608,7 +2608,8 @@ html[dir=rtl] .cd-site-header__nav-holder .cd-nav button {
   color: var(--cd-ocha-blue);
   border: 0;
   background: transparent;
-  font-size: 24px
+  font-size: 24px;
+  text-decoration: none;
 }
 
 .cd-search__btn svg {
@@ -7509,7 +7510,7 @@ display: block;}
 .search-pg .cd-layout-content-wrapper .search-panel .views-exposed-form {padding: 25px 25px; background: #fff; border-radius: 0; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; margin-bottom: 30px;}
 .search-pg .cd-layout-content-wrapper .search-panel .views-exposed-form .cd-form--inline {margin: 0;}
 .search-pg .cd-layout-content-wrapper .search-panel .views-exposed-form .js-form-item label {font-weight: normal; font-size: small; padding: 10px 15px; margin: 0; background: #eee; border-radius: 3px 0 0 3px; color:#999;}
-.search-pg .cd-layout-content-wrapper .search-panel .views-exposed-form .js-form-item .form-text, .js-form-item .form-select {border: 1px solid #eee; margin-right: 25px; font-size: medium; border-radius: 0 3px 3px 0;}
+.search-pg .cd-layout-content-wrapper .search-panel .views-exposed-form .js-form-item input, .js-form-item select {border: 1px solid #eee; margin-right: 25px; font-size: medium; border-radius: 0 3px 3px 0;}
 .search-pg .cd-layout-content-wrapper .search-panel .view-content .views-row {border-bottom: 1px dotted #ddd; margin-bottom: 30px;}
 .search-pg .cd-layout-content-wrapper .search-panel .view-content .views-row .views-field-title {font-size: medium;}
 .search-pg .cd-layout-content-wrapper .search-panel .view-content .views-row .views-field-body {font-size: var(--cd-font-size--tiny); margin-top: 5px; margin-bottom: 10px;}
