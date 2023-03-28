@@ -148,10 +148,7 @@ module:
   views: 10
   minimal: 1000
 theme:
-  bartik: 0
   seven: 0
-  bootstrap: 0
-  dxpr_theme: 0
   stable: 0
   common_design: 0
   gms_ocha_common: 0

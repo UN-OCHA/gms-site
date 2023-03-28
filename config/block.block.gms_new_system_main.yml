@@ -5,11 +5,11 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - gms_ocha_common
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
 id: gms_new_system_main
-theme: bartik
+theme: gms_ocha_common
 region: content
 weight: -14
 provider: null

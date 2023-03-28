@@ -8,9 +8,9 @@ dependencies:
     - block_content
     - system
   theme:
-    - bartik
+    - gms_ocha_common
 id: gms_new_block_4
-theme: bartik
+theme: gms_ocha_common
 region: content
 weight: -34
 provider: null

@@ -6,11 +6,11 @@ dependencies:
     - search
     - system
   theme:
-    - bartik
+    - gms_ocha_common
 _core:
   default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
 id: gms_new_search_form
-theme: bartik
+theme: gms_ocha_common
 region: content
 weight: -10
 provider: null

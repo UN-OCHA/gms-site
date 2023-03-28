@@ -5,9 +5,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - gms_ocha_common
 id: gms_new_menu_menu_ocha
-theme: bartik
+theme: gms_ocha_common
 region: content
 weight: -11
 provider: null
