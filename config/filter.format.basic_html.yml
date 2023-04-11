@@ -45,6 +45,13 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'
   filter_onomasticon:
     id: filter_onomasticon
     provider: onomasticon
@@ -60,10 +67,3 @@ filters:
       onomasticon_ignorecase: '0'
       onomasticon_repetition: '1'
       onomasticon_termlink: '0'
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: 0
-    settings:
-      replace_empty: '0'
