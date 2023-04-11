@@ -1,11 +1,7 @@
 uuid: 4341b782-a731-424b-82a6-a4ca0962dc7d
 langcode: en
-status: true
+status: false
 dependencies:
-  content:
-    - 'block_content:basic:1d2ab712-ccd8-4727-9b2c-33b1ccbd6514'
-  module:
-    - block_content
   theme:
     - gms_ocha_common
 id: searchbutton
