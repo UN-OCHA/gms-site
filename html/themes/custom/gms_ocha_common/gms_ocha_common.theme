@@ -280,6 +280,7 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
       if (isset($form['field_cerf_menu'])) {
         $form['field_cerf_menu']['#states'] = $states_when_category_is_design_cerf;
       };
+	  $form['#validate'][] = 'validate_views_exposed_form';
     }
     if (in_array($form['#id'], ['views-exposed-form-search-api-page-block-1'])) {
       $form['field_page_type']['#options']['All'] = t('Select Fund');
@@ -303,5 +304,23 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
         $form['field_cerf_menu']['#states'] = $states_when_category_is_design_cerf;
       };
     }
+  }
+}
+
+/**
+ * Validate views exposed filters in the block region.
+ */
+function validate_views_exposed_form (array &$form, $form_state){
+  if ($form_state->getValue('search_api_fulltext') == '') {
+	$form_state->setErrorByName('search_api_fulltext', t('Please enter the text in the search bar.'));
+  }
+  if ($form_state->getValue('field_page_type') == 'All') {
+	$form_state->setErrorByName('field_page_type', t('Please select your fund.'));
+  }
+  if ($form_state->getValue('field_page_type') == '1' && $form_state->getValue('field_cbpf_menu') == 'All') {
+	$form_state->setErrorByName('field_cbpf_menu', t('Please select your user role.'));
+  }
+  if ($form_state->getValue('field_page_type') == '2' && $form_state->getValue('field_cerf_menu') == 'All') {
+	$form_state->setErrorByName('field_cerf_menu', t('Please select your user role.'));
   }
 }

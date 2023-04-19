@@ -28,7 +28,7 @@ RUN cp -a docker/settings.php docker/services.yml html/sites/default
 ################################################################################
 
 # Generate the image.
-FROM public.ecr.aws/unocha/php-k8s:8.0-stable
+FROM public.ecr.aws/unocha/php-k8s:8.0.28-r0-202304-02
 
 ARG VCS_REF
 ARG VCS_URL

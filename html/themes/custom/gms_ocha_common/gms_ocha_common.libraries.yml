@@ -2,7 +2,8 @@ global-styling:
   css:
     theme:
       css/styles.css: {}
-
+  js:
+    js/custom.js: {}
 # Custom components
 # cd-teaser:
 #   css:
