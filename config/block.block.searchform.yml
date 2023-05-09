@@ -1,6 +1,6 @@
 uuid: db5ec910-ea73-417f-9b71-32108704c323
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - search
