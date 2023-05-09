@@ -5,9 +5,13 @@ dependencies:
   content:
     - 'block_content:basic:9f5582ff-f68a-4288-a687-884c73cb8106'
   module:
+    - block_class
     - block_content
   theme:
     - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: seachbtnclass
 id: searchbutton
 theme: gms_ocha_common
 region: header_search
