@@ -1,17 +1,25 @@
-uuid: 4341b782-a731-424b-82a6-a4ca0962dc7d
+uuid: d3a913cd-7406-458b-899d-d08515a0a03d
 langcode: en
-status: false
+status: true
 dependencies:
+  content:
+    - 'block_content:basic:9f5582ff-f68a-4288-a687-884c73cb8106'
+  module:
+    - block_class
+    - block_content
   theme:
     - gms_ocha_common
+third_party_settings:
+  block_class:
+    classes: seachbtnclass
 id: searchbutton
 theme: gms_ocha_common
 region: header_search
 weight: 0
 provider: null
-plugin: 'block_content:1d2ab712-ccd8-4727-9b2c-33b1ccbd6514'
+plugin: 'block_content:9f5582ff-f68a-4288-a687-884c73cb8106'
 settings:
-  id: 'block_content:1d2ab712-ccd8-4727-9b2c-33b1ccbd6514'
+  id: 'block_content:9f5582ff-f68a-4288-a687-884c73cb8106'
   label: 'Search Button'
   label_display: '0'
   provider: block_content
