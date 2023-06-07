@@ -601,6 +601,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      title: 'Search Page'
       fields:
         title:
           id: title
@@ -833,6 +834,7 @@ display:
             field_identifier: ''
           exposed: false
       defaults:
+        title: false
         css_class: false
         pager: false
         fields: false
