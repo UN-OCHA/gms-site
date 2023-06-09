@@ -305,6 +305,11 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
       };
     }
   }
+  if (in_array($form['#form_id'], ['search_block_form'])) {
+    $form['search_api_fulltext'] = $form['keys'];
+    unset($form['keys']);
+    $form['#action'] = '/searchpage';
+  }
 }
 
 /**
