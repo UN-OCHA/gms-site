@@ -2,9 +2,9 @@
 
 namespace Drupal\gms_secure_role\EventSubscriber;
 
-use Drupal\social_auth\Event\UserEvent;
-use Drupal\social_auth\Event\SocialAuthEvents;
 use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+use Drupal\social_auth\Event\SocialAuthEvents;
+use Drupal\social_auth\Event\UserEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

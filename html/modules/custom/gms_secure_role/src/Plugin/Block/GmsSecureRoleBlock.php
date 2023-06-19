@@ -2,9 +2,9 @@
 
 namespace Drupal\gms_secure_role\Plugin\Block;
 
+use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
-use Drupal\Core\Block\BlockBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

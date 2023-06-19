@@ -3,10 +3,10 @@
 namespace Drupal\gms_ocha;
 
 use Drupal\Core\Cache\CacheBackendInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use GuzzleHttp\Client;
-use Symfony\Component\HttpFoundation\RequestStack;
 use GuzzleHttp\Exception\RequestException;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 define('GMS_OCHA_HIGHMAP', 'http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial');
 define('GMS_OCHA_ADMIN_PARENT', 457);

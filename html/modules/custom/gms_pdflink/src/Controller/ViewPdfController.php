@@ -2,15 +2,15 @@
 
 namespace Drupal\gms_pdflink\Controller;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Url;
-use Drupal\Component\Utility\Html;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Print controller.
