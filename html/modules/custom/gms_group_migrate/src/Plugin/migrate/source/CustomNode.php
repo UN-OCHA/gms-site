@@ -2,8 +2,8 @@
 
 namespace Drupal\gms_group_migrate\Plugin\migrate\source;
 
-use Drupal\node\Plugin\migrate\source\d7\Node;
 use Drupal\migrate\Row;
+use Drupal\node\Plugin\migrate\source\d7\Node;
 
 /**
  * Extends the D7 Node source plugin so we can grab OG info.
