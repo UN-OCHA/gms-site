@@ -231,6 +231,8 @@
             "html/modules/contrib/{$name}": ["type:drupal-module"],
             "html/profiles/contrib/{$name}": ["type:drupal-profile"],
             "html/themes/contrib/{$name}": ["type:drupal-theme"],
+            "html/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "html/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
@@ -253,11 +255,6 @@
             "replace": false,
             "merge-extra": false
         },
-        "preserve-paths": [
-            "html/modules/custom",
-            "html/themes/custom",
-            "html/sites/default"
-        ],
         "patches-file": "composer.patches.json",
         "composer-exit-on-patch-failure": true
     },
