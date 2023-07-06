@@ -133,6 +133,7 @@ module:
   user_event_dispatcher: 0
   user_expire: 0
   user_login: 0
+  username_enumeration_prevention: 0
   userprotect: 0
   video_embed_field: 0
   views_base_url: 0
