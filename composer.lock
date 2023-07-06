@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1006abba59b6d4ca63904814f1c72f69",
+    "content-hash": "ef891f3ad33a098412e7303b3542ae08",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2148,64 +2148,6 @@
                 "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/font"
             },
             "time": "2022-01-25T09:28:39+00:00"
-        },
-        {
-            "name": "drupal-composer/preserve-paths",
-            "version": "0.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-composer/preserve-paths.git",
-                "reference": "2f86a503f1f7838f5f7f399a17edd4d16eb95034"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/preserve-paths/zipball/2f86a503f1f7838f5f7f399a17edd4d16eb95034",
-                "reference": "2f86a503f1f7838f5f7f399a17edd4d16eb95034",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "require-dev": {
-                "composer/composer": "^2.0",
-                "derhasi/tempdirectory": "0.1.*",
-                "escapestudios/symfony2-coding-standard": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "DrupalComposer\\PreservePaths\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "DrupalComposer\\PreservePaths\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Johannes Haseitl",
-                    "email": "johannes@undpaul.de",
-                    "homepage": "http://www.undpaul.de"
-                }
-            ],
-            "description": "Composer plugin for preserving custom paths and supporting nested packages",
-            "homepage": "https://github.com/drupal-composer/preserve-paths",
-            "keywords": [
-                "composer-plugin",
-                "custom path",
-                "installer",
-                "nested package"
-            ],
-            "support": {
-                "issues": "https://github.com/drupal-composer/preserve-paths/issues",
-                "source": "https://github.com/drupal-composer/preserve-paths/tree/0.1.6"
-            },
-            "time": "2020-11-14T20:28:03+00:00"
         },
         {
             "name": "drupal/acl",
@@ -7350,27 +7292,27 @@
         },
         {
             "name": "drupal/token_filter",
-            "version": "1.4.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token_filter.git",
-                "reference": "8.x-1.4"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token_filter-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "d0d4ddc098c8e8002a0aefb066cb6cd7481a4658"
+                "url": "https://ftp.drupal.org/files/projects/token_filter-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "73a4dc759ed78d634d4414ec81febc3428ebd2a5"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9.4 || ^10",
                 "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1649114304",
+                    "version": "2.0.0",
+                    "datestamp": "1675762777",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10454,16 +10396,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "ec58baf7b3c7f1c81b3b00617c953249fb8cf30c"
+                "reference": "65c39594fbd8c67abfc68bb323f86447bab79cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/ec58baf7b3c7f1c81b3b00617c953249fb8cf30c",
-                "reference": "ec58baf7b3c7f1c81b3b00617c953249fb8cf30c",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/65c39594fbd8c67abfc68bb323f86447bab79cc0",
+                "reference": "65c39594fbd8c67abfc68bb323f86447bab79cc0",
                 "shasum": ""
             },
             "require": {
@@ -10495,9 +10437,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.22.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.22.1"
             },
-            "time": "2023-06-01T12:35:21+00:00"
+            "time": "2023-06-29T20:46:06+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -17301,17 +17243,17 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "2.0.2"
+                "reference": "2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "187019fdbb7b805a66068c6ca93d211f439d288b"
+                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "74833f98bee96a108516bbd1cad3b728b735918c"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -17322,8 +17264,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1670369228",
+                    "version": "2.0.3",
+                    "datestamp": "1688053826",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -18018,5 +17960,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
