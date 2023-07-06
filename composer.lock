@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1006abba59b6d4ca63904814f1c72f69",
+    "content-hash": "c020a1c4dd80b877633b37e3a41c1909",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2148,64 +2148,6 @@
                 "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/font"
             },
             "time": "2022-01-25T09:28:39+00:00"
-        },
-        {
-            "name": "drupal-composer/preserve-paths",
-            "version": "0.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-composer/preserve-paths.git",
-                "reference": "2f86a503f1f7838f5f7f399a17edd4d16eb95034"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/preserve-paths/zipball/2f86a503f1f7838f5f7f399a17edd4d16eb95034",
-                "reference": "2f86a503f1f7838f5f7f399a17edd4d16eb95034",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "require-dev": {
-                "composer/composer": "^2.0",
-                "derhasi/tempdirectory": "0.1.*",
-                "escapestudios/symfony2-coding-standard": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "DrupalComposer\\PreservePaths\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "DrupalComposer\\PreservePaths\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Johannes Haseitl",
-                    "email": "johannes@undpaul.de",
-                    "homepage": "http://www.undpaul.de"
-                }
-            ],
-            "description": "Composer plugin for preserving custom paths and supporting nested packages",
-            "homepage": "https://github.com/drupal-composer/preserve-paths",
-            "keywords": [
-                "composer-plugin",
-                "custom path",
-                "installer",
-                "nested package"
-            ],
-            "support": {
-                "issues": "https://github.com/drupal-composer/preserve-paths/issues",
-                "source": "https://github.com/drupal-composer/preserve-paths/tree/0.1.6"
-            },
-            "time": "2020-11-14T20:28:03+00:00"
         },
         {
             "name": "drupal/acl",
@@ -7347,27 +7289,27 @@
         },
         {
             "name": "drupal/token_filter",
-            "version": "1.4.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token_filter.git",
-                "reference": "8.x-1.4"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token_filter-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "d0d4ddc098c8e8002a0aefb066cb6cd7481a4658"
+                "url": "https://ftp.drupal.org/files/projects/token_filter-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "73a4dc759ed78d634d4414ec81febc3428ebd2a5"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9.4 || ^10",
                 "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1649114304",
+                    "version": "2.0.0",
+                    "datestamp": "1675762777",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7642,6 +7584,50 @@
             "support": {
                 "source": "https://git.drupal.org/project/user_expire.git",
                 "issues": "https://www.drupal.org/project/issues/user_expire"
+            }
+        },
+        {
+            "name": "drupal/username_enumeration_prevention",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/username_enumeration_prevention.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/username_enumeration_prevention-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "fa3f1f57a9d5ad77943c484ff7e1e40f5cd73df7"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1670892402",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "nicksanta",
+                    "homepage": "https://www.drupal.org/user/87915"
+                }
+            ],
+            "description": "Prevents username enumeration on password reset and user pages.",
+            "homepage": "https://www.drupal.org/project/username_enumeration_prevention",
+            "support": {
+                "source": "https://git.drupalcode.org/project/username_enumeration_prevention"
             }
         },
         {
@@ -18108,5 +18094,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
