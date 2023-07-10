@@ -57,3 +57,4 @@ hidden:
   field_terms_and_condition: true
   langcode: true
   member_for: true
+  search_api_excerpt: true
