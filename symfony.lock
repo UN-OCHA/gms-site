@@ -131,9 +131,6 @@
     "drupal-ckeditor-libraries-group/font": {
         "version": "4.16.2"
     },
-    "drupal-composer/preserve-paths": {
-        "version": "0.1.6"
-    },
     "drupal/acl": {
         "version": "1.0.0-beta1"
     },
