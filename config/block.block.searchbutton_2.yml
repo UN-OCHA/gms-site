@@ -1,0 +1,25 @@
+uuid: 73377b2c-23b7-41a0-9de6-8b93c2fafeef
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4a68b22f-61ee-473a-ab50-3d8e8ca93c08'
+  module:
+    - block_content
+  theme:
+    - gms_ocha_common
+id: searchbutton_2
+theme: gms_ocha_common
+region: header_search
+weight: 0
+provider: null
+plugin: 'block_content:4a68b22f-61ee-473a-ab50-3d8e8ca93c08'
+settings:
+  id: 'block_content:4a68b22f-61ee-473a-ab50-3d8e8ca93c08'
+  label: 'Search Button'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
