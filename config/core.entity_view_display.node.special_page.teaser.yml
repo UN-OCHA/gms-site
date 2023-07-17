@@ -33,7 +33,6 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_domain_source: true
   field_url_path_settings: true
   field_url_redirects: true
   langcode: true
