@@ -10,8 +10,6 @@ dependencies:
     - field.field.user.user.field_functional_title
     - field.field.user.user.field_government
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_migrate_example_favbeers
-    - field.field.user.user.field_migrate_example_gender
     - field.field.user.user.field_note
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_relevant_donor
@@ -49,11 +47,10 @@ hidden:
   field_functional_title: true
   field_government: true
   field_last_name: true
-  field_migrate_example_favbeers: true
-  field_migrate_example_gender: true
   field_note: true
   field_phone_number: true
   field_relevant_donor: true
   field_terms_and_condition: true
   langcode: true
   member_for: true
+  search_api_excerpt: true

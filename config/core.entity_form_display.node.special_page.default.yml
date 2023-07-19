@@ -72,7 +72,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_domain_source: true
   promote: true
   sticky: true
   uid: true

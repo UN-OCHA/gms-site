@@ -1,6 +1,6 @@
 {
-    "name": "unocha/starterkit",
-    "description": "Starterkit",
+    "name": "unocha/gms-site",
+    "description": "GMS Site",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -97,7 +97,6 @@
         "ckeditor-plugin/panelbutton": "^4.11",
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.7",
-        "drupal-composer/preserve-paths": "^0.1.6",
         "drupal/acl": "^1.0@beta",
         "drupal/admin_denied": "^2",
         "drupal/admin_toolbar": "^3.1",
@@ -146,10 +145,6 @@
         "drupal/menu_firstchild": "^2.0",
         "drupal/menu_link_attributes": "^1.2",
         "drupal/metatag": "^1.16",
-        "drupal/migrate_file": "^2.0",
-        "drupal/migrate_plus": "^5.1",
-        "drupal/migrate_tools": "^5.0",
-        "drupal/migrate_upgrade": "^3.2",
         "drupal/modules_weight": "^1.9",
         "drupal/noreqnewpass": "^1.2",
         "drupal/onomasticon": "^2.0",
@@ -167,9 +162,10 @@
         "drupal/superfish": "^1.4",
         "drupal/tb_megamenu": "^1.3",
         "drupal/token": "^1.9",
-        "drupal/token_filter": "^1.2",
+        "drupal/token_filter": "^2.0",
         "drupal/tome": "^1.4",
         "drupal/user_expire": "^1.0",
+        "drupal/username_enumeration_prevention": "^1.3",
         "drupal/userprotect": "^1.1",
         "drupal/video_embed_field": "^2.4",
         "drupal/views_base_url": "^2.0@beta",
@@ -206,7 +202,6 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal-composer/preserve-paths": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "drupal/console-extend-plugin": true,
@@ -231,6 +226,8 @@
             "html/modules/contrib/{$name}": ["type:drupal-module"],
             "html/profiles/contrib/{$name}": ["type:drupal-profile"],
             "html/themes/contrib/{$name}": ["type:drupal-theme"],
+            "html/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "html/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
@@ -253,11 +250,6 @@
             "replace": false,
             "merge-extra": false
         },
-        "preserve-paths": [
-            "html/modules/custom",
-            "html/themes/custom",
-            "html/sites/default"
-        ],
         "patches-file": "composer.patches.json",
         "composer-exit-on-patch-failure": true
     },

@@ -2,9 +2,9 @@
 
 namespace Drupal\gms_sitename\Form;
 
+use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Drupal\Core\Form\ConfirmFormBase;
 
 /**
  * SiteName Delete form.

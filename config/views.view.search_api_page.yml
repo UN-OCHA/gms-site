@@ -287,9 +287,6 @@ display:
             duel_reference: duel_reference
             entity_browser_test: entity_browser_test
             faq: faq
-            migrate_example_beer: migrate_example_beer
-            migrate_example_producer: migrate_example_producer
-            migrate_example_wine: migrate_example_wine
             page: page
             special_page: special_page
             static_page: static_page

@@ -9,8 +9,6 @@ dependencies:
     - field.field.user.user.field_functional_title
     - field.field.user.user.field_government
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_migrate_example_favbeers
-    - field.field.user.user.field_migrate_example_gender
     - field.field.user.user.field_note
     - field.field.user.user.field_phone_number
     - field.field.user.user.field_relevant_donor
@@ -125,6 +123,11 @@ content:
   timezone:
     weight: 6
     region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
     weight: 51
@@ -134,6 +137,4 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
-  field_migrate_example_favbeers: true
-  field_migrate_example_gender: true
   langcode: true

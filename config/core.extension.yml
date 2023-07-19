@@ -49,7 +49,6 @@ module:
   file: 0
   filter: 0
   genpass: 0
-  gms_group_migrate: 0
   gms_pdflink: 0
   gms_secure_role: 0
   gms_sitename: 0
@@ -82,11 +81,6 @@ module:
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
-  migrate: 0
-  migrate_drupal: 0
-  migrate_file: 0
-  migrate_plus: 0
-  migrate_tools: 0
   modules_weight: 0
   mysql: 0
   node: 0
@@ -133,6 +127,7 @@ module:
   user_event_dispatcher: 0
   user_expire: 0
   user_login: 0
+  username_enumeration_prevention: 0
   userprotect: 0
   video_embed_field: 0
   views_base_url: 0
