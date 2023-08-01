@@ -11,6 +11,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -126,7 +127,7 @@ class PrintSectionController extends ControllerBase {
       $pdf     = ocha_snap($url, $params);
       if (empty($pdf)) {
         $this->messenger()->addMessage($this->t('Failed to generate a PDF file.'), 'error');
-        $response = new Response($this->t('Failed to generate a PDF file.'), 503);
+        $response = new RedirectResponse($url, 301);
         $response->send();
       }
       else {
@@ -142,8 +143,9 @@ class PrintSectionController extends ControllerBase {
       }
     }
     else {
+      global $base_url;
       $this->messenger()->addMessage($this->t('Access denied.'), 'error');
-      $response = new Response($this->t('Access denied.'), 403);
+      $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
 
@@ -211,8 +213,9 @@ class PrintSectionController extends ControllerBase {
       die;
     }
     else {
+      global $base_url;
       $this->messenger()->addMessage($this->t('Access denied.'), 'error');
-      $response = new Response($this->t('Access denied.'), 403);
+      $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
   }
