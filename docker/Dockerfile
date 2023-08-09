@@ -1,5 +1,5 @@
 # Build the code.
-FROM public.ecr.aws/unocha/unified-builder:8.2-stable as builder
+FROM public.ecr.aws/unocha/unified-builder:8.1-stable as builder
 
 ARG  BRANCH_ENVIRONMENT
 
@@ -12,7 +12,7 @@ WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
-    composer install --no-interaction
+    composer install --no-interaction --ignore-platform-reqs
 
 # Clean up previous npm installation and run new one. Those commands correspond
 # to running `composer sass` but without hitting the PHP timeout from composer.
