@@ -33,7 +33,7 @@ permissions:
   - 'access PDF version'
   - 'access administration menu'
   - 'access administration pages'
-  - 'access al views'
+  - 'access all views'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
