@@ -2,9 +2,9 @@ name: GMS Secure Role
 type: module
 description: Custom functionality for GMS Secure Role
 package: GMS Custom Modules
-core: 8.x
 core_version_requirement: ^8 || ^9
-dependancies:
-  - contact_storage
-  - social_auth_roles
-  - user_event_dispatcher
+dependencies:
+  - contact_storage:contact_storage
+  - social_auth:social_auth
+  - social_auth_roles:social_auth_roles
+  - user_event_dispatcher:user_event_dispatcher
