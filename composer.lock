@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff2efc1f3c18669be1754906e2a547d4",
+    "content-hash": "d037c60707104312cf70d1d462d6bf0c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5922,26 +5922,26 @@
         },
         {
             "name": "drupal/modules_weight",
-            "version": "1.9.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/modules_weight.git",
-                "reference": "8.x-1.9"
+                "reference": "3.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/modules_weight-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "bc718995fe16009c701b4b73ceced5264d219910"
+                "url": "https://ftp.drupal.org/files/projects/modules_weight-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "864154d629490ed356df2e0e1d1cf3733341fa7a"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9.0"
+                "drupal/core": "^9.0|| ^10.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1613514301",
+                    "version": "3.0.0",
+                    "datestamp": "1689089150",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
