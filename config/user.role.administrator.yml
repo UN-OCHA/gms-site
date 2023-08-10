@@ -23,7 +23,6 @@ dependencies:
     - redirect
     - search
     - system
-    - views_ui
 _core:
   default_config_hash: Om6FEO7vZZMkPIbVvfxtdkWerQ2PvQM4sWUd6Q3ZnfI
 id: administrator
@@ -34,7 +33,7 @@ permissions:
   - 'access PDF version'
   - 'access administration menu'
   - 'access administration pages'
-  - 'access all views'
+  - 'access al views'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
@@ -74,7 +73,6 @@ permissions:
   - 'administer url aliases'
   - 'administer userprotect'
   - 'administer users'
-  - 'administer views'
   - 'assign node themes'
   - 'assign path alias themes'
   - 'assign theme to own nodes'
