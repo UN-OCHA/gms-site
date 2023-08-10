@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.filtered_html
     - filter.format.full_html
-    - filter.format.php_code
     - node.type.cbpf_pages
     - node.type.faq
     - node.type.special_page
@@ -58,6 +57,5 @@ permissions:
   - 'select account cancellation method'
   - 'use text format filtered_html'
   - 'use text format full_html'
-  - 'use text format php_code'
   - 'view own unpublished content'
   - 'view revisions'
