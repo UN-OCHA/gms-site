@@ -1,5 +1,5 @@
 # Build the code.
-FROM public.ecr.aws/unocha/unified-builder:8.1-stable as builder
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable as builder
 
 ARG  BRANCH_ENVIRONMENT
 
@@ -12,15 +12,15 @@ WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
-    composer install --no-interaction --ignore-platform-reqs
+    composer install --no-interaction
 
 # Clean up previous npm installation and run new one. Those commands correspond
 # to running `composer sass` but without hitting the PHP timeout from composer.
-RUN cd html/themes/custom/gms_ocha_common && \
-    rm -rf ./node_modules && \
-    npm install && \
-    ./node_modules/.bin/sass sass:build && \
-    rm -rf ./node_modules
+# RUN cd html/themes/custom/gms_ocha_common && \
+#     rm -rf ./node_modules && \
+#     npm install && \
+#     ./node_modules/.bin/sass sass:build && \
+#     rm -rf ./node_modules
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml html/sites/default
