@@ -1,5 +1,5 @@
 # Build the code.
-FROM public.ecr.aws/unocha/unified-builder:8.0-stable as builder
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable as builder
 
 ARG  BRANCH_ENVIRONMENT
 
@@ -16,11 +16,11 @@ RUN rm -rf ./vendor && \
 
 # Clean up previous npm installation and run new one. Those commands correspond
 # to running `composer sass` but without hitting the PHP timeout from composer.
-RUN cd html/themes/custom/gms_ocha_common && \
-    rm -rf ./node_modules && \
-    npm install && \
-    ./node_modules/.bin/sass sass:build && \
-    rm -rf ./node_modules
+# RUN cd html/themes/custom/gms_ocha_common && \
+#     rm -rf ./node_modules && \
+#     npm install && \
+#     ./node_modules/.bin/sass sass:build && \
+#     rm -rf ./node_modules
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml html/sites/default
@@ -28,7 +28,7 @@ RUN cp -a docker/settings.php docker/services.yml html/sites/default
 ################################################################################
 
 # Generate the image.
-FROM public.ecr.aws/unocha/php-k8s:8.0.28-r0-202304-02
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable
 
 ARG VCS_REF
 ARG VCS_URL
@@ -61,4 +61,3 @@ COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.jso
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/symfony.lock /srv/www/symfony.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
-COPY --from=builder /srv/www/docker/etc/nginx/apps/drupal/fastcgi_drupal.conf /etc/nginx/apps/drupal/fastcgi_drupal.conf

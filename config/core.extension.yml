@@ -21,6 +21,7 @@ module:
   condition_query: 0
   conditional_fields: 0
   config: 0
+  config_split: 0
   config_translation: 0
   config_update: 0
   contact: 0
@@ -109,7 +110,6 @@ module:
   social_auth: 0
   social_auth_hid: 0
   social_auth_roles: 0
-  stage_file_proxy: 0
   superfish: 0
   syslog: 0
   system: 0
@@ -133,7 +133,6 @@ module:
   views_base_url: 0
   views_block_area: 0
   views_event_dispatcher: 0
-  views_ui: 0
   workflows: 0
   ds: 1
   pathauto: 1
