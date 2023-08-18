@@ -36,3 +36,4 @@ hidden:
   field_url_path_settings: true
   field_url_redirects: true
   langcode: true
+  search_api_excerpt: true

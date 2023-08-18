@@ -1,5 +1,6 @@
 services:
   gms_secure_role.event_subscriber:
-    class: '\Drupal\gms_secure_role\EventSubscriber\GmsOchaEventSubscriber'
+    class: Drupal\gms_secure_role\EventSubscriber\GmsOchaEventSubscriber
+    arguments: []
     tags:
       - { name: 'event_subscriber' }

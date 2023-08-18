@@ -1,5 +1,6 @@
 services:
   user_login.event_subscriber:
     class: '\Drupal\user_login\EventSubscriber\LoginEventSubscriber'
+    arguments: []
     tags:
       - { name: 'event_subscriber' }
