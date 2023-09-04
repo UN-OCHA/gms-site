@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - contact
+    - contact_storage
     - options
 _core:
   default_config_hash: DPDdSo2bgjXKvRvUgm2UdRhBaXXKo_7cDeVhE1-GRU0

@@ -30,3 +30,4 @@ hidden:
   field_url_redirects: true
   langcode: true
   links: true
+  search_api_excerpt: true
