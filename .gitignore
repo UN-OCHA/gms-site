@@ -9,6 +9,7 @@
 /html/themes/*
 !/html/themes/custom/
 
+/local/.env
 
 # Misc
 /vendor
