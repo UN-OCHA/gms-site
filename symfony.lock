@@ -443,9 +443,6 @@
     "masterminds/html5": {
         "version": "2.7.4"
     },
-    "mehrpadin/superfish": {
-        "version": "2.1"
-    },
     "mikey179/vfsstream": {
         "version": "v1.6.10"
     },
