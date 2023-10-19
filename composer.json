@@ -128,7 +128,7 @@
         "drupal/entity_browser": "^2.6",
         "drupal/environment_indicator": "^4.0",
         "drupal/features": "^3.12",
-        "drupal/genpass": "^1.1",
+        "drupal/genpass": "^2",
         "drupal/google_tag": "^1.4",
         "drupal/hook_event_dispatcher": "^3.2",
         "drupal/http_client_manager": "^2.5",

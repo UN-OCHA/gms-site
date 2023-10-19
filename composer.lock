@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "454a47563944a325a61b3510afe81b36",
+    "content-hash": "aa02630db9ce4344a24e606f1d11ecca",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4863,26 +4863,26 @@
         },
         {
             "name": "drupal/genpass",
-            "version": "1.2.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/genpass.git",
-                "reference": "8.x-1.2"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/genpass-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "849970855f0aa1a791323899ed926b1acf45c02f"
+                "url": "https://ftp.drupal.org/files/projects/genpass-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "51701b3c857e1ef0eed75dd8505ec6b6a5a3e0fb"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.1 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1697203700",
+                    "version": "2.0.0",
+                    "datestamp": "1697203760",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -17990,5 +17990,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
