@@ -2992,16 +2992,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.21",
+            "version": "8.3.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51"
+                "reference": "ba6e62303d567863275fb086941f50a06dc7d08f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
-                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/ba6e62303d567863275fb086941f50a06dc7d08f",
+                "reference": "ba6e62303d567863275fb086941f50a06dc7d08f",
                 "shasum": ""
             },
             "require": {
@@ -3039,7 +3039,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2023-07-17T15:36:49+00:00"
+            "time": "2023-10-15T09:55:50+00:00"
         },
         {
             "name": "drupal/color",
@@ -4863,26 +4863,26 @@
         },
         {
             "name": "drupal/genpass",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/genpass.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/genpass-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "12971093f5d0fce1fcb18856eb8b54809e0e46e4"
+                "url": "https://ftp.drupal.org/files/projects/genpass-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "849970855f0aa1a791323899ed926b1acf45c02f"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1613575173",
+                    "version": "8.x-1.2",
+                    "datestamp": "1697203700",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4891,17 +4891,18 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "starbow",
+                    "homepage": "https://www.drupal.org/u/starbow",
+                    "role": "contributor"
+                },
                 {
                     "name": "Kris77",
                     "homepage": "https://www.drupal.org/u/kris77",
                     "role": "contributor"
-                },
-                {
-                    "name": "greggles",
-                    "homepage": "https://www.drupal.org/user/36762"
                 },
                 {
                     "name": "japanitrat",
@@ -4927,7 +4928,7 @@
             "description": "Great utility module which makes the password field optional (or hidden) on the add new user page (admin & registration). If the password field is not set during registration, the system will generate a password. You can optionally display this password at the time it's created.",
             "homepage": "http://drupal.org/project/genpass",
             "support": {
-                "source": "https://github.com/luksak/genpass",
+                "source": "https://git.drupalcode.org/project/genpass",
                 "issues": "http://drupal.org/project/issues/genpass",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             }
@@ -5593,6 +5594,10 @@
                 {
                     "name": "ben.bunk",
                     "homepage": "https://www.drupal.org/user/764808"
+                },
+                {
+                    "name": "kemsnake",
+                    "homepage": "https://www.drupal.org/user/914800"
                 },
                 {
                     "name": "runeasgar",
@@ -6634,17 +6639,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.29.0",
+            "version": "1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.29"
+                "reference": "8.x-1.30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.29.zip",
-                "reference": "8.x-1.29",
-                "shasum": "4663abbcfe5dfc159ee0886fc6c437e998fc0653"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.30.zip",
+                "reference": "8.x-1.30",
+                "shasum": "25bd2cfab6a6332c595fbc8be1c4cfff33a85ce8"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10.0"
@@ -6665,8 +6670,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.29",
-                    "datestamp": "1679910252",
+                    "version": "8.x-1.30",
+                    "datestamp": "1697366291",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6674,7 +6679,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
