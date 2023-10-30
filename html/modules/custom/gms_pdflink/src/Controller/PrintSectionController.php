@@ -148,6 +148,7 @@ class PrintSectionController extends ControllerBase {
       $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
+    return $response;
 
   }
 
@@ -208,9 +209,16 @@ class PrintSectionController extends ControllerBase {
                   </style>
                 </head>
                 <body>' . $content . '</body>
-             </html>';
-      echo $html;
-      die;
+                </html>';
+
+      // This could *possibly* be an HtmlResponse but things seem to work as-is.
+      $response = new Response();
+      $response->headers->set('Pragma', 'no-cache');
+      $response->headers->set('Content-type', 'text/html; charset=utf-8');
+      $response->headers->set('Cache-control', 'private');
+      $response->headers->set('Content-length', strlen($html));
+      $response->setContent($html);
+      $response->send();
     }
     else {
       global $base_url;
@@ -218,6 +226,7 @@ class PrintSectionController extends ControllerBase {
       $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
+    return $response;
   }
 
 }

@@ -143,6 +143,7 @@ class ViewPdfController extends ControllerBase {
       $response = new RedirectResponse($base_url, 301);
       $response->send();
     }
+    return $response;
   }
 
 }
