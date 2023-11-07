@@ -99,7 +99,6 @@ module:
   redirect: 0
   rest: 0
   scrollup: 0
-  search: 0
   search_api: 0
   search_api_db: 0
   search_api_db_defaults: 0
