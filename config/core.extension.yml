@@ -33,7 +33,6 @@ module:
   csp: 0
   ctools: 0
   datetime: 0
-  dblog: 0
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
   editor: 0
@@ -99,10 +98,8 @@ module:
   redirect: 0
   rest: 0
   scrollup: 0
-  search: 0
   search_api: 0
   search_api_db: 0
-  search_api_db_defaults: 0
   semanticviews: 0
   serialization: 0
   shortcut: 0

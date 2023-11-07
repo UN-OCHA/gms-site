@@ -8,7 +8,6 @@ dependencies:
     - comment
     - filter
     - media
-    - search
     - system
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
@@ -24,6 +23,5 @@ permissions:
   - 'change own openid'
   - 'change own password'
   - 'edit own account'
-  - 'search content'
   - 'use text format svg_embed'
   - 'view media'

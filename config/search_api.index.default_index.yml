@@ -4,13 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_duel_reference
     - field.storage.node.field_cbpf_menu
     - field.storage.node.field_cerf_menu
+    - field.storage.node.field_duel_reference
     - field.storage.node.field_page_type
     - field.storage.node.field_tags
     - search_api.server.default_server
-    - core.entity_view_mode.node.search_index
   module:
     - node
     - user
@@ -94,7 +93,7 @@ field_settings:
     label: Tags
     datasource_id: 'entity:node'
     property_path: field_tags
-    type: integer
+    type: text
     dependencies:
       config:
         - field.storage.node.field_tags
@@ -105,17 +104,6 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
-  rendered_item:
-    label: 'Rendered item'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        - anonymous
-      view_mode:
-        'entity:node':
-          article: search_index
-          page: search_index
   status:
     label: 'Publishing status'
     datasource_id: 'entity:node'
@@ -201,8 +189,7 @@ processor_settings:
       preprocess_index: -3
       preprocess_query: -6
     all_fields: false
-    fields:
-      - rendered_item
+    fields: {  }
     title: true
     alt: true
     tags:
@@ -217,7 +204,6 @@ processor_settings:
       preprocess_query: -8
     all_fields: false
     fields:
-      - rendered_item
       - title
   language_with_fallback: {  }
   rendered_item:
@@ -230,7 +216,6 @@ processor_settings:
       preprocess_query: -10
     all_fields: false
     fields:
-      - rendered_item
       - title
     stopwords:
       - a
@@ -274,7 +259,6 @@ processor_settings:
       preprocess_query: -5
     all_fields: false
     fields:
-      - rendered_item
       - title
     spaces: ''
     ignored: ._-
@@ -286,7 +270,6 @@ processor_settings:
       preprocess_query: -7
     all_fields: false
     fields:
-      - rendered_item
       - title
 tracker_settings:
   default:

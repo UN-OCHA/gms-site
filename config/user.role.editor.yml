@@ -12,7 +12,6 @@ dependencies:
     - filter
     - node
     - path
-    - search
     - system
 id: editor
 label: editor
@@ -38,7 +37,6 @@ permissions:
   - 'edit own static_page content'
   - 'override faq published option'
   - 'override static_page published option'
-  - 'search content'
   - 'use text format filtered_html'
   - 'use text format full_html'
   - 'use text format svg_embed'
