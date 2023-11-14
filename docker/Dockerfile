@@ -61,3 +61,9 @@ COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.jso
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/symfony.lock /srv/www/symfony.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
+COPY --from=builder /srv/www/docker/99-elastic-apm-custom.ini /tmp/99-elastic-apm-custom.ini
+
+RUN  curl -L -o /tmp/apm-agent-php_all.apk https://github.com/elastic/apm-agent-php/releases/download/v1.10.0/apm-agent-php_1.10.0_all.apk && \
+     apk add --allow-untrusted /tmp/apm-agent-php_all.apk && \
+     rm -f /tmp/apm-agent-php_all.apk && \
+     mv -f /tmp/99-elastic-apm-custom.ini /etc/php82/conf.d/99-elastic-apm-custom.ini

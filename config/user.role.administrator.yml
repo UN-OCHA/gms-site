@@ -21,7 +21,6 @@ dependencies:
     - path
     - pathauto
     - redirect
-    - search
     - system
 _core:
   default_config_hash: Om6FEO7vZZMkPIbVvfxtdkWerQ2PvQM4sWUd6Q3ZnfI
@@ -62,7 +61,6 @@ permissions:
   - 'administer print'
   - 'administer redirects'
   - 'administer rules'
-  - 'administer search'
   - 'administer shadowbox'
   - 'administer site configuration'
   - 'administer software updates'
@@ -134,9 +132,7 @@ permissions:
   - 'override static_page revision option'
   - 'override static_page sticky option'
   - 'revert revisions'
-  - 'search content'
   - 'select account cancellation method'
-  - 'use advanced search'
   - 'use ctools import'
   - 'use text format filtered_html'
   - 'use text format full_html'

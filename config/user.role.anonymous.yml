@@ -5,7 +5,6 @@ dependencies:
   module:
     - comment
     - media
-    - search
     - system
 _core:
   default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
@@ -17,6 +16,5 @@ permissions:
   - 'access PDF version'
   - 'access comments'
   - 'access content'
-  - 'search content'
   - 'use hybridauth'
   - 'view media'
