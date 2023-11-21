@@ -16,7 +16,7 @@ function gms_ocha_common_preprocess_page(&$variables) {
   $site_config = \Drupal::config('system.site');
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
-  $variables['site_logo'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+  $variables['site_logo'] = \Drupal::service('file_url_generator')->generateString(theme_get_setting('logo.url'));
 }
 
 /**
@@ -90,6 +90,7 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
     $current_path_result = \Drupal::service('path_alias.manager')
       ->getAliasByPath($current_path, $language);
     $query = \Drupal::entityQuery('path_alias');
+    $query->accessCheck(TRUE);
     $query->condition('alias', $current_path_result, '=');
     $query->condition('langcode', $language, '=');
     $aliasIds = $query->execute();
@@ -149,6 +150,7 @@ function gms_ocha_common_preprocess_menu(&$variables, $hook) {
                 $result = \Drupal::service('path_alias.manager')
                   ->getAliasByPath($url_string, $language);
                 $query = \Drupal::entityQuery('path_alias');
+                $query->accessCheck(TRUE);
                 $query->condition('alias', $result, '=');
                 $aliasIds = $query->execute();
                 $aliasIds = array_values($aliasIds);
@@ -280,7 +282,7 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
       if (isset($form['field_cerf_menu'])) {
         $form['field_cerf_menu']['#states'] = $states_when_category_is_design_cerf;
       };
-	  $form['#validate'][] = 'validate_views_exposed_form';
+      $form['#validate'][] = 'validate_views_exposed_form';
     }
     if (in_array($form['#id'], ['views-exposed-form-search-api-page-block-1'])) {
       $form['field_page_type']['#options']['All'] = t('Select Fund');
@@ -315,17 +317,17 @@ function gms_ocha_common_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Validate views exposed filters in the block region.
  */
-function validate_views_exposed_form (array &$form, $form_state){
+function validate_views_exposed_form(array &$form, $form_state) {
   if ($form_state->getValue('search_api_fulltext') == '') {
-	$form_state->setErrorByName('search_api_fulltext', t('Please enter the text in the search bar.'));
+    $form_state->setErrorByName('search_api_fulltext', t('Please enter the text in the search bar.'));
   }
   if ($form_state->getValue('field_page_type') == 'All') {
-	$form_state->setErrorByName('field_page_type', t('Please select your fund.'));
+    $form_state->setErrorByName('field_page_type', t('Please select your fund.'));
   }
   if ($form_state->getValue('field_page_type') == '1' && $form_state->getValue('field_cbpf_menu') == 'All') {
-	$form_state->setErrorByName('field_cbpf_menu', t('Please select your user role.'));
+    $form_state->setErrorByName('field_cbpf_menu', t('Please select your user role.'));
   }
   if ($form_state->getValue('field_page_type') == '2' && $form_state->getValue('field_cerf_menu') == 'All') {
-	$form_state->setErrorByName('field_cerf_menu', t('Please select your user role.'));
+    $form_state->setErrorByName('field_cerf_menu', t('Please select your user role.'));
   }
 }

@@ -57,3 +57,7 @@ config/routes.yaml
 config/routes
 ###< symfony rubbish ###
 /.gitattributes
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###

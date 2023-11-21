@@ -40,7 +40,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <li> <dl> <dt> <dd> <h3 id> <h4 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <h1> <pre> <u> <span lang dir> <ul type class="p-0 ml-3 mt-4 mb-4"> <ol start type class="p-0 ml-3 mt-4 mb-4"> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <table class="table table-bordered table-default table-striped table-green-left-border table-green-border table-vertical-heading"> <p class="mt-4 mb-4"> <h2 id class="mt-5 mb-5 igf-text-primary"> <h5 id class="mt-5 mb-5 igf-text-primary"> <iframe> <a href hreflang name>'
+      allowed_html: '<table class="table table-bordered table-default table-striped table-green-left-border table-green-border table-vertical-heading"> <ul class="p-0 ml-3 mt-4 mb-4"> <ol class="p-0 ml-3 mt-4 mb-4"> <p class="mt-4 mb-4"> <h2 class="mt-5 mb-5 igf-text-primary"> <h5 class="mt-5 mb-5 igf-text-primary">'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:
@@ -74,11 +74,13 @@ filters:
     weight: 0
     settings:
       onomasticon_vocabulary: categories
+      onomasticon_definition_field: description
+      onomasticon_definition_filters: '0'
       onomasticon_tag: dfn
       onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
       onomasticon_implement: attr_title
       onomasticon_orientation: below
       onomasticon_cursor: default
       onomasticon_ignorecase: '0'
-      onomasticon_repetition: '1'
+      onomasticon_repetition: ''
       onomasticon_termlink: '0'

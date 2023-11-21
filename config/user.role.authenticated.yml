@@ -6,8 +6,10 @@ dependencies:
     - filter.format.svg_embed
   module:
     - comment
+    - file
     - filter
     - media
+    - search
     - system
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
@@ -16,12 +18,9 @@ label: 'authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access PDF version'
   - 'access comments'
   - 'access content'
-  - 'change own e-mail'
-  - 'change own openid'
-  - 'change own password'
-  - 'edit own account'
+  - 'delete own files'
+  - 'search content'
   - 'use text format svg_embed'
   - 'view media'

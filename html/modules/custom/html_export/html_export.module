@@ -328,7 +328,7 @@ function html_export_html_export_data_alter(&$data, $paths, $active_path, $dom_r
       if (isset($obj->href) && (strpos($obj->href, 'http://') === FALSE || strpos($obj->href, 'https://') === FALSE)) {
         $parts = parse_url($obj->href);
         if (isset($parts['path']) && count($parts) == 1) {
-          $query = \Drupal::entityQuery('path_alias');
+          $query = \Drupal::entityQuery('path_alias')->accessCheck(TRUE);
           $query->condition('alias', $parts['path'], '=');
           $aliasIds = $query->execute();
           if (!empty($aliasIds)) {

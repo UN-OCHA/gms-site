@@ -2,9 +2,10 @@
 
 namespace Drupal\gms_secure_role\EventSubscriber;
 
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
 use Drupal\social_auth\Event\SocialAuthEvents;
 use Drupal\social_auth\Event\UserEvent;
+// Use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;.
+use Drupal\user_event_dispatcher\UserHookEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -23,7 +24,8 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
   public static function getSubscribedEvents() {
     return [
       SocialAuthEvents::USER_LOGIN => ['showPopup'],
-      HookEventDispatcherInterface::USER_LOGIN => 'showNormalPopup',
+      // HookEventDispatcherInterface::USER_LOGIN => 'showNormalPopup',.
+      UserHookEvents::USER_LOGIN => 'showNormalPopup',
     ];
   }
 

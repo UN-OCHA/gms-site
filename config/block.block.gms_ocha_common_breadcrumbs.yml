@@ -1,4 +1,4 @@
-uuid: d2c0f9ec-8b34-483a-acd4-4c15fa1246ac
+uuid: 163664be-3ced-499a-b1b7-6e4557dc81a9
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,10 @@ dependencies:
     - system
   theme:
     - gms_ocha_common
-_core:
-  default_config_hash: KpBqqBIyNPTNavLklXPC1-cUAeuwAbBOsrvGussFh1E
 id: gms_ocha_common_breadcrumbs
 theme: gms_ocha_common
 region: page_title
-weight: -19
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -25,8 +23,8 @@ visibility:
     id: request_path
     negate: true
     pages: "<front>\r\n/content/home\r\n/content/cerf\r\n/content/cbpf"
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

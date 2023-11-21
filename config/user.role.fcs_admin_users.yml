@@ -6,6 +6,7 @@ dependencies:
     - node.type.document
     - node.type.donor_page
   module:
+    - file
     - node
 id: fcs_admin_users
 label: 'FCS admin users'
@@ -20,6 +21,7 @@ permissions:
   - 'delete any donor_page content'
   - 'delete own document content'
   - 'delete own donor_page content'
+  - 'delete own files'
   - 'edit any document content'
   - 'edit any donor_page content'
   - 'edit own document content'
