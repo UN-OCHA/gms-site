@@ -17,6 +17,9 @@
         "drupal/entity_browser": {
             "expects parameter 1 to be array": "PATCHES/entity_browser/entity_browser-key-2914385-6.patch"
         },
+        "drupal/features": {
+            "features patch for deprication warning": "PATCHES/features/3375425-deprication-warning-features.patch"
+        },
         "drupal/google_tag": {
             "Error during cache rebuild when assets are stored on NFS": "PATCHES/google_tag/3250315-google-tag-nfs-locks-5.patch"
         },
@@ -27,8 +30,8 @@
         "drupal/username_enumeration_prevention": {
             "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
         },
-        "drupal/features": {
-            "features patch for deprication warning": "PATCHES/features/3375425-deprication-warning-features.patch"
+        "drupal/userprotect": {
+            "Error: Call to a member function grantPermission() on null in userprotect_install()": "https://www.drupal.org/files/issues/2023-07-28/3349663-8.patch"
         }
     }
 }
