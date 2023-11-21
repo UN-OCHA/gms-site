@@ -4,6 +4,9 @@
             "Design Issue": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
             "CSS dialog Design Issue": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         },
+        "drupal/contact_storage": {
+          "Error while field storage definition": "https://www.drupal.org/files/issues/2022-10-19/contact_storage.patch"
+        },
         "drupal/core": {
             "Warning": "PATCHES/core/CoreError.patch",
             "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
@@ -24,7 +27,7 @@
         "drupal/username_enumeration_prevention": {
             "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
         },
-		"drupal/features": {
+        "drupal/features": {
             "features patch for deprication warning": "PATCHES/features/3375425-deprication-warning-features.patch"
         }
     }
