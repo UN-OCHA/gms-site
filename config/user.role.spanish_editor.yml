@@ -10,6 +10,7 @@ dependencies:
   module:
     - content_translation
     - contextual
+    - file
     - filter
     - path
     - system
@@ -21,6 +22,7 @@ permissions:
   - 'access contextual links'
   - 'administer url aliases'
   - 'create url aliases'
+  - 'delete own files'
   - 'link to any page'
   - 'translate duel_reference node'
   - 'translate editable entities'

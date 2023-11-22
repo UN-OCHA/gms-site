@@ -4,7 +4,7 @@ display:
     display_options:
       fields:
         name:
-          label: 'Nom de l''expéditeur'
+          label: "Nom de l'expéditeur"
           separator: ', '
         mail:
           separator: ', '

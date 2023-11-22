@@ -49,3 +49,30 @@ function gms_sitename_schema() {
 
   return $schema;
 }
+
+/**
+ * Hook Update.
+ */
+function gms_sitename_update_9001() {
+  // Removing scrollup from active configuration.
+  $module_data = \Drupal::config('core.extension')->get('module');
+  unset($module_data['scrollup']);
+  \Drupal::configFactory()->getEditable('core.extension')->set('module', $module_data)->save();
+
+  // Fix block visibility config.
+  $config_factory = \Drupal::service('config.factory');
+  $block_configurations = $config_factory->listAll('block.block');
+
+  foreach ($block_configurations as $config_name) {
+    // Load the block configuration.
+    $config = $config_factory->getEditable($config_name);
+
+    // Check for a value and update it if needed.
+    if (is_array($config->get('visibility.node_type'))) {
+      if ($config->get('visibility.node_type')['id'] === 'node_type') {
+        $config->set('visibility.node_type.id', 'entity_bundle:node');
+        $config->save();
+      }
+    }
+  }
+}

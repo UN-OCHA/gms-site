@@ -127,7 +127,7 @@ class SanKeyForm extends FormBase {
                         <div class="header-right"><h4>RECIPIENT COUNTRIES</h4></div>
                     </div>
                     <div id="sankey_chart"></div>
-                </div>',
+                      </div>',
     ];
     $form['jsonUrl'] = $json_url;
     $form['#attached'] = [

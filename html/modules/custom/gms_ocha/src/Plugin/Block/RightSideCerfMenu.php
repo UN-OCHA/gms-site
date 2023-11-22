@@ -122,7 +122,7 @@ class RightSideCerfMenu extends BlockBase implements ContainerFactoryPluginInter
     $group = $query->orConditionGroup()
       ->condition('path', $result, '=')
       ->condition('alias', $result, '=');
-    $aliasIds = $query->condition($group)->execute();
+    $aliasIds = $query->condition($group)->accessCheck(TRUE)->execute();
     // $query->condition('alias', $result, '=');
     // $aliasIds = $query->execute();
     $aliasIds = array_values($aliasIds);

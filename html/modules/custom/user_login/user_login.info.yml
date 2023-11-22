@@ -2,6 +2,6 @@ name: GMS Ocha User Login
 type: module
 description: GMS Ocha Default userlogin disable
 package: GMS Custom Modules
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 dependencies:
   - hook_event_dispatcher:hook_event_dispatcher

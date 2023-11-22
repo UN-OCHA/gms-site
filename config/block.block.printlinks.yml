@@ -1,4 +1,4 @@
-uuid: 71d0e111-1d56-424e-94ba-2da668b10d6a
+uuid: ff4f9a99-620a-47e3-9648-66f7d8f01beb
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: printlinks
 theme: gms_ocha_common
 region: content
-weight: -27
+weight: -21
 provider: null
 plugin: print_links
 settings:
@@ -27,8 +27,8 @@ visibility:
     id: request_path
     negate: true
     pages: "<front>\r\n/content/home\r\n/content/cerf\r\n/content/cbpf"
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

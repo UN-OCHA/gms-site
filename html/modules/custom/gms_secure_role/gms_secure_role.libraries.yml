@@ -7,4 +7,3 @@ gms_secure_role_js:
     - core/once
     - core/jquery.once.bc
     - core/drupal.dialog.ajax
-

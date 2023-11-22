@@ -10,6 +10,7 @@ dependencies:
     - node.type.special_page
     - node.type.static_page
   module:
+    - file
     - filter
     - node
     - path
@@ -19,15 +20,12 @@ label: 'super editor'
 weight: 4
 is_admin: null
 permissions:
-  - 'access administration menu'
   - 'access administration pages'
   - 'access content overview'
   - 'access user profiles'
-  - 'administer fields'
   - 'administer menu'
   - 'administer nodes'
   - 'administer permissions'
-  - 'administer sitename'
   - 'administer users'
   - 'cancel account'
   - 'change own username'
@@ -41,9 +39,9 @@ permissions:
   - 'delete any static_page content'
   - 'delete own cbpf_pages content'
   - 'delete own faq content'
+  - 'delete own files'
   - 'delete own special_page content'
   - 'delete own static_page content'
-  - 'delete revisions'
   - 'edit any cbpf_pages content'
   - 'edit any faq content'
   - 'edit any special_page content'
@@ -52,10 +50,7 @@ permissions:
   - 'edit own faq content'
   - 'edit own special_page content'
   - 'edit own static_page content'
-  - 'flush caches'
-  - 'revert revisions'
   - 'select account cancellation method'
   - 'use text format filtered_html'
   - 'use text format full_html'
   - 'view own unpublished content'
-  - 'view revisions'

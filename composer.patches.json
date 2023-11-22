@@ -4,8 +4,10 @@
             "Design Issue": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
             "CSS dialog Design Issue": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         },
+        "drupal/contact_storage": {
+          "Error while field storage definition": "https://www.drupal.org/files/issues/2022-10-19/contact_storage.patch"
+        },
         "drupal/core": {
-            "CKeditor Image": "PATCHES/ckeditor/2642808-69.patch",
             "Warning": "PATCHES/core/CoreError.patch",
             "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
         },
@@ -14,6 +16,9 @@
         },
         "drupal/entity_browser": {
             "expects parameter 1 to be array": "PATCHES/entity_browser/entity_browser-key-2914385-6.patch"
+        },
+        "drupal/features": {
+            "features patch for deprication warning": "PATCHES/features/3375425-deprication-warning-features.patch"
         },
         "drupal/google_tag": {
             "Error during cache rebuild when assets are stored on NFS": "PATCHES/google_tag/3250315-google-tag-nfs-locks-5.patch"
@@ -24,6 +29,9 @@
         },
         "drupal/username_enumeration_prevention": {
             "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
+        },
+        "drupal/userprotect": {
+            "Error: Call to a member function grantPermission() on null in userprotect_install()": "https://www.drupal.org/files/issues/2023-07-28/3349663-8.patch"
         }
     }
 }

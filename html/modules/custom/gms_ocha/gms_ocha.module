@@ -175,7 +175,7 @@ function gms_ocha_preprocess_block(&$variables) {
     $current_path = \Drupal::service('path.current')->getPath();
     $result = \Drupal::service('path_alias.manager')
       ->getAliasByPath($current_path);
-    $query = \Drupal::entityQuery('path_alias');
+    $query = \Drupal::entityQuery('path_alias')->accessCheck(TRUE);
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     if (!empty($aliasIds)) {
@@ -209,7 +209,7 @@ function gms_ocha_preprocess_block(&$variables) {
     $current_path = \Drupal::service('path.current')->getPath();
     $result = \Drupal::service('path_alias.manager')
       ->getAliasByPath($current_path);
-    $query = \Drupal::entityQuery('path_alias');
+    $query = \Drupal::entityQuery('path_alias')->accessCheck(TRUE);
     $query->condition('alias', $result, '=');
     $aliasIds = $query->execute();
     if (!empty($aliasIds)) {

@@ -28,7 +28,7 @@ display:
           label: Objet
           separator: ', '
         name:
-          label: 'Nom de l''expéditeur'
+          label: "Nom de l'expéditeur"
           separator: ', '
         contact_form_label:
           label: 'Formulaire de contact'
