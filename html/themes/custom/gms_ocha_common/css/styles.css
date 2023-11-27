@@ -3539,7 +3539,7 @@ html[dir=rtl] .cd-site-header__nav-holder .cd-nav button {
   @media(min-width:1024px) {
     .cd-footer__section--mandate {
       flex: 1 0 50%;
-      max-width: 780px;
+      max-width: 892px;
       margin: 0
     }
   }
@@ -3675,7 +3675,7 @@ a.cd-footer-copyright__link:focus {
   width: 149px;
   height: 37px;
   margin: 0 auto 16px;
-  background: url(/themes/contrib/common_design/img/logos/ocha-lockup.svg) 0 center no-repeat
+  /* background: url(/themes/contrib/common_design/img/logos/ocha-lockup.svg) 6px 0 no-repeat */
 }
 
 [dir=rtl] .cd-mandate__logo {
@@ -3734,8 +3734,7 @@ a.cd-footer-copyright__link:focus {
     max-width: 100%;
     margin: 0;
     padding: 0;
-    padding-right: var(--cd-container-padding-xlarge);
-    padding-left: 173px;
+    padding-right: var(--cd-container-padding-xlarge);    
     text-align: left
   }
 
@@ -4595,7 +4594,8 @@ u {
 
 .cd-search__btn:hover,
 .cd-search__btn:focus {
-  color: var(--cd-blue--dark);
+  color: var(--cd-blue--dark) !important;
+  text-decoration:none !important;
 }
 
 .cd-search__btn:hover svg,
@@ -5080,6 +5080,7 @@ a:focus {
 
 #block-highmaptableau {
   width: 80%;
+  overflow:hidden;
 }
 
 #block-cbpfsmultidonorhumanitarian {
@@ -7516,4 +7517,9 @@ display: block;}
 .search-pg .cd-layout-content-wrapper .search-panel .view-content .views-row .views-field-body {font-size: var(--cd-font-size--tiny); margin-top: 5px; margin-bottom: 10px;}
 
 .cd-pager__items {font-size: var(--cd-font-size--small);}
+
+.js .cd-global-header__actions {background:transparent;}
+.js .cd-global-header__actions > * {background:transparent;}
+
+#backtotop {height: 60px; width: 60px; border-radius: 50%;}
 

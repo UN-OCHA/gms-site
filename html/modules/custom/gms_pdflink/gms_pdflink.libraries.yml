@@ -14,5 +14,5 @@ pdf_links:
     js/pdf_links.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupalSettings

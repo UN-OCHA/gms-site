@@ -1,9 +1,12 @@
 uuid: 0c811f87-128b-40b7-be70-e32ff63942ee
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: hfu_fund_manager
 label: 'HFU Fund Manager'
 weight: 55
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

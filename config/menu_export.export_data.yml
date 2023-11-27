@@ -2401,7 +2401,7 @@
   enabled:
     value: '1'
   title:
-    value: 'Performance Review and Partner''s Risk management'
+    value: "Performance Review and Partner's Risk management"
   description: false
   menu_name:
     value: menu-ocha
@@ -5980,7 +5980,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Timelines'' impact on OCHA Assurance'
+    value: "Timelines' impact on OCHA Assurance"
   description:
     value: ''
   menu_name:
@@ -6344,7 +6344,7 @@
   enabled:
     value: '0'
   title:
-    value: 'How to approve Users'' registration on the GMS (HFU only) ?'
+    value: "How to approve Users' registration on the GMS (HFU only) ?"
   description:
     value: ''
   menu_name:
@@ -6448,7 +6448,7 @@
   enabled:
     value: '0'
   title:
-    value: 'How to edit my profile''s info? '
+    value: "How to edit my profile's info? "
   description:
     value: ''
   menu_name:
@@ -8277,7 +8277,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Scorecard''s categories'
+    value: "Scorecard's categories"
   description:
     value: ''
   menu_name:
@@ -8329,7 +8329,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Scorecard''s questions'
+    value: "Scorecard's questions"
   description:
     value: ''
   menu_name:
@@ -8381,7 +8381,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Scorecard''s multiple answers'
+    value: "Scorecard's multiple answers"
   description:
     value: ''
   menu_name:
@@ -8433,7 +8433,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Scorecard''s recommendations'
+    value: "Scorecard's recommendations"
   description:
     value: ''
   menu_name:
@@ -8484,7 +8484,7 @@
   enabled:
     value: '0'
   title:
-    value: 'How to weight the scorecard''s elements?'
+    value: "How to weight the scorecard's elements?"
   description: false
   menu_name:
     value: menu-ocha
@@ -8535,7 +8535,7 @@
   enabled:
     value: '0'
   title:
-    value: 'Scorecard''s color code'
+    value: "Scorecard's color code"
   description:
     value: ''
   menu_name:
@@ -18679,7 +18679,7 @@
   enabled:
     value: '1'
   title:
-    value: 'How to edit my profile''s info'
+    value: "How to edit my profile's info"
   description:
     value: ''
   menu_name:
@@ -18731,7 +18731,7 @@
   enabled:
     value: '1'
   title:
-    value: 'How to edit my profile''s info'
+    value: "How to edit my profile's info"
   description:
     value: ''
   menu_name:
@@ -18783,7 +18783,7 @@
   enabled:
     value: '1'
   title:
-    value: 'How to edit my profile''s info'
+    value: "How to edit my profile's info"
   description:
     value: ''
   menu_name:
@@ -18831,7 +18831,7 @@
   enabled:
     value: '1'
   title:
-    value: 'How to edit my profile''s info'
+    value: "How to edit my profile's info"
   description:
     value: ''
   menu_name:
@@ -27746,7 +27746,7 @@
   enabled:
     value: '1'
   title:
-    value: 'How to approve user''s registration on the OneGMS'
+    value: "How to approve user's registration on the OneGMS"
   description: false
   menu_name:
     value: menu-ocha
@@ -30129,7 +30129,7 @@
   enabled:
     value: '1'
   title:
-    value: 'Performance Index calculation and impact on the partner''s risk level'
+    value: "Performance Index calculation and impact on the partner's risk level"
   description: false
   menu_name:
     value: menu-ocha

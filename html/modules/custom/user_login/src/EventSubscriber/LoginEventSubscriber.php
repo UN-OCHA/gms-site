@@ -2,7 +2,8 @@
 
 namespace Drupal\user_login\EventSubscriber;
 
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+// Use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;.
+use Drupal\core_event_dispatcher\FormHookEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -15,7 +16,7 @@ class LoginEventSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents() {
     return [
-      HookEventDispatcherInterface::FORM_ALTER => 'formModification',
+      FormHookEvents::FORM_ALTER => 'formModification',
     ];
   }
 

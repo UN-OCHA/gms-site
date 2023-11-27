@@ -13,7 +13,7 @@ sankey_chart:
   - core/drupal.ajax
   - core/drupal
   - core/drupalSettings
-  - core/jquery.once
+  - core/once
 welcome_text:
   js:
     js/clock.js: {}
@@ -22,11 +22,11 @@ welcome_text:
     - core/drupal.ajax
     - core/drupal
     - core/drupalSettings
-    - core/jquery.once
+    - core/once
 menu_portal:
   js:
     js/gms_ocha_portal_menu.js: {}
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
+    - core/once

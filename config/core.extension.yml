@@ -4,19 +4,15 @@ module:
   acl: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
-  anchor_link: 0
   automated_cron: 0
+  back_to_top: 0
   big_pipe: 0
   block: 0
   block_class: 0
   block_content: 0
   breakpoint: 0
-  ckeditor: 0
-  ckeditor_config: 0
-  ckeditor_font: 0
-  ckeditor_iframe: 0
+  ckeditor5: 0
   codemirror_editor: 0
-  colorbutton: 0
   comment: 0
   condition_query: 0
   conditional_fields: 0
@@ -41,7 +37,6 @@ module:
   entity_browser_entity_form: 0
   entity_browser_example: 0
   environment_indicator: 0
-  fakeobjects: 0
   features: 0
   field: 0
   field_event_dispatcher: 0
@@ -90,14 +85,13 @@ module:
   options: 0
   page_cache: 0
   page_specific_class: 0
-  panelbutton: 0
   path: 0
   path_alias: 0
+  phpass: 0
   quickedit: 0
   rdf: 0
   redirect: 0
   rest: 0
-  scrollup: 0
   search: 0
   search_api: 0
   search_api_db: 0
@@ -140,8 +134,8 @@ module:
   views: 10
   minimal: 1000
 theme:
-  seven: 0
   stable: 0
   common_design: 0
   gms_ocha_common: 0
+  claro: 0
 profile: minimal

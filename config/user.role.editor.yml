@@ -9,20 +9,18 @@ dependencies:
     - node.type.faq
     - node.type.static_page
   module:
+    - file
     - filter
     - node
     - path
+    - search
     - system
 id: editor
 label: editor
 weight: 2
 is_admin: null
 permissions:
-  - 'access PDF version'
-  - 'access administration menu'
   - 'access content overview'
-  - 'administer menu-faq-menu menu items'
-  - 'administer menu-ocha menu items'
   - 'administer modules'
   - 'create faq content'
   - 'create static_page content'
@@ -30,13 +28,13 @@ permissions:
   - 'delete any faq content'
   - 'delete any static_page content'
   - 'delete own faq content'
+  - 'delete own files'
   - 'delete own static_page content'
   - 'edit any faq content'
   - 'edit any static_page content'
   - 'edit own faq content'
   - 'edit own static_page content'
-  - 'override faq published option'
-  - 'override static_page published option'
+  - 'search content'
   - 'use text format filtered_html'
   - 'use text format full_html'
   - 'use text format svg_embed'

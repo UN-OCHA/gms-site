@@ -108,3 +108,4 @@ hidden:
   field_thumbnail_image: true
   langcode: true
   links: true
+  search_api_excerpt: true

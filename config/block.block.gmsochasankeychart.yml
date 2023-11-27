@@ -10,7 +10,7 @@ dependencies:
 id: gmsochasankeychart
 theme: gms_ocha_common
 region: content
-weight: -25
+weight: -19
 provider: null
 plugin: gms_ocha_sankey_chart
 settings:

@@ -1,6 +1,6 @@
 name: 'HTML Export'
 description: 'This allows you to export drupal paths to a HTML package.'
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'HTML Export'
 type: module

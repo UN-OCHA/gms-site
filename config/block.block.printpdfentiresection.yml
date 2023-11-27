@@ -11,7 +11,7 @@ dependencies:
 id: printpdfentiresection
 theme: gms_ocha_common
 region: content
-weight: -28
+weight: -22
 provider: null
 plugin: print_entire
 settings:

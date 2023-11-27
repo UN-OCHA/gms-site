@@ -1,99 +1,182 @@
-uuid: d865c8c1-53b4-4212-b5d6-d3a2573d3eb8
+uuid: f97b026e-9761-484b-99d7-2f8ec1d8cb3f
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+    - ckeditor5
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Iframe
-            - Underline
-            - Strike
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
-            - Undo
-            - Redo
-            - Cut
-            - Copy
-            - Paste
-            - PasteText
-            - PasteFromWord
-            - SpecialChar
-            - TextColor
-            - BGColor
-            - FontSize
-            - Font
-        -
-          name: paragraph
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
-            - Outdent
-            - Indent
-        -
-          name: Linking
-          items:
-            - Link
-            - Unlink
-            - Anchor
-            - ImceLink
-            - tokenbrowser
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - ImceImage
-            - DrupalImage
-            - DrupalMediaLibrary
-            - Table
-            - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-            - Styles
-            - Maximize
-            - Language
-        -
-          name: Tools
-          items:
-            - ShowBlocks
-            - Source
+    items:
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - undo
+      - redo
+      - specialCharacters
+      - '|'
+      - alignment
+      - outdent
+      - indent
+      - '|'
+      - imce_link
+      - tokenBrowser
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - imce_image
+      - drupalInsertImage
+      - drupalMedia
+      - insertTable
+      - horizontalLine
+      - '|'
+      - heading
+      - codeBlock
+      - style
+      - textPartLanguage
+      - '|'
+      - sourceEditing
   plugins:
-    stylescombo:
-      styles: "table.table.table-bordered|Table bordered\r\ntable.table.table-default|Table default\r\ntable.table.table-striped|Table strip\r\ntable.table.table-green-left-border|Table green left border\r\ntable.table.table-green-border|Table green border\r\ntable.table.table-vertical-heading|Table vertical heading\r\nul.p-0.ml-3|Left spacing none (Unordered List)\r\nul.mt-4|Top spacing (Unordered List)\r\nul.mb-4|Bottom spacing (Unordered List)\r\nol.p-0.ml-3|Left spacing none (Ordered List)\r\nol.mt-4|Top spacing (Ordered List)\r\nol.mb-4|Bottom spacing (Ordered List)\r\np.mt-4|Top spacing (Paragraph)\r\np.mb-4|Bottom spacing (Paragraph)\r\nh2.mt-5|Top spacing (Heading 2)\r\nh2.mb-5|Bottom spacing (Heading 2)\r\nh2.igf-text-primary|Green Text (Heading 2)\r\nh5.mt-5|Top spacing (Heading 5)\r\nh5.mb-5|Bottom spacing (Heading 5)\r\nh5.igf-text-primary|Green Text (Heading 5)"
-    language:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Plain text'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diff
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_language:
       language_list: un
-    customconfig:
-      ckeditor_custom_config: ''
-    font:
-      font_names: ''
-      font_sizes: ''
-    colorbutton:
-      colors: ''
-    tokenbrowser:
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Table bordered'
+          element: '<table class="table table-bordered">'
+        -
+          label: 'Table default'
+          element: '<table class="table table-default">'
+        -
+          label: 'Table strip'
+          element: '<table class="table table-striped">'
+        -
+          label: 'Table green left border'
+          element: '<table class="table table-green-left-border">'
+        -
+          label: 'Table green border'
+          element: '<table class="table table-green-border">'
+        -
+          label: 'Table vertical heading'
+          element: '<table class="table table-vertical-heading">'
+        -
+          label: 'Left spacing none (Unordered List)'
+          element: '<ul class="p-0 ml-3">'
+        -
+          label: 'Top spacing (Unordered List)'
+          element: '<ul class="mt-4">'
+        -
+          label: 'Bottom spacing (Unordered List)'
+          element: '<ul class="mb-4">'
+        -
+          label: 'Left spacing none (Ordered List)'
+          element: '<ol class="p-0 ml-3">'
+        -
+          label: 'Top spacing (Ordered List)'
+          element: '<ol class="mt-4">'
+        -
+          label: 'Bottom spacing (Ordered List)'
+          element: '<ol class="mb-4">'
+        -
+          label: 'Top spacing (Paragraph)'
+          element: '<p class="mt-4">'
+        -
+          label: 'Bottom spacing (Paragraph)'
+          element: '<p class="mb-4">'
+        -
+          label: 'Top spacing (Heading 2)'
+          element: '<h2 class="mt-5">'
+        -
+          label: 'Bottom spacing (Heading 2)'
+          element: '<h2 class="mb-5">'
+        -
+          label: 'Green Text (Heading 2)'
+          element: '<h2 class="igf-text-primary">'
+        -
+          label: 'Top spacing (Heading 5)'
+          element: '<h5 class="mt-5">'
+        -
+          label: 'Bottom spacing (Heading 5)'
+          element: '<h5 class="mb-5">'
+        -
+          label: 'Green Text (Heading 5)'
+          element: '<h5 class="igf-text-primary">'
+    media_media:
+      allow_view_mode_override: false
+    token_filter_token_browser:
       token_types: {  }
 image_upload:
   status: true
@@ -101,5 +184,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

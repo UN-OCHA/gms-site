@@ -1,8 +1,9 @@
-uuid: 07560f7d-fee6-4fbd-a135-b331240b5869
+uuid: 08ee9add-dd51-4248-a7cc-3a80e44545bb
 langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - condition_query
     - gms_ocha
     - node
@@ -12,7 +13,7 @@ dependencies:
 id: rightsidemenu
 theme: gms_ocha_common
 region: sidebar_first
-weight: -15
+weight: -22
 provider: null
 plugin: rightside_menu
 settings:
@@ -25,10 +26,6 @@ visibility:
     id: request_path
     negate: true
     pages: "<front>\r\n/content/home\r\n/cerf-home\r\n/cerf/*\r\n/content/cerf\r\n/content/cbpf"
-  request_param:
-    id: request_param
-    request_param: menu_visibility=show
-    negate: true
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
@@ -36,3 +33,7 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       static_page: static_page
+  request_param:
+    id: request_param
+    request_param: menu_visibility=show
+    negate: 1
