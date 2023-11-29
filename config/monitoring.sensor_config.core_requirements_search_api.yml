@@ -1,0 +1,20 @@
+uuid: c4e5a4bd-ae70-4b76-9afc-a65ae90d4eb3
+langcode: en
+status: false
+dependencies:
+  module:
+    - search_api
+id: core_requirements_search_api
+label: 'Module search_api'
+description: 'Requirements of the search_api module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: search_api
+  exclude_keys: {  }
+thresholds:
+  type: none

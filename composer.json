@@ -205,6 +205,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.2",
+        "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_snap": "^8.3.0",
         "webflo/drupal-finder": "^1.2.2"
     },
