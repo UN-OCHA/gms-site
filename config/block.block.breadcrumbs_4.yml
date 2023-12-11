@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - node
     - system
   theme:
@@ -26,3 +27,7 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       blog_entry: blog_entry
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/content*'
