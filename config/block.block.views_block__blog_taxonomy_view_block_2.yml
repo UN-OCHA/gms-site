@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.blog_taxonomy_view
   module:
+    - block_class
     - node
     - system
     - views
@@ -35,4 +36,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/access-denied\r\n/page-not-found\r\n/content/gms-one"
+    pages: "/access-denied\r\n/page-not-found\r\n/content/gms-one\r\n/content/gms-blog\r\n/content*"
