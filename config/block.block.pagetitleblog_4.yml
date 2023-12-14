@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - gms_ocha
+    - node
     - system
   theme:
     - gms_ocha_common
@@ -22,4 +24,12 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/content/home\r\n<front>\r\n/content/cerf\r\n/content/cbpf\r\n/content/gms-one"
+    pages: "/content/home\r\n<front>\r\n/content/cerf\r\n/content/cbpf\r\n/content/gms-one\r\n/content/gms-blog"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page
+      static_page: static_page
