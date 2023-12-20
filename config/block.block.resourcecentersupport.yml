@@ -1,0 +1,31 @@
+uuid: ffa5c0d4-d06b-492f-b304-a7ce7209debd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e4e97808-1028-4931-a55c-c955a5e2d3d5'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - gms_ocha_common
+id: resourcecentersupport
+theme: gms_ocha_common
+region: fluid_content
+weight: 0
+provider: null
+plugin: 'block_content:e4e97808-1028-4931-a55c-c955a5e2d3d5'
+settings:
+  id: 'block_content:e4e97808-1028-4931-a55c-c955a5e2d3d5'
+  label: 'Resource Center Support'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /content/gms-one

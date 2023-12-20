@@ -1,0 +1,41 @@
+uuid: 9f019cee-c403-4ddb-8923-af200b182c9d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2097942c-6b8b-44f2-82a5-988b4dcc6d97'
+  module:
+    - block_class
+    - block_content
+    - node
+    - system
+  theme:
+    - gms_ocha_common
+id: custombot
+theme: gms_ocha_common
+region: footer_navigation
+weight: 0
+provider: null
+plugin: 'block_content:2097942c-6b8b-44f2-82a5-988b4dcc6d97'
+settings:
+  id: 'block_content:2097942c-6b8b-44f2-82a5-988b4dcc6d97'
+  label: 'Custom Bot'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/content/gms-blog\r\n/content/contact-information\r\n/content/terms-and-conditions-use\r\n/content/privacy-statement"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      duel_reference: duel_reference
+      page: page
+      static_page: static_page
