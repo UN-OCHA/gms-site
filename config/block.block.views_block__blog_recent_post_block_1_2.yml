@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.blog_recent_post
   module:
+    - block_class
     - node
     - system
     - views
@@ -12,7 +13,7 @@ dependencies:
     - gms_ocha_common
 id: views_block__blog_recent_post_block_1_2
 theme: gms_ocha_common
-region: sidebar_first
+region: sidebar_second
 weight: -21
 provider: null
 plugin: 'views_block:blog_recent_post-block_1'
