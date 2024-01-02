@@ -201,7 +201,7 @@
         "drupal/views_block_area": "^1.0@beta",
         "drupal/votingapi": "^3.0@beta",
         "drupaloverride/condition_query": "dev-master",
-        "drush/drush": "^11",
+        "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.2",
