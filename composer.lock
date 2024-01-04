@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3a503318addcc1aff6628c30319e234",
+    "content-hash": "703955ae3b2717659552a1c0308dd748",
     "packages": [
         {
             "name": "arthurkirkosa/guzzle-description-loader",
@@ -169,7 +169,7 @@
         },
         {
             "name": "ckeditor-plugin/colorbutton",
-            "version": "4.11.1",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.11.1.zip"
@@ -178,43 +178,34 @@
         },
         {
             "name": "ckeditor-plugin/fakeobjects",
-            "version": "4.16.2",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.2.0"
             },
             "type": "drupal-library"
         },
         {
             "name": "ckeditor-plugin/iframe",
-            "version": "4.16.2",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.16.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.2.0"
             },
             "type": "drupal-library"
         },
         {
             "name": "ckeditor-plugin/link",
-            "version": "4.17.2",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/link/releases/link_4.17.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.2.0"
             },
             "type": "drupal-library"
         },
         {
             "name": "ckeditor-plugin/panelbutton",
-            "version": "4.11.1",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.11.1.zip"
@@ -223,39 +214,37 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.12.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.3"
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "autoload": {
                 "psr-4": {
@@ -276,7 +265,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -297,7 +285,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -316,7 +303,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -325,6 +311,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -344,9 +331,7 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -354,7 +339,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.12.0"
+                "source": "https://github.com/composer/installers/tree/v2.2.0"
             },
             "funding": [
                 {
@@ -370,7 +355,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-13T08:19:44+00:00"
+            "time": "2022-08-20T06:45:11+00:00"
         },
         {
             "name": "composer/semver",
@@ -12638,20 +12623,20 @@
         },
         {
             "name": "unocha/ocha_snap",
-            "version": "v8.8.0",
+            "version": "v8.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_snap.git",
-                "reference": "b68643f8055ca5b4618a4f6cf0bf49f969bbc670"
+                "reference": "d2e949adbd7ff466afb717f712b232c5eccabceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_snap/zipball/b68643f8055ca5b4618a4f6cf0bf49f969bbc670",
-                "reference": "b68643f8055ca5b4618a4f6cf0bf49f969bbc670",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_snap/zipball/d2e949adbd7ff466afb717f712b232c5eccabceb",
+                "reference": "d2e949adbd7ff466afb717f712b232c5eccabceb",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.2",
+                "composer/installers": "^1 || ^2",
                 "drupal/core": "^8 || ^9 || ^10"
             },
             "conflict": {
@@ -12668,9 +12653,9 @@
             ],
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_snap/issues",
-                "source": "https://github.com/UN-OCHA/ocha_snap/tree/v8.8.0"
+                "source": "https://github.com/UN-OCHA/ocha_snap/tree/v8.9.0"
             },
-            "time": "2023-12-06T08:54:23+00:00"
+            "time": "2024-01-03T08:55:02+00:00"
         },
         {
             "name": "webflo/drupal-finder",
