@@ -1566,17 +1566,17 @@
         },
         {
             "name": "drupal/auto_config_form",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/auto_config_form.git",
-                "reference": "1.0.1"
+                "reference": "1.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/auto_config_form-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "bd61b3e21f987717ccf45b1cd2ac8d474317bb07"
+                "url": "https://ftp.drupal.org/files/projects/auto_config_form-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "737d0d8a8661ea1e42a5372e07aa9a60620d85b4"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -1584,8 +1584,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1668506497",
+                    "version": "1.0.2",
+                    "datestamp": "1704323027",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -4221,17 +4221,17 @@
         },
         {
             "name": "drupal/imce",
-            "version": "3.0.10",
+            "version": "3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/imce.git",
-                "reference": "3.0.10"
+                "reference": "3.0.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/imce-3.0.10.zip",
-                "reference": "3.0.10",
-                "shasum": "7b17140a4875e8484d9ca77eb33207eced61f780"
+                "url": "https://ftp.drupal.org/files/projects/imce-3.0.11.zip",
+                "reference": "3.0.11",
+                "shasum": "8d9fb9df41288baa7851a6700be1f1af47de00b1"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -4242,8 +4242,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.10",
-                    "datestamp": "1703073444",
+                    "version": "3.0.11",
+                    "datestamp": "1704304923",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7148,6 +7148,10 @@
                 {
                     "name": "nils.destoop",
                     "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "paulrad",
+                    "homepage": "https://www.drupal.org/user/3722439"
                 }
             ],
             "description": "Exposes all blocks as a views area.",
