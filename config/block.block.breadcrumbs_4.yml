@@ -10,7 +10,7 @@ dependencies:
     - gms_ocha_common
 id: breadcrumbs_4
 theme: gms_ocha_common
-region: header_third
+region: navigation
 weight: -19
 provider: null
 plugin: system_breadcrumb_block
@@ -29,5 +29,5 @@ visibility:
       blog_entry: blog_entry
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: '/content*'
