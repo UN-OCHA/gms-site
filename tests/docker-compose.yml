@@ -4,14 +4,14 @@ networks:
   default:
 
 volumes:
-  gms9-site-public:
-  gms9-site-private:
+  gms-site-public:
+  gms-site-private:
 
 services:
   mysql:
     image: public.ecr.aws/unocha/mysql:10.11
-    hostname: gms9-test-mysql
-    container_name: gms9-test-mysql
+    hostname: gms-test-mysql
+    container_name: gms-test-mysql
     environment:
       - MYSQL_DB=gms
       - MYSQL_USER=gms
@@ -20,14 +20,14 @@ services:
       - default
 
   drupal:
-    image: public.ecr.aws/unocha/gms9-site:local
-    hostname: gms9-test-site
-    container_name: gms9-test-site
+    image: public.ecr.aws/unocha/gms-site:local
+    hostname: gms-test-site
+    container_name: gms-test-site
     volumes:
       - "./settings:/srv/www/shared/settings:ro"
       # Mount volumes for the private and public files.
-      - "gms9-site-public:/srv/www/html/sites/default/files:rw"
-      - "gms9-site-private:/srv/www/html/sites/default/private:rw"
+      - "gms-site-public:/srv/www/html/sites/default/files:rw"
+      - "gms-site-private:/srv/www/html/sites/default/private:rw"
       # Mount the folders needed for the tests.
       - "../tests:/srv/www/tests"
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
@@ -35,9 +35,9 @@ services:
     environment:
       - TERM=xterm
       - ENVIRONMENT=dev
-      - NGINX_SERVERNAME=gms9-test-site,localhost,127.0.0.1
-      - NGINX_OVERRIDE_PROTOCOL=HTTP,gms9-test-site,localhost,127.0.0.1
-      - DRUSH_OPTIONS_URI=http://gms9-test-site
+      - NGINX_SERVERNAME=gms-test-site,localhost,127.0.0.1
+      - NGINX_OVERRIDE_PROTOCOL=HTTP,gms-test-site,localhost,127.0.0.1
+      - DRUSH_OPTIONS_URI=http://gms-test-site
       - DRUPAL_DB_DATABASE=gms
       - DRUPAL_DB_USERNAME=gms
       - DRUPAL_DB_PASSWORD=gms
