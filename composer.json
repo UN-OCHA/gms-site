@@ -22,7 +22,7 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/colorbutton",
-                "version": "4.11.1",
+                "version": "4.23.0",
                 "type": "drupal-library",
                 "dist": {
                     "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.11.1.zip",
@@ -34,7 +34,7 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/panelbutton",
-                "version": "4.11.1",
+                "version": "4.23.0",
                 "type": "drupal-library",
                 "dist": {
                     "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.11.1.zip",
@@ -47,13 +47,10 @@
             "package": {
                 "name": "ckeditor-plugin/iframe",
                 "type": "drupal-library",
-                "version": "4.16.2",
+                "version": "4.23.0",
                 "dist": {
                     "url": "https://download.ckeditor.com/iframe/releases/iframe_4.16.2.zip",
                     "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
                 }
             }
         },
@@ -62,13 +59,10 @@
             "package": {
                 "name": "ckeditor-plugin/fakeobjects",
                 "type": "drupal-library",
-                "version": "4.16.2",
+                "version": "4.23.0",
                 "dist": {
                     "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
                     "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
                 }
             }
         },
@@ -77,13 +71,10 @@
             "package": {
                 "name": "ckeditor-plugin/link",
                 "type": "drupal-library",
-                "version": "4.17.2",
+                "version": "4.23.0",
                 "dist": {
                     "url": "https://download.ckeditor.com/link/releases/link_4.17.2.zip",
                     "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
                 }
             }
         },
@@ -119,7 +110,7 @@
         "ckeditor-plugin/iframe": "^4.16.2",
         "ckeditor-plugin/link": "^4.17.2",
         "ckeditor-plugin/panelbutton": "^4.11",
-        "composer/installers": "^1.10",
+        "composer/installers": "^2",
         "cweagans/composer-patches": "^1.7",
         "drupal/acl": "^2.0@beta",
         "drupal/admin_denied": "^2",
@@ -201,7 +192,7 @@
         "drupal/views_block_area": "^1.0@beta",
         "drupal/votingapi": "^3.0@beta",
         "drupaloverride/condition_query": "dev-master",
-        "drush/drush": "^11",
+        "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.2",

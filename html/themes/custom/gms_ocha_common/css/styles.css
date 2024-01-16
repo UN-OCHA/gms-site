@@ -5733,8 +5733,10 @@ li.nav-item-others {
   background-color:#f7f8f9;
 }
 .blog-page .cd-layout-container main {
-  margin-top: 50px;
+  margin-top: 30px;
 }
+
+.blog-page .cd-layout-with-sidebar-second .block-system-breadcrumb-block {margin-bottom: 30px; background: #eee; padding: 5px 10px; margin-top:-20px;}
 
 .blog-page .cd-layout-container .cd-layout-content-wrapper .cd-layout-sidebar-first {
   position: relative;
@@ -5783,6 +5785,9 @@ li.nav-item-others {
 .blog-page .cd-layout-container .blog-title-panel .block-system-breadcrumb-block {
   float: right;
 }
+a.blog-home-link {color: #1f69b3; font-size: 12px; font-weight: 300; text-decoration: none;}
+a.blog-home-link:hover {color:#333; text-decoration:underline;}
+a.blog-home-link i {margin-right:5px;}
 
 .blog-page .cd-layout-container .blog-title-panel .block-system-breadcrumb-block ol {
   margin: 0;
