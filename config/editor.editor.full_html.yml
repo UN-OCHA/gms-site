@@ -26,6 +26,7 @@ settings:
       - outdent
       - indent
       - '|'
+      - link
       - imce_link
       - tokenBrowser
       - '|'
