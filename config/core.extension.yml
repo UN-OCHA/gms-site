@@ -4,7 +4,9 @@ module:
   acl: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  amazon_ses: 0
   automated_cron: 0
+  aws: 0
   back_to_top: 0
   big_pipe: 0
   block: 0
@@ -62,6 +64,7 @@ module:
   link: 0
   locale: 0
   mailcontrol: 0
+  mailsystem: 0
   maintenance200: 0
   media: 0
   media_entity_browser: 0
