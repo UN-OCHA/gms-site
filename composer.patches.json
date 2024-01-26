@@ -5,7 +5,9 @@
             "CSS dialog Design Issue": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         },
         "drupal/amazon_ses": {
-          "Issue #3416368: Error not caught when AWS API returns 403": "https://git.drupalcode.org/project/amazon_ses/-/merge_requests/13.diff"
+          "Error not caught when AWS API returns 403": "PATCHES/3416368-error-not-caught.patch",
+          "Error not caught when AWS API returns 403 extra backport": "PATCHES/3416368-error-not-caught-extra.patch",
+          "Error not caught when AWS API returns 403 extra queue fix": "PATCHES/3416368-error-not-caught-queue.patch"
         },
         "drupal/contact_storage": {
           "Error while field storage definition": "https://www.drupal.org/files/issues/2022-10-19/contact_storage.patch"
