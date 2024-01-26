@@ -1,0 +1,17 @@
+diff --git a/src/AmazonSesHandler.php b/src/AmazonSesHandler.php
+index 28342d8..103829c 100644
+--- a/src/AmazonSesHandler.php
++++ b/src/AmazonSesHandler.php
+@@ -126,6 +126,12 @@ class AmazonSesHandler implements AmazonSesHandlerInterface {
+    */
+   protected function getSleepTime() {
+     $results = $this->getSendQuota();
++
++    // Avoid a division by zero if the quota call failed.
++    if (empty($results)) {
++      return 0;
++    }
++
+     $per_second = ceil(1000000 / $results['MaxSendRate']);
+ 
+     return intval($per_second);
