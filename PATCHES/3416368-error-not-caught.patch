@@ -1,0 +1,90 @@
+diff --git a/src/AmazonSesHandler.php b/src/AmazonSesHandler.php
+index ed8882c..cb2fb01 100644
+--- a/src/AmazonSesHandler.php
++++ b/src/AmazonSesHandler.php
+@@ -194,9 +194,16 @@ class AmazonSesHandler implements AmazonSesHandlerInterface {
+    * {@inheritdoc}
+    */
+   public function getSendQuota() {
+-    $result = $this->client->getAccount();
++    $quota = [];
+ 
+-    return array_map('number_format', $result['SendQuota']);
++    try {
++      $result = $this->client->getAccount();
++      $quota = array_map('number_format', $result['SendQuota']);
++    } catch (SesV2Exception $e) {
++      $this->logger->error($e->getMessage());
++      $this->messenger->addError($this->t('Unable to retrieve quota.'));
++    }
++    return $quota;
+   }
+ 
+   /**
+diff --git a/src/Controller/AmazonSesController.php b/src/Controller/AmazonSesController.php
+index 541838c..831d38d 100644
+--- a/src/Controller/AmazonSesController.php
++++ b/src/Controller/AmazonSesController.php
+@@ -29,33 +29,38 @@ class AmazonSesController extends ControllerBase {
+    *   A render array to build the page.
+    */
+   public function statistics() {
++    $statistics = [];
++
+     if (!$this->verifyClient()) {
+-      return [];
++      return $statistics;
+     }
+ 
+-    $quota = $this->handler->getSendQuota();
+-
+-    return [
+-      'quota' => [
+-        '#type' => 'details',
+-        '#title' => $this->t('Daily sending limits'),
+-        '#open' => TRUE,
+-        'sending_quota' => [
+-          '#markup' => $this->t('<strong>Quota:</strong> @max_send', [
+-            '@max_send' => $quota['Max24HourSend'],
+-          ]) . '<br />',
+-        ],
+-        'sent_mail' => [
+-          '#markup' => $this->t('<strong>Sent:</strong> @sent_last', [
+-            '@sent_last' => $quota['SentLast24Hours'],
+-          ]) . '<br />',
+-        ],
+-        'send_rate' => [
+-          '#markup' => $this->t('<strong>Maximum Send Rate:</strong> @send_rate
+-            emails/second', ['@send_rate' => $quota['MaxSendRate']]),
++    $result = $this->handler->getSendQuota();
++
++    if (!empty($result)) {
++      $statistics = [
++        'quota' => [
++          '#type' => 'details',
++          '#title' => $this->t('Daily sending limits'),
++          '#open' => TRUE,
++          'sending_quota' => [
++            '#markup' => $this->t('<strong>Quota:</strong> @max_send', [
++              '@max_send' => $result['Max24HourSend'],
++            ]) . '<br />',
++          ],
++          'sent_mail' => [
++              '#markup' => $this->t('<strong>Sent:</strong> @sent_last', [
++              '@sent_last' => $result['SentLast24Hours'],
++            ]) . '<br />',
++          ],
++          'send_rate' => [
++            '#markup' => $this->t('<strong>Maximum Send Rate:</strong> @send_rate
++            emails/second', ['@send_rate' => $result['MaxSendRate']]),
++          ],
+         ],
+-      ],
+-    ];
+-  }
++      ];
++    }
+ 
++    return $statistics;
++  }
+ }
