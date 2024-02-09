@@ -13,7 +13,7 @@ WORKDIR /srv/www
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
     composer self-update && \
-    COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --no-interaction --prefer-dist
+    COMPOSER_MEMORY_LIMIT=-1 COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --no-interaction --prefer-dist
 
 # Clean up previous npm installation and run new one. Those commands correspond
 # to running `composer sass` but without hitting the PHP timeout from composer.
