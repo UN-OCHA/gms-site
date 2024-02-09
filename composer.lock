@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5250a41eb6992381d06414827a19cee",
+    "content-hash": "74469719733610d9de5375877732ae35",
     "packages": [
         {
             "name": "arthurkirkosa/guzzle-description-loader",
@@ -4573,6 +4573,10 @@
                 {
                     "name": "dawehner",
                     "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
                 },
                 {
                     "name": "geek-merlin",
