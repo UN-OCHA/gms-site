@@ -163,16 +163,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.298.5",
+            "version": "3.298.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b9bc34a8702a37a6151d843af966bf3b36aaaae3"
+                "reference": "99af8830cb0662e3edaebe1a976d1cc833a86091"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b9bc34a8702a37a6151d843af966bf3b36aaaae3",
-                "reference": "b9bc34a8702a37a6151d843af966bf3b36aaaae3",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99af8830cb0662e3edaebe1a976d1cc833a86091",
+                "reference": "99af8830cb0662e3edaebe1a976d1cc833a86091",
                 "shasum": ""
             },
             "require": {
@@ -252,9 +252,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.298.5"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.298.10"
             },
-            "time": "2024-02-07T19:05:01+00:00"
+            "time": "2024-02-14T19:05:54+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2024,17 +2024,17 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.29.0",
+            "version": "3.30.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap.git",
-                "reference": "8.x-3.29"
+                "reference": "8.x-3.30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.29.zip",
-                "reference": "8.x-3.29",
-                "shasum": "85ab09921602cb184f1d18b79d7d864b6eb06c8c"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.30.zip",
+                "reference": "8.x-3.30",
+                "shasum": "37a44a677163d2e82f1a8b55bd5feddb88918ad2"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10",
@@ -2043,8 +2043,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.29",
-                    "datestamp": "1689102544",
+                    "version": "8.x-3.30",
+                    "datestamp": "1707842525",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3611,17 +3611,17 @@
         },
         {
             "name": "drupal/ds",
-            "version": "3.18.0",
+            "version": "3.19.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ds.git",
-                "reference": "8.x-3.18"
+                "reference": "8.x-3.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ds-8.x-3.18.zip",
-                "reference": "8.x-3.18",
-                "shasum": "1e2a8f48e48df54b3663c5aa58a1560e64b7b292"
+                "url": "https://ftp.drupal.org/files/projects/ds-8.x-3.19.zip",
+                "reference": "8.x-3.19",
+                "shasum": "7a1a4ded193ad8489c123a2f20ca2c7908c65eaa"
             },
             "require": {
                 "drupal/core": "^10"
@@ -3633,8 +3633,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.18",
-                    "datestamp": "1705507467",
+                    "version": "8.x-3.19",
+                    "datestamp": "1707499881",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13531,16 +13531,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.6.6",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "683557bd2466072777309d039534bb1332d0dda5"
+                "reference": "aaf6ed5ccd27c23f79a545e351b4d7842a99d0bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/683557bd2466072777309d039534bb1332d0dda5",
-                "reference": "683557bd2466072777309d039534bb1332d0dda5",
+                "url": "https://api.github.com/repos/composer/composer/zipball/aaf6ed5ccd27c23f79a545e351b4d7842a99d0bc",
+                "reference": "aaf6ed5ccd27c23f79a545e351b4d7842a99d0bc",
                 "shasum": ""
             },
             "require": {
@@ -13558,7 +13558,7 @@
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.2",
                 "seld/signal-handler": "^2.0",
-                "symfony/console": "^5.4.11 || ^6.0.11",
+                "symfony/console": "^5.4.11 || ^6.0.11 || ^7",
                 "symfony/filesystem": "^5.4 || ^6.0 || ^7",
                 "symfony/finder": "^5.4 || ^6.0 || ^7",
                 "symfony/polyfill-php73": "^1.24",
@@ -13572,7 +13572,7 @@
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpstan/phpstan-strict-rules": "^1",
                 "phpstan/phpstan-symfony": "^1.2.10",
-                "symfony/phpunit-bridge": "^6.0 || ^7"
+                "symfony/phpunit-bridge": "^6.4.1 || ^7.0.1"
             },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
@@ -13585,7 +13585,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.6-dev"
+                    "dev-main": "2.7-dev"
                 },
                 "phpstan": {
                     "includes": [
@@ -13625,7 +13625,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.6.6"
+                "source": "https://github.com/composer/composer/tree/2.7.1"
             },
             "funding": [
                 {
@@ -13641,7 +13641,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-08T17:32:26+00:00"
+            "time": "2024-02-09T14:26:28+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -14079,16 +14079,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.22",
+            "version": "8.3.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "ba6e62303d567863275fb086941f50a06dc7d08f"
+                "reference": "1a1613d83c08dac5be593f2775c9eccae1b41805"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/ba6e62303d567863275fb086941f50a06dc7d08f",
-                "reference": "ba6e62303d567863275fb086941f50a06dc7d08f",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/1a1613d83c08dac5be593f2775c9eccae1b41805",
+                "reference": "1a1613d83c08dac5be593f2775c9eccae1b41805",
                 "shasum": ""
             },
             "require": {
@@ -14126,7 +14126,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2023-10-15T09:55:50+00:00"
+            "time": "2024-01-27T18:13:12+00:00"
         },
         {
             "name": "drupal/core-dev",
@@ -14363,16 +14363,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "1.2.6",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "ba8678f8cbea42cc41022c21751004eb677cf5a4"
+                "reference": "32f79fcf48c74532014248687ae3850581a22416"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/ba8678f8cbea42cc41022c21751004eb677cf5a4",
-                "reference": "ba8678f8cbea42cc41022c21751004eb677cf5a4",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/32f79fcf48c74532014248687ae3850581a22416",
+                "reference": "32f79fcf48c74532014248687ae3850581a22416",
                 "shasum": ""
             },
             "require": {
@@ -14447,7 +14447,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.2.6"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.2.7"
             },
             "funding": [
                 {
@@ -14463,7 +14463,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-16T00:42:10+00:00"
+            "time": "2024-02-14T04:38:08+00:00"
         },
         {
             "name": "micheh/phpcs-gitlab",
@@ -15972,16 +15972,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.57",
+            "version": "1.10.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e"
+                "reference": "a23518379ec4defd9e47cbf81019526861623ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1627b1d03446904aaa77593f370c5201d2ecc34e",
-                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a23518379ec4defd9e47cbf81019526861623ec2",
+                "reference": "a23518379ec4defd9e47cbf81019526861623ec2",
                 "shasum": ""
             },
             "require": {
@@ -16030,7 +16030,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-24T11:51:34+00:00"
+            "time": "2024-02-12T20:02:57+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
