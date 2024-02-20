@@ -13,7 +13,7 @@ WORKDIR /srv/www
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
     composer self-update && \
-    COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --no-interaction --prefer-dist
+    COMPOSER_MEMORY_LIMIT=-1 COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --no-interaction --prefer-dist
 
 # Clean up previous npm installation and run new one. Those commands correspond
 # to running `composer sass` but without hitting the PHP timeout from composer.
@@ -63,6 +63,7 @@ COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/symfony.lock /srv/www/symfony.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
 COPY --from=builder /srv/www/docker/99-elastic-apm-custom.ini /tmp/99-elastic-apm-custom.ini
+COPY --from=builder /srv/www/docker/etc/nginx/ratelimit.conf.template /etc/nginx/ratelimit.conf.template
 
 RUN  curl -L -o /tmp/apm-agent-php_all.apk https://github.com/elastic/apm-agent-php/releases/download/v1.10.0/apm-agent-php_1.10.0_all.apk && \
      apk add --allow-untrusted /tmp/apm-agent-php_all.apk && \
