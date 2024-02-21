@@ -35,7 +35,7 @@ map $request_uri $binary_remote_addr_map {
         ~*/en/section/print/pdf $binary_remote_addr;
 }
 
-## Define custom zone for expensive requests for GMS and allow 1 only
-## one request per minute and no bursts or delayed response.
-limit_req_zone $binary_remote_addr_map zone=pdf:10m rate=1r/m;
+## Define custom zone for expensive requests for GMS and allow only
+## three requests per minute and no bursts or delayed response.
+limit_req_zone $binary_remote_addr_map zone=pdf:10m rate=3r/m;
 limit_req zone=pdf nodelay;
