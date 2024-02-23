@@ -15,25 +15,12 @@ name: 'Full HTML'
 format: full_html
 weight: 0
 filters:
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
     weight: 0
     settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
@@ -43,6 +30,36 @@ filters:
       allowed_html: '<table class="table table-bordered table-default table-striped table-green-left-border table-green-border table-vertical-heading"> <ul class="p-0 ml-3 mt-4 mb-4"> <ol class="p-0 ml-3 mt-4 mb-4"> <p class="mt-4 mb-4"> <h2 class="mt-5 mb-5 igf-text-primary"> <h5 class="mt-5 mb-5 igf-text-primary">'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_onomasticon:
+    id: filter_onomasticon
+    provider: onomasticon
+    status: true
+    weight: 0
+    settings:
+      onomasticon_vocabulary: categories
+      onomasticon_definition_field: description
+      onomasticon_definition_filters: '0'
+      onomasticon_tag: dfn
+      onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
+      onomasticon_implement: attr_title
+      onomasticon_orientation: below
+      onomasticon_cursor: default
+      onomasticon_ignorecase: '0'
+      onomasticon_repetition: ''
+      onomasticon_termlink: '0'
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
   media_embed:
     id: media_embed
     provider: media
@@ -67,20 +84,3 @@ filters:
     weight: 0
     settings:
       replace_empty: '0'
-  filter_onomasticon:
-    id: filter_onomasticon
-    provider: onomasticon
-    status: true
-    weight: 0
-    settings:
-      onomasticon_vocabulary: categories
-      onomasticon_definition_field: description
-      onomasticon_definition_filters: '0'
-      onomasticon_tag: dfn
-      onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
-      onomasticon_implement: attr_title
-      onomasticon_orientation: below
-      onomasticon_cursor: default
-      onomasticon_ignorecase: '0'
-      onomasticon_repetition: ''
-      onomasticon_termlink: '0'

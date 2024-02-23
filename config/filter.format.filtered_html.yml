@@ -24,13 +24,6 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd>'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   filter_onomasticon:
     id: filter_onomasticon
     provider: onomasticon
@@ -46,6 +39,13 @@ filters:
       onomasticon_ignorecase: '0'
       onomasticon_repetition: '1'
       onomasticon_termlink: '0'
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
   token_filter:
     id: token_filter
     provider: token_filter
