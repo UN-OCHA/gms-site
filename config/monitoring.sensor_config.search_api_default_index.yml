@@ -1,0 +1,19 @@
+uuid: d037e6d8-1f4d-4bd1-83f9-301079b03a6e
+langcode: en
+status: false
+dependencies:
+  module:
+    - search_api
+id: search_api_default_index
+label: 'Search index queue size of Default content index'
+description: ''
+category: 'Search API'
+plugin_id: search_api_unindexed
+result_class: null
+value_label: 'Unindexed items'
+value_type: number
+caching_time: 900
+settings:
+  index_id: default_index
+thresholds:
+  type: none

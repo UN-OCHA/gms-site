@@ -80,9 +80,11 @@ module:
   menu_ui: 0
   metatag: 0
   modules_weight: 0
+  monitoring: 0
   mysql: 0
   node: 0
   noreqnewpass: 0
+  ocha_monitoring: 0
   ocha_snap: 0
   onomasticon: 0
   options: 0
