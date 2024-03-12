@@ -7824,9 +7824,10 @@ display: block;}
 .carousel-control-next, .carousel-control-prev {width:2% !important;}
 .latest-updates .carousel-inner h3{font-size: 20px; font-weight: 500; color:#418fde; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;}
 .latest-updates .carousel-inner p{font-size: 16px; font-weight: 300; margin-bottom: 10px;}
+.latest-updates .carousel-inner p:last-child{margin-bottom: 0 !important;}
 .latest-updates .carousel-inner strong {font-weight: 600;}
 .latest-updates .carousel-inner .fa-quote-right {float: right; color:#ddd; font-size:20px;}
-.carousel-fade .carousel-inner .carousel-item {min-height: 195px;}
+.carousel-fade .carousel-inner .carousel-item {min-height: 175px;}
 
 .carousel-indicators {bottom:-37px !important;}
 .carousel-indicators [data-bs-target] {width: 10px !important; height: 10px !important; }
