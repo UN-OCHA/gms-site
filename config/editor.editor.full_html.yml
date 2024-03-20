@@ -109,8 +109,10 @@ settings:
     ckeditor5_language:
       language_list: un
     ckeditor5_list:
-      reversed: true
-      startIndex: true
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
     ckeditor5_style:

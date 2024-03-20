@@ -118,6 +118,7 @@
         "drupal/amazon_ses": "^3.0",
         "drupal/anchor_link": "^2.5",
         "drupal/auto_config_form": "^1.0",
+        "drupal/aws": "dev-2.0.x",
         "drupal/back_to_top": "^3.0",
         "drupal/block_class": "^2.0",
         "drupal/bootstrap": "^3.23",
@@ -198,6 +199,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.2",
+        "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_snap": "^8.3.0",
         "webflo/drupal-finder": "^1.2.2"
     },

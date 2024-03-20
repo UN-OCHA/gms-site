@@ -4,6 +4,14 @@ global-styling:
       css/styles.css: {}
   js:
     js/custom.js: {}
+bootstrap-styling:  
+  css:
+    theme:
+      css/bootstrap.min.css: {}   
+  js:
+    js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery      
 # Custom components
 # cd-teaser:
 #   css:

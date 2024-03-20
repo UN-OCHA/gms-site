@@ -5,6 +5,7 @@
  * Template overrides, preprocess, and hooks for the Custom Design theme.
  */
 
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Url;
 use Drupal\path_alias\Entity\PathAlias;
 use Drupal\redirect\Entity\Redirect;
@@ -17,6 +18,33 @@ function gms_ocha_common_preprocess_page(&$variables) {
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
   $variables['site_logo'] = \Drupal::service('file_url_generator')->generateString(theme_get_setting('logo.url'));
+  if ($variables['is_front']) {
+    $variables['#attached']['library'][] = 'gms_ocha_common/bootstrap-styling';
+    // BLOCK_ID.
+    $block_key_resources = BlockContent::load('35');
+    if ($block_key_resources != '') {
+      $block_key_resources_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_key_resources, 'block_content');
+      if ($block_key_resources_view) {
+        $variables['page']['my_block'] = $block_key_resources_view;
+      }
+    }
+    // BLOCK_ID.
+    $block_training_platform = BlockContent::load('36');
+    if ($block_training_platform != '') {
+      $block_training_platform_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_training_platform, 'block_content');
+      if ($block_training_platform_view) {
+        $variables['page']['training_platform'] = $block_training_platform_view;
+      }
+    }
+    // BLOCK_ID.
+    $block_latest_updates = BlockContent::load('37');
+    if ($block_training_platform != '') {
+      $block_latest_updates_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_latest_updates, 'block_content');
+      if ($block_latest_updates_view) {
+        $variables['page']['latest_updates'] = $block_latest_updates_view;
+      }
+    }
+  }
 }
 
 /**
