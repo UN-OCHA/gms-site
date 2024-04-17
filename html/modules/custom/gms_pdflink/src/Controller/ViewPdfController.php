@@ -89,10 +89,20 @@ class ViewPdfController extends ControllerBase {
    */
   public function viewPrint($export_type, $entity_type, $entity_id) {
 
+    global $base_url;
+
     if (!empty($entity_id) && is_numeric($entity_id)) {
       $entity_type = 'node';
+      $node        = $this->entityTypeManager->getStorage('node')->load($entity_id);
 
-      $node       = $this->entityTypeManager->getStorage('node')->load($entity_id);
+      // Sometimes there is apparently no node. Catch the problem and return.
+      if (empty($node)) {
+        $this->messenger()->addMessage($this->t('Access denied.'), 'error');
+        $response = new RedirectResponse($base_url, 301);
+        $response->send();
+        return $response;
+      }
+
       $node_title = $node->get('title')->value;
       $filename   = Html::cleanCssIdentifier($node_title) . '.pdf';
 
@@ -138,7 +148,6 @@ class ViewPdfController extends ControllerBase {
       }
     }
     else {
-      global $base_url;
       $this->messenger()->addMessage($this->t('Access denied.'), 'error');
       $response = new RedirectResponse($base_url, 301);
       $response->send();
