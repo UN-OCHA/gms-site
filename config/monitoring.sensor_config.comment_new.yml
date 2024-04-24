@@ -1,0 +1,30 @@
+uuid: 94d483ef-a57c-47bc-80c3-7b675c1e51e0
+langcode: en
+status: false
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: 3PMXz1FRPes9_lndVww6zwzOdrGYXt7RUVEUO_6RIXI
+id: comment_new
+label: 'New Comments'
+description: ''
+category: Content
+plugin_id: entity_aggregator
+result_class: null
+value_label: Comments
+value_type: number
+caching_time: 3600
+settings:
+  time_interval_field: created
+  time_interval_value: 86400
+  verbose_fields:
+    - id
+    - label
+    - comment_type
+    - created
+  entity_type: comment
+thresholds:
+  type: exceeds
+  warning: 10
+  critical: null

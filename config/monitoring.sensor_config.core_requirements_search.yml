@@ -1,0 +1,20 @@
+uuid: f942c191-b46b-4e4d-a10c-eddacf9e5c10
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+id: core_requirements_search
+label: 'Module search'
+description: 'Requirements of the search module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: search
+  exclude_keys: {  }
+thresholds:
+  type: none
