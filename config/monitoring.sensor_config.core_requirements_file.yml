@@ -1,0 +1,20 @@
+uuid: e1b83ee0-6d86-4b58-bcf8-23b59f29d377
+langcode: en
+status: false
+dependencies:
+  module:
+    - file
+id: core_requirements_file
+label: 'Module file'
+description: 'Requirements of the file module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: file
+  exclude_keys: {  }
+thresholds:
+  type: none
