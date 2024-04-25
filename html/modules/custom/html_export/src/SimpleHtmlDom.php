@@ -22,7 +22,8 @@ function file_get_html(
   $target_charset = DEFAULT_TARGET_CHARSET,
   $stripRN = TRUE,
   $defaultBRText = DEFAULT_BR_TEXT,
-  $defaultSpanText = DEFAULT_SPAN_TEXT) {
+  $defaultSpanText = DEFAULT_SPAN_TEXT,
+) {
   if ($maxLen <= 0) {
     $maxLen = MAX_FILE_SIZE;
   }
@@ -62,7 +63,8 @@ function str_get_html(
   $target_charset = DEFAULT_TARGET_CHARSET,
   $stripRN = TRUE,
   $defaultBRText = DEFAULT_BR_TEXT,
-  $defaultSpanText = DEFAULT_SPAN_TEXT) {
+  $defaultSpanText = DEFAULT_SPAN_TEXT,
+) {
   $dom = new SimpleHtmlDom(
     NULL,
     $lowercase,
@@ -275,14 +277,15 @@ class SimpleHtmlDom {
    * Constructor.
    */
   public function __construct(
-  $str = NULL,
-  $lowercase = TRUE,
-  $forceTagsClosed = TRUE,
-  $target_charset = DEFAULT_TARGET_CHARSET,
-  $stripRN = TRUE,
-  $defaultBRText = DEFAULT_BR_TEXT,
-  $defaultSpanText = DEFAULT_SPAN_TEXT,
-  $options = 0) {
+    $str = NULL,
+    $lowercase = TRUE,
+    $forceTagsClosed = TRUE,
+    $target_charset = DEFAULT_TARGET_CHARSET,
+    $stripRN = TRUE,
+    $defaultBRText = DEFAULT_BR_TEXT,
+    $defaultSpanText = DEFAULT_SPAN_TEXT,
+    $options = 0,
+  ) {
     if ($str) {
       if (preg_match('/^http:\/\//i', $str) || is_file($str)) {
         $this->loadFileHtml($str);
@@ -325,12 +328,13 @@ class SimpleHtmlDom {
    * Load html.
    */
   public function load(
-  $str,
-  $lowercase = TRUE,
-  $stripRN = TRUE,
-  $defaultBRText = DEFAULT_BR_TEXT,
-  $defaultSpanText = DEFAULT_SPAN_TEXT,
-  $options = 0) {
+    $str,
+    $lowercase = TRUE,
+    $stripRN = TRUE,
+    $defaultBRText = DEFAULT_BR_TEXT,
+    $defaultSpanText = DEFAULT_SPAN_TEXT,
+    $options = 0,
+  ) {
 
     // Prepare.
     $this->prepare($str, $lowercase, $defaultBRText, $defaultSpanText);
@@ -381,10 +385,11 @@ class SimpleHtmlDom {
    * Prepare data.
    */
   protected function prepare(
-        $str,
-        $lowercase = TRUE,
-        $defaultBRText = DEFAULT_BR_TEXT,
-        $defaultSpanText = DEFAULT_SPAN_TEXT) {
+    $str,
+    $lowercase = TRUE,
+    $defaultBRText = DEFAULT_BR_TEXT,
+    $defaultSpanText = DEFAULT_SPAN_TEXT,
+  ) {
     $this->clear();
 
     $this->doc = trim($str);
