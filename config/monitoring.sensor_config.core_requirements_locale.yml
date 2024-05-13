@@ -1,0 +1,20 @@
+uuid: b55695ac-9e14-4478-80cd-6eabb5215bfc
+langcode: en
+status: false
+dependencies:
+  module:
+    - locale
+id: core_requirements_locale
+label: 'Module locale'
+description: 'Requirements of the locale module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: locale
+  exclude_keys: {  }
+thresholds:
+  type: none

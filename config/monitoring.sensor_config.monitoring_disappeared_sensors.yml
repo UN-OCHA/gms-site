@@ -1,0 +1,18 @@
+uuid: 7c5d5ac5-5da2-42ef-bdab-0e30553a0162
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: iOdFrt0HGYaGWH_ERCk7cMV7NpkdPCU6OIFuIl_q-As
+id: monitoring_disappeared_sensors
+label: 'Disappeared sensors'
+description: 'Keeps track of active sensors and reports if a sensor disappears'
+category: System
+plugin_id: monitoring_disappeared_sensors
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: null
+settings: {  }
+thresholds:
+  type: none
