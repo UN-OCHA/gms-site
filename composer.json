@@ -176,6 +176,7 @@
         "drupal/rdf": "^2.0",
         "drupal/redirect": "^1.6",
         "drupal/search_api": "^1.28",
+        "drupal/seckit": "^2.0",
         "drupal/semanticviews": "^3.0",
         "drupal/social_auth": "^3.0",
         "drupal/social_auth_hid": "^3.2",
