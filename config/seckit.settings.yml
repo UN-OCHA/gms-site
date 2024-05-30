@@ -17,7 +17,7 @@ seckit_xss:
     frame-ancestors: "'self'"
     child-src: "'self'"
     font-src: "'self' data: fonts.gstatic.com"
-    connect-src: "'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com *.unocha.org *.github.io *.powerplatform.com"
+    connect-src: "'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com *.unocha.org *.github.io *.powerplatform.com europe.directline.botframework.com"
     report-uri: /report-csp-violation
     upgrade-req: false
     policy-uri: ''
