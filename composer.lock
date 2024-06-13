@@ -4,53 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d651c0d64fd84b53ffd4a1121b06a573",
+    "content-hash": "a2ea8e44ee91bd3b96999533f3c994fd",
     "packages": [
-        {
-            "name": "arthurkirkosa/guzzle-description-loader",
-            "version": "0.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/arthurkirkosa/guzzle-description-loader.git",
-                "reference": "fa256f4be7c32974505ee356dca2949451959e54"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/arthurkirkosa/guzzle-description-loader/zipball/fa256f4be7c32974505ee356dca2949451959e54",
-                "reference": "fa256f4be7c32974505ee356dca2949451959e54",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0|^8.0",
-                "symfony/config": "*",
-                "symfony/yaml": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Guzzle\\Service\\Loader\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gordon Franke",
-                    "email": "info@nevalon.de"
-                },
-                {
-                    "name": "Community",
-                    "homepage": "https://github.com/gimler/guzzle-description-loader/contributors"
-                }
-            ],
-            "description": "Load guzzle service description from various file formats",
-            "support": {
-                "source": "https://github.com/arthurkirkosa/guzzle-description-loader/tree/0.0.7"
-            },
-            "time": "2020-11-20T21:18:36+00:00"
-        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.2.0",
@@ -4298,66 +4253,6 @@
             }
         },
         {
-            "name": "drupal/google_tag",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/google_tag.git",
-                "reference": "8.x-1.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_tag-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "e46c24b62c3c3c6b5d7232f3b679b46b1fe0c7a9"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1710888941",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "acquia",
-                    "homepage": "https://www.drupal.org/user/1231722"
-                },
-                {
-                    "name": "japerry",
-                    "homepage": "https://www.drupal.org/user/45640"
-                },
-                {
-                    "name": "kaynen",
-                    "homepage": "https://www.drupal.org/user/733308"
-                },
-                {
-                    "name": "mglaman",
-                    "homepage": "https://www.drupal.org/user/2416470"
-                },
-                {
-                    "name": "solotandem",
-                    "homepage": "https://www.drupal.org/user/240748"
-                }
-            ],
-            "description": "Allows your website analytics to be managed using Google Tag Manager.",
-            "homepage": "https://www.drupal.org/project/google_tag",
-            "support": {
-                "source": "https://git.drupalcode.org/project/google_tag"
-            }
-        },
-        {
             "name": "drupal/hook_event_dispatcher",
             "version": "4.0.1",
             "source": {
@@ -4427,28 +4322,29 @@
         },
         {
             "name": "drupal/http_client_manager",
-            "version": "9.3.12",
+            "version": "10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/http_client_manager.git",
-                "reference": "9.3.12"
+                "reference": "10.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/http_client_manager-9.3.12.zip",
-                "reference": "9.3.12",
-                "shasum": "3aae63a8c91d753ab719a2c945c5e8e91f9458e5"
+                "url": "https://ftp.drupal.org/files/projects/http_client_manager-10.0.0.zip",
+                "reference": "10.0.0",
+                "shasum": "fbf9a49d01aa145fc3464878f071cf7598f1970f"
             },
             "require": {
-                "arthurkirkosa/guzzle-description-loader": "^0.0.7",
-                "drupal/core": "^9.4 || ^10",
+                "drupal/core": "^10",
+                "drush/drush": "^12",
+                "fatal-error/guzzle-description-loader": "^3.1.1",
                 "guzzlehttp/guzzle-services": "^1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "9.3.12",
-                    "datestamp": "1717162712",
+                    "version": "10.0.0",
+                    "datestamp": "1717163129",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4533,17 +4429,17 @@
         },
         {
             "name": "drupal/inline_entity_form",
-            "version": "1.0.0-rc17",
+            "version": "3.0.0-rc19",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "8.x-1.0-rc17"
+                "reference": "3.0.0-rc19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc17.zip",
-                "reference": "8.x-1.0-rc17",
-                "shasum": "626622e01cf7a2d2977fdc06ae09afd5a814e09b"
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-3.0.0-rc19.zip",
+                "reference": "3.0.0-rc19",
+                "shasum": "d8976940dd3f85412ba5e274af15fbcdd22ee27a"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9 || ^10",
@@ -4555,8 +4451,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc17",
-                    "datestamp": "1703020130",
+                    "version": "3.0.0-rc19",
+                    "datestamp": "1704729077",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -7946,6 +7842,51 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "fatal-error/guzzle-description-loader",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Fatal-Error/guzzle-description-loader.git",
+                "reference": "c2be2ed69a6c61659495255eff907589502451aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Fatal-Error/guzzle-description-loader/zipball/c2be2ed69a6c61659495255eff907589502451aa",
+                "reference": "c2be2ed69a6c61659495255eff907589502451aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0",
+                "symfony/config": "*",
+                "symfony/yaml": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Guzzle\\Service\\Loader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gordon Franke",
+                    "email": "info@nevalon.de"
+                },
+                {
+                    "name": "Community",
+                    "homepage": "https://github.com/gimler/guzzle-description-loader/contributors"
+                }
+            ],
+            "description": "Load guzzle service description from various file formats",
+            "support": {
+                "source": "https://github.com/Fatal-Error/guzzle-description-loader/tree/3.1.1"
+            },
+            "time": "2023-12-22T12:43:30+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -18700,20 +18641,18 @@
         },
         {
             "name": "weitzman/drupal-test-traits",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:weitzman/drupal-test-traits.git",
-                "reference": "9ef44f5cd5eef942c84f2d2ffd21734944d566f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/weitzman%2Fdrupal-test-traits/repository/archive.zip?sha=9ef44f5cd5eef942c84f2d2ffd21734944d566f8",
-                "reference": "9ef44f5cd5eef942c84f2d2ffd21734944d566f8",
-                "shasum": ""
+                "url": "https://git.drupalcode.org/project/dtt/",
+                "reference": "9385da6be0db48ecdb27e6646ae2bb0864c1dcee"
             },
             "require": {
                 "php": ">=8.1"
+            },
+            "require-dev": {
+                "drush/drush": "^12.5",
+                "phpspec/prophecy-phpunit": "^2"
             },
             "type": "library",
             "extra": {
@@ -18749,7 +18688,7 @@
                 }
             ],
             "description": "Traits for testing Drupal sites that have user content (versus unpopulated sites).",
-            "time": "2023-10-13T22:55:15+00:00"
+            "time": "2024-05-08T13:42:59+00:00"
         }
     ],
     "aliases": [],
@@ -18761,7 +18700,6 @@
         "drupal/conditional_fields": 15,
         "drupal/config_update": 15,
         "drupal/hook_event_dispatcher": 15,
-        "drupal/inline_entity_form": 5,
         "drupal/login_destination": 10,
         "drupal/media_entity_browser": 15,
         "drupal/menu_breadcrumb": 15,
