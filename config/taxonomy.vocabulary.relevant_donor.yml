@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Relevant Donor'
 vid: relevant_donor
-description: ''
+description: null
 weight: 0
+new_revision: false

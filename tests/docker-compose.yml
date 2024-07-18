@@ -25,6 +25,8 @@ services:
     container_name: gms-test-site
     volumes:
       - "./settings:/srv/www/shared/settings:ro"
+      # Mount config.
+      - "../config:/srv/www/config:rw"
       # Mount volumes for the private and public files.
       - "gms-site-public:/srv/www/html/sites/default/files:rw"
       - "gms-site-private:/srv/www/html/sites/default/private:rw"

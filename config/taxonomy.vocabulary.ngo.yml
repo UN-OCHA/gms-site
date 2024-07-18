@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: NGO
 vid: ngo
-description: ''
+description: null
 weight: 0
+new_revision: false
