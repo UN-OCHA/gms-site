@@ -180,7 +180,7 @@
         "drupal/social_auth_hid": "^3.2",
         "drupal/social_auth_roles": "^1.4",
         "drupal/stable": "^2.0",
-        "drupal/stage_file_proxy": "^2.1",
+        "drupal/stage_file_proxy": "^3",
         "drupal/superfish": "^1.6",
         "drupal/tb_megamenu": "^3.0@alpha",
         "drupal/token": "^1.9",
