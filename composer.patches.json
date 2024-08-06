@@ -25,9 +25,6 @@
         "drupal/google_tag": {
             "Error during cache rebuild when assets are stored on NFS": "PATCHES/google_tag/3250315-google-tag-nfs-locks-5.patch"
         },
-        "drupal/quickedit": {
-            "Use core popper library": "https://www.drupal.org/files/issues/2024-05-24/quickedit-use-internal-popper-3445959-1.patch"
-        },
         "drupal/user_expire": {
             "Allow the notification email to be customised": "PATCHES/user_expire/customize-notification-email.patch",
             "Reset expiration when user is reactivated": "PATCHES/user_expire/reset-expiration-on-reactivation.patch"
