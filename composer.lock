@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "849c36bec852460dd9b1943bf7c15a45",
+    "content-hash": "f92e52829d16e32a638627f7f24afbb2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9241,6 +9241,18 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
             },
             "time": "2024-07-01T20:03:41+00:00"
+        },
+        {
+            "name": "npm-asset/popperjs--core",
+            "version": "2.11.8",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "oomphinc/composer-installers-extender",

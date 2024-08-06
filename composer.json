@@ -196,6 +196,7 @@
         "drupal/votingapi": "^3.0@beta",
         "drupaloverride/condition_query": "dev-master",
         "drush/drush": "^12",
+        "npm-asset/popperjs--core": "^2.11",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.2",
