@@ -78,19 +78,7 @@
                 }
             }
         },
-		{
-            "type": "package",
-            "package": {
-                "name": "unocha/common_design",
-                "version": "9.2.2",
-                "type": "drupal-theme",
-                "dist": {
-                    "url": "https://github.com/UN-OCHA/common_design/archive/refs/tags/v9.2.2.zip",
-                    "type": "zip"
-                }
-            }
-        },
-		{
+        {
             "type": "package",
             "package": {
                 "name": "drupaloverride/condition_query",

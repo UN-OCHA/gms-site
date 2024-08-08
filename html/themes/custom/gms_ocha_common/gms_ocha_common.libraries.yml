@@ -16,4 +16,4 @@ bootstrap-styling:
 # cd-teaser:
 #   css:
 #     theme:
-#       components/cd-teaser/cd-teaser.css: {}
+#       libraries/cd-teaser/cd-teaser.css: {}
