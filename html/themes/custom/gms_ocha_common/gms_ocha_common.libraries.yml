@@ -7,13 +7,13 @@ global-styling:
 bootstrap-styling:  
   css:
     theme:
-      css/bootstrap.min.css: {}   
+      css/bootstrap.min.css: {}
   js:
     js/bootstrap.min.js: {}
   dependencies:
-    - core/jquery      
+    - core/jquery
 # Custom components
 # cd-teaser:
 #   css:
 #     theme:
-#       components/cd-teaser/cd-teaser.css: {}
+#       libraries/cd-teaser/cd-teaser.css: {}
