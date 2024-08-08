@@ -183,7 +183,7 @@
         "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
-        "unocha/common_design": "^9.2",
+        "unocha/common_design": "^9.4.3",
         "unocha/gtm_barebones": "^1.0",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_snap": "^8.3.0",
