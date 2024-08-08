@@ -14,6 +14,7 @@
         },
         "drupal/core": {
             "Warning": "PATCHES/core/CoreError.patch",
+            "Temporary patch for node-edit-form - #3458714": "PATCHES/claro-node-edit-form.patch",
             "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
         },
         "drupal/csp": {
