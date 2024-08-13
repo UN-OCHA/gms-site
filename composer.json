@@ -164,7 +164,7 @@
         "drupal/semanticviews": "^3.0",
         "drupal/social_auth": "^3.0",
         "drupal/social_auth_hid": "^3.2",
-        "drupal/social_auth_roles": "^1.4",
+        "drupal/social_auth_roles": "^2",
         "drupal/stable": "^2.0",
         "drupal/stage_file_proxy": "^3",
         "drupal/superfish": "^1.6",
