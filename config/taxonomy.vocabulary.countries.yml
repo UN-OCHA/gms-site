@@ -6,3 +6,4 @@ name: Countries
 vid: countries
 description: 'List of countries'
 weight: 0
+new_revision: false

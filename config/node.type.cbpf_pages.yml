@@ -11,8 +11,8 @@ third_party_settings:
     parent: 'menu-cbpf-menu:menu_link_content:1fb1951a-fc21-413e-9b5d-9fc24bc33c77'
 name: 'CBPF BI internal Pages'
 type: cbpf_pages
-description: ''
-help: ''
+description: null
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false
