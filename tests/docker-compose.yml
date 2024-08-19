@@ -1,11 +1,11 @@
-version: "2.2"
+name: gms-test
 
 networks:
   default:
 
 volumes:
-  gms-site-public:
-  gms-site-private:
+  site-public:
+  site-private:
 
 services:
   mysql:
@@ -28,8 +28,8 @@ services:
       # Mount config.
       - "../config:/srv/www/config:rw"
       # Mount volumes for the private and public files.
-      - "gms-site-public:/srv/www/html/sites/default/files:rw"
-      - "gms-site-private:/srv/www/html/sites/default/private:rw"
+      - "site-public:/srv/www/html/sites/default/files:rw"
+      - "site-private:/srv/www/html/sites/default/private:rw"
       # Mount the folders needed for the tests.
       - "../tests:/srv/www/tests"
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
