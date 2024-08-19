@@ -9,9 +9,6 @@
           "Error not caught when AWS API returns 403 extra backport": "PATCHES/3416368-error-not-caught-extra.patch",
           "Error not caught when AWS API returns 403 extra queue fix": "PATCHES/3416368-error-not-caught-queue.patch"
         },
-        "drupal/block_class": {
-          "Type Error when no classes are specified - #3345981": "PATCHES/block_class/3345981-array-merge-type-error.diff"
-        },
         "drupal/contact_storage": {
           "Error while field storage definition": "https://www.drupal.org/files/issues/2022-10-19/contact_storage.patch"
         },
