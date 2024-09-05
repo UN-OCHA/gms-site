@@ -36,9 +36,9 @@ filters:
       onomasticon_implement: extra_element
       onomasticon_orientation: below
       onomasticon_cursor: default
-      onomasticon_ignorecase: '0'
       onomasticon_repetition: '1'
-      onomasticon_termlink: '0'
+      onomasticon_ignorecase: false
+      onomasticon_termlink: false
   filter_url:
     id: filter_url
     provider: filter
