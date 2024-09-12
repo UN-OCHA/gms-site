@@ -59,15 +59,15 @@ filters:
     settings:
       onomasticon_vocabulary: glossary
       onomasticon_definition_field: description
-      onomasticon_definition_filters: '0'
+      onomasticon_definition_filters: false
       onomasticon_tag: dfn
       onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
       onomasticon_implement: attr_title
       onomasticon_orientation: below
       onomasticon_cursor: default
       onomasticon_repetition: ''
-      onomasticon_ignorecase: '0'
-      onomasticon_termlink: '0'
+      onomasticon_ignorecase: false
+      onomasticon_termlink: false
   token_filter:
     id: token_filter
     provider: token_filter
