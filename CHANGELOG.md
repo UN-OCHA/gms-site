@@ -4,6 +4,30 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.5](https://github.com/UN-OCHA/gms-site/compare/v9.7.4...v9.7.5) (2024-09-17)
+
+### Bug Fixes
+
+* Include core patch for aggregation error ([db94fe](https://github.com/UN-OCHA/gms-site/commit/db94fe8e0034d2ce13effa5ecbabd1686142099a))
+
+### Chores
+
+* Add patch to fix tests ([6a5970](https://github.com/UN-OCHA/gms-site/commit/6a59708fcf1b8072c49f514df0cb15af1b598daf))
+* Add tools [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867), [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867), [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867) ([312386](https://github.com/UN-OCHA/gms-site/commit/312386384515721009c31247d69f246adece82eb), [ddddc1](https://github.com/UN-OCHA/gms-site/commit/ddddc17eada08bb75cf5828002baa8bfff94cd13), [8200f8](https://github.com/UN-OCHA/gms-site/commit/8200f8533ce4514e8b130e7c2884aaa150148bc1))
+* Enable dependency too ([7e6f9f](https://github.com/UN-OCHA/gms-site/commit/7e6f9fc1283cbbae9c9554041ab489a1a4d2dcb0))
+* Include config update, remove patch ([d84189](https://github.com/UN-OCHA/gms-site/commit/d84189c17333569b72c27711621f7b680fb879df))
+* Include php logs if tests fail ([692776](https://github.com/UN-OCHA/gms-site/commit/6927764c220fd90fc29a88fd279b27e5e13e59e9))
+* Pass on credentials to action ([f22bd8](https://github.com/UN-OCHA/gms-site/commit/f22bd89b4a2a00ee4638acf7bc4e57613d89a79e))
+* Remove outdated patch ([df0133](https://github.com/UN-OCHA/gms-site/commit/df01339da3c583d995625c28b0474925def6903a))
+* Remove patch which is blocking core update ([efcc79](https://github.com/UN-OCHA/gms-site/commit/efcc79db1e858e94dc462bfb7170e49857dd1eeb))
+* Remove version from docker-compose file ([978569](https://github.com/UN-OCHA/gms-site/commit/978569abe646f12fbce9195179a9fb92cf5cd9d5))
+* Update all outdated drupal/* unocha/* drush/* packages. ([9c2a00](https://github.com/UN-OCHA/gms-site/commit/9c2a0068531fbcad70966642da30b03377ee89d5), [4de13a](https://github.com/UN-OCHA/gms-site/commit/4de13a90f0db4c330ca28170fcabae2c3347ae08), [52f98d](https://github.com/UN-OCHA/gms-site/commit/52f98d8e2ed72268235444d3c234393b86f71a58))
+* Update codemirror_editor module to include dependency ([377a63](https://github.com/UN-OCHA/gms-site/commit/377a6386297c4571cca0429b1e87aa1cdc104a23))
+
+##### Deps-dev
+
+* Bump axios in /html/themes/custom/gms_ocha_common ([f32923](https://github.com/UN-OCHA/gms-site/commit/f329230ba9d252f86b1716ac995dc3053e04ccfb))
+
 ## [9.6.4](https://github.com/UN-OCHA/gms-site/compare/v9.6.3...v9.6.4) (2023-11-27)
 
 ### Bug Fixes
