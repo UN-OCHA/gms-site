@@ -183,15 +183,17 @@
         "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
-        "unocha/common_design": "9.2.6",
+        "unocha/common_design": "^9.4",
         "unocha/gtm_barebones": "^1.0",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_snap": "^8.3.0",
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
+        "davidrjonas/composer-lock-diff": "^1.7",
         "drupal/coder": "^8.3",
         "drupal/core-dev": "^10.1",
+        "marcocesarato/php-conventional-changelog": "^1.17",
         "phpcompatibility/php-compatibility": "^9.3.5",
         "phpmd/phpmd": "^2.9.1",
         "phpunit/php-code-coverage": "^9.2",
@@ -225,20 +227,37 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "installer-paths": {
-            "html/core": ["type:drupal-core"],
+            "html/core": [
+                "type:drupal-core"
+            ],
             "html/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
             ],
-            "html/modules/contrib/{$name}": ["type:drupal-module"],
-            "html/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "html/themes/contrib/{$name}": ["type:drupal-theme"],
-            "html/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "html/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "html/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "html/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "html/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "html/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "html/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "drupal-scaffold": {
             "file-mapping": {
@@ -284,5 +303,6 @@
         "post-update-cmd": [
             "@git-hooks"
         ]
-    }
+    },
+    "version": "9.7.5"
 }
