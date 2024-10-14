@@ -124,7 +124,6 @@
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
-        "drupal/csp": "^1.16",
         "drupal/ctools": "^4.0",
         "drupal/ds": "^3.13",
         "drupal/entity_browser": "^2.6",
@@ -212,14 +211,15 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "drupal/console-extend-plugin": true,
             "oomphinc/composer-installers-extender": true,
-            "symfony/flex": true,
-            "wikimedia/composer-merge-plugin": true,
+            "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "symfony/flex": true,
+            "tbachert/spi": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "audit": {
             "abandoned": "report",
