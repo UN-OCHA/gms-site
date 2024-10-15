@@ -4,6 +4,22 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.6](https://github.com/UN-OCHA/gms-site/compare/v9.7.5...v9.7.6) (2024-10-15)
+
+### Bug Fixes
+
+
+##### Tests
+
+* Set a higher rate limit for bots, so the test bot does not get limited because of its UA string. ([d5df8d](https://github.com/UN-OCHA/gms-site/commit/d5df8d64f0f8a4551367e06842bf1f1ecd067c37))
+
+### Chores
+
+* Csp config for UNTV ([c4b306](https://github.com/UN-OCHA/gms-site/commit/c4b3067309491097fc40090daba0b22dcde3b22d))
+* Ignore audit warning that doesn't affect us ([7f8899](https://github.com/UN-OCHA/gms-site/commit/7f8899f93ebb46156cd6310fe1e0031ee505a6d5))
+* Remove csp module ([ec5f82](https://github.com/UN-OCHA/gms-site/commit/ec5f822f4a5a57a8fbc6215b063396783af41683))
+* Update all outdated drupal/* unocha/* drush/* packages. ([5ac145](https://github.com/UN-OCHA/gms-site/commit/5ac145ddf6df283d7904cc5d57e45a7a9ab312b2), [4f31e4](https://github.com/UN-OCHA/gms-site/commit/4f31e45025a4927803e4270eba6e7bd8577512bb), [84dea0](https://github.com/UN-OCHA/gms-site/commit/84dea0a5185fee432bea7c72a94297e75e7d0078), [4e59c2](https://github.com/UN-OCHA/gms-site/commit/4e59c296dcc00a45fdee84e98e33eae11fe935de))
+
 ## [9.7.5](https://github.com/UN-OCHA/gms-site/compare/v9.7.4...v9.7.5) (2024-09-17)
 
 ### Bug Fixes
