@@ -4,6 +4,7 @@ back_to_top_prevent_on_mobile: false
 back_to_top_prevent_in_admin: true
 back_to_top_prevent_in_front: true
 back_to_top_button_trigger: 50.0
+back_to_top_speed: 1200.0
 back_to_top_button_place: 1
 back_to_top_button_text: 'Back to top'
 back_to_top_button_type: image
