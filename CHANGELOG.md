@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.7](https://github.com/UN-OCHA/gms-site/compare/v9.7.6...v9.7.7) (2024-11-18)
+
+### Chores
+
+* Add csp for vimeo iframes ([f5c685](https://github.com/UN-OCHA/gms-site/commit/f5c68579e57b0b3eb13313bad6bbeef89585c0a8))
+* Bump metatag module version ([94374e](https://github.com/UN-OCHA/gms-site/commit/94374ec6874be72bcd1cd3239003ae4e81b87712))
+* Further package updates ([f3c8d9](https://github.com/UN-OCHA/gms-site/commit/f3c8d99f37baca6d2ee1acf2860bcd6d1eec66be))
+* Update all outdated drupal/* unocha/* drush/* packages. ([5fb0c6](https://github.com/UN-OCHA/gms-site/commit/5fb0c640308eb3e9bf3c6811acb2185b9efb4722), [92199e](https://github.com/UN-OCHA/gms-site/commit/92199e3b1101f02acf90c67dd989264d4d1e5d33), [934975](https://github.com/UN-OCHA/gms-site/commit/9349755c4a831604efe1e8b4f62122874bfad432), [ed7290](https://github.com/UN-OCHA/gms-site/commit/ed729037f59af16d8e1f31a6a53d8a3b1012cac2), [4109f7](https://github.com/UN-OCHA/gms-site/commit/4109f74e2011371e228f583a5fe229fa23bb33b8))
+
 ## [9.7.6](https://github.com/UN-OCHA/gms-site/compare/v9.7.5...v9.7.6) (2024-10-15)
 
 ### Bug Fixes
