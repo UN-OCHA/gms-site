@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.8](https://github.com/UN-OCHA/gms-site/compare/v9.7.7...v9.7.8) (2024-11-21)
+
+### Chores
+
+* Update all outdated drupal/* unocha/* drush/* packages. ([e48001](https://github.com/UN-OCHA/gms-site/commit/e4800176ad7b9153544be294b7e5567489f4b1fd))
+
 ## [9.7.7](https://github.com/UN-OCHA/gms-site/compare/v9.7.6...v9.7.7) (2024-11-18)
 
 ### Chores
