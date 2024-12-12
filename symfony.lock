@@ -371,9 +371,6 @@
     "oomphinc/composer-installers-extender": {
         "version": "2.0.0"
     },
-    "paragonie/random_compat": {
-        "version": "v9.99.100"
-    },
     "pdepend/pdepend": {
         "version": "2.10.1"
     },
