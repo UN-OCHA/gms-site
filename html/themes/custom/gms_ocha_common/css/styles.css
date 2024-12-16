@@ -6843,7 +6843,7 @@ strong u {
 }
 
 .onegms-home-pg .cd-layout-container main .cd-layout-content-wrapper .onegms-user-rl-container .column a.cerf:hover {
-  background-color: #fbd45b;
+  background-color: #ffcb05;
 }
 
 .view-request-form-data table.cols-6 {
@@ -7012,7 +7012,7 @@ strong u {
 
 .help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content h2 {
   font-size: 22px !important;
-  color: #ffc417 !important;
+  color: #ffcb05 !important;
 }
 
 .help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content p {
@@ -7105,6 +7105,12 @@ strong u {
   font-size: 46px;
   color: #418fde;
 }
+.help-portal-page .cerf-help-portal .browse-user-roles .cd-container .cd-content .user-roles-section .user-role h3 i {
+  margin-right: 10px;
+  float: left;
+  font-size: 46px;
+  color: #009edb;
+}
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role p {
   margin: 10px 0px 0px 0px;
@@ -7127,7 +7133,7 @@ strong u {
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover {
   height: 160px;
-  background-color: #fbd45c !important;
+  background-color: #ffcb05 !important;
 }
 
 .help-portal-page .browse-user-roles .cd-container .cd-content .user-roles-section .user-role:hover h3 i {
@@ -7282,6 +7288,13 @@ strong u {
   float: left;
   font-size: 40px;
   color: #418fde;
+}
+
+.help-portal-page .cerf-help-portal .grey-section .section i {
+  margin-right: 15px;
+  float: left;
+  font-size: 40px;
+  color: #009edb;
 }
 
 .onegms-support-pg .grey-section .section i {
@@ -7449,6 +7462,9 @@ strong u {
 
 .help-portal-page .gms-help-portal .cd-layout-container .cd-container .cd-content h2 {
   color: #418fde;
+}
+.help-portal-page .cerf-help-portal .cd-layout-container .cd-container .cd-content h2 {
+  color: #009edb;
 }
 
 .help-portal-page .gms-help-portal .cd-layout-container .cd-container .cd-content h2:after {
@@ -7670,14 +7686,14 @@ strong u {
 
 
 .cd-fluid_navigation ul.custom-menu-cerf li:hover {
-  background: #FBD45C;
+  background: #ffcb05;
 }
 .cd-fluid_navigation ul.custom-menu-cerf li:hover a {
   color: #333;
 }
 .cd-fluid_navigation ul.custom-menu-cerf li.is-active {
   color: #333;
-  background-color: #FBD45C;
+  background-color: #ffcb05;
 }
 .cd-fluid_navigation ul.custom-menu-cerf li.is-active a {
   color: #333;
@@ -7790,7 +7806,7 @@ display: block;}
 .gms-home-page .bottom-panel {padding: 40px 0 50px 0;}
 .gms-home-page .bottom-panel p {font-size: 16px; font-weight: 300; line-height: 22px; color: #777; letter-spacing: -0.1px;}
 
-.gms-home-page a.cerf-btn {background-color: #fff4d4; font-size: 16px; border-left:10px solid #fbd45c; padding: 6px 15px; color: #555 !important; font-weight: 300; text-decoration: none; transition: all 0.2s linear;}
+.gms-home-page a.cerf-btn {background-color: #fff4d4; font-size: 16px; border-left:10px solid #ffcb05; padding: 6px 15px; color: #555 !important; font-weight: 300; text-decoration: none; transition: all 0.2s linear;}
 .gms-home-page a.cerf-btn:hover {background-color: #418fde; color: #fff !important; text-decoration:none !important;}
 .gms-home-page a.cbpf-btn {background-color: #ffdeda; font-size: 16px; border-left:10px solid #f37261; padding: 6px 15px; color: #555 !important; font-weight: 300; text-decoration: none; transition: all 0.2s linear;}
 .gms-home-page a.cbpf-btn:hover {background-color: #418fde; color: #fff !important; text-decoration:none !important;}
