@@ -4,6 +4,16 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.9](https://github.com/UN-OCHA/gms-site/compare/v9.7.8...v9.7.9) (2024-12-16)
+
+### Chores
+
+* Update all outdated drupal/* unocha/* drush/* packages. ([fea9df](https://github.com/UN-OCHA/gms-site/commit/fea9df45b24d6c403d082c25cd731877571d7d21), [1c8dcf](https://github.com/UN-OCHA/gms-site/commit/1c8dcfecab4b36395e5d0b2838cb0885edc521ce), [00ea33](https://github.com/UN-OCHA/gms-site/commit/00ea334ebd129caceca1f488ef94198fc9cb3d63))
+
+##### Deps
+
+* Bump nanoid in /html/themes/custom/gms_ocha_common ([088951](https://github.com/UN-OCHA/gms-site/commit/088951b1a1ed6539682af1a52b911bca219bc99d))
+
 ## [9.7.8](https://github.com/UN-OCHA/gms-site/compare/v9.7.7...v9.7.8) (2024-11-21)
 
 ### Chores
