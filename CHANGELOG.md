@@ -4,6 +4,17 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.10](https://github.com/UN-OCHA/gms-site/compare/v9.7.9...v9.7.10) (2025-01-14)
+
+### Chores
+
+* Bump version of mariadb for local development ([4e3dab](https://github.com/UN-OCHA/gms-site/commit/4e3dab05c253d6d7ddbc38df4e28626a6f02b906))
+* Update all outdated drupal/* unocha/* drush/* packages. ([f5c198](https://github.com/UN-OCHA/gms-site/commit/f5c1988ca444415e979104d467299152dbd6318b), [ac9918](https://github.com/UN-OCHA/gms-site/commit/ac9918175ee734a7153e105188f26a8091db3e83), [695030](https://github.com/UN-OCHA/gms-site/commit/69503018a05bc9bd89fa603da18f9abbaed7d1eb), [e606e1](https://github.com/UN-OCHA/gms-site/commit/e606e123d1bd5eeb672f78ec13f10420672791e3))
+
+##### Tests
+
+* Bump the test MariaDB to match what the dev sites will use soon. ([502a1f](https://github.com/UN-OCHA/gms-site/commit/502a1f17c86e37b7bc87989f8e6e6141760079c3))
+
 ## [9.7.9](https://github.com/UN-OCHA/gms-site/compare/v9.7.8...v9.7.9) (2024-12-16)
 
 ### Chores
