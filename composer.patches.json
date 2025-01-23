@@ -4,11 +4,6 @@
             "Design Issue": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
             "CSS dialog Design Issue": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch"
         },
-        "drupal/amazon_ses": {
-          "Error not caught when AWS API returns 403": "PATCHES/3416368-error-not-caught.patch",
-          "Error not caught when AWS API returns 403 extra backport": "PATCHES/3416368-error-not-caught-extra.patch",
-          "Error not caught when AWS API returns 403 extra queue fix": "PATCHES/3416368-error-not-caught-queue.patch"
-        },
         "drupal/core": {
             "Warning": "PATCHES/core/CoreError.patch",
             "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
