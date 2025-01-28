@@ -12733,16 +12733,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "v9.4.4",
+            "version": "v9.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "f11b39f2faf9eabcd88ec10a120e465897116e7d"
+                "reference": "519a486e05a8f9a749b9717c91be91202063de9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/f11b39f2faf9eabcd88ec10a120e465897116e7d",
-                "reference": "f11b39f2faf9eabcd88ec10a120e465897116e7d",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/519a486e05a8f9a749b9717c91be91202063de9a",
+                "reference": "519a486e05a8f9a749b9717c91be91202063de9a",
                 "shasum": ""
             },
             "require": {
@@ -12754,12 +12754,12 @@
             "license": [
                 "GPL-2.0-only"
             ],
-            "description": "OCHA Common Design base theme for Drupal 9+",
+            "description": "OCHA Common Design base theme for Drupal",
             "support": {
                 "issues": "https://github.com/UN-OCHA/common_design/issues",
-                "source": "https://github.com/UN-OCHA/common_design/tree/v9.4.4"
+                "source": "https://github.com/UN-OCHA/common_design/tree/v9.5.0"
             },
-            "time": "2024-11-18T09:15:05+00:00"
+            "time": "2025-01-22T11:58:45+00:00"
         },
         {
             "name": "unocha/gtm_barebones",
@@ -12790,20 +12790,19 @@
         },
         {
             "name": "unocha/ocha_monitoring",
-            "version": "1.0.18",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_monitoring.git",
-                "reference": "6c8d8a803da62c1f9581c1a8a90fc17501ba6394"
+                "reference": "187d453123403b2ffca351d5810dc4a2ef3d8919"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_monitoring/zipball/6c8d8a803da62c1f9581c1a8a90fc17501ba6394",
-                "reference": "6c8d8a803da62c1f9581c1a8a90fc17501ba6394",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_monitoring/zipball/187d453123403b2ffca351d5810dc4a2ef3d8919",
+                "reference": "187d453123403b2ffca351d5810dc4a2ef3d8919",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^10",
                 "drupal/monitoring": "^1"
             },
             "type": "drupal-module",
@@ -12814,9 +12813,9 @@
             "description": "UNOCHA Monitoring",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_monitoring/issues",
-                "source": "https://github.com/UN-OCHA/ocha_monitoring/tree/1.0.18"
+                "source": "https://github.com/UN-OCHA/ocha_monitoring/tree/1.1.0"
             },
-            "time": "2024-07-18T14:02:43+00:00"
+            "time": "2025-01-20T12:21:09+00:00"
         },
         {
             "name": "unocha/ocha_snap",
