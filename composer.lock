@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e190b979225388046398a8f4d081f1ba",
+    "content-hash": "77df2076499919078b899ef2dcea0625",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2258,74 +2258,6 @@
             }
         },
         {
-            "name": "drupal/codemirror_editor",
-            "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/codemirror_editor.git",
-                "reference": "8.x-1.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/codemirror_editor-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "c6c28d04f4501bcdeaf516aad25d397d63007b40"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/js_cookie": "^1.0",
-                "ext-json": "*",
-                "php": ">=7.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1724672039",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "anybody",
-                    "homepage": "https://www.drupal.org/user/291091"
-                },
-                {
-                    "name": "chi",
-                    "homepage": "https://www.drupal.org/user/556138"
-                },
-                {
-                    "name": "chris burge",
-                    "homepage": "https://www.drupal.org/user/1826152"
-                },
-                {
-                    "name": "grevil",
-                    "homepage": "https://www.drupal.org/user/3668491"
-                },
-                {
-                    "name": "heddn",
-                    "homepage": "https://www.drupal.org/user/1463982"
-                }
-            ],
-            "description": "This module integrates the CodeMirror editor library into Drupal.",
-            "homepage": "https://www.drupal.org/project/codemirror_editor",
-            "keywords": [
-                "CodeMirror",
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/codemirror_editor",
-                "issues": "https://www.drupal.org/project/issues/codemirror_editor"
-            }
-        },
-        {
             "name": "drupal/colorbutton",
             "version": "1.5.0",
             "source": {
@@ -2382,80 +2314,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/colorbutton",
                 "issues": "http://drupal.org/project/issues/colorbutton"
-            }
-        },
-        {
-            "name": "drupal/component_library",
-            "version": "1.0.0-alpha4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/component_library.git",
-                "reference": "1.0.0-alpha4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/component_library-1.0.0-alpha4.zip",
-                "reference": "1.0.0-alpha4",
-                "shasum": "64240ae4ba4c9fabb341e8b8420784f9d412d835"
-            },
-            "require": {
-                "drupal/codemirror_editor": "^1.5",
-                "drupal/core": "^9 || ^10",
-                "drupal/entity": "^1.0"
-            },
-            "conflict": {
-                "drupal/core": "<9.0"
-            },
-            "require-dev": {
-                "drupal/entity": "*",
-                "drupal/group": "*"
-            },
-            "suggest": {
-                "drupal/ui_patterns": "Integration for module to place patterns"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-alpha4",
-                    "datestamp": "1701181995",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Lucas D Hedding",
-                    "homepage": "https://www.drupal.org/u/heddn",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://www.drupal.org/node/3208960/committers",
-                    "role": "Contributors"
-                },
-                {
-                    "name": "heddn",
-                    "homepage": "https://www.drupal.org/user/1463982"
-                },
-                {
-                    "name": "tim bozeman",
-                    "homepage": "https://www.drupal.org/user/2241356"
-                }
-            ],
-            "description": "Build a library of components",
-            "homepage": "https://www.drupal.org/project/component_library",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/component_library",
-                "issues": "https://www.drupal.org/project/issues/component_library"
             }
         },
         {
@@ -3358,75 +3216,6 @@
             }
         },
         {
-            "name": "drupal/entity",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/entity.git",
-                "reference": "8.x-1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "86c0b75c173144aaedde3e3258dc0d3ce11d1a22"
-            },
-            "require": {
-                "drupal/core": "^10.1 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1723380062",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "bojanz",
-                    "homepage": "https://www.drupal.org/user/86106"
-                },
-                {
-                    "name": "dawehner",
-                    "homepage": "https://www.drupal.org/user/99340"
-                },
-                {
-                    "name": "dixon_",
-                    "homepage": "https://www.drupal.org/user/239911"
-                },
-                {
-                    "name": "fago",
-                    "homepage": "https://www.drupal.org/user/16747"
-                },
-                {
-                    "name": "mglaman",
-                    "homepage": "https://www.drupal.org/user/2416470"
-                },
-                {
-                    "name": "tr",
-                    "homepage": "https://www.drupal.org/user/202830"
-                }
-            ],
-            "description": "Provides expanded entity APIs, which will be moved to Drupal core one day.",
-            "homepage": "https://www.drupal.org/project/entity",
-            "support": {
-                "source": "https://git.drupalcode.org/project/entity",
-                "issues": "https://www.drupal.org/project/issues/entity"
-            }
-        },
-        {
             "name": "drupal/entity_browser",
             "version": "2.12.0",
             "source": {
@@ -4227,50 +4016,6 @@
             "homepage": "https://www.drupal.org/project/jquery_ui",
             "support": {
                 "source": "https://git.drupalcode.org/project/jquery_ui"
-            }
-        },
-        {
-            "name": "drupal/js_cookie",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/js_cookie.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/js_cookie-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "e010b3de64a0d57eef9c1773c4dd7e3d9bd9118c"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1693951097",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dave Reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                }
-            ],
-            "description": "Provides the js-cookie library as a dependency.",
-            "homepage": "https://www.drupal.org/project/js_cookie",
-            "support": {
-                "source": "https://git.drupalcode.org/project/js_cookie"
             }
         },
         {
