@@ -92,7 +92,7 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ckeditor-plugin/colorbutton": "^4.11",
         "ckeditor-plugin/fakeobjects": "^4.16.2",
         "ckeditor-plugin/iframe": "^4.16.2",
