@@ -4,6 +4,20 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.7.11](https://github.com/UN-OCHA/gms-site/compare/v9.7.10...v9.7.11) (2025-02-18)
+
+### Chores
+
+* Bump block_class to supported version 4. ([3fd3e9](https://github.com/UN-OCHA/gms-site/commit/3fd3e99e693dc258f834e9cd68e192ba095e454f))
+* Oops. Drop the codemirror editor settings. ([1a44e2](https://github.com/UN-OCHA/gms-site/commit/1a44e235de5f0f8fbffafed550c795d92a90918b))
+* Remove codemirror_editor sensor config. ([75ec1f](https://github.com/UN-OCHA/gms-site/commit/75ec1fbec6afd6bc8ba2923a14c7b90e82d4bc27))
+* Remove component_library module and dependencies (entity, js-cookie) it has. ([05bddb](https://github.com/UN-OCHA/gms-site/commit/05bddbf0627e6137e2ae5f67fc9ebf6e1f7f6e3e))
+* Remove config_filter module ([b4e068](https://github.com/UN-OCHA/gms-site/commit/b4e068f52a4f5c6f8081de7d84832fd1e1d81052))
+* Remove patch and update user_expire module ([bc781c](https://github.com/UN-OCHA/gms-site/commit/bc781cc2a4b1d90db65331a2f111e5bf517bd042))
+* Uninstall entity and js_cookie modules, as component_library which they need is gone. ([fccdd2](https://github.com/UN-OCHA/gms-site/commit/fccdd29f90cc27bab53c30fc5da3713a2f3d31b2))
+* Uninstall the codemirror_editor module. ([88822c](https://github.com/UN-OCHA/gms-site/commit/88822caf8902e7f66983247eade323250720cba1))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([b30c8d](https://github.com/UN-OCHA/gms-site/commit/b30c8d68a1be500633d510b8320cd64d5f83c488), [eda682](https://github.com/UN-OCHA/gms-site/commit/eda682c847ae07bd47e1460cb10fcae5814809cc), [df417f](https://github.com/UN-OCHA/gms-site/commit/df417f461b56c011ca19bf34824d00b820d545d9), [48e33e](https://github.com/UN-OCHA/gms-site/commit/48e33ed0635cb410253edef7d611fa376854636a))
+
 ## [9.7.10](https://github.com/UN-OCHA/gms-site/compare/v9.7.9...v9.7.10) (2025-01-14)
 
 ### Chores
