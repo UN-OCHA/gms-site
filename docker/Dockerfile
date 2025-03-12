@@ -24,7 +24,7 @@ RUN rm -rf ./vendor && \
 #     rm -rf ./node_modules
 
 # Copy settings to default site location.
-RUN cp -a docker/settings.php docker/services.yml html/sites/default
+RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml html/sites/default
 
 ################################################################################
 
