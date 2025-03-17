@@ -4,6 +4,23 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.8.0](https://github.com/UN-OCHA/gms-site/compare/v9.7.12...v9.8.0) (2025-03-17)
+
+### Features
+
+* Add memcache module to Drupal. ([bea1de](https://github.com/UN-OCHA/gms-site/commit/bea1de8bec143c578c872a0763aebee853733a08))
+* Drop memcache service config in the docker image. ([d04f0e](https://github.com/UN-OCHA/gms-site/commit/d04f0e0be8b18cc60952b316027c4e6fc524837b))
+* Enable the memcache module! ([ba6b1a](https://github.com/UN-OCHA/gms-site/commit/ba6b1acb49745d137853c1a3642a0e47f9385350))
+
+### Chores
+
+* Add memcache for local development ([b02d3f](https://github.com/UN-OCHA/gms-site/commit/b02d3ff0cae572b9591a4b62a68c402308e927e2))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([20bcfa](https://github.com/UN-OCHA/gms-site/commit/20bcfa425fe1eccd04f7aa29c6a6aead17179e9e), [1f1748](https://github.com/UN-OCHA/gms-site/commit/1f1748dca19fe0eaa7f6d1ec669a0a37262ae36f), [857b49](https://github.com/UN-OCHA/gms-site/commit/857b49b3ac9669c9798867edee7b7c383de45f02))
+
+##### Deps-dev
+
+* Bump axios in /html/themes/custom/gms_ocha_common ([aba97e](https://github.com/UN-OCHA/gms-site/commit/aba97ea892f6d3dcc7b42dcb275085252d662788))
+
 ## [9.7.12](https://github.com/UN-OCHA/gms-site/compare/v9.7.11...v9.7.12) (2025-02-20)
 
 ### Chores

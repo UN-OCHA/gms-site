@@ -13,6 +13,17 @@ volumes:
   site-private:
 
 services:
+  memcache:
+    image: public.ecr.aws/unocha/memcache:1.6
+    hostname: $PROJECT_NAME-memcache
+    container_name: $PROJECT_NAME-memcache
+    environment:
+      MEMCACHE_MAX_MEMORY: 64
+    expose:
+      - "11211"
+    networks:
+      - default
+
   mysql:
     image: public.ecr.aws/unocha/mysql:11.4
     hostname: $PROJECT_NAME-mysql
@@ -32,6 +43,7 @@ services:
     hostname: $PROJECT_NAME-site
     container_name: $PROJECT_NAME-site
     depends_on:
+      - memcache
       - mysql
     volumes:
       - "./shared/settings:/srv/www/shared/settings:ro"
