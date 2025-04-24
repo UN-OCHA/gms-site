@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.342.28",
+            "version": "3.342.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "16cec140483869b3d244a5995b55d5365465dc58"
+                "reference": "ddd3747bd08f04159aec5d102a60c7d29906ee0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/16cec140483869b3d244a5995b55d5365465dc58",
-                "reference": "16cec140483869b3d244a5995b55d5365465dc58",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ddd3747bd08f04159aec5d102a60c7d29906ee0b",
+                "reference": "ddd3747bd08f04159aec5d102a60c7d29906ee0b",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.28"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.33"
             },
-            "time": "2025-04-16T18:13:32+00:00"
+            "time": "2025-04-23T18:07:32+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -1923,17 +1923,17 @@
         },
         {
             "name": "drupal/block_class",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/block_class.git",
-                "reference": "4.0.0"
+                "reference": "4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/block_class-4.0.0.zip",
-                "reference": "4.0.0",
-                "shasum": "4ed97a78db9b52f28e46d377947fecfb3a8c9580"
+                "url": "https://ftp.drupal.org/files/projects/block_class-4.0.1.zip",
+                "reference": "4.0.1",
+                "shasum": "46fa2437a8bd272a1f757a7cd957eb2747e28cdb"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -1941,8 +1941,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.0",
-                    "datestamp": "1730640283",
+                    "version": "4.0.1",
+                    "datestamp": "1745427425",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3621,27 +3621,26 @@
         },
         {
             "name": "drupal/genpass",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/genpass.git",
-                "reference": "2.1.1"
+                "reference": "2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/genpass-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "4455c31e011fbec9bcd15d2b59e3bd1b30ed36ad"
+                "url": "https://ftp.drupal.org/files/projects/genpass-2.1.2.zip",
+                "reference": "2.1.2",
+                "shasum": "640013b2f8652d6de1eb05f71a5812fba6cd522b"
             },
             "require": {
-                "drupal/core": "^10.3 || ^11",
-                "php": ">=8.0.0"
+                "drupal/core": "^10.3 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1729643787",
+                    "version": "2.1.2",
+                    "datestamp": "1745387479",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6328,17 +6327,17 @@
         },
         {
             "name": "drupal/superfish",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/superfish.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "e8ae338e68f4833a75116406f659f527630860f2"
+                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "3fb212cc1884e6dac1d1deef6c5ee7e87fb1b1f7"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11",
@@ -6347,8 +6346,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1740354162",
+                    "version": "8.x-1.11",
+                    "datestamp": "1744888197",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8392,16 +8391,16 @@
         },
         {
             "name": "lobsterr/drupal-superfish",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LOBsTerr/drupal-superfish.git",
-                "reference": "82c926d73d10e35a10449e61a02a532a55b58c7f"
+                "reference": "0ecc145be2a72027982ae86c60caf451a9fbb851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LOBsTerr/drupal-superfish/zipball/82c926d73d10e35a10449e61a02a532a55b58c7f",
-                "reference": "82c926d73d10e35a10449e61a02a532a55b58c7f",
+                "url": "https://api.github.com/repos/LOBsTerr/drupal-superfish/zipball/0ecc145be2a72027982ae86c60caf451a9fbb851",
+                "reference": "0ecc145be2a72027982ae86c60caf451a9fbb851",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8431,7 +8430,7 @@
                 "issues": "https://github.com/LOBsTerr/drupal-superfish/issues",
                 "source": "https://github.com/LOBsTerr/drupal-superfish"
             },
-            "time": "2025-02-23T01:00:39+00:00"
+            "time": "2025-04-23T12:52:31+00:00"
         },
         {
             "name": "masterminds/html5",
