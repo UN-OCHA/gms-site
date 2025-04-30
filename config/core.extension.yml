@@ -56,6 +56,7 @@ module:
   imce: 0
   inline_entity_form: 0
   jquery_ui: 0
+  key: 0
   language: 0
   layout_discovery: 0
   libraries: 0
@@ -83,9 +84,12 @@ module:
   mysql: 0
   node: 0
   noreqnewpass: 0
+  ocha_entraid: 0
   ocha_monitoring: 0
   ocha_snap: 0
   onomasticon: 0
+  openid_connect: 0
+  openid_connect_windows_aad: 0
   options: 0
   page_cache: 0
   page_specific_class: 0
@@ -136,6 +140,7 @@ module:
   ds_extras: 2
   gms_ocha: 5
   content_translation: 10
+  externalauth: 10
   views: 10
   minimal: 1000
 theme:
