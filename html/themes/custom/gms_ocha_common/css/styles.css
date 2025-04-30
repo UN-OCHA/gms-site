@@ -6600,6 +6600,23 @@ article p iframe {
   border: 1px solid #144372;
 }
 
+.node--type-page .field--name-body a[href^="/user/login/"] {
+  display: inline-block;
+  margin: 1rem 0 0 0;
+  padding: 12px 18px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background: var(--cd-ocha-blue);
+  font-weight: bold;
+}
+
+.node--type-page .field--name-body a[href^="/user/login/"]:hover,
+.node--type-page .field--name-body a[href^="/user/login/"]:focus,
+.node--type-page .field--name-body a[href^="/user/login/"]:active {
+  background: var(--cd-blue--dark);
+}
+
 .cd-search .cd-search__form {
   -webkit-box-shadow: 0px 10px 15px -2px rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0px 10px 15px -2px rgba(0, 0, 0, 0.16);
