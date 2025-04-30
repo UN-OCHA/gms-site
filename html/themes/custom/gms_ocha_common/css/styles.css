@@ -6600,7 +6600,7 @@ article p iframe {
   border: 1px solid #144372;
 }
 
-.node--type-page .field--name-body a[href^="/user/login/"] {
+.field--name-body a[href^="/user/login/"] {
   display: inline-block;
   margin: 1rem 0 0 0;
   padding: 12px 18px;
@@ -6611,9 +6611,9 @@ article p iframe {
   font-weight: bold;
 }
 
-.node--type-page .field--name-body a[href^="/user/login/"]:hover,
-.node--type-page .field--name-body a[href^="/user/login/"]:focus,
-.node--type-page .field--name-body a[href^="/user/login/"]:active {
+.field--name-body a[href^="/user/login/"]:hover,
+.field--name-body a[href^="/user/login/"]:focus,
+.field--name-body a[href^="/user/login/"]:active {
   background: var(--cd-blue--dark);
 }
 
