@@ -50,6 +50,7 @@ module:
   help: 0
   help_topics: 0
   history: 0
+  honeypot: 0
   hook_event_dispatcher: 0
   html_export: 0
   image: 0
