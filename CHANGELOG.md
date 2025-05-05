@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.8.3](https://github.com/UN-OCHA/gms-site/compare/v9.8.2...v9.8.3) (2025-05-05)
+
+### Chores
+
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([40a553](https://github.com/UN-OCHA/gms-site/commit/40a553b332c67c909be1fe38205157b8dcd4d5ef), [fb55a2](https://github.com/UN-OCHA/gms-site/commit/fb55a2ac22b449f57690503bc6e371ae91b14255), [3db0f2](https://github.com/UN-OCHA/gms-site/commit/3db0f2797fe00575428558619c099ffd6bd8af5f))
+
 ## [9.8.2](https://github.com/UN-OCHA/gms-site/compare/v9.8.1...v9.8.2) (2025-04-15)
 
 ### Chores
