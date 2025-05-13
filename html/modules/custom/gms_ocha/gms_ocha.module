@@ -239,10 +239,6 @@ function gms_ocha_preprocess_block(&$variables) {
       $variables['#cache']['max-age'] = 0;
     }
   }
-
-  if ($variables['attributes']['id'] == 'block-socialauthlogin') {
-    $variables['content']['#social_networks']['social_auth_hid']['img_path'] = 'themes/custom/gms_ocha_common/img/hid-logo.svg';
-  }
 }
 
 /**
