@@ -249,9 +249,9 @@ function gms_ocha_preprocess_block(&$variables) {
  */
 function gms_ocha_user_presave(UserInterface $account) {
   if ($account->isNew()) {
-    if ($account->hasRole('non-verified')) {
+    if ($account->hasRole('non_verified')) {
       return;
     }
-    $account->addRole('non-verified');
+    $account->addRole('non_verified');
   }
 }
