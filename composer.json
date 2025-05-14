@@ -150,6 +150,8 @@
         "drupal/modules_weight": "^3.0",
         "drupal/noreqnewpass": "^1.2",
         "drupal/onomasticon": "^2.2",
+        "drupal/openid_connect": "^3",
+        "drupal/openid_connect_windows_aad": "@dev",
         "drupal/override_node_options": "^2.6",
         "drupal/page_specific_class": "^2.0",
         "drupal/pathauto": "^1.8",
@@ -183,6 +185,7 @@
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.4",
         "unocha/gtm_barebones": "^1.0",
+        "unocha/ocha_entraid": "^1",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_snap": "^8.3.0",
         "webflo/drupal-finder": "^1.2.2"

@@ -5,6 +5,7 @@ dependencies:
   module:
     - comment
     - media
+    - ocha_entraid
     - search
     - system
 _core:
@@ -16,5 +17,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access ocha entraid direct login'
   - 'search content'
   - 'view media'
