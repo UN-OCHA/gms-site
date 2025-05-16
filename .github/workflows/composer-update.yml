@@ -2,7 +2,7 @@ name: Run Composer Update
 
 on:
   schedule:
-    - cron: '30 7 * * 4'
+    - cron: '30 23 * * 3'
   workflow_dispatch:
 
 jobs:
