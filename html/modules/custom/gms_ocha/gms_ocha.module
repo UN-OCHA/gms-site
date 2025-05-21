@@ -9,6 +9,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\SettingsCommand;
 use Drupal\path_alias\Entity\PathAlias;
+use Drupal\user\UserInterface;
 
 /**
  * Implements hook_theme().
@@ -238,8 +239,19 @@ function gms_ocha_preprocess_block(&$variables) {
       $variables['#cache']['max-age'] = 0;
     }
   }
+}
 
-  if ($variables['attributes']['id'] == 'block-socialauthlogin') {
-    $variables['content']['#social_networks']['social_auth_hid']['img_path'] = 'themes/custom/gms_ocha_common/img/hid-logo.svg';
+/**
+ * Implements hook_user_presave().
+ *
+ * Ensure that new users keep the "non-verified" role after switching
+ * from HID to Entra ID.
+ */
+function gms_ocha_user_presave(UserInterface $account) {
+  if ($account->isNew()) {
+    if ($account->hasRole('non_verified')) {
+      return;
+    }
+    $account->addRole('non_verified');
   }
 }

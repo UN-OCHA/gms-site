@@ -1,9 +1,0 @@
-_core:
-  default_config_hash: C_2nIdfM0mqImwzMZsxo7ZHLZBgqzmsIP8-klZwsRjY
-base_url: 'https://auth.humanitarian.id'
-auto_redirect: false
-disable_default: false
-disable_password_fields: false
-disable_email_field: false
-disable_user_field: false
-maintenance_access: false

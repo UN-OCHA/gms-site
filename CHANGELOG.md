@@ -4,6 +4,32 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [9.9.0](https://github.com/UN-OCHA/gms-site/compare/v9.8.3...v9.9.0) (2025-05-20)
+
+### Features
+
+* Ensure that new users keep getting assigned the `non-verified` role when they first login. ([b4a58f](https://github.com/UN-OCHA/gms-site/commit/b4a58fc92f566c246d643dcb23a82c339691ccfb))
+
+### Bug Fixes
+
+* Add the role by id, which of course has an underscore instead. ([7abe4b](https://github.com/UN-OCHA/gms-site/commit/7abe4b1e9502d2f6fcda074460824458d02dcb65))
+* Do not depend on an uninstalled module. ([c34a53](https://github.com/UN-OCHA/gms-site/commit/c34a53a889a62a0d903d367bd6c308b270aff260))
+* Enable the required honeypot module. ([9372eb](https://github.com/UN-OCHA/gms-site/commit/9372eb4cd2252c8f8e3f7d2dce7bc2086aebcb0e))
+
+### Chores
+
+* Add css changes to main css file ([b0c615](https://github.com/UN-OCHA/gms-site/commit/b0c6159bf65151d35a03011bd2455eb0b0a44bae))
+* Add modules. ([83367e](https://github.com/UN-OCHA/gms-site/commit/83367eaed0d6e803b83528900e36dc1a24ef4e40))
+* Add new settings and allow anonymous to use the direct link. ([2438f0](https://github.com/UN-OCHA/gms-site/commit/2438f02addbf25868c9bf5cdcc04b6d3114ac1fc))
+* Definitely do not add the HID logo! ([dbd576](https://github.com/UN-OCHA/gms-site/commit/dbd57641698304b6dcbe4c63570d986ac8622ddc))
+* Enable the new modules in Drupal. ([baa366](https://github.com/UN-OCHA/gms-site/commit/baa3661aadfbe76b2f2aa6812dad4b99b711abbe))
+* No paragraphs - apply style to basic page text block ([5d2e8b](https://github.com/UN-OCHA/gms-site/commit/5d2e8b14f24ababac3ef0c887140108983625eb9))
+* Remove login block and HID module. Set "connect users" for OIDC. ([1afdcf](https://github.com/UN-OCHA/gms-site/commit/1afdcf641d9d9e17c1f3d283b5363584b7a643e8))
+* Remove social_auth_roles module, no longer needed. ([71268a](https://github.com/UN-OCHA/gms-site/commit/71268ad2c4de18a08fce61c4eb9b76dc4db97fd4))
+* Style login links in the body of page nodes as buttons. ([1a74e7](https://github.com/UN-OCHA/gms-site/commit/1a74e7cd55b45bc81d944d229392e944534cc547))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([cd8936](https://github.com/UN-OCHA/gms-site/commit/cd8936004cc035770849606ea40c6a2c8c42f985), [f05eb1](https://github.com/UN-OCHA/gms-site/commit/f05eb187f3970a4c0816cc31e1d7dc0e2b158c9a))
+* What? This builds but the result is maye not used? ([9ace03](https://github.com/UN-OCHA/gms-site/commit/9ace03ddbb78aebb88c042ec076cb6ab3910c252))
+
 ## [9.8.3](https://github.com/UN-OCHA/gms-site/compare/v9.8.2...v9.8.3) (2025-05-05)
 
 ### Chores
