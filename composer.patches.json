@@ -17,9 +17,6 @@
         "drupal/onomasticon": {
             "Add missing schema - 3459880": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch"
         },
-        "drupal/user_expire": {
-            "Reset expiration when user is reactivated": "PATCHES/user_expire/reset-expiration-on-reactivation.patch"
-        },
         "drupal/username_enumeration_prevention": {
             "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
         }
