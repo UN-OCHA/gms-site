@@ -11,9 +11,6 @@
             "Warning": "PATCHES/core/CoreError.patch",
             "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
         },
-        "drupal/entity_browser": {
-            "expects parameter 1 to be array": "PATCHES/entity_browser/entity_browser-key-2914385-6.patch"
-        },
         "drupal/onomasticon": {
             "Add missing schema - 3459880": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch"
         },
