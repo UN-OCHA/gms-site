@@ -2,11 +2,8 @@ uuid: e30caeed-1b79-4599-a3bf-4e42d24e04f7
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:82e1b2f8-a0a8-48ec-8018-a09b36ea4393'
   module:
     - block_class
-    - block_content
     - system
   theme:
     - gms_ocha_common

@@ -5,7 +5,6 @@ dependencies:
   config:
     - views.view.blog_recent_post
   module:
-    - block_class
     - node
     - system
     - views
