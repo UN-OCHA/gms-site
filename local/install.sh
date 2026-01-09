@@ -122,9 +122,9 @@ if [ "$install_site" = "yes" ]; then
   docker_compose exec site sh -c "cp /srv/www/html/sites/default/settings.php /srv/www/html/sites/default/settings.php.backup"
   docker_compose exec site chmod 666 /srv/www/html/sites/default/settings.php
 
-  # Install the subtheme.
-  echo "Install the common design subtheme if not present already."
-  docker_compose exec -w /srv/www site composer run sub-theme || true
+  # Install the subtheme. Not used in GMS site.
+  # echo "Install the common design subtheme if not present already."
+  # docker_compose exec -w /srv/www site composer run sub-theme || true
 
   # Install the site with the existing config.
   if [ "$use_existing_config" = "yes" ]; then
@@ -152,8 +152,8 @@ if [ "$install_dev_dependencies" = "yes" ]; then
   # CLear the cache, import the configuration etc.
   docker_compose exec -u appuser site drush -y deploy
 
-  # Enable the devel module.
-  docker_compose exec  -u appuser site drush -y en devel
+  # Enable the devel module. Not present in GMS site.
+  #docker_compose exec  -u appuser site drush -y en devel
 
   # Enable the stage file proxy module.
   docker_compose exec  -u appuser site drush -y en stage_file_proxy
