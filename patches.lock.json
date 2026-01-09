@@ -1,0 +1,73 @@
+{
+    "_hash": "b3fc351797c72787e0717f6f62016eb33eb21cf7b2cb6fa2830caa03e6c1a41d",
+    "patches": {
+        "drupal/anchor_link": [
+            {
+                "package": "drupal/anchor_link",
+                "description": "Design Issue",
+                "url": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
+                "sha256": "424235b13a8275a4dac3415decb85c790910a8f5827d6e526c9279f6003e463c",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            },
+            {
+                "package": "drupal/anchor_link",
+                "description": "CSS dialog Design Issue",
+                "url": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch",
+                "sha256": "79888745d084448a9748a1915e1c4ff5a4e2a2c0098dadf7afdf413da3e2bca4",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "Warning",
+                "url": "PATCHES/core/CoreError.patch",
+                "sha256": "64b2b73c5deef44f962ba0fdd5687ba47114f9f4fdc325b22de9ddddb29596dd",
+                "depth": 2,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "https://www.drupal.org/project/drupal/issues/3143617",
+                "url": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch",
+                "sha256": "1af4063f6958cfe6c397789cdd32b4ba5aef6e932197951ca3aed6c2a5d0b794",
+                "depth": 2,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/onomasticon": [
+            {
+                "package": "drupal/onomasticon",
+                "description": "Add missing schema - 3459880",
+                "url": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch",
+                "sha256": "a2cccd8f4b80ef7406b783582df7c1e86fdaf038f254cfbf2a3ad4ff163ce1ba",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/username_enumeration_prevention": [
+            {
+                "package": "drupal/username_enumeration_prevention",
+                "description": "Avoid leaking the path via Drupal.settings json",
+                "url": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch",
+                "sha256": "d69c3af6d81a028ee001324682c5ddce14124632b4a83e240cd2f838905ede87",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ]
+    }
+}
