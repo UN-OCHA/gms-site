@@ -1,8 +1,9 @@
 diff --git a/core/lib/Drupal/Core/Render/RenderCache.php b/core/lib/Drupal/Core/Render/RenderCache.php
-index 674c00e28f..d46e6f0f6d 100644
+index ed7771b8047..53c547d59a0 100644
 --- a/core/lib/Drupal/Core/Render/RenderCache.php
 +++ b/core/lib/Drupal/Core/Render/RenderCache.php
-@@ -330,7 +330,7 @@ protected function createCacheID(array &$elements) {
+@@ -127,7 +127,7 @@ public function set(array &$elements, array $pre_bubbling_elements) {
+    */
    public function getCacheableRenderArray(array $elements) {
      $data = [
 -      '#markup' => $elements['#markup'],

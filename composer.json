@@ -99,7 +99,7 @@
         "ckeditor-plugin/link": "^4.17.2",
         "ckeditor-plugin/panelbutton": "^4.11",
         "composer/installers": "^2",
-        "cweagans/composer-patches": "^1.7",
+        "cweagans/composer-patches": "^2.0",
         "drupal/acl": "^2.0@beta",
         "drupal/admin_denied": "^2",
         "drupal/admin_toolbar": "^3.1",
@@ -231,9 +231,12 @@
         }
     },
     "extra": {
-        "enable-patching": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
+        "composer-patches": {
+            "patches-file": "composer.patches.json",
+            "exit-on-patch-failure": true,
+            "package-depths": {
+                "drupal/core": 2
+            }
         },
         "installer-types": [
             "bower-asset",
@@ -291,9 +294,7 @@
             "recurse": true,
             "replace": false,
             "merge-extra": false
-        },
-        "patches-file": "composer.patches.json",
-        "composer-exit-on-patch-failure": true
+        }
     },
     "scripts": {
         "git-hooks": "git config core.hooksPath git-hooks || exit 0",

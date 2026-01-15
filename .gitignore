@@ -11,6 +11,9 @@
 
 /local/.env
 
+# Ignore local composer cache.
+/.composer
+
 # Misc
 /vendor
 /behat/vendor
