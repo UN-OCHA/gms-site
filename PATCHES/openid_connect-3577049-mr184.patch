@@ -1,0 +1,73 @@
+diff --git a/openid_connect.install b/openid_connect.install
+index 83b57024477098987744541ba8ddfda9e044c53f..78b9c952e2c3392b90e89ddd73b4d5813ad254c3 100644
+--- a/openid_connect.install
++++ b/openid_connect.install
+@@ -38,7 +38,7 @@ function openid_connect_requirements($phase) {
+     foreach ($clients as $client) {
+       $settings = $client->getPlugin()->getConfiguration();
+ 
+-      $prompts = !empty($settings['prompt']) ? array_filter($settings['prompt']) : [];
++      $prompts = !empty($settings['prompt']) && is_array($settings['prompt']) ? array_filter($settings['prompt']) : [];
+       // Check if 'prompt' is set to 'none'.
+       if (
+         empty($prompts) ||
+@@ -429,10 +429,13 @@ function openid_connect_update_30005() {
+ 
+     foreach ($clients as $client) {
+       $config = $client->getPlugin()->getConfiguration();
+-      $config['prompt'] = ['login' => 'login'];
+-      $client->getPlugin()->setConfiguration($config);
+-      $client->save();
++      if (!isset($config['prompt'])) {
++        $config['prompt'] = ['login'];
++        $client->getPlugin()->setConfiguration($config);
++        $client->save();
++      }
+     }
+   }
++
+   \Drupal::messenger()->addWarning(t('The OpenID Connect module settings have been updated. Administrators should review the OpenID Connect configuration, particularly the prompt settings for all enabled providers.'));
+ }
+diff --git a/src/Plugin/OpenIDConnectClientBase.php b/src/Plugin/OpenIDConnectClientBase.php
+index 9c8193c15e3677e9971e2713aee6f13ed99db949..f1356ed79b412d7547ed4d10c8a833e30bc509a2 100644
+--- a/src/Plugin/OpenIDConnectClientBase.php
++++ b/src/Plugin/OpenIDConnectClientBase.php
+@@ -199,7 +199,7 @@ abstract class OpenIDConnectClientBase extends PluginBase implements OpenIDConne
+       'client_id' => '',
+       'client_secret' => '',
+       'iss_allowed_domains' => '',
+-      'prompt' => ['login' => 'login'],
++      'prompt' => ['login'],
+     ];
+   }
+ 
+@@ -255,7 +255,7 @@ abstract class OpenIDConnectClientBase extends PluginBase implements OpenIDConne
+         'consent' => $this->t('Consent'),
+         'select_account' => $this->t('Select account'),
+       ],
+-      '#default_value' => array_filter(array_values($this->configuration['prompt'] ?? [])),
++      '#default_value' => (array) ($this->configuration['prompt'] ?? []),
+       '#description' => $this->t('<strong><em>Please note:</em> This option has security implications.</strong><br />While valid, not selecting a prompt could lead to security issues and is discouraged in most use cases.'),
+     ];
+     return $form;
+@@ -287,7 +287,10 @@ abstract class OpenIDConnectClientBase extends PluginBase implements OpenIDConne
+    * {@inheritdoc}
+    */
+   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+-    // Empty function. Can be overridden by derived classes if required.
++    $prompt = $form_state->getValue('prompt');
++    if (is_array($prompt)) {
++      $form_state->setValue('prompt', array_values(array_filter($prompt)));
++    }
+   }
+ 
+   /**
+@@ -343,7 +346,7 @@ abstract class OpenIDConnectClientBase extends PluginBase implements OpenIDConne
+       isset($this->configuration['prompt']) &&
+       count($this->configuration['prompt']) > 0
+     ) {
+-      $return['query']['prompt'] = implode(' ', array_filter($this->configuration['prompt']));
++      $return['query']['prompt'] = implode(' ', $this->configuration['prompt']);
+     }
+     return $return;
+   }
