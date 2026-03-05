@@ -1,5 +1,5 @@
 {
-    "_hash": "74547101bf9af94e9d77fb7d10fedb1ab6077709310d1451fea1293e3af9d287",
+    "_hash": "39b942a4c7c99bba58db5da6809fc5ba2fa81ea25b858be59cf20cedae4d5b71",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -57,12 +57,12 @@
                 }
             }
         ],
-        "drupal/openid_connect": [
+        "drupal/openid_connect_windows_aad": [
             {
-                "package": "drupal/openid_connect",
-                "description": "The configuration property settings.prompt.login doesn't exist",
-                "url": "PATCHES/openid_connect/openid_connect-3577049-mr186.patch",
-                "sha256": "0acdd12fe2f0f9e3668406107547e84f94377f45ace17e735e5db6f8a76de6a4",
+                "package": "drupal/openid_connect_windows_aad",
+                "description": "OIDC prompt schema mismatch",
+                "url": "PATCHES/openid_connect_windows_aad/openid_connect_windows_aad-3577142-mr46.patch",
+                "sha256": "6b4bd440d50bc5cbe1f60ec835652aaec7d2dabc5e9836b478f1085a95fe12c8",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
