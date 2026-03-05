@@ -1,0 +1,43 @@
+diff --git a/config/schema/onomasticon.schema.yml b/config/schema/onomasticon.schema.yml
+new file mode 100644
+index 0000000..80597af
+--- /dev/null
++++ b/config/schema/onomasticon.schema.yml
+@@ -0,0 +1,37 @@
++filter_settings.filter_onomasticon:
++  type: mapping
++  label: 'Adds glossary information to words.'
++  mapping:
++    onomasticon_vocabulary:
++      type: string
++      label: 'Vocabulary that holds the glossary terms'
++    onomasticon_definition_field:
++      type: string
++      label: 'Definition field'
++    onomasticon_definition_filters:
++      type: boolean
++      label: 'Definition filters'
++    onomasticon_tag:
++      type: string
++      label: 'HTML Tag'
++    onomasticon_disabled:
++      type: string
++      label: 'Disabled tags'
++    onomasticon_implement:
++      type: string
++      label: 'Implementation'
++    onomasticon_orientation:
++      type: string
++      label: 'Orientation'
++    onomasticon_cursor:
++      type: string
++      label: 'Cursor'
++    onomasticon_repetition:
++      type: string
++      label: 'Add alternate row striping'
++    onomasticon_ignorecase:
++      type: boolean
++      label: 'Ignore case'
++    onomasticon_termlink:
++      type: boolean
++      label: 'Add a link to the term entity'
