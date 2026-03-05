@@ -1,5 +1,5 @@
 {
-    "_hash": "1d77b753a646ae887e63c792ed20ff2690a61ec89378128ae33d06221994dfba",
+    "_hash": "74547101bf9af94e9d77fb7d10fedb1ab6077709310d1451fea1293e3af9d287",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -61,8 +61,8 @@
             {
                 "package": "drupal/openid_connect",
                 "description": "The configuration property settings.prompt.login doesn't exist",
-                "url": "PATCHES/openid_connect-3577049-mr184.patch",
-                "sha256": "ad395c541e1362f9cc65dbf3fd5bf5e1ee8bb50ed098e8192f0a74310631b0c4",
+                "url": "PATCHES/openid_connect/openid_connect-3577049-mr186.patch",
+                "sha256": "0acdd12fe2f0f9e3668406107547e84f94377f45ace17e735e5db6f8a76de6a4",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
