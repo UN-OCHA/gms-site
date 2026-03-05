@@ -1,5 +1,5 @@
 {
-    "_hash": "b3fc351797c72787e0717f6f62016eb33eb21cf7b2cb6fa2830caa03e6c1a41d",
+    "_hash": "1d77b753a646ae887e63c792ed20ff2690a61ec89378128ae33d06221994dfba",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -37,7 +37,7 @@
             {
                 "package": "drupal/core",
                 "description": "https://www.drupal.org/project/drupal/issues/3143617",
-                "url": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch",
+                "url": "PATCHES/core/3143617-28_0.patch",
                 "sha256": "1af4063f6958cfe6c397789cdd32b4ba5aef6e932197951ca3aed6c2a5d0b794",
                 "depth": 2,
                 "extra": {
@@ -49,8 +49,20 @@
             {
                 "package": "drupal/onomasticon",
                 "description": "Add missing schema - 3459880",
-                "url": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch",
+                "url": "PATCHES/onomasticon/compat-10.3-missing-schema.patch",
                 "sha256": "a2cccd8f4b80ef7406b783582df7c1e86fdaf038f254cfbf2a3ad4ff163ce1ba",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/openid_connect": [
+            {
+                "package": "drupal/openid_connect",
+                "description": "The configuration property settings.prompt.login doesn't exist",
+                "url": "PATCHES/openid_connect-3577049-mr184.patch",
+                "sha256": "ad395c541e1362f9cc65dbf3fd5bf5e1ee8bb50ed098e8192f0a74310631b0c4",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
