@@ -1,0 +1,11 @@
+--- a/openid_connect_windows_aad.module	2026-03-06 15:28:41
++++ b/openid_connect_windows_aad.module	2026-03-06 15:34:45
+@@ -186,7 +186,7 @@
+  */
+ function openid_connect_windows_aad_openid_connect_redirect_logout_alter(array &$response, array $context) : void {
+   $client = OpenIDConnectClientEntity::load($context['client']);
+-  if ($client->getPlugin() instanceof WindowsAad && $response['response'] instanceof TrustedRedirectResponse) {
++  if (!empty($client) && $client->getPlugin() instanceof WindowsAad && $response['response'] instanceof TrustedRedirectResponse) {
+     $idToken = \Drupal::service('openid_connect.session')->retrieveIdToken();
+     if (!$idToken) {
+       return;

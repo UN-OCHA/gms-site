@@ -1,5 +1,5 @@
 {
-    "_hash": "39b942a4c7c99bba58db5da6809fc5ba2fa81ea25b858be59cf20cedae4d5b71",
+    "_hash": "465324fd2a0ce7d725ddd5f25723f7d553bd0f57a730213133c435124a284f7d",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -63,6 +63,16 @@
                 "description": "OIDC prompt schema mismatch",
                 "url": "PATCHES/openid_connect_windows_aad/openid_connect_windows_aad-3577142-mr46.patch",
                 "sha256": "6b4bd440d50bc5cbe1f60ec835652aaec7d2dabc5e9836b478f1085a95fe12c8",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            },
+            {
+                "package": "drupal/openid_connect_windows_aad",
+                "description": "Incorrect context in hook_redirect_logout_alter",
+                "url": "PATCHES/openid_connect_windows_aad/openid_connect_windows_aad-logout_alter_hook.patch",
+                "sha256": "15e36b67ecb7916854042ca2fc97670beccdc653766a7976cb8eb7787150b2b0",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
