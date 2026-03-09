@@ -25,8 +25,8 @@ settings:
   userinfo_update_email: false
   hide_email_address_warning: false
   prompt:
-    login: login
-    none: 0
+    login: 0
+    none: 'none'
     consent: 0
     select_account: 0
     create: 0
