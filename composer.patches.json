@@ -12,7 +12,10 @@
             "Add missing schema - 3459880": "PATCHES/onomasticon/compat-10.3-missing-schema.patch"
         },
         "drupal/openid_connect": {
-            "The configuration property settings.prompt.login doesn't exist": "PATCHES/openid_connect-3577049-mr184.patch"
+            "Incorrect context in hook_redirect_logout_alter": "PATCHES/openid_connect/openid_connect-3577436-mr191.patch"
+        },
+        "drupal/openid_connect_windows_aad": {
+            "OIDC prompt schema mismatch": "PATCHES/openid_connect_windows_aad/openid_connect_windows_aad-3577142-mr46.patch"
         },
         "drupal/username_enumeration_prevention": {
             "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
