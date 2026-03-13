@@ -1,5 +1,5 @@
 {
-    "_hash": "b3fc351797c72787e0717f6f62016eb33eb21cf7b2cb6fa2830caa03e6c1a41d",
+    "_hash": "bbf506cae44db50d00ca2ac6b55e24cea3709600b00063f44cdf2a07f7495672",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -37,7 +37,7 @@
             {
                 "package": "drupal/core",
                 "description": "https://www.drupal.org/project/drupal/issues/3143617",
-                "url": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch",
+                "url": "PATCHES/core/3143617-28_0.patch",
                 "sha256": "1af4063f6958cfe6c397789cdd32b4ba5aef6e932197951ca3aed6c2a5d0b794",
                 "depth": 2,
                 "extra": {
@@ -49,8 +49,20 @@
             {
                 "package": "drupal/onomasticon",
                 "description": "Add missing schema - 3459880",
-                "url": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch",
+                "url": "PATCHES/onomasticon/compat-10.3-missing-schema.patch",
                 "sha256": "a2cccd8f4b80ef7406b783582df7c1e86fdaf038f254cfbf2a3ad4ff163ce1ba",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/openid_connect": [
+            {
+                "package": "drupal/openid_connect",
+                "description": "Incorrect context in hook_redirect_logout_alter",
+                "url": "PATCHES/openid_connect/openid_connect-3577436-mr191.patch",
+                "sha256": "3ab9ffcd23bcaf4f12c1e657a15f349e703ef56694c25bfd13a7b28be4cad42d",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
