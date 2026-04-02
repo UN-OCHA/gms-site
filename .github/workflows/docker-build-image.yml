@@ -13,11 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    
     - name: Checkout code
-     id: checkout
-     uses: actions/checkout@v6
-     with:
-       fetch-depth: 0
+      id: checkout
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
 
     - name: Build
       id: build-action
