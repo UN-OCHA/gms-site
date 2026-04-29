@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.379.5",
+            "version": "3.379.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c81342df6e09bbc30d28ea57cc4644bb35c53ce2"
+                "reference": "aaa9aab5d077018dbc9af63338b2c5aa44a5add3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c81342df6e09bbc30d28ea57cc4644bb35c53ce2",
-                "reference": "c81342df6e09bbc30d28ea57cc4644bb35c53ce2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aaa9aab5d077018dbc9af63338b2c5aa44a5add3",
+                "reference": "aaa9aab5d077018dbc9af63338b2c5aa44a5add3",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.379.5"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.379.9"
             },
-            "time": "2026-04-22T18:13:16+00:00"
+            "time": "2026-04-29T18:07:13+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2696,17 +2696,17 @@
         },
         {
             "name": "drupal/content_access",
-            "version": "2.1.0-rc3",
+            "version": "2.1.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/content_access.git",
-                "reference": "2.1.0-rc3"
+                "reference": "2.1.0-rc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/content_access-2.1.0-rc3.zip",
-                "reference": "2.1.0-rc3",
-                "shasum": "837517e778470de28c5f00d7c412d769b1b85877"
+                "url": "https://ftp.drupal.org/files/projects/content_access-2.1.0-rc5.zip",
+                "reference": "2.1.0-rc5",
+                "shasum": "f468a72cd99ec0485dc63f051c05fd26af9a5034"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10 || ^11"
@@ -2717,8 +2717,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0-rc3",
-                    "datestamp": "1773842128",
+                    "version": "2.1.0-rc5",
+                    "datestamp": "1777319270",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -6071,17 +6071,17 @@
         },
         {
             "name": "drupal/redirect",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/redirect.git",
-                "reference": "8.x-1.12"
+                "reference": "8.x-1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "1cdee11356a25b9f9a10329aec0eeb293e0023de"
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "57185d3b9d9e2a549584b903eab838aeaa72a218"
             },
             "require": {
                 "drupal/core": "^10 || ^11"
@@ -6089,8 +6089,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1756419163",
+                    "version": "8.x-1.13",
+                    "datestamp": "1777006978",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8981,16 +8981,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.17.5",
+            "version": "v1.17.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "e19a8bd896b7f04941a38fd38a140c9a6531c84f"
+                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/e19a8bd896b7f04941a38fd38a140c9a6531c84f",
-                "reference": "e19a8bd896b7f04941a38fd38a140c9a6531c84f",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/b8b4184b1e6912669f9af155caef9050509d9f18",
+                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18",
                 "shasum": ""
             },
             "require": {
@@ -9003,7 +9003,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17.5-dev"
+                    "dev-master": "1.17.6-dev"
                 }
             },
             "autoload": {
@@ -9024,9 +9024,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.17.5"
+                "source": "https://github.com/mck89/peast/tree/v1.17.6"
             },
-            "time": "2026-03-15T10:47:07+00:00"
+            "time": "2026-04-24T08:04:05+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -11794,7 +11794,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -11854,7 +11854,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -11878,7 +11878,7 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
@@ -11934,7 +11934,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -19078,7 +19078,7 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
@@ -19134,7 +19134,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -19158,7 +19158,7 @@
         },
         {
             "name": "symfony/polyfill-php82",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php82.git",
@@ -19214,7 +19214,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php82/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php82/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -19238,7 +19238,7 @@
         },
         {
             "name": "symfony/polyfill-php84",
-            "version": "v1.36.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php84.git",
@@ -19294,7 +19294,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php84/tree/v1.36.0"
+                "source": "https://github.com/symfony/polyfill-php84/tree/v1.37.0"
             },
             "funding": [
                 {
