@@ -18,6 +18,7 @@ display_configuration:
   link_text: 'Select media'
   auto_open: true
   path: ''
+  use_admin_theme: true
 selection_display: no_display
 selection_display_configuration:
   view: null

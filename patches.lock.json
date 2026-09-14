@@ -1,5 +1,5 @@
 {
-    "_hash": "bbf506cae44db50d00ca2ac6b55e24cea3709600b00063f44cdf2a07f7495672",
+    "_hash": "662c81944d0b80547301efafaec2462d1bf0694ad589bb236864b64d4ba88df6",
     "patches": {
         "drupal/anchor_link": [
             {
@@ -51,18 +51,6 @@
                 "description": "Add missing schema - 3459880",
                 "url": "PATCHES/onomasticon/compat-10.3-missing-schema.patch",
                 "sha256": "a2cccd8f4b80ef7406b783582df7c1e86fdaf038f254cfbf2a3ad4ff163ce1ba",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
-        "drupal/openid_connect": [
-            {
-                "package": "drupal/openid_connect",
-                "description": "Incorrect context in hook_redirect_logout_alter",
-                "url": "PATCHES/openid_connect/openid_connect-3577436-mr191.patch",
-                "sha256": "3ab9ffcd23bcaf4f12c1e657a15f349e703ef56694c25bfd13a7b28be4cad42d",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
