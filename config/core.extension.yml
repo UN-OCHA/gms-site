@@ -39,7 +39,6 @@ module:
   features: 0
   field: 0
   field_event_dispatcher: 0
-  field_ui: 0
   file: 0
   filter: 0
   genpass: 0
