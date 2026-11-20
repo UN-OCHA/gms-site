@@ -58,9 +58,9 @@ class GmsSecureRoleController extends ControllerBase {
 
     $response = new AjaxResponse();
     $options = [
-      'dialogClass' => 'popup-dialog-class',
-      'width' => '700',
-      'title' => $this->t('Request for Secure role.'),
+      'classes' => ['ui-dialog' => 'popup-dialog-class'],
+      'width'   => '700',
+      'title'   => $this->t('Request for Secure role.'),
     ];
 
     $message = $this->entityTypeManager

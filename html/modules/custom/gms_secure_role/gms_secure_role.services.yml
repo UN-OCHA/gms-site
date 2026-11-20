@@ -1,6 +1,7 @@
 services:
   gms_secure_role.event_subscriber:
     class: Drupal\gms_secure_role\EventSubscriber\GmsOchaEventSubscriber
-    arguments: []
+    arguments:
+      - '@request_stack'
     tags:
       - { name: 'event_subscriber' }
