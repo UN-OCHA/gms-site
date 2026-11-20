@@ -254,9 +254,6 @@
     "drupal/social_auth": {
         "version": "3.0.2"
     },
-    "drupal/social_auth_hid": {
-        "version": "2.7.0"
-    },
     "drupal/stage_file_proxy": {
         "version": "1.1.0"
     },
@@ -301,9 +298,6 @@
     },
     "drush/drush": {
         "version": "10.4.0"
-    },
-    "easyrdf/easyrdf": {
-        "version": "1.1.1"
     },
     "egulias/email-validator": {
         "version": "2.1.25"
@@ -758,9 +752,6 @@
     },
     "typo3/phar-stream-wrapper": {
         "version": "v3.1.6"
-    },
-    "un-ocha/oauth2-hid": {
-        "version": "v1.0.2"
     },
     "unocha/common_design": {
         "version": "v4.1.1"
