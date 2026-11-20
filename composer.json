@@ -77,18 +77,6 @@
                     "type": "zip"
                 }
             }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "drupaloverride/condition_query",
-                "version": "dev-master",
-                "type": "drupal-module",
-                "dist": {
-                    "url": "https://git.drupalcode.org/api/v4/projects/project%2Fcondition_query/repository/archive.zip?sha=e1de72",
-                    "type": "zip"
-                }
-            }
         }
     ],
     "require": {
@@ -110,6 +98,7 @@
         "drupal/block_class": "^4",
         "drupal/ckeditor_font": "^2",
         "drupal/components": "^3.0@beta",
+        "drupal/condition_query": "^1.5",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/config_split": "^2.0",
         "drupal/config_update": "^2.0@alpha",
@@ -174,8 +163,8 @@
         "drupal/views_base_url": "^2.0@beta",
         "drupal/views_block_area": "^2.0",
         "drupal/votingapi": "^3.0@beta",
-        "drupaloverride/condition_query": "dev-master",
         "drush/drush": "^12",
+        "mglaman/composer-drupal-lenient": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
         "unocha/common_design": "^9.4",
@@ -211,13 +200,14 @@
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
+            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "symfony/flex": true,
+            "symfony/runtime": true,
             "tbachert/spi": true,
-            "wikimedia/composer-merge-plugin": true,
-            "symfony/runtime": true
+            "wikimedia/composer-merge-plugin": true
         },
         "policy": {
             "advisories": {
@@ -302,6 +292,9 @@
             "recurse": true,
             "replace": false,
             "merge-extra": false
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/maintenance200"]
         }
     },
     "scripts": {
