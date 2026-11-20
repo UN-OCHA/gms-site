@@ -101,9 +101,6 @@
     "doctrine/reflection": {
         "version": "1.2.2"
     },
-    "drupal-ckeditor-libraries-group/font": {
-        "version": "4.16.2"
-    },
     "drupal/admin_denied": {
         "version": "1.1.0"
     },
@@ -113,26 +110,14 @@
     "drupal/anchor_link": {
         "version": "2.5.0"
     },
-    "drupal/auto_config_form": {
-        "version": "1.0.x-dev"
-    },
     "drupal/block_class": {
         "version": "1.3.0"
-    },
-    "drupal/ckeditor_config": {
-        "version": "3.1.0"
     },
     "drupal/ckeditor_font": {
         "version": "1.2.0"
     },
-    "drupal/ckeditor_iframe": {
-        "version": "2.1.0"
-    },
     "drupal/coder": {
         "version": "8.3.13"
-    },
-    "drupal/colorbutton": {
-        "version": "1.3.0"
     },
     "drupal/components": {
         "version": "3.0.0-beta2"
@@ -236,9 +221,6 @@
     "drupal/override_node_options": {
         "version": "2.6.0"
     },
-    "drupal/panelbutton": {
-        "version": "1.4.0"
-    },
     "drupal/pathauto": {
         "version": "1.8.0"
     },
@@ -253,9 +235,6 @@
     },
     "drupal/social_auth": {
         "version": "3.0.2"
-    },
-    "drupal/social_auth_hid": {
-        "version": "2.7.0"
     },
     "drupal/stage_file_proxy": {
         "version": "1.1.0"
@@ -301,9 +280,6 @@
     },
     "drush/drush": {
         "version": "10.4.0"
-    },
-    "easyrdf/easyrdf": {
-        "version": "1.1.1"
     },
     "egulias/email-validator": {
         "version": "2.1.25"
@@ -758,9 +734,6 @@
     },
     "typo3/phar-stream-wrapper": {
         "version": "v3.1.6"
-    },
-    "un-ocha/oauth2-hid": {
-        "version": "v1.0.2"
     },
     "unocha/common_design": {
         "version": "v4.1.1"

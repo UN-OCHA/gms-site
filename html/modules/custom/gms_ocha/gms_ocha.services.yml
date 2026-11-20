@@ -1,4 +1,8 @@
 services:
+  logger.channel.gms_ocha:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: [ 'gms_ocha' ]
   gms_ocha.graph_data:
     class: Drupal\gms_ocha\GraphData
-    arguments: ['@cache.default', '@http_client','@request_stack']
+    arguments: ['@cache.default', '@http_client','@request_stack','@logger.channel.gms_ocha']

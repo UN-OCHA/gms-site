@@ -1,28 +1,6 @@
 {
-    "_hash": "662c81944d0b80547301efafaec2462d1bf0694ad589bb236864b64d4ba88df6",
+    "_hash": "5d86328e451efb84e028cef4c41d36fccd26de59d8a8737f005c86be11295e5b",
     "patches": {
-        "drupal/anchor_link": [
-            {
-                "package": "drupal/anchor_link",
-                "description": "Design Issue",
-                "url": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
-                "sha256": "424235b13a8275a4dac3415decb85c790910a8f5827d6e526c9279f6003e463c",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            },
-            {
-                "package": "drupal/anchor_link",
-                "description": "CSS dialog Design Issue",
-                "url": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch",
-                "sha256": "79888745d084448a9748a1915e1c4ff5a4e2a2c0098dadf7afdf413da3e2bca4",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
         "drupal/core": [
             {
                 "package": "drupal/core",
@@ -40,6 +18,30 @@
                 "url": "PATCHES/core/3143617-28_0.patch",
                 "sha256": "1af4063f6958cfe6c397789cdd32b4ba5aef6e932197951ca3aed6c2a5d0b794",
                 "depth": 2,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/mailcontrol": [
+            {
+                "package": "drupal/mailcontrol",
+                "description": "Automated Drupal 11 compatibility fixes - #3431785",
+                "url": "PATCHES/mailcontrol/mailcontrol-3431785-d11-compat-3.diff",
+                "sha256": "349d3f85e0d11c3b1731793164aac2538e643b0f1003a1124265530652eaaf0c",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/maintenance200": [
+            {
+                "package": "drupal/maintenance200",
+                "description": "D11 compatibility - #3431791",
+                "url": "PATCHES/maintenance200/maintenance200-D11-compatibility-3431791.patch",
+                "sha256": "a18c917b199168ded802407a11e2d9eb75b1933c75aea4e60701c3ba0f6ea623",
+                "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
                 }

@@ -7,6 +7,7 @@ use Drupal\social_auth\Event\UserEvent;
 // Use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;.
 use Drupal\user_event_dispatcher\UserHookEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Class EntityTypeSubscriber.
@@ -14,6 +15,20 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  * @package Drupal\custom_events\EventSubscriber
  */
 class GmsOchaEventSubscriber implements EventSubscriberInterface {
+
+  /**
+   * The request stack.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected $requestStack;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(RequestStack $requestStack) {
+    $this->requestStack = $requestStack;
+  }
 
   /**
    * {@inheritdoc}
@@ -38,7 +53,8 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
   public function showPopup(UserEvent $event) {
     $account = $event->getUser();
     if (in_array('non_verified', $account->getRoles())) {
-      $_SESSION['show_pop_up'] = TRUE;
+      $request = $this->requestStack->getCurrentRequest();
+      $request->getSession()->set('show_pop_up', TRUE);
     }
   }
 
@@ -48,7 +64,8 @@ class GmsOchaEventSubscriber implements EventSubscriberInterface {
   public function showNormalPopup($event) {
     $account = $event->getAccount();
     if (in_array('non_verified', $account->getRoles())) {
-      $_SESSION['show_pop_up'] = TRUE;
+      $request = $this->requestStack->getCurrentRequest();
+      $request->getSession()->set('show_pop_up', TRUE);
     }
   }
 
