@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97029f20067dc8bcc398b7d876065d45",
+    "content-hash": "885703d165299cd697251eee343d3e53",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1400,76 +1400,6 @@
             "published-time": "2024-02-05T11:57:39+00:00"
         },
         {
-            "name": "drupal-ckeditor-libraries-group/fakeobjects",
-            "version": "4.22.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-ckeditor-libraries-group/fakeobjects.git",
-                "reference": "a1de732aa3dbc63349f8b4653b1c7788c93ae25c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-ckeditor-libraries-group/fakeobjects/zipball/a1de732aa3dbc63349f8b4653b1c7788c93ae25c",
-                "reference": "a1de732aa3dbc63349f8b4653b1c7788c93ae25c",
-                "shasum": ""
-            },
-            "type": "drupal-library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later",
-                "LGPL-2.1-or-later",
-                "MPL-1.1"
-            ],
-            "description": "CKEditor 4 fakeobjects plugin",
-            "homepage": "https://ckeditor.com/cke4/addon/fakeobjects",
-            "keywords": [
-                "CKEditor",
-                "fakeobjects",
-                "plugin"
-            ],
-            "support": {
-                "issues": "https://github.com/ckeditor/ckeditor4/issues",
-                "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/fakeobjects"
-            },
-            "time": "2023-02-08T14:53:49+00:00",
-            "published-time": "2023-08-29T02:31:26+00:00"
-        },
-        {
-            "name": "drupal-ckeditor-libraries-group/font",
-            "version": "4.22.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-ckeditor-libraries-group/font.git",
-                "reference": "a038b039d6ef72720a1018b9e8dff8b9db7af071"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-ckeditor-libraries-group/font/zipball/a038b039d6ef72720a1018b9e8dff8b9db7af071",
-                "reference": "a038b039d6ef72720a1018b9e8dff8b9db7af071",
-                "shasum": ""
-            },
-            "type": "drupal-library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later",
-                "LGPL-2.1-or-later",
-                "MPL-1.1"
-            ],
-            "description": "CKEditor 4 font plugin",
-            "homepage": "https://ckeditor.com/cke4/addon/font",
-            "keywords": [
-                "CKEditor",
-                "font",
-                "plugin"
-            ],
-            "support": {
-                "issues": "https://github.com/ckeditor/ckeditor4/issues",
-                "source": "https://github.com/ckeditor/ckeditor4/tree/master/plugins/font"
-            },
-            "time": "2023-02-08T14:53:49+00:00",
-            "published-time": "2023-08-29T02:23:46+00:00"
-        },
-        {
             "name": "drupal/acl",
             "version": "2.0.2",
             "source": {
@@ -1723,35 +1653,31 @@
         },
         {
             "name": "drupal/anchor_link",
-            "version": "2.7.0",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/anchor_link.git",
-                "reference": "8.x-2.7"
+                "reference": "3.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/anchor_link-8.x-2.7.zip",
-                "reference": "8.x-2.7",
-                "shasum": "fb98d736514d7acecd6c62cd9732bc083762f5da"
+                "url": "https://ftp.drupal.org/files/projects/anchor_link-3.0.7.zip",
+                "reference": "3.0.7",
+                "shasum": "370b97c38650ed3049709242e67483df6a809d50"
             },
             "require": {
-                "drupal/ckeditor": "*",
-                "drupal/core": "^9 || ^10 || ^11",
-                "drupal/fakeobjects": "~1.0"
+                "drupal/core": "^10 || ^11 || ^12",
+                "vardot/ckeditor5-anchor-drupal": "^1.0.3 || ^2.0.5"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.7",
-                    "datestamp": "1718879219",
+                    "version": "3.0.7",
+                    "datestamp": "1794696583",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "branch-alias": {
-                    "dev-8.x-2.x": "8.2.x-dev"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1765,8 +1691,9 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "josebc",
-                    "homepage": "https://www.drupal.org/user/1376836"
+                    "name": "Northern Commerce",
+                    "homepage": "https://www.drupal.org/northern-commerce",
+                    "role": "Maintainer"
                 },
                 {
                     "name": "mohammed j. razem",
@@ -1791,7 +1718,7 @@
                 "source": "http://cgit.drupalcode.org/anchor_link",
                 "issues": "https://www.drupal.org/project/issues/anchor_link"
             },
-            "published-time": "2024-06-19T19:18:11+00:00"
+            "published-time": "2026-11-09T13:20:28+00:00"
         },
         {
             "name": "drupal/aws",
@@ -2021,120 +1948,30 @@
             "published-time": "2025-11-10T00:20:00+00:00"
         },
         {
-            "name": "drupal/ckeditor",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "1.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.2.zip",
-                "reference": "1.0.2",
-                "shasum": "fec2ca9ad852a00c7b9584cb6040dc860364c481"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "require-dev": {
-                "drupal/classy": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.2",
-                    "datestamp": "1695740655",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Jorrit",
-                    "homepage": "https://www.drupal.org/user/161217"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "magnus",
-                    "homepage": "https://www.drupal.org/user/73919"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "p.wiaderny",
-                    "homepage": "https://www.drupal.org/user/2956619"
-                },
-                {
-                    "name": "vokiel",
-                    "homepage": "https://www.drupal.org/user/2793801"
-                },
-                {
-                    "name": "wim leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "wwalc",
-                    "homepage": "https://www.drupal.org/user/184556"
-                },
-                {
-                    "name": "xjm",
-                    "homepage": "https://www.drupal.org/user/65776"
-                }
-            ],
-            "description": "WYSIWYG editing for rich text fields using CKEditor.",
-            "homepage": "https://www.drupal.org/project/ckeditor",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor"
-            },
-            "published-time": "2023-06-20T11:52:20+00:00"
-        },
-        {
             "name": "drupal/ckeditor_font",
-            "version": "1.5.0",
+            "version": "2.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_font.git",
-                "reference": "8.x-1.5"
+                "reference": "2.0.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_font-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "41f76c63fd5c2a417c48d7999d138dc5629788b8"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_font-2.0.0-beta6.zip",
+                "reference": "2.0.0-beta6",
+                "shasum": "95ffdb6fe2dd1f6b68d9b45ca7b31c14e2641ccd"
             },
             "require": {
-                "drupal-ckeditor-libraries-group/font": "^4.13.1",
-                "drupal/ckeditor": "*",
                 "drupal/core": "^9.4 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1736732976",
+                    "version": "2.0.0-beta6",
+                    "datestamp": "1751225775",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2144,36 +1981,54 @@
             ],
             "authors": [
                 {
-                    "name": "cobenash",
-                    "homepage": "https://www.drupal.org/user/2138470"
+                    "name": "Darryl Norris (darol100)",
+                    "homepage": "https://www.drupal.org/u/darol100",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "danrod",
-                    "homepage": "https://www.drupal.org/user/19150"
+                    "name": "Mauricio Dinarte (dinarcon)",
+                    "homepage": "https://www.drupal.org/u/dinarcon",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "darol100",
-                    "homepage": "https://www.drupal.org/user/2667123"
+                    "name": "Jason Thompson (galactus86)",
+                    "homepage": "https://www.drupal.org/u/galactus86",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "dinarcon",
-                    "homepage": "https://www.drupal.org/user/909522"
+                    "name": "Stephen Pennell (steyep)",
+                    "homepage": "https://www.drupal.org/u/steyep",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "galactus86",
-                    "homepage": "https://www.drupal.org/user/1203916"
+                    "name": "Adrian ABABEI (web247)",
+                    "homepage": "https://www.drupal.org/u/web247",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "kevinquillen",
-                    "homepage": "https://www.drupal.org/user/317279"
+                    "name": "Eric Sembrat (Webbeh)",
+                    "homepage": "https://www.drupal.org/u/webbeh",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "steyep",
-                    "homepage": "https://www.drupal.org/user/3289085"
+                    "name": "Victor Yang (cobenash)",
+                    "homepage": "https://www.drupal.org/u/cobenash",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "Webbeh",
-                    "homepage": "https://www.drupal.org/user/1160608"
+                    "name": "Kevin Quillen (kevinquillen)",
+                    "homepage": "https://www.drupal.org/u/kevinquillen",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Georgia Institute of Technology (ramblinwreck)",
+                    "homepage": "https://www.drupal.org/u/ramblinwreck",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Daniel Rodriguez (danrod)",
+                    "homepage": "https://www.drupal.org/u/danrod",
+                    "role": "Maintainer"
                 }
             ],
             "description": "This plugin adds Font Size and Font Family dropdowns that applies as inline element style.",
@@ -2185,7 +2040,7 @@
                 "source": "http://cgit.drupalcode.org/ckeditor_font",
                 "issues": "http://drupal.org/project/issues/ckeditor_font"
             },
-            "published-time": "2025-01-13T01:49:27+00:00"
+            "published-time": "2025-06-29T19:36:07+00:00"
         },
         {
             "name": "drupal/components",
@@ -3404,65 +3259,6 @@
                 "issues": "https://www.drupal.org/project/issues/externalauth"
             },
             "published-time": "2026-10-01T13:27:50+00:00"
-        },
-        {
-            "name": "drupal/fakeobjects",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/fakeobjects.git",
-                "reference": "8.x-1.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "3d809e634f334681664e01c57fbff013e18b428e"
-            },
-            "require": {
-                "drupal-ckeditor-libraries-group/fakeobjects": "^4.5.11",
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1740013102",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Kevin Quillen (kevinquillen)",
-                    "homepage": "https://www.drupal.org/u/kevinquillen",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "kevinquillen",
-                    "homepage": "https://www.drupal.org/user/317279"
-                },
-                {
-                    "name": "xmacinfo",
-                    "homepage": "https://www.drupal.org/user/12131"
-                }
-            ],
-            "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
-            "homepage": "http://drupal.org/project/fakeobjects",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/fakeobjects",
-                "issues": "http://drupal.org/project/issues/fakeobjects"
-            },
-            "published-time": "2025-02-20T00:51:54+00:00"
         },
         {
             "name": "drupal/features",
@@ -12634,6 +12430,49 @@
             },
             "time": "2025-07-18T04:34:09+00:00",
             "published-time": "2025-07-18T04:35:08+00:00"
+        },
+        {
+            "name": "vardot/ckeditor5-anchor-drupal",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vardot/ckeditor5-anchor-drupal.git",
+                "reference": "3da1fa260dd4102635396445dfbd7c37b1b0892f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vardot/ckeditor5-anchor-drupal/zipball/3da1fa260dd4102635396445dfbd7c37b1b0892f",
+                "reference": "3da1fa260dd4102635396445dfbd7c37b1b0892f",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": ">=10.5 || >=11.2"
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vardot",
+                    "homepage": "https://github.com/vardot",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Anchor feature for CKEditor 5, adapted for Drupal",
+            "homepage": "https://github.com/vardot/ckeditor5-anchor-drupal",
+            "keywords": [
+                "ckeditor5",
+                "drupal",
+                "plugin"
+            ],
+            "support": {
+                "issues": "http://drupal.org/project/issues/anchor_link",
+                "source": "http://cgit.drupalcode.org/anchor_link"
+            },
+            "time": "2026-08-25T08:25:36+00:00",
+            "published-time": "2026-08-25T08:25:55+00:00"
         },
         {
             "name": "webflo/drupal-finder",
