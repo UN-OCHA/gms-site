@@ -4,7 +4,9 @@ global-styling:
       css/styles.css: {}
   js:
     js/custom.js: {}
-bootstrap-styling:  
+  dependencies:
+    - core/jquery
+bootstrap-styling:
   css:
     theme:
       css/bootstrap.min.css: {}
