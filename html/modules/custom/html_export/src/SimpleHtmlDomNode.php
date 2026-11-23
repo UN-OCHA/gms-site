@@ -176,8 +176,10 @@ class SimpleHtmlDomNode {
 
     $string .= ' HDOM_INNER_INFO: ';
 
-    if (isset($node->blank[HDOM_INFO_INNER])) {
-      $string .= "'" . $node->blank[HDOM_INFO_INNER] . "'";
+    // $node is not defined, so this always evaluates to FALSE.
+    // How about we guess we should be using $this?
+    if (isset($this->blank[HDOM_INFO_INNER])) {
+      $string .= "'" . $this->blank[HDOM_INFO_INNER] . "'";
     }
     else {
       $string .= ' NULL ';
