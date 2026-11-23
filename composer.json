@@ -164,7 +164,7 @@
         "drupal/views_base_url": "^2.0@beta",
         "drupal/views_block_area": "^2.0",
         "drupal/votingapi": "^3.0@beta",
-        "drush/drush": "^12",
+        "drush/drush": "^13",
         "mglaman/composer-drupal-lenient": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "symfony/flex": "^1.17",
