@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "583078c4a50f35ee11c7e0e203d53bc2",
+    "content-hash": "39c824db64f873cc61740de05a88c483",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3008,17 +3008,17 @@
         },
         {
             "name": "drupal/entity_browser",
-            "version": "2.17.0",
+            "version": "2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_browser.git",
-                "reference": "8.x-2.17"
+                "reference": "8.x-2.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.17.zip",
-                "reference": "8.x-2.17",
-                "shasum": "0a2979bd27502c22b1d0b4c2d9746e28c314ca30"
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.18.zip",
+                "reference": "8.x-2.18",
+                "shasum": "1cf3927691354a244430353077716e608ea1917f"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11 || ^12"
@@ -3039,8 +3039,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.17",
-                    "datestamp": "1786484502",
+                    "version": "8.x-2.18",
+                    "datestamp": "1795115793",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3102,12 +3102,16 @@
             ],
             "description": "Entity browsing and selecting component.",
             "homepage": "https://drupal.org/project/entity_browser",
+            "keywords": [
+                "Actively maintained",
+                "Content editing experience"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser",
                 "issues": "https://www.drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "published-time": "2026-08-11T21:39:54+00:00"
+            "published-time": "2026-11-19T19:16:10+00:00"
         },
         {
             "name": "drupal/entity_browser_entity_form",
@@ -4643,29 +4647,29 @@
         },
         {
             "name": "drupal/menu_export",
-            "version": "1.8.0",
+            "version": "1.9.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_export.git",
-                "reference": "8.x-1.8"
+                "reference": "8.x-1.9-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_export-8.x-1.8.zip",
-                "reference": "8.x-1.8",
-                "shasum": "5f5db20faa588f1d8aabfc39f80f8ad74e4599e0"
+                "url": "https://ftp.drupal.org/files/projects/menu_export-8.x-1.9-rc1.zip",
+                "reference": "8.x-1.9-rc1",
+                "shasum": "4f464ea20810fb82a07ec580d14d7f942c2b2542"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
+                "drupal/core": "^10.1 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.8",
-                    "datestamp": "1790097757",
+                    "version": "8.x-1.9-rc1",
+                    "datestamp": "1790112159",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -4695,7 +4699,7 @@
                 "source": "https://git.drupalcode.org/project/menu_export",
                 "issues": "https://www.drupal.org/project/issues/menu_export"
             },
-            "published-time": "2026-09-22T17:22:16+00:00"
+            "published-time": "2026-09-22T21:21:52+00:00"
         },
         {
             "name": "drupal/menu_firstchild",
