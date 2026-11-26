@@ -1,28 +1,6 @@
 {
     "_hash": "086b231bb506eb9b8b97b3c14641d886ed4479f404334124c108e7dda403e6d9",
     "patches": {
-        "drupal/anchor_link": [
-            {
-                "package": "drupal/anchor_link",
-                "description": "Design Issue",
-                "url": "PATCHES/anchorlink/anchor_link-Integration-with-LinkIt-2958532.patch",
-                "sha256": "424235b13a8275a4dac3415decb85c790910a8f5827d6e526c9279f6003e463c",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            },
-            {
-                "package": "drupal/anchor_link",
-                "description": "CSS dialog Design Issue",
-                "url": "PATCHES/anchorlink/anchor_link-styling_issue_in_link_dialog-2986268-11.patch",
-                "sha256": "79888745d084448a9748a1915e1c4ff5a4e2a2c0098dadf7afdf413da3e2bca4",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
         "drupal/core": [
             {
                 "package": "drupal/core",

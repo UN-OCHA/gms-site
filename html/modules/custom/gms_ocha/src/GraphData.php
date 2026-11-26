@@ -3,8 +3,10 @@
 namespace Drupal\gms_ocha;
 
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Utility\Error;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -54,12 +56,20 @@ class GraphData {
   protected $request;
 
   /**
+   * The logger.
+   *
+   * @var \Psr\Log\LoggerInterface
+   */
+  protected $logger;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(CacheBackendInterface $cache, Client $http_client, RequestStack $request) {
+  public function __construct(CacheBackendInterface $cache, Client $http_client, RequestStack $request, LoggerInterface $logger) {
     $this->cache = $cache;
     $this->httpClient = $http_client;
     $this->request = $request;
+    $this->logger = $logger;
   }
 
   /**
@@ -70,6 +80,7 @@ class GraphData {
       $container->get('cache.default'),
       $container->get('http_client'),
       $container->get('request_stack'),
+      $container->get('logger.channel.gms_ocha'),
     );
   }
 
@@ -99,7 +110,7 @@ class GraphData {
           }
           catch (RequestException $e) {
             // Log the error.
-            watchdog_exception('gms_ocha Http Request', $e);
+            Error::logException($this->logger, $e);
           }
           $request->getStatusCode();
           $response_data = $request->getBody()->getContents();
@@ -180,7 +191,7 @@ class GraphData {
       }
       catch (RequestException $e) {
         // Log the error.
-        watchdog_exception('gms_ocha Http Request', $e);
+        Error::logException($this->logger, $e);
       }
       $responseStatus = $request->getStatusCode();
       $response_data = $request->getBody()->getContents();
@@ -231,7 +242,7 @@ class GraphData {
       $request = $client->request('GET', $url, $headers);
     }
     catch (RequestException $e) {
-      watchdog_exception('gms_ocha JSON Request', $e);
+      Error::logException($this->logger, $e);
     }
     if (!empty($request) && $request->getStatusCode() == 200) {
       $response_data = $request->getBody()->getContents();
@@ -249,7 +260,7 @@ class GraphData {
       }
       catch (RequestException $e) {
         // Log the error.
-        watchdog_exception('gms_ocha JSON Request', $e);
+        Error::logException($this->logger, $e);
       }
       if (!empty($request_narrative) && $request_narrative->getStatusCode() == 200) {
         $request_narrative->getStatusCode();

@@ -1,6 +1,6 @@
 gms_secure_role_js:
   js:
-    js/gms_secure_role.js: { weight: -1 }
+    js/gms_secure_role.js
   dependencies:
     - core/jquery
     - core/drupal

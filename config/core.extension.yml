@@ -47,7 +47,6 @@ module:
   gms_sitename: 0
   gtm_barebones: 0
   help: 0
-  help_topics: 0
   history: 0
   honeypot: 0
   hook_event_dispatcher: 0
@@ -120,7 +119,6 @@ module:
   tome_base: 0
   tome_static: 0
   toolbar: 0
-  tour: 0
   update: 0
   user: 0
   user_event_dispatcher: 0
