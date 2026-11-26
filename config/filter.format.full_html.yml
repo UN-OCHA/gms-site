@@ -42,7 +42,8 @@ filters:
     status: true
     weight: 0
     settings:
-      onomasticon_vocabulary: categories
+      onomasticon_vocabulary:
+        categories: categories
       onomasticon_definition_field: description
       onomasticon_definition_filters: false
       onomasticon_tag: dfn
