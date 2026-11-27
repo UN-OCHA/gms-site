@@ -6,6 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\Markup;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Banner block.
@@ -16,6 +17,31 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The current request.
+   *
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  protected $request;
+
+  /**
+   * Creates a GmsSecureRoleBlock instance.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   The current request.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, Request $request) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->request = $request;
+  }
 
   /**
    * Create function.
@@ -35,6 +61,7 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
+      $container->get('request_stack')->getCurrentRequest(),
     );
   }
 
@@ -45,7 +72,9 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
     global $base_url;
     $markup = '<a href="/gms_secure_role/show_popup" id="show_popup" style="display:none" class="use-ajax ajax-login" >Click</a>';
     $attached = [];
-    if (isset($_SESSION['show_pop_up']) && $_SESSION['show_pop_up'] == TRUE) {
+
+    $show_pop_up = $this->request->getSession()->get('show_pop_up');
+    if ($show_pop_up == TRUE) {
       $attached = [
         'library' => [
           'gms_secure_role/gms_secure_role_js',
@@ -54,7 +83,7 @@ class GmsSecureRoleBlock extends BlockBase implements ContainerFactoryPluginInte
           'siteBaseUrl' => $base_url,
         ],
       ];
-      unset($_SESSION['show_pop_up']);
+      $this->request->getSession()->remove('show_pop_up');
     }
 
     return [
