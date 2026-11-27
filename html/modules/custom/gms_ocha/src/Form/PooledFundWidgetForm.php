@@ -18,13 +18,13 @@ class PooledFundWidgetForm extends FormBase {
    *
    * @var Drupal\gms_ocha\GraphData
    */
-  private $graphData;
+  protected $graphData;
   /**
    * The query.
    *
    * @var Drupal\Core\Cache\CacheFactory
    */
-  private $cache;
+  protected $cache;
 
   /**
    * Creates an DevelLocalTask object.

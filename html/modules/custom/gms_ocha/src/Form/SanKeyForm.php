@@ -18,7 +18,7 @@ class SanKeyForm extends FormBase {
    *
    * @var Drupal\gms_ocha\GraphData
    */
-  private $graphData;
+  protected $graphData;
 
   /**
    * Retrieves the currently active request object.
