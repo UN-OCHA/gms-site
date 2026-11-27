@@ -42,7 +42,8 @@ filters:
     status: true
     weight: 0
     settings:
-      onomasticon_vocabulary: glossary
+      onomasticon_vocabulary:
+        glossary: glossary
       onomasticon_definition_field: description
       onomasticon_definition_filters: false
       onomasticon_tag: dfn
@@ -53,6 +54,7 @@ filters:
       onomasticon_repetition: ''
       onomasticon_ignorecase: false
       onomasticon_termlink: false
+      onomasticon_showsynonym: false
   filter_url:
     id: filter_url
     provider: filter

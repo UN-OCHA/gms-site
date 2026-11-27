@@ -5,7 +5,6 @@ dependencies:
   content:
     - 'block_content:basic:e4e97808-1028-4931-a55c-c955a5e2d3d5'
   module:
-    - block_class
     - block_content
     - system
   theme:
@@ -21,8 +20,6 @@ settings:
   label: 'Resource Center Support'
   label_display: '0'
   provider: block_content
-  status: true
-  info: ''
   view_mode: full
 visibility:
   request_path:

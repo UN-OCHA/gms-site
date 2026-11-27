@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - onomasticon
-    - token_filter
 name: 'Filtered HTML'
 format: filtered_html
 weight: 0
@@ -30,15 +29,19 @@ filters:
     status: true
     weight: 0
     settings:
-      onomasticon_vocabulary: glossary
+      onomasticon_vocabulary:
+        glossary: glossary
+      onomasticon_definition_field: description
+      onomasticon_definition_filters: false
       onomasticon_tag: dfn
       onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
-      onomasticon_implement: extra_element
+      onomasticon_implement: attr_title
       onomasticon_orientation: below
       onomasticon_cursor: default
-      onomasticon_repetition: '1'
+      onomasticon_repetition: ''
       onomasticon_ignorecase: false
       onomasticon_termlink: false
+      onomasticon_showsynonym: false
   filter_url:
     id: filter_url
     provider: filter
@@ -46,10 +49,3 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: 0
-    settings:
-      replace_empty: false

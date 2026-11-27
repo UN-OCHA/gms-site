@@ -5,7 +5,6 @@ dependencies:
   module:
     - editor
     - onomasticon
-    - token_filter
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -36,7 +35,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <span> <a hreflang href> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <span> <a hreflang href> <blockquote cite> <strong> <em> <code> <ul type> <ol type start> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_html_image_secure:
@@ -57,7 +56,8 @@ filters:
     status: true
     weight: 0
     settings:
-      onomasticon_vocabulary: glossary
+      onomasticon_vocabulary:
+        glossary: glossary
       onomasticon_definition_field: description
       onomasticon_definition_filters: false
       onomasticon_tag: dfn
@@ -68,10 +68,4 @@ filters:
       onomasticon_repetition: ''
       onomasticon_ignorecase: false
       onomasticon_termlink: false
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: 0
-    settings:
-      replace_empty: false
+      onomasticon_showsynonym: false

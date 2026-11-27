@@ -17,8 +17,8 @@ display_configuration:
   height: '500'
   link_text: 'Select media'
   auto_open: true
-  path: ''
   use_admin_theme: true
+  path: ''
 selection_display: no_display
 selection_display_configuration:
   view: null
