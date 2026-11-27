@@ -1,5 +1,5 @@
 {
-    "_hash": "5d86328e451efb84e028cef4c41d36fccd26de59d8a8737f005c86be11295e5b",
+    "_hash": "74978ad1ffe01aed5261a1ab2d9deabafb0ecf2f96a3c83367c536873a2e1e6e",
     "patches": {
         "drupal/core": [
             {
@@ -41,18 +41,6 @@
                 "description": "D11 compatibility - #3431791",
                 "url": "PATCHES/maintenance200/maintenance200-D11-compatibility-3431791.patch",
                 "sha256": "a18c917b199168ded802407a11e2d9eb75b1933c75aea4e60701c3ba0f6ea623",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
-        "drupal/onomasticon": [
-            {
-                "package": "drupal/onomasticon",
-                "description": "Add missing schema - 3459880",
-                "url": "PATCHES/onomasticon/compat-10.3-missing-schema.patch",
-                "sha256": "a2cccd8f4b80ef7406b783582df7c1e86fdaf038f254cfbf2a3ad4ff163ce1ba",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
