@@ -30,12 +30,12 @@ filters:
     weight: 0
     settings:
       onomasticon_vocabulary:
-        glossary: glossary
+        categories: categories
       onomasticon_definition_field: description
       onomasticon_definition_filters: false
       onomasticon_tag: dfn
       onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
-      onomasticon_implement: attr_title
+      onomasticon_implement: extra_element
       onomasticon_orientation: below
       onomasticon_cursor: default
       onomasticon_repetition: ''
