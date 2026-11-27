@@ -30,8 +30,7 @@ filters:
     status: true
     weight: 0
     settings:
-      onomasticon_vocabulary:
-        glossary: glossary
+      onomasticon_vocabulary: glossary
       onomasticon_tag: dfn
       onomasticon_disabled: 'abbr audio button cite code dfn form meta object pre style script video'
       onomasticon_implement: extra_element
