@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\system\Plugin\Block;
+namespace Drupal\gms_pdflink\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a generic Menu block.
  *
  * @Block(
- *   id = "system_menu_block",
+ *   id = "gms_pdflink_block",
  *   admin_label = @Translation("Menu"),
  *   category = @Translation("Menus"),
  *   deriver = "Drupal\system\Plugin\Derivative\SystemMenuBlock",
@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   },
  * )
  */
-class SystemMenuBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class GmsPdflinkBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * The menu link tree service.
